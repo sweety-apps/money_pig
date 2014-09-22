@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ui namespace="WCMainPageBoard_iPhone">
+    
+	<linear orientation="v" class="wrapper">
+        
+    </linear>
+   
+	<style type="text/css">
+        #wrapper {
+            width: 100%;
+            height: 100%;
+        }
+        .head_image {
+            image-mode: fit;
+            position: absolute;
+            left: 0;
+            top: 0px;
+            image-src: url(main_page_head.png);
+        }
+        .bottom_image {
+            image-mode: fit;
+            position: absolute;
+            left: 0;
+            top: 0px;
+            image-src: url(bottom_bg.png);
+        }
+	</style>
+</ui>

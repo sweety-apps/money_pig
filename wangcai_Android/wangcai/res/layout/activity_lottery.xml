@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" 
+	android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+		<Button 
+			android:id="@+id/return_button"
+			android:text="@string/test_return_text" 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+		/> 
+		<ImageView
+			android:src="@drawable/choujiang_title"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" />
+	</LinearLayout>
+	<FrameLayout 
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content" 
+		android:layout_marginTop="30dp" 
+		android:layout_marginBottom="30dp" >
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal" 
+			android:layout_gravity="center" >
+			<ImageView
+				android:src="@drawable/choujiang_zhongjiangbeilv"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" />
+			<ImageView
+				android:src="@drawable/choujiang_x1selected"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" />
+			<ImageView
+				android:src="@drawable/choujiang_x2selected"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" />
+			<ImageView
+				android:src="@drawable/choujiang_x3selected"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" />
+		</LinearLayout>
+	</FrameLayout>
+	<FrameLayout 
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content" >
+		 <RelativeLayout 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"   >
+				<ImageView
+					android:id="@+id/icon11"
+					android:src="@drawable/choujiang_5mao"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content" />
+				<ImageView
+					android:id="@+id/icon12"
+					android:src="@drawable/choujiang_thanks1"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content" 
+					android:layout_alignTop="@id/icon11"
+					android:layout_toRightOf="@id/icon11" />
+				<ImageView
+					android:id="@+id/icon13"
+					android:src="@drawable/choujiang_1mao"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_alignTop="@id/icon11"
+					android:layout_toRightOf="@id/icon12" />
+				<ImageView
+					android:id="@+id/icon14"
+					android:src="@drawable/choujiang_thanks4"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content" 
+					android:layout_alignTop="@id/icon11"
+					android:layout_toRightOf="@id/icon13" />
+
+
+				<ImageView
+					android:id="@+id/icon21"
+					android:src="@drawable/choujiang_thanks4"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content" 	 
+					android:layout_alignLeft="@id/icon11"
+					android:layout_below="@id/icon11" />
+				<ImageView
+					android:id="@+id/icon31"
+					android:src="@drawable/choujiang_1mao"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content" 	 
+					android:layout_alignLeft="@id/icon11"
+					android:layout_below="@id/icon21" />
+
+				<ImageButton 
+					android:id="@+id/lottery_button"
+					android:background="@drawable/lottery_button"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_alignTop="@id/icon21"
+					android:layout_toRightOf="@id/icon21"
+				/> 
+				<ImageView
+					android:id="@+id/icon24"
+					android:src="@drawable/choujiang_8yuan"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content" 	 
+					android:layout_alignTop="@id/icon21"
+					android:layout_toRightOf="@id/lottery_button" />
+				<ImageView
+					android:id="@+id/icon34"
+					android:src="@drawable/choujiang_5mao"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content" 	 
+					android:layout_alignTop="@id/icon31"
+					android:layout_toRightOf="@id/lottery_button" />
+
+				<ImageView
+					android:id="@+id/icon41"
+					android:src="@drawable/choujiang_5mao"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content" 	 
+					android:layout_below="@id/icon31"
+					android:layout_alignLeft="@id/icon11" />
+				<ImageView
+					android:id="@+id/icon42"
+					android:src="@drawable/choujiang_thanks3"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content" 	 
+					android:layout_alignTop="@id/icon41" 
+					android:layout_toRightOf="@id/icon41"/>
+				<ImageView
+					android:id="@+id/icon43"
+					android:src="@drawable/choujiang_3yuan"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content" 	 
+					android:layout_alignTop="@id/icon41" 
+					android:layout_toRightOf="@id/icon42"/>
+				<ImageView
+					android:id="@+id/icon44"
+					android:src="@drawable/choujiang_1mao"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content" 	 
+					android:layout_alignTop="@id/icon41" 
+					android:layout_toRightOf="@id/icon43"/>
+
+				<ImageView
+					android:id="@+id/select_cover"
+					android:src="@drawable/choujiang_border_moving"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content" 
+					android:visibility="gone" />
+				<ImageView
+					android:id="@+id/select_border"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content" 
+					android:visibility="gone"   />
+		  </RelativeLayout>
+	</FrameLayout>
+	<ImageView
+	    android:src="@drawable/choujiang_guize"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content" />
+</LinearLayout>

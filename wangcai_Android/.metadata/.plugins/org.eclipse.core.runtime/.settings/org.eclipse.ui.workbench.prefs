@@ -1,0 +1,5 @@
+ColorsAndFontsPreferencePage.expandedCategories=Torg.eclipse.jdt.ui.presentation
+ColorsAndFontsPreferencePage.selectedElement=Forg.eclipse.jdt.ui.editors.textfont
+RUN_IN_BACKGROUND=true
+eclipse.preferences.version=1
+org.eclipse.jdt.ui.editors.textfont=1|Verdana|9.75|0|WINDOWS|1|-13|0|0|0|400|0|0|0|0|3|2|1|34|Verdana;

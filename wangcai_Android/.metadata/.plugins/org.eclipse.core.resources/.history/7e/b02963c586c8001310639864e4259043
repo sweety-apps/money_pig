@@ -1,0 +1,41 @@
+package com.example.wangcai;
+
+import android.app.ActionBar.LayoutParams;
+import android.app.Activity;
+import android.content.Context;
+import android.graphics.drawable.ColorDrawable;
+import android.view.LayoutInflater;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.PopupWindow;
+
+public class AppWallWin extends PopupWindow {
+	
+    public AppWallWin(Activity holderActivity) {  
+        super(holderActivity);  
+        LayoutInflater inflater = (LayoutInflater) holderActivity  
+                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);  
+        View appWin = inflater.inflate(R.layout.win_app_wall, null);  
+
+        this.setContentView(appWin);    
+        this.setWidth(LayoutParams.FILL_PARENT);  
+        this.setHeight(LayoutParams.WRAP_CONTENT); 
+        this.setFocusable(true);  
+        ColorDrawable dw = new ColorDrawable(0xb0000000);  
+        this.setBackgroundDrawable(dw);  
+  
+    }  
+    
+    private void AttachEvents() {
+
+        appWin.setOnTouchListener(new View.OnTouchListener() {
+			@Override
+            public boolean onTouch(View v, MotionEvent event) { 
+                dismiss();    
+                return true;  
+            }
+        });  
+    }
+  
+
+}

@@ -1,0 +1,95 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.wangcai.MainActivity$PlaceholderFragment" >
+
+    <LinearLayout android:id="@+id/main_wnd"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+       >
+       
+		 <!--标题栏-->
+		 <LinearLayout android:id="@+id/title"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+		   >
+		 </LinearLayout>
+		 <!--余额-->
+		 <LinearLayout android:id="@+id/balance"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+		   >
+		 </LinearLayout>
+		 <!--签到捡钱，提取现金-->
+		 <LinearLayout android:id="@+id/tool_bar"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+		   >
+		 </LinearLayout>
+		 <!--推荐任务-->
+		 <LinearLayout android:id="@+id/tasks"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+		   >
+		 </LinearLayout>
+		 <!--邀请好友-->
+		 <LinearLayout android:id="@+id/invite"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+		   >
+		 </LinearLayout>
+		 <!--应用体验中心-->
+		 <LinearLayout android:id="@+id/app_wall"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+		   >
+		 </LinearLayout>
+		 <!--旺财等级-->
+		 <LinearLayout android:id="@+id/level"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+		   >
+		 </LinearLayout>
+		 <!--填写资料-->
+		 <LinearLayout android:id="@+id/write_info"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+		   >
+		 </LinearLayout>
+		 <!--好评旺财-->
+		 <LinearLayout android:id="@+id/comment"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+		   >
+		 </LinearLayout>
+		 <!--晒单有奖-->
+		 <LinearLayout android:id="@+id/share"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+		   >
+		 </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/options"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+       >
+    </LinearLayout>
+</RelativeLayout>

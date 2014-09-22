@@ -1,0 +1,20 @@
+package com.example.wangcai;
+
+import android.content.Context;
+import android.util.AttributeSet;
+import android.widget.LinearLayout;
+
+public class TitleCtrl extends LinearLayout {
+
+    public TitleCtrl(Context context) {
+        super(context);
+    }
+
+    public boolean Init()
+    {
+    	return true;    	
+    }
+
+    
+    
+}

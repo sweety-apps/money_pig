@@ -1,0 +1,42 @@
+package com.example.wangcai;
+
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+public class MainItem extends ItemBase
+{
+	public MainItem(String strItemName) {
+		m_strItemName = strItemName;
+		m_viewRoot = null;
+	}
+
+	public View Create(Context context, int nItemIconId, String strTitle, String strTip, int nMoneyIconId, Boolean bComplete) {
+		LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		m_viewRoot = (ViewGroup)inflater.inflate(R.layout.main_item,null);
+		InitView(nItemIconId, strTitle, strTip, nMoneyIconId, bComplete);
+		return m_viewRoot;
+	}
+	
+	private void InitView(int nItemIconId, String strTitle, String strTip, int nMoneyIconId, Boolean bComplete) {
+		ViewHelper.SetIconId(m_viewRoot, R.id.main_item_icon, nItemIconId);
+		ViewHelper.SetTextStr(m_viewRoot, R.id.main_item_title, strTitle);
+		ViewHelper.SetTextStr(m_viewRoot, R.id.main_item_tip, strTip);
+		if (bComplete)
+		{
+			ViewHelper.SetChildVisibility(m_viewRoot, R.id.main_item_money_icon, View.GONE);
+			ViewHelper.SetChildVisibility(m_viewRoot, R.id.main_item_task_status, View.VISIBLE);
+		}
+		else
+		{
+			ViewHelper.SetChildVisibility(m_viewRoot, R.id.main_item_task_status, View.GONE);
+			ViewHelper.SetChildVisibility(m_viewRoot, R.id.main_item_money_icon, View.VISIBLE);
+			ViewHelper.SetIconId(m_viewRoot, R.id.main_item_money_icon, nMoneyIconId);
+		}
+	}
+	
+	
+}
+
+

@@ -1,0 +1,27 @@
+package com.example.wangcai;
+
+import android.view.View;
+import android.view.ViewGroup;
+
+public class ItemBase {
+
+	public ItemBase(String strItemName) {
+		m_strItemName = strItemName;
+		m_viewRoot = null;
+	}
+
+
+	public void SetVisibility(int nVisibility) {
+		if (m_viewRoot != null)	{
+			m_viewRoot.setVisibility(nVisibility);
+		}
+	}
+	public View GetView() {
+		return m_viewRoot;
+	}
+	
+	
+	
+	protected String m_strItemName;
+	protected ViewGroup m_viewRoot;
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">wangcai</string>
+    <string name="hello_world">Hello sssworld!</string>
+    <string name="action_settings">Settings</string>
+	<string name="app_description">旺财</string>
+	<string name="balance">账户余额</string>
+	<string name="balance_unit">元</string>
+	<string name="sign_in">签到捡钱</string>
+	<string name="extract_cash">提取现金</string>
+	<string name="recommand_task">签到捡钱</string>
+	<string name="remain_task_money">今天还能赚：</string>
+</resources>

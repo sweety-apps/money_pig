@@ -1,0 +1,10 @@
+package com.example.wangcai;
+
+public class ViewHelper 
+{
+	public static Bool SetIconId(View parentView, int nViewId, int nIconId)
+	{
+	}
+
+	public static 
+}

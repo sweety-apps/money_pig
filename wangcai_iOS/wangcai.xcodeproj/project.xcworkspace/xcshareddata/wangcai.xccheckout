@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>F917A149-7D7B-4702-8717-51023C6FFA31</string>
+	<key>IDESourceControlProjectName</key>
+	<string>wangcai</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C4A69CBB-27C7-4124-8D0A-7A32A3C05298</key>
+		<string>https://github.com/sweety-apps/wangcai.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>wangcai_iOS/wangcai.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C4A69CBB-27C7-4124-8D0A-7A32A3C05298</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/sweety-apps/wangcai.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C4A69CBB-27C7-4124-8D0A-7A32A3C05298</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C4A69CBB-27C7-4124-8D0A-7A32A3C05298</string>
+			<key>IDESourceControlWCCName</key>
+			<string>wangcai</string>
+		</dict>
+	</array>
+</dict>
+</plist>

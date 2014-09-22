@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:wangcai = "http://schemas.android.com/apk/res/com.example.wangcai"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+	<com.example.wangcai.ctrls.TitleCtrl
+		android:id="@+id/title"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content" 
+		wangcai:titleText ="@string/user_info_title" />
+    
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal" >
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerVertical="true"
+			android:text="@string/my_infomation" />
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerVertical="true"
+			android:text="@string/my_infomation_hint" />
+	</LinearLayout>
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal" >
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerVertical="true"
+			android:text="@string/sex" />  
+			<RadioGroup  
+				android:id="@+id/sex_group"
+				android:layout_width="wrap_content"  
+				android:layout_height="wrap_content"  
+				android:orientation="horizontal">  
+				  
+				<RadioButton  
+					android:id="@+id/male_button"  
+					android:layout_width="wrap_content"  
+					android:layout_height="wrap_content"  
+					android:text="@string/male"  
+					android:checked="true"/>  
+				<RadioButton  
+					android:id="@+id/female_button"  
+					android:layout_width="wrap_content"  
+					android:layout_height="wrap_content"  
+					android:text="@string/female"/>  
+			</RadioGroup>  
+	</LinearLayout>
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal" >
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerVertical="true"
+			android:text="@string/age" />
+		<EditText 
+			android:id="@+id/age_edit"
+			android:layout_marginLeft="40dp"
+			android:layout_width="190dp"
+			android:layout_height="wrap_content"
+			android:layout_gravity="right"
+			android:inputType="number"
+			android:numeric="integer"
+		/>
+	</LinearLayout>
+	<TextView 
+		android:text="@string/select_help_hint"	
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+	/> 
+	<TableLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"  >
+		<TableRow>
+			<CheckBox
+				android:id="@+id/userinfo_relaxation_game"
+				android:text="@string/userinfo_relaxation_game"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" />
+			<CheckBox
+				android:id="@+id/userinfo_rpg_game"
+				android:text="@string/userinfo_rpg_game"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" />
+		</TableRow>
+		<TableRow>
+			<CheckBox
+				android:id="@+id/userinfo_ebuy"
+				android:text="@string/userinfo_ebuy"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" />
+			<CheckBox
+				android:id="@+id/userinfo_social_contact"
+				android:text="@string/userinfo_social_contact"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" />
+		</TableRow>
+		<TableRow>
+			<CheckBox
+				android:id="@+id/userinfo_travel"
+				android:text="@string/userinfo_travel"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" />
+			<CheckBox
+				android:id="@+id/userinfo_competitive_game"
+				android:text="@string/userinfo_competitive_game"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" />
+		</TableRow>
+		<TableRow>
+			<CheckBox
+				android:id="@+id/userinfo_sport"
+				android:text="@string/userinfo_sport"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" />
+			<CheckBox
+				android:id="@+id/userinfo_beautify"
+				android:text="@string/userinfo_beautify"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" />
+		</TableRow>
+	</TableLayout>
+	<Button 
+		android:id="@+id/confirm_button"
+		android:text="@string/userinfo_confirm" 
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:gravity="center_vertical"
+	/> 
+
+</LinearLayout>

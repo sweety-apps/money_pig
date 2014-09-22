@@ -1,0 +1,42 @@
+package com.example.wangcai;
+
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+public class ItemBase {
+	public interface ItemClickEvent
+	{
+		void OnItemClicked(String strItemName);
+	}
+	public ItemBase(String strItemName) {
+		m_strItemName = strItemName;
+		m_viewRoot = null;
+	}
+
+
+	public void SetVisibility(int nVisibility) {
+		if (m_viewRoot != null)	{
+			m_viewRoot.setVisibility(nVisibility);
+		}
+	}
+	
+	public void SetClickEventLinstener(ItemClickEvent clickEventLinstener) {
+		m_clickEventLinstener = clickEventLinstener;
+	}
+	
+	public View GetView() {
+		return m_viewRoot;
+	}
+	
+	protected boolean CreateView(Context context, int nLayoutId){
+		LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		m_viewRoot = (ViewGroup)inflater.inflate(nLayoutId, null);
+		return m_viewRoot != null;
+	}
+	
+	protected String m_strItemName;
+	protected ViewGroup m_viewRoot;
+	protected ItemClickEvent m_clickEventLinstener;
+}

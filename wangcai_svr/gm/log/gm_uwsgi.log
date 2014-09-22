@@ -1,0 +1,159 @@
+*** Starting uWSGI 2.0.6 (64bit) on [Thu Sep  4 12:43:14 2014] ***
+compiled with version: 4.2.1 Compatible Apple LLVM 5.1 (clang-503.0.40) on 21 August 2014 02:43:37
+os: Darwin-13.3.0 Darwin Kernel Version 13.3.0: Tue Jun  3 21:27:35 PDT 2014; root:xnu-2422.110.17~1/RELEASE_X86_64
+nodename: LeetekiMacBook-Pro.local
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /Users/leejustin/Documents/SourceCode/GitHub/wangcai/wangcai_svr/gm/sbin
+writing pidfile to ../conf/gm.pid
+detected binary path: /usr/local/bin/uwsgi
+your processes number limit is 709
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 256
+lock engine: OSX spinlocks
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8341 fd 3
+Python version: 2.7.5 (default, Mar  9 2014, 22:15:05)  [GCC 4.2.1 Compatible Apple LLVM 5.0 (clang-500.0.68)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x7f88e8e006b0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 219248 bytes (214 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x7f88e8e006b0 pid: 6758 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 6758)
+spawned uWSGI worker 1 (pid: 6775, cores: 1)
+SIGINT/SIGQUIT received...killing workers...
+*** Starting uWSGI 2.0.6 (64bit) on [Thu Sep  4 12:58:41 2014] ***
+compiled with version: 4.2.1 Compatible Apple LLVM 5.1 (clang-503.0.40) on 21 August 2014 02:43:37
+os: Darwin-13.3.0 Darwin Kernel Version 13.3.0: Tue Jun  3 21:27:35 PDT 2014; root:xnu-2422.110.17~1/RELEASE_X86_64
+nodename: LeetekiMacBook-Pro.local
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /Users/leejustin/Documents/SourceCode/GitHub/wangcai/wangcai_svr/gm/sbin
+writing pidfile to ../conf/gm.pid
+detected binary path: /usr/local/bin/uwsgi
+your processes number limit is 709
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 256
+lock engine: OSX spinlocks
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:8341).
+bind(): Address already in use [core/socket.c line 759]
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.6 (64bit) on [Fri Sep  5 00:15:24 2014] ***
+compiled with version: 4.2.1 Compatible Apple LLVM 5.1 (clang-503.0.40) on 21 August 2014 02:43:37
+os: Darwin-13.3.0 Darwin Kernel Version 13.3.0: Tue Jun  3 21:27:35 PDT 2014; root:xnu-2422.110.17~1/RELEASE_X86_64
+nodename: LeetekiMacBook-Pro.local
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /Users/leejustin/Documents/SourceCode/GitHub/wangcai/wangcai_svr/gm/sbin
+writing pidfile to ../conf/gm.pid
+detected binary path: /usr/local/bin/uwsgi
+your processes number limit is 709
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 256
+lock engine: OSX spinlocks
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8341 fd 3
+Python version: 2.7.5 (default, Mar  9 2014, 22:15:05)  [GCC 4.2.1 Compatible Apple LLVM 5.0 (clang-500.0.68)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x7fdd18e00920
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 219248 bytes (214 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x7fdd18e00920 pid: 4260 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 4260)
+spawned uWSGI worker 1 (pid: 4277, cores: 1)
+SIGINT/SIGQUIT received...killing workers...
+*** Starting uWSGI 2.0.6 (64bit) on [Fri Sep  5 01:36:02 2014] ***
+compiled with version: 4.2.1 Compatible Apple LLVM 5.1 (clang-503.0.40) on 21 August 2014 02:43:37
+os: Darwin-13.3.0 Darwin Kernel Version 13.3.0: Tue Jun  3 21:27:35 PDT 2014; root:xnu-2422.110.17~1/RELEASE_X86_64
+nodename: LeetekiMacBook-Pro.local
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /Users/leejustin/Documents/SourceCode/GitHub/wangcai/wangcai_svr/gm/sbin
+writing pidfile to ../conf/gm.pid
+detected binary path: /usr/local/bin/uwsgi
+your processes number limit is 709
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 256
+lock engine: OSX spinlocks
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:8341).
+bind(): Address already in use [core/socket.c line 759]
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.6 (64bit) on [Fri Sep  5 01:45:15 2014] ***
+compiled with version: 4.2.1 Compatible Apple LLVM 5.1 (clang-503.0.40) on 21 August 2014 02:43:37
+os: Darwin-13.3.0 Darwin Kernel Version 13.3.0: Tue Jun  3 21:27:35 PDT 2014; root:xnu-2422.110.17~1/RELEASE_X86_64
+nodename: LeetekiMacBook-Pro.local
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /Users/leejustin/Documents/SourceCode/GitHub/wangcai/wangcai_svr/gm/sbin
+writing pidfile to ../conf/gm.pid
+detected binary path: /usr/local/bin/uwsgi
+your processes number limit is 709
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 256
+lock engine: OSX spinlocks
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8341 fd 3
+Python version: 2.7.5 (default, Mar  9 2014, 22:15:05)  [GCC 4.2.1 Compatible Apple LLVM 5.0 (clang-500.0.68)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x7fa9106008a0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 219248 bytes (214 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x7fa9106008a0 pid: 5145 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 5145)
+spawned uWSGI worker 1 (pid: 5162, cores: 1)
+SIGINT/SIGQUIT received...killing workers...
+*** Starting uWSGI 2.0.6 (64bit) on [Fri Sep  5 01:47:57 2014] ***
+compiled with version: 4.2.1 Compatible Apple LLVM 5.1 (clang-503.0.40) on 21 August 2014 02:43:37
+os: Darwin-13.3.0 Darwin Kernel Version 13.3.0: Tue Jun  3 21:27:35 PDT 2014; root:xnu-2422.110.17~1/RELEASE_X86_64
+nodename: LeetekiMacBook-Pro.local
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /Users/leejustin/Documents/SourceCode/GitHub/wangcai/wangcai_svr/gm/sbin
+writing pidfile to ../conf/gm.pid
+detected binary path: /usr/local/bin/uwsgi
+your processes number limit is 709
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 256
+lock engine: OSX spinlocks
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:8341).
+bind(): Address already in use [core/socket.c line 759]
+worker 1 buried after 1 seconds
+goodbye to uWSGI.

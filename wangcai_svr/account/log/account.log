@@ -1,0 +1,52 @@
+[20140905 01:48:14] [DEBUG] SELECT * FROM anonymous_device WHERE device_id = '794badce379550935db3993f780d3964'
+[20140905 01:48:14] [DEBUG] INSERT INTO anonymous_device                 SET device_id = '794badce379550935db3993f780d3964', mac = '542696D6E05D', idfa = 'FE5DAD07-CEAD-4D11-A810-EFA9FD7DCC86', platform = 'iPhone Simulator_7.1', interest = '', activate_time = NOW()
+[20140905 01:48:14] [DEBUG] INSERT INTO anonymous_device                 SET device_id = '794badce379550935db3993f780d3964', mac = '542696D6E05D', idfa = 'FE5DAD07-CEAD-4D11-A810-EFA9FD7DCC86', platform = 'iPhone Simulator_7.1', interest = '', activate_time = NOW()
+[20140905 01:48:14] [DEBUG] new device, 794badce379550935db3993f780d3964
+[20140905 01:48:14] [DEBUG] url: http://127.0.0.1:15283/recharge, data: {"money": 100, "remark": "初次安装奖励", "userid": 0, "device_id": "794badce379550935db3993f780d3964"}
+[20140905 01:48:14] [DEBUG] resp: {"rtn": 0}
+[20140905 01:48:14] [DEBUG] INSERT INTO login_history                 SET userid = 0,                 device_id = '794badce379550935db3993f780d3964',                 platform = 'iPhone Simulator_7.1',                 version = 'WangCaiFriend2.2',                 ip = '127.0.0.1',                 network = 'wifi'
+[20140905 01:48:14] [DEBUG] resp: {'phone_num': '', 'new_device': True, 'rtn': 0, 'userid': 0, 'invite_code': '', 'inviter': '', 'device_id': '794badce379550935db3993f780d3964'}
+[20140905 01:52:39] [DEBUG] SELECT * FROM anonymous_device WHERE device_id = '794badce379550935db3993f780d3964'
+[20140905 01:52:39] [DEBUG] INSERT INTO login_history                 SET userid = 0,                 device_id = '794badce379550935db3993f780d3964',                 platform = 'iPhone Simulator_7.1',                 version = 'WangCaiFriend2.2',                 ip = '127.0.0.1',                 network = 'wifi'
+[20140905 01:52:39] [DEBUG] resp: {'phone_num': '', 'new_device': False, 'rtn': 0, 'userid': 0, 'invite_code': '', 'inviter': '', 'device_id': '794badce379550935db3993f780d3964'}
+[20140905 02:17:29] [DEBUG] SELECT * FROM anonymous_device WHERE device_id = '794badce379550935db3993f780d3964'
+[20140905 02:17:29] [DEBUG] INSERT INTO login_history                 SET userid = 0,                 device_id = '794badce379550935db3993f780d3964',                 platform = 'iPhone Simulator_7.1',                 version = 'WangCaiFriend2.2',                 ip = '127.0.0.1',                 network = 'wifi'
+[20140905 02:17:29] [DEBUG] resp: {'phone_num': '', 'new_device': False, 'rtn': 0, 'userid': 0, 'invite_code': '', 'inviter': '', 'device_id': '794badce379550935db3993f780d3964'}
+[20140905 02:18:12] [DEBUG] SELECT * FROM anonymous_device WHERE device_id = '794badce379550935db3993f780d3964'
+[20140905 02:18:12] [DEBUG] INSERT IGNORE INTO user_info                 SET phone_num = '13923887973', sex = 0, age = 0, interest = '', invite_code = 'SEXBF', create_time = NOW()
+[20140905 02:18:12] [DEBUG] SELECT COUNT(*) FROM user_device WHERE userid = 1
+[20140905 02:18:12] [DEBUG] INSERT INTO user_device                 SET userid = 1, device_id = '794badce379550935db3993f780d3964', mac = '542696D6E05D', idfa = 'FE5DAD07-CEAD-4D11-A810-EFA9FD7DCC86', platform = 'iPhone Simulator_7.1', activate_time = NOW()
+[20140905 02:18:12] [DEBUG] UPDATE anonymous_device SET flag = 1 WHERE device_id = '794badce379550935db3993f780d3964'
+[20140905 02:18:23] [DEBUG] SELECT * FROM anonymous_device WHERE device_id = '794badce379550935db3993f780d3964'
+[20140905 02:18:23] [DEBUG] SELECT * FROM user_device WHERE device_id = '794badce379550935db3993f780d3964'
+[20140905 02:18:23] [DEBUG] SELECT * FROM user_info WHERE id = 1
+[20140905 02:18:23] [DEBUG] phone_num: 13923887973
+[20140905 02:18:23] [DEBUG] user: {'inviter_code': u'', 'phone_num': u'13923887973', 'inviter_id': 0, 'age': 0, 'userid': 1, 'invite_code': u'SEXBF', 'sex': 0, 'create_time': '2014-09-05 02:18:12', 'interest': u'', 'nickname': ''}
+[20140905 02:18:23] [DEBUG] INSERT INTO login_history                 SET userid = 1,                 device_id = '794badce379550935db3993f780d3964',                 platform = 'iPhone Simulator_7.1',                 version = 'WangCaiFriend2.2',                 ip = '127.0.0.1',                 network = 'wifi'
+[20140905 02:18:23] [DEBUG] resp: {'phone_num': u'13923887973', 'new_device': False, 'rtn': 0, 'userid': 1, 'invite_code': u'SEXBF', 'inviter': u'', 'device_id': '794badce379550935db3993f780d3964'}
+[20140905 02:25:49] [DEBUG] SELECT * FROM anonymous_device WHERE device_id = '794badce379550935db3993f780d3964'
+[20140905 02:25:49] [DEBUG] SELECT * FROM user_device WHERE device_id = '794badce379550935db3993f780d3964'
+[20140905 02:25:49] [DEBUG] SELECT * FROM user_info WHERE id = 1
+[20140905 02:25:49] [DEBUG] phone_num: 13923887973
+[20140905 02:25:49] [DEBUG] user: {'inviter_code': u'', 'phone_num': u'13923887973', 'inviter_id': 0, 'age': 0, 'userid': 1, 'invite_code': u'SEXBF', 'sex': 0, 'create_time': '2014-09-05 02:18:12', 'interest': u'', 'nickname': ''}
+[20140905 02:25:49] [DEBUG] INSERT INTO login_history                 SET userid = 1,                 device_id = '794badce379550935db3993f780d3964',                 platform = 'iPhone Simulator_7.1',                 version = 'WangCaiFriend2.2',                 ip = '127.0.0.1',                 network = 'wifi'
+[20140905 02:25:49] [DEBUG] resp: {'phone_num': u'13923887973', 'new_device': False, 'rtn': 0, 'userid': 1, 'invite_code': u'SEXBF', 'inviter': u'', 'device_id': '794badce379550935db3993f780d3964'}
+[20140905 02:26:02] [DEBUG] SELECT * FROM user_info WHERE id = 1
+[20140905 02:26:02] [DEBUG] phone_num: 13923887973
+[20140905 02:26:15] [DEBUG] SELECT * FROM user_info WHERE id = 1
+[20140905 02:26:15] [DEBUG] phone_num: 13923887973
+[20140905 02:26:21] [DEBUG] SELECT * FROM anonymous_device WHERE device_id = '794badce379550935db3993f780d3964'
+[20140905 02:26:21] [DEBUG] SELECT * FROM user_device WHERE device_id = '794badce379550935db3993f780d3964'
+[20140905 02:26:21] [DEBUG] SELECT * FROM user_info WHERE id = 1
+[20140905 02:26:21] [DEBUG] phone_num: 13923887973
+[20140905 02:26:21] [DEBUG] user: {'inviter_code': u'', 'phone_num': u'13923887973', 'inviter_id': 0, 'age': 0, 'userid': 1, 'invite_code': u'SEXBF', 'sex': 0, 'create_time': '2014-09-05 02:18:12', 'interest': u'', 'nickname': ''}
+[20140905 02:26:21] [DEBUG] INSERT INTO login_history                 SET userid = 1,                 device_id = '794badce379550935db3993f780d3964',                 platform = 'iPhone Simulator_7.1',                 version = 'WangCaiFriend2.2',                 ip = '127.0.0.1',                 network = 'wifi'
+[20140905 02:26:21] [DEBUG] resp: {'phone_num': u'13923887973', 'new_device': False, 'rtn': 0, 'userid': 1, 'invite_code': u'SEXBF', 'inviter': u'', 'device_id': '794badce379550935db3993f780d3964'}
+[20140907 01:23:00] [DEBUG] SELECT * FROM anonymous_device WHERE device_id = 'c4349e3b8f9bee145c5b419dc4edc35a'
+[20140907 01:23:00] [DEBUG] INSERT INTO anonymous_device                 SET device_id = 'c4349e3b8f9bee145c5b419dc4edc35a', mac = '542696D6E05D', idfa = '8534E4A4-6691-42BB-9FAA-0ACD7FB95F23', platform = 'iPhone Simulator_7.1', interest = '', activate_time = NOW()
+[20140907 01:23:00] [DEBUG] INSERT INTO anonymous_device                 SET device_id = 'c4349e3b8f9bee145c5b419dc4edc35a', mac = '542696D6E05D', idfa = '8534E4A4-6691-42BB-9FAA-0ACD7FB95F23', platform = 'iPhone Simulator_7.1', interest = '', activate_time = NOW()
+[20140907 01:23:00] [DEBUG] new device, c4349e3b8f9bee145c5b419dc4edc35a
+[20140907 01:23:00] [DEBUG] url: http://127.0.0.1:15283/recharge, data: {"money": 100, "remark": "初次安装奖励", "userid": 0, "device_id": "c4349e3b8f9bee145c5b419dc4edc35a"}
+[20140907 01:23:00] [DEBUG] resp: {"rtn": 0}
+[20140907 01:23:00] [DEBUG] INSERT INTO login_history                 SET userid = 0,                 device_id = 'c4349e3b8f9bee145c5b419dc4edc35a',                 platform = 'iPhone Simulator_7.1',                 version = 'WangCaiFriend2.2',                 ip = '127.0.0.1',                 network = 'wifi'
+[20140907 01:23:00] [DEBUG] resp: {'phone_num': '', 'new_device': True, 'rtn': 0, 'userid': 0, 'invite_code': '', 'inviter': '', 'device_id': 'c4349e3b8f9bee145c5b419dc4edc35a'}

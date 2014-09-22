@@ -1,0 +1,44 @@
+package com.example.wangcai;
+
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.FrameLayout;
+
+public class TitleCtrl extends FrameLayout {
+
+	public interface TitleEvent{
+		void OnRequestClose();
+	}
+	
+    public TitleCtrl(Context context) {
+        super(context);
+        LayoutInflater inflater=(LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);  
+        inflater.inflate(R.layout.ctrl_title, this); 
+
+    	Button returnButton = (Button)this.findViewById(R.id.return_button);
+    	if (returnButton != null) {
+	    	returnButton.setOnClickListener(new OnClickListener() {
+	            public void onClick(View v) {
+	            	if (m_eventLinsterner != null) {
+	            		m_eventLinsterner.OnRequestClose();
+	            	}
+	            }
+	        });
+    	}
+    
+    }
+
+    public boolean Init(TitleEvent eventLinstener)
+    {
+    	m_eventLinsterner = eventLinstener;
+    	
+    	return true;    	
+    }
+ 
+
+    
+    private TitleEvent m_eventLinsterner;
+}

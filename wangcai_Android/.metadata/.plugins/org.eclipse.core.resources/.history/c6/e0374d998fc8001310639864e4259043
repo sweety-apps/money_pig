@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+	android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal" >
+		<Button 
+			android:id="@+id/return_button"
+			android:text="@string/test_return_text" 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+		/> 
+		<ImageView
+			android:src="@drawable/choujiang_title"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" />
+	</LinearLayout>
+	<TableLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content" >
+		<TableRow>
+			<ImageView
+				android:id="@+id/icon11"
+				android:src="@drawable/choujiang_5mao"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" />			
+			<ImageView
+				android:id="@+id/icon12"
+				android:src="@drawable/choujiang_thanks1"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" />
+			<ImageView
+				android:id="@+id/icon13"
+				android:src="@drawable/choujiang_1mao"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" />
+			<ImageView
+				android:id="@+id/icon14"
+				android:src="@drawable/choujiang_thanks4"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" />
+		</TableRow>
+		<TableRow>
+			<ImageView
+				android:id="@+id/icon21"
+				android:src="@drawable/choujiang_thanks4"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" />		
+			<Button 
+				android:id="@+id/lottery_button"
+				android:src="@drawable/choujiang_start_btn"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_span="2" /> 	
+			<ImageView
+				android:id="@+id/icon24"
+				android:src="@drawable/choujiang_8yuan"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_column="3"/>
+		</TableRow>
+		<TableRow>
+			<ImageView
+				android:id="@+id/icon31"
+				android:src="@drawable/choujiang_1mao"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" />
+			<ImageView
+				android:id="@+id/icon34"
+				android:src="@drawable/choujiang_thanks2"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_column="3"/>
+		</TableRow>
+		<TableRow>
+			<ImageView
+				android:id="@+id/icon41"
+				android:src="@drawable/choujiang_5mao"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" />			
+			<ImageView
+				android:id="@+id/icon42"
+				android:src="@drawable/choujiang_thanks3"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" />
+			<ImageView
+				android:id="@+id/icon43"
+				android:src="@drawable/choujiang_3yuan"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" />
+			<ImageView
+				android:id="@+id/choujiang_1mao"
+				android:src="@drawable/choujiang_1mao"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" />
+		</TableRow>
+	</TableLayout>
+	<ImageView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content" />
+</LinearLayout>

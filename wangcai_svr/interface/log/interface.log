@@ -1,0 +1,143 @@
+[20140905 00:16:39] [DEBUG] cookies: platform=iPhone Simulator_7.1, version=WangCaiFriend2.2, network=wifi
+[20140905 00:16:39] [DEBUG] client ip: 127.0.0.1
+[20140905 00:16:39] [DEBUG] http://127.0.0.1:15281/register
+[20140905 00:16:39] [ERROR] httperror: HTTP Error 500: Internal Server Error
+[20140905 00:16:54] [DEBUG] cookies: platform=iPhone Simulator_7.1, version=WangCaiFriend2.2, network=wifi
+[20140905 00:16:54] [DEBUG] client ip: 127.0.0.1
+[20140905 00:16:54] [DEBUG] http://127.0.0.1:15281/register
+[20140905 00:16:54] [ERROR] httperror: HTTP Error 500: Internal Server Error
+[20140905 00:18:30] [DEBUG] cookies: platform=iPhone Simulator_7.1, version=WangCaiFriend2.2, network=wifi
+[20140905 00:18:30] [DEBUG] client ip: 127.0.0.1
+[20140905 00:18:30] [DEBUG] http://127.0.0.1:15281/register
+[20140905 00:18:30] [ERROR] httperror: HTTP Error 500: Internal Server Error
+[20140905 01:47:19] [DEBUG] cookies: platform=iPhone Simulator_7.1, version=WangCaiFriend2.2, network=wifi
+[20140905 01:47:19] [DEBUG] client ip: 127.0.0.1
+[20140905 01:47:19] [DEBUG] http://127.0.0.1:15281/register
+[20140905 01:47:19] [ERROR] httperror: HTTP Error 500: Internal Server Error
+[20140905 01:47:28] [DEBUG] cookies: platform=iPhone Simulator_7.1, version=WangCaiFriend2.2, network=wifi
+[20140905 01:47:28] [DEBUG] client ip: 127.0.0.1
+[20140905 01:47:28] [DEBUG] http://127.0.0.1:15281/register
+[20140905 01:47:28] [ERROR] httperror: HTTP Error 500: Internal Server Error
+[20140905 01:47:33] [DEBUG] cookies: platform=iPhone Simulator_7.1, version=WangCaiFriend2.2, network=wifi
+[20140905 01:47:33] [DEBUG] client ip: 127.0.0.1
+[20140905 01:47:33] [DEBUG] http://127.0.0.1:15281/register
+[20140905 01:47:33] [ERROR] httperror: HTTP Error 500: Internal Server Error
+[20140905 01:48:14] [DEBUG] cookies: platform=iPhone Simulator_7.1, version=WangCaiFriend2.2, network=wifi
+[20140905 01:48:14] [DEBUG] client ip: 127.0.0.1
+[20140905 01:48:14] [DEBUG] http://127.0.0.1:15281/register
+[20140905 01:48:14] [DEBUG] resp: {"phone_num": "", "new_device": true, "rtn": 0, "userid": 0, "invite_code": "", "inviter": "", "device_id": "794badce379550935db3993f780d3964"}
+[20140905 01:48:14] [DEBUG] create session, device_id: 794badce379550935db3993f780d3964, userid: 0
+[20140905 01:48:14] [DEBUG] create session, new session_id:649e0bd9-f79e-4553-b0a1-0db667ff6866, device_id:794badce379550935db3993f780d3964,userid:0
+[20140905 01:48:14] [DEBUG] add session, session_id:649e0bd9-f79e-4553-b0a1-0db667ff6866, device_id:794badce379550935db3993f780d3964, userid:0
+[20140905 01:48:14] [INFO] new device, idfa:FE5DAD07-CEAD-4D11-A810-EFA9FD7DCC86, mac:542696D6E05D
+[20140905 01:48:14] [INFO] billing request, url = http://127.0.0.1:15283/query_balance?userid=0&device_id=794badce379550935db3993f780d3964
+[20140905 01:48:14] [DEBUG] http://127.0.0.1:15283/query_balance?userid=0&device_id=794badce379550935db3993f780d3964
+[20140905 01:48:14] [DEBUG] resp: {"balance": 100, "shared_income": 0, "rtn": 0, "outgo": 0, "income": 100}
+[20140905 01:48:14] [DEBUG] http://127.0.0.1:15282/list/task_of_device?device_id=794badce379550935db3993f780d3964
+[20140905 01:48:14] [DEBUG] resp: {"rtn": 0, "task_list": [{"status": 10, "title": "安装旺财", "money": 100, "intro": "安装旺财获得1元红包", "steps": [""], "timestamp": 0, "desc": "安装旺财获得1元红包", "type": 1, "id": 1, "icon": ""}, {"status": 0, "title": "填写个人资料", "money": 100, "intro": "填写个人资料即可获得1元红包", "steps": [""], "timestamp": 0, "desc": "填写个人资料即可获得1元红包", "type": 2, "id": 2, "icon": ""}, {"status": 0, "title": "填写邀请人", "money": 200, "intro": "与好友一起旺财，填写后领取2元红包", "steps": [""], "timestamp": 0, "desc": "与好友一起旺财，填写后领取2元红包", "type": 3, "id": 3, "icon": ""}, {"status": 0, "title": "签到领红包", "money": 10, "intro": "签到", "steps": [""], "timestamp": 0, "desc": "签到", "type": 4, "id": 4, "icon": ""}, {"status": 0, "title": "应用体验中心", "money": 9900, "intro": "体验不同的应用赚取红包", "steps": [""], "timestamp": 0, "desc": "体验不同的应用赚取红包", "type": 5, "id": 5, "icon": ""}, {"status": 0, "title": "好评旺财", "money": 10, "intro": "红包虽小，旺财真心希望得到您的好评", "steps": [""], "timestamp": 0, "desc": "红包虽小，旺财真心希望得到您的好评", "type": 6, "id": 6, "icon": ""}, {"status": 0, "title": "窃听风云", "money": 1000, "intro": "立即安装窃听风云即可获得1000元", "steps": ["在APPSTORE安装", "游戏内注册", "领取红包"], "timestamp": 1408944543, "desc": "即日起安装窃听风云并通关100遍，到深圳南山区田夏国际1528领取属于您的1000元奖励！！", "type": 10000, "id": 10000, "icon": "http://a1.mzstatic.com/us/r30/Purple6/v4/2b/e6/f1/2be6f17c-5ec7-b15e-4a20-06197abc3675/mzl.htefdfxe.175x175-75.jpg"}]}
+[20140905 01:48:41] [DEBUG] check session success, device_id:794badce379550935db3993f780d3964, userid:0
+[20140905 01:48:41] [DEBUG] userid: 0
+[20140905 01:48:41] [DEBUG] device_id: 794badce379550935db3993f780d3964
+[20140905 01:48:41] [DEBUG] phone: 13923887973
+[20140905 01:52:39] [DEBUG] cookies: platform=iPhone Simulator_7.1, version=WangCaiFriend2.2, network=wifi
+[20140905 01:52:39] [DEBUG] client ip: 127.0.0.1
+[20140905 01:52:39] [DEBUG] http://127.0.0.1:15281/register
+[20140905 01:52:39] [DEBUG] resp: {"phone_num": "", "new_device": false, "rtn": 0, "userid": 0, "invite_code": "", "inviter": "", "device_id": "794badce379550935db3993f780d3964"}
+[20140905 01:52:39] [DEBUG] create session, device_id: 794badce379550935db3993f780d3964, userid: 0
+[20140905 01:52:39] [DEBUG] reuse session, session_id:649e0bd9-f79e-4553-b0a1-0db667ff6866, device_id:794badce379550935db3993f780d3964,userid:0
+[20140905 01:52:39] [INFO] billing request, url = http://127.0.0.1:15283/query_balance?userid=0&device_id=794badce379550935db3993f780d3964
+[20140905 01:52:39] [DEBUG] http://127.0.0.1:15283/query_balance?userid=0&device_id=794badce379550935db3993f780d3964
+[20140905 01:52:39] [DEBUG] resp: {"balance": 100, "shared_income": 0, "rtn": 0, "outgo": 0, "income": 100}
+[20140905 01:52:39] [DEBUG] http://127.0.0.1:15282/list/task_of_device?device_id=794badce379550935db3993f780d3964
+[20140905 01:52:39] [DEBUG] resp: {"rtn": 0, "task_list": [{"status": 10, "title": "安装旺财", "money": 100, "intro": "安装旺财获得1元红包", "steps": [""], "timestamp": 0, "desc": "安装旺财获得1元红包", "type": 1, "id": 1, "icon": ""}, {"status": 0, "title": "填写个人资料", "money": 100, "intro": "填写个人资料即可获得1元红包", "steps": [""], "timestamp": 0, "desc": "填写个人资料即可获得1元红包", "type": 2, "id": 2, "icon": ""}, {"status": 0, "title": "填写邀请人", "money": 200, "intro": "与好友一起旺财，填写后领取2元红包", "steps": [""], "timestamp": 0, "desc": "与好友一起旺财，填写后领取2元红包", "type": 3, "id": 3, "icon": ""}, {"status": 0, "title": "签到领红包", "money": 10, "intro": "签到", "steps": [""], "timestamp": 0, "desc": "签到", "type": 4, "id": 4, "icon": ""}, {"status": 0, "title": "应用体验中心", "money": 9900, "intro": "体验不同的应用赚取红包", "steps": [""], "timestamp": 0, "desc": "体验不同的应用赚取红包", "type": 5, "id": 5, "icon": ""}, {"status": 0, "title": "好评旺财", "money": 10, "intro": "红包虽小，旺财真心希望得到您的好评", "steps": [""], "timestamp": 0, "desc": "红包虽小，旺财真心希望得到您的好评", "type": 6, "id": 6, "icon": ""}, {"status": 0, "title": "窃听风云", "money": 1000, "intro": "立即安装窃听风云即可获得1000元", "steps": ["在APPSTORE安装", "游戏内注册", "领取红包"], "timestamp": 1408944543, "desc": "即日起安装窃听风云并通关100遍，到深圳南山区田夏国际1528领取属于您的1000元奖励！！", "type": 10000, "id": 10000, "icon": "http://a1.mzstatic.com/us/r30/Purple6/v4/2b/e6/f1/2be6f17c-5ec7-b15e-4a20-06197abc3675/mzl.htefdfxe.175x175-75.jpg"}]}
+[20140905 01:55:09] [DEBUG] check session success, device_id:794badce379550935db3993f780d3964, userid:0
+[20140905 01:55:09] [DEBUG] userid: 0
+[20140905 01:55:09] [DEBUG] device_id: 794badce379550935db3993f780d3964
+[20140905 01:55:09] [DEBUG] phone: 13923887973
+[20140905 02:17:29] [DEBUG] cookies: platform=iPhone Simulator_7.1, version=WangCaiFriend2.2, network=wifi
+[20140905 02:17:29] [DEBUG] client ip: 127.0.0.1
+[20140905 02:17:29] [DEBUG] http://127.0.0.1:15281/register
+[20140905 02:17:29] [DEBUG] resp: {"phone_num": "", "new_device": false, "rtn": 0, "userid": 0, "invite_code": "", "inviter": "", "device_id": "794badce379550935db3993f780d3964"}
+[20140905 02:17:29] [DEBUG] create session, device_id: 794badce379550935db3993f780d3964, userid: 0
+[20140905 02:17:29] [DEBUG] reuse session, session_id:649e0bd9-f79e-4553-b0a1-0db667ff6866, device_id:794badce379550935db3993f780d3964,userid:0
+[20140905 02:17:29] [INFO] billing request, url = http://127.0.0.1:15283/query_balance?userid=0&device_id=794badce379550935db3993f780d3964
+[20140905 02:17:29] [DEBUG] http://127.0.0.1:15283/query_balance?userid=0&device_id=794badce379550935db3993f780d3964
+[20140905 02:17:29] [DEBUG] resp: {"balance": 100, "shared_income": 0, "rtn": 0, "outgo": 0, "income": 100}
+[20140905 02:17:29] [DEBUG] http://127.0.0.1:15282/list/task_of_device?device_id=794badce379550935db3993f780d3964
+[20140905 02:17:29] [DEBUG] resp: {"rtn": 0, "task_list": [{"status": 10, "title": "安装旺财", "money": 100, "intro": "安装旺财获得1元红包", "steps": [""], "timestamp": 0, "desc": "安装旺财获得1元红包", "type": 1, "id": 1, "icon": ""}, {"status": 0, "title": "填写个人资料", "money": 100, "intro": "填写个人资料即可获得1元红包", "steps": [""], "timestamp": 0, "desc": "填写个人资料即可获得1元红包", "type": 2, "id": 2, "icon": ""}, {"status": 0, "title": "填写邀请人", "money": 200, "intro": "与好友一起旺财，填写后领取2元红包", "steps": [""], "timestamp": 0, "desc": "与好友一起旺财，填写后领取2元红包", "type": 3, "id": 3, "icon": ""}, {"status": 0, "title": "签到领红包", "money": 10, "intro": "签到", "steps": [""], "timestamp": 0, "desc": "签到", "type": 4, "id": 4, "icon": ""}, {"status": 0, "title": "应用体验中心", "money": 9900, "intro": "体验不同的应用赚取红包", "steps": [""], "timestamp": 0, "desc": "体验不同的应用赚取红包", "type": 5, "id": 5, "icon": ""}, {"status": 0, "title": "好评旺财", "money": 10, "intro": "红包虽小，旺财真心希望得到您的好评", "steps": [""], "timestamp": 0, "desc": "红包虽小，旺财真心希望得到您的好评", "type": 6, "id": 6, "icon": ""}, {"status": 0, "title": "窃听风云", "money": 1000, "intro": "立即安装窃听风云即可获得1000元", "steps": ["在APPSTORE安装", "游戏内注册", "领取红包"], "timestamp": 1408944543, "desc": "即日起安装窃听风云并通关100遍，到深圳南山区田夏国际1528领取属于您的1000元奖励！！", "type": 10000, "id": 10000, "icon": "http://a1.mzstatic.com/us/r30/Purple6/v4/2b/e6/f1/2be6f17c-5ec7-b15e-4a20-06197abc3675/mzl.htefdfxe.175x175-75.jpg"}]}
+[20140905 02:17:52] [DEBUG] check session success, device_id:794badce379550935db3993f780d3964, userid:0
+[20140905 02:17:52] [DEBUG] userid: 0
+[20140905 02:17:52] [DEBUG] device_id: 794badce379550935db3993f780d3964
+[20140905 02:17:52] [DEBUG] phone: 13923887973
+[20140905 02:17:52] [DEBUG] http://106.ihuyi.com/webservice/sms.php?mobile=13923887973&content=%E6%82%A8%E7%9A%84%E9%AA%8C%E8%AF%81%E7%A0%81%E6%98%AF%EF%BC%9A%E3%80%9051960%E3%80%91%E3%80%82%E8%AF%B7%E4%B8%8D%E8%A6%81%E6%8A%8A%E9%AA%8C%E8%AF%81%E7%A0%81%E6%B3%84%E9%9C%B2%E7%BB%99%E5%85%B6%E4%BB%96%E4%BA%BA%E3%80%82%E5%A6%82%E9%9D%9E%E6%9C%AC%E4%BA%BA%E6%93%8D%E4%BD%9C%EF%BC%8C%E5%8F%AF%E4%B8%8D%E7%94%A8%E7%90%86%E4%BC%9A%EF%BC%81&account=cf_ksd&password=1528studioihuyi&method=Submit
+[20140905 02:17:54] [DEBUG] send sms successfully
+[20140905 02:18:12] [DEBUG] check session success, device_id:794badce379550935db3993f780d3964, userid:0
+[20140905 02:18:12] [DEBUG] http://127.0.0.1:15281/bind_phone
+[20140905 02:18:12] [DEBUG] resp: {"inviter": "", "rtn": 0, "userid": 1, "invite_code": "SEXBF", "total_device": 0}
+[20140905 02:18:13] [DEBUG] http://127.0.0.1:15283/activate_account
+[20140905 02:18:13] [DEBUG] resp: {"balance": 100, "shared_income": 0, "rtn": 0, "outgo": 0, "income": 100}
+[20140905 02:18:13] [DEBUG] update session, session_id:649e0bd9-f79e-4553-b0a1-0db667ff6866, device_id:794badce379550935db3993f780d3964, userid:1
+[20140905 02:18:23] [DEBUG] cookies: platform=iPhone Simulator_7.1, version=WangCaiFriend2.2, network=wifi
+[20140905 02:18:23] [DEBUG] client ip: 127.0.0.1
+[20140905 02:18:23] [DEBUG] http://127.0.0.1:15281/register
+[20140905 02:18:24] [DEBUG] resp: {"phone_num": "13923887973", "new_device": false, "rtn": 0, "userid": 1, "invite_code": "SEXBF", "inviter": "", "device_id": "794badce379550935db3993f780d3964"}
+[20140905 02:18:24] [DEBUG] create session, device_id: 794badce379550935db3993f780d3964, userid: 1
+[20140905 02:18:24] [DEBUG] reuse session, session_id:649e0bd9-f79e-4553-b0a1-0db667ff6866, device_id:794badce379550935db3993f780d3964,userid:1
+[20140905 02:18:24] [INFO] billing request, url = http://127.0.0.1:15283/query_balance?userid=1&device_id=794badce379550935db3993f780d3964
+[20140905 02:18:24] [DEBUG] http://127.0.0.1:15283/query_balance?userid=1&device_id=794badce379550935db3993f780d3964
+[20140905 02:18:24] [DEBUG] resp: {"balance": 100, "shared_income": 0, "rtn": 0, "outgo": 0, "income": 100}
+[20140905 02:18:24] [DEBUG] http://127.0.0.1:15282/list/task_of_device?device_id=794badce379550935db3993f780d3964
+[20140905 02:18:24] [DEBUG] resp: {"rtn": 0, "task_list": [{"status": 10, "title": "安装旺财", "money": 100, "intro": "安装旺财获得1元红包", "steps": [""], "timestamp": 0, "desc": "安装旺财获得1元红包", "type": 1, "id": 1, "icon": ""}, {"status": 0, "title": "填写个人资料", "money": 100, "intro": "填写个人资料即可获得1元红包", "steps": [""], "timestamp": 0, "desc": "填写个人资料即可获得1元红包", "type": 2, "id": 2, "icon": ""}, {"status": 0, "title": "填写邀请人", "money": 200, "intro": "与好友一起旺财，填写后领取2元红包", "steps": [""], "timestamp": 0, "desc": "与好友一起旺财，填写后领取2元红包", "type": 3, "id": 3, "icon": ""}, {"status": 0, "title": "签到领红包", "money": 10, "intro": "签到", "steps": [""], "timestamp": 0, "desc": "签到", "type": 4, "id": 4, "icon": ""}, {"status": 0, "title": "应用体验中心", "money": 9900, "intro": "体验不同的应用赚取红包", "steps": [""], "timestamp": 0, "desc": "体验不同的应用赚取红包", "type": 5, "id": 5, "icon": ""}, {"status": 0, "title": "好评旺财", "money": 10, "intro": "红包虽小，旺财真心希望得到您的好评", "steps": [""], "timestamp": 0, "desc": "红包虽小，旺财真心希望得到您的好评", "type": 6, "id": 6, "icon": ""}, {"status": 0, "title": "窃听风云", "money": 1000, "intro": "立即安装窃听风云即可获得1000元", "steps": ["在APPSTORE安装", "游戏内注册", "领取红包"], "timestamp": 1408944543, "desc": "即日起安装窃听风云并通关100遍，到深圳南山区田夏国际1528领取属于您的1000元奖励！！", "type": 10000, "id": 10000, "icon": "http://a1.mzstatic.com/us/r30/Purple6/v4/2b/e6/f1/2be6f17c-5ec7-b15e-4a20-06197abc3675/mzl.htefdfxe.175x175-75.jpg"}]}
+[20140905 02:18:24] [DEBUG] http://127.0.0.1:15282/list/task_of_user?userid=1
+[20140905 02:18:24] [DEBUG] resp: {"rtn": 0, "task_list": [{"status": 10, "title": "安装旺财", "money": 100, "intro": "安装旺财获得1元红包", "steps": [""], "timestamp": 0, "desc": "安装旺财获得1元红包", "type": 1, "id": 1, "icon": ""}, {"status": 0, "title": "填写个人资料", "money": 100, "intro": "填写个人资料即可获得1元红包", "steps": [""], "timestamp": 0, "desc": "填写个人资料即可获得1元红包", "type": 2, "id": 2, "icon": ""}, {"status": 0, "title": "填写邀请人", "money": 200, "intro": "与好友一起旺财，填写后领取2元红包", "steps": [""], "timestamp": 0, "desc": "与好友一起旺财，填写后领取2元红包", "type": 3, "id": 3, "icon": ""}, {"status": 0, "title": "签到领红包", "money": 10, "intro": "签到", "steps": [""], "timestamp": 0, "desc": "签到", "type": 4, "id": 4, "icon": ""}, {"status": 0, "title": "应用体验中心", "money": 9900, "intro": "体验不同的应用赚取红包", "steps": [""], "timestamp": 0, "desc": "体验不同的应用赚取红包", "type": 5, "id": 5, "icon": ""}, {"status": 0, "title": "好评旺财", "money": 10, "intro": "红包虽小，旺财真心希望得到您的好评", "steps": [""], "timestamp": 0, "desc": "红包虽小，旺财真心希望得到您的好评", "type": 6, "id": 6, "icon": ""}]}
+[20140905 02:18:37] [DEBUG] check session success, device_id:794badce379550935db3993f780d3964, userid:1
+[20140905 02:18:37] [DEBUG] http://127.0.0.1:15282/check-in
+[20140905 02:18:37] [DEBUG] resp: {"rtn": 0, "award": 1}
+[20140905 02:25:41] [DEBUG] check session success, device_id:794badce379550935db3993f780d3964, userid:1
+[20140905 02:25:41] [DEBUG] http://127.0.0.1:15282/report_comment
+[20140905 02:25:41] [DEBUG] resp: {"rtn": 0, "income": 10}
+[20140905 02:25:49] [DEBUG] cookies: platform=iPhone Simulator_7.1, version=WangCaiFriend2.2, network=wifi
+[20140905 02:25:49] [DEBUG] client ip: 127.0.0.1
+[20140905 02:25:49] [DEBUG] http://127.0.0.1:15281/register
+[20140905 02:25:49] [DEBUG] resp: {"phone_num": "13923887973", "new_device": false, "rtn": 0, "userid": 1, "invite_code": "SEXBF", "inviter": "", "device_id": "794badce379550935db3993f780d3964"}
+[20140905 02:25:49] [DEBUG] create session, device_id: 794badce379550935db3993f780d3964, userid: 1
+[20140905 02:25:49] [DEBUG] reuse session, session_id:649e0bd9-f79e-4553-b0a1-0db667ff6866, device_id:794badce379550935db3993f780d3964,userid:1
+[20140905 02:25:49] [INFO] billing request, url = http://127.0.0.1:15283/query_balance?userid=1&device_id=794badce379550935db3993f780d3964
+[20140905 02:25:49] [DEBUG] http://127.0.0.1:15283/query_balance?userid=1&device_id=794badce379550935db3993f780d3964
+[20140905 02:25:49] [DEBUG] resp: {"balance": 120, "shared_income": 0, "rtn": 0, "outgo": 0, "income": 120}
+[20140905 02:25:49] [DEBUG] http://127.0.0.1:15282/list/task_of_device?device_id=794badce379550935db3993f780d3964
+[20140905 02:25:49] [DEBUG] resp: {"rtn": 0, "task_list": [{"status": 10, "title": "安装旺财", "money": 100, "intro": "安装旺财获得1元红包", "steps": [""], "timestamp": 0, "desc": "安装旺财获得1元红包", "type": 1, "id": 1, "icon": ""}, {"status": 0, "title": "填写个人资料", "money": 100, "intro": "填写个人资料即可获得1元红包", "steps": [""], "timestamp": 0, "desc": "填写个人资料即可获得1元红包", "type": 2, "id": 2, "icon": ""}, {"status": 0, "title": "填写邀请人", "money": 200, "intro": "与好友一起旺财，填写后领取2元红包", "steps": [""], "timestamp": 0, "desc": "与好友一起旺财，填写后领取2元红包", "type": 3, "id": 3, "icon": ""}, {"status": 10, "title": "签到领红包", "money": 10, "intro": "签到", "steps": [""], "timestamp": 0, "desc": "签到", "type": 4, "id": 4, "icon": ""}, {"status": 0, "title": "应用体验中心", "money": 9900, "intro": "体验不同的应用赚取红包", "steps": [""], "timestamp": 0, "desc": "体验不同的应用赚取红包", "type": 5, "id": 5, "icon": ""}, {"status": 0, "title": "好评旺财", "money": 10, "intro": "红包虽小，旺财真心希望得到您的好评", "steps": [""], "timestamp": 0, "desc": "红包虽小，旺财真心希望得到您的好评", "type": 6, "id": 6, "icon": ""}, {"status": 0, "title": "窃听风云", "money": 1000, "intro": "立即安装窃听风云即可获得1000元", "steps": ["在APPSTORE安装", "游戏内注册", "领取红包"], "timestamp": 1408944543, "desc": "即日起安装窃听风云并通关100遍，到深圳南山区田夏国际1528领取属于您的1000元奖励！！", "type": 10000, "id": 10000, "icon": "http://a1.mzstatic.com/us/r30/Purple6/v4/2b/e6/f1/2be6f17c-5ec7-b15e-4a20-06197abc3675/mzl.htefdfxe.175x175-75.jpg"}]}
+[20140905 02:25:49] [DEBUG] http://127.0.0.1:15282/list/task_of_user?userid=1
+[20140905 02:25:49] [DEBUG] resp: {"rtn": 0, "task_list": [{"status": 10, "title": "安装旺财", "money": 100, "intro": "安装旺财获得1元红包", "steps": [""], "timestamp": 0, "desc": "安装旺财获得1元红包", "type": 1, "id": 1, "icon": ""}, {"status": 0, "title": "填写个人资料", "money": 100, "intro": "填写个人资料即可获得1元红包", "steps": [""], "timestamp": 0, "desc": "填写个人资料即可获得1元红包", "type": 2, "id": 2, "icon": ""}, {"status": 0, "title": "填写邀请人", "money": 200, "intro": "与好友一起旺财，填写后领取2元红包", "steps": [""], "timestamp": 0, "desc": "与好友一起旺财，填写后领取2元红包", "type": 3, "id": 3, "icon": ""}, {"status": 10, "title": "签到领红包", "money": 10, "intro": "签到", "steps": [""], "timestamp": 0, "desc": "签到", "type": 4, "id": 4, "icon": ""}, {"status": 0, "title": "应用体验中心", "money": 9900, "intro": "体验不同的应用赚取红包", "steps": [""], "timestamp": 0, "desc": "体验不同的应用赚取红包", "type": 5, "id": 5, "icon": ""}, {"status": 10, "title": "好评旺财", "money": 10, "intro": "红包虽小，旺财真心希望得到您的好评", "steps": [""], "timestamp": 0, "desc": "红包虽小，旺财真心希望得到您的好评", "type": 6, "id": 6, "icon": ""}]}
+[20140905 02:26:02] [DEBUG] check session success, device_id:794badce379550935db3993f780d3964, userid:1
+[20140905 02:26:02] [DEBUG] http://127.0.0.1:15281/user_info?userid=1&device_id=794badce379550935db3993f780d3964
+[20140905 02:26:02] [DEBUG] resp: {"activate_time": "2014-09-05 02:18:12", "phone_num": "13923887973", "interest": "", "inviter": "", "age": 0, "rtn": 0, "userid": 1, "invite_code": "SEXBF", "sex": 0}
+[20140905 02:26:15] [DEBUG] check session success, device_id:794badce379550935db3993f780d3964, userid:1
+[20140905 02:26:15] [DEBUG] http://127.0.0.1:15281/user_info?userid=1&device_id=794badce379550935db3993f780d3964
+[20140905 02:26:15] [DEBUG] resp: {"activate_time": "2014-09-05 02:18:12", "phone_num": "13923887973", "interest": "", "inviter": "", "age": 0, "rtn": 0, "userid": 1, "invite_code": "SEXBF", "sex": 0}
+[20140905 02:26:21] [DEBUG] cookies: platform=iPhone Simulator_7.1, version=WangCaiFriend2.2, network=wifi
+[20140905 02:26:21] [DEBUG] client ip: 127.0.0.1
+[20140905 02:26:21] [DEBUG] http://127.0.0.1:15281/register
+[20140905 02:26:21] [DEBUG] resp: {"phone_num": "13923887973", "new_device": false, "rtn": 0, "userid": 1, "invite_code": "SEXBF", "inviter": "", "device_id": "794badce379550935db3993f780d3964"}
+[20140905 02:26:21] [DEBUG] create session, device_id: 794badce379550935db3993f780d3964, userid: 1
+[20140905 02:26:21] [DEBUG] reuse session, session_id:649e0bd9-f79e-4553-b0a1-0db667ff6866, device_id:794badce379550935db3993f780d3964,userid:1
+[20140905 02:26:21] [INFO] billing request, url = http://127.0.0.1:15283/query_balance?userid=1&device_id=794badce379550935db3993f780d3964
+[20140905 02:26:21] [DEBUG] http://127.0.0.1:15283/query_balance?userid=1&device_id=794badce379550935db3993f780d3964
+[20140905 02:26:21] [DEBUG] resp: {"balance": 120, "shared_income": 0, "rtn": 0, "outgo": 0, "income": 120}
+[20140905 02:26:21] [DEBUG] http://127.0.0.1:15282/list/task_of_device?device_id=794badce379550935db3993f780d3964
+[20140905 02:26:22] [DEBUG] resp: {"rtn": 0, "task_list": [{"status": 10, "title": "安装旺财", "money": 100, "intro": "安装旺财获得1元红包", "steps": [""], "timestamp": 0, "desc": "安装旺财获得1元红包", "type": 1, "id": 1, "icon": ""}, {"status": 0, "title": "填写个人资料", "money": 100, "intro": "填写个人资料即可获得1元红包", "steps": [""], "timestamp": 0, "desc": "填写个人资料即可获得1元红包", "type": 2, "id": 2, "icon": ""}, {"status": 0, "title": "填写邀请人", "money": 200, "intro": "与好友一起旺财，填写后领取2元红包", "steps": [""], "timestamp": 0, "desc": "与好友一起旺财，填写后领取2元红包", "type": 3, "id": 3, "icon": ""}, {"status": 10, "title": "签到领红包", "money": 10, "intro": "签到", "steps": [""], "timestamp": 0, "desc": "签到", "type": 4, "id": 4, "icon": ""}, {"status": 0, "title": "应用体验中心", "money": 9900, "intro": "体验不同的应用赚取红包", "steps": [""], "timestamp": 0, "desc": "体验不同的应用赚取红包", "type": 5, "id": 5, "icon": ""}, {"status": 0, "title": "好评旺财", "money": 10, "intro": "红包虽小，旺财真心希望得到您的好评", "steps": [""], "timestamp": 0, "desc": "红包虽小，旺财真心希望得到您的好评", "type": 6, "id": 6, "icon": ""}, {"status": 0, "title": "窃听风云", "money": 1000, "intro": "立即安装窃听风云即可获得1000元", "steps": ["在APPSTORE安装", "游戏内注册", "领取红包"], "timestamp": 1408944543, "desc": "即日起安装窃听风云并通关100遍，到深圳南山区田夏国际1528领取属于您的1000元奖励！！", "type": 10000, "id": 10000, "icon": "http://a1.mzstatic.com/us/r30/Purple6/v4/2b/e6/f1/2be6f17c-5ec7-b15e-4a20-06197abc3675/mzl.htefdfxe.175x175-75.jpg"}]}
+[20140905 02:26:22] [DEBUG] http://127.0.0.1:15282/list/task_of_user?userid=1
+[20140905 02:26:22] [DEBUG] resp: {"rtn": 0, "task_list": [{"status": 10, "title": "安装旺财", "money": 100, "intro": "安装旺财获得1元红包", "steps": [""], "timestamp": 0, "desc": "安装旺财获得1元红包", "type": 1, "id": 1, "icon": ""}, {"status": 0, "title": "填写个人资料", "money": 100, "intro": "填写个人资料即可获得1元红包", "steps": [""], "timestamp": 0, "desc": "填写个人资料即可获得1元红包", "type": 2, "id": 2, "icon": ""}, {"status": 0, "title": "填写邀请人", "money": 200, "intro": "与好友一起旺财，填写后领取2元红包", "steps": [""], "timestamp": 0, "desc": "与好友一起旺财，填写后领取2元红包", "type": 3, "id": 3, "icon": ""}, {"status": 10, "title": "签到领红包", "money": 10, "intro": "签到", "steps": [""], "timestamp": 0, "desc": "签到", "type": 4, "id": 4, "icon": ""}, {"status": 0, "title": "应用体验中心", "money": 9900, "intro": "体验不同的应用赚取红包", "steps": [""], "timestamp": 0, "desc": "体验不同的应用赚取红包", "type": 5, "id": 5, "icon": ""}, {"status": 10, "title": "好评旺财", "money": 10, "intro": "红包虽小，旺财真心希望得到您的好评", "steps": [""], "timestamp": 0, "desc": "红包虽小，旺财真心希望得到您的好评", "type": 6, "id": 6, "icon": ""}]}
+[20140907 01:23:00] [DEBUG] cookies: platform=iPhone Simulator_7.1, version=WangCaiFriend2.2, network=wifi
+[20140907 01:23:00] [DEBUG] client ip: 127.0.0.1
+[20140907 01:23:00] [DEBUG] http://127.0.0.1:15281/register
+[20140907 01:23:00] [DEBUG] resp: {"phone_num": "", "new_device": true, "rtn": 0, "userid": 0, "invite_code": "", "inviter": "", "device_id": "c4349e3b8f9bee145c5b419dc4edc35a"}
+[20140907 01:23:00] [DEBUG] create session, device_id: c4349e3b8f9bee145c5b419dc4edc35a, userid: 0
+[20140907 01:23:00] [DEBUG] create session, new session_id:c5179c47-22a0-41b4-9d77-e6d5604bae88, device_id:c4349e3b8f9bee145c5b419dc4edc35a,userid:0
+[20140907 01:23:00] [DEBUG] add session, session_id:c5179c47-22a0-41b4-9d77-e6d5604bae88, device_id:c4349e3b8f9bee145c5b419dc4edc35a, userid:0
+[20140907 01:23:00] [INFO] new device, idfa:8534E4A4-6691-42BB-9FAA-0ACD7FB95F23, mac:542696D6E05D
+[20140907 01:23:00] [INFO] billing request, url = http://127.0.0.1:15283/query_balance?userid=0&device_id=c4349e3b8f9bee145c5b419dc4edc35a
+[20140907 01:23:00] [DEBUG] http://127.0.0.1:15283/query_balance?userid=0&device_id=c4349e3b8f9bee145c5b419dc4edc35a
+[20140907 01:23:00] [DEBUG] resp: {"balance": 100, "shared_income": 0, "rtn": 0, "outgo": 0, "income": 100}
+[20140907 01:23:00] [DEBUG] http://127.0.0.1:15282/list/task_of_device?device_id=c4349e3b8f9bee145c5b419dc4edc35a
+[20140907 01:23:01] [DEBUG] resp: {"rtn": 0, "task_list": [{"status": 10, "title": "安装旺财", "money": 100, "intro": "安装旺财获得1元红包", "steps": [""], "timestamp": 0, "desc": "安装旺财获得1元红包", "type": 1, "id": 1, "icon": ""}, {"status": 0, "title": "填写个人资料", "money": 100, "intro": "填写个人资料即可获得1元红包", "steps": [""], "timestamp": 0, "desc": "填写个人资料即可获得1元红包", "type": 2, "id": 2, "icon": ""}, {"status": 0, "title": "填写邀请人", "money": 200, "intro": "与好友一起旺财，填写后领取2元红包", "steps": [""], "timestamp": 0, "desc": "与好友一起旺财，填写后领取2元红包", "type": 3, "id": 3, "icon": ""}, {"status": 0, "title": "签到领红包", "money": 10, "intro": "签到", "steps": [""], "timestamp": 0, "desc": "签到", "type": 4, "id": 4, "icon": ""}, {"status": 0, "title": "应用体验中心", "money": 9900, "intro": "体验不同的应用赚取红包", "steps": [""], "timestamp": 0, "desc": "体验不同的应用赚取红包", "type": 5, "id": 5, "icon": ""}, {"status": 0, "title": "好评旺财", "money": 10, "intro": "红包虽小，旺财真心希望得到您的好评", "steps": [""], "timestamp": 0, "desc": "红包虽小，旺财真心希望得到您的好评", "type": 6, "id": 6, "icon": ""}, {"status": 0, "title": "窃听风云", "money": 1000, "intro": "立即安装窃听风云即可获得1000元", "steps": ["在APPSTORE安装", "游戏内注册", "领取红包"], "timestamp": 1408944543, "desc": "即日起安装窃听风云并通关100遍，到深圳南山区田夏国际1528领取属于您的1000元奖励！！", "type": 10000, "id": 10000, "icon": "http://a1.mzstatic.com/us/r30/Purple6/v4/2b/e6/f1/2be6f17c-5ec7-b15e-4a20-06197abc3675/mzl.htefdfxe.175x175-75.jpg"}]}

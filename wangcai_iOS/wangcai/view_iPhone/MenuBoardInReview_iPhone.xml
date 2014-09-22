@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ui namespace="MenuBoardInReview_iPhone">
+	
+	<linear orientation="v" class="menu-bg-wrapper">
+        <image id="menu-bg-image" class="menu-bg-image"/>
+        <linear orientation="v" class="title-wrapper">
+            <label class="title-text">菜单</label>
+            <image id="title-line-image" class="title-line-image"/>
+        </linear>
+        <linear orientation="v" class="wrapper">
+            <image id="item-bg" class="item-bg"/>
+            <linear orientation="v" class="item-wrapper">
+                <label class="item-text">我的旺财</label>
+                <button id="my_wangcai" class="item-mask"/>
+                <image id="item-line-image0" class="item-line-image"/>
+            </linear>
+            <linear orientation="v" class="item-wrapper">
+                <label class="item-text">现金提取</label>
+                <button id="second" class="item-mask"/>
+                <image id="item-line-image1" class="item-line-image"/>
+            </linear>
+            <linear orientation="v" class="item-wrapper">
+                <label class="item-text">超值兑换</label>
+                <button id="first" class="item-mask"/>
+                <image id="item-line-image3" class="item-line-image"/>
+            </linear>
+            
+            <linear orientation="v" class="item-wrapper">
+                <label class="item-text">邀请送红包</label>
+                <button id="invite" class="item-mask"/>
+                <image id="item-line-image4" class="item-line-image"/>
+            </linear>
+            
+            <linear orientation="v" class="item-wrapper">
+                <label class="item-text">功能设置</label>
+                <button id="third" class="item-mask"/>
+                <image id="item-line-image5" class="item-line-image"/>
+            </linear>
+        </linear>
+	</linear>
+
+	<style type="text/css">
+        .menu-bg-wrapper {
+            background-color: transparent;
+            width: 320px;
+            height: 100%;
+		}
+        .menu-bg-image {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            image-mode: center;
+            image-src: url(main_menu_bg.jpg);
+		}
+		.wrapper {
+            background-color: transparent;
+            width: 320px;
+			height: 100%;
+		}
+        .title-wrapper {
+            background-color: transparent;
+            width: 320px;
+            height: 78px;
+            margin-top: 6px;
+		}
+        .title-text {
+            text-align: left;
+            width: 100%;
+            height: 100%;
+            margin-left: 26px;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            font-size: 40px;
+            font-weight: bold;
+		}
+        .title-line-image {
+            width: 100%;
+            height: 1px;
+            position: absolute;
+            left: 0px;
+            top: 100%;
+            image-mode: left;
+            image-src: url(menu_icon_line.png);
+		}
+		.item-wrapper {
+            width: 100%;
+			height: 48px;
+			margin-top: 0px;
+		}
+		.item-bg {
+			width: 100%;
+			height: 38px;
+			position: absolute;
+			left: 0px;
+			top: 6px;
+			image-mode: center;
+			image-src: url(menu-icon-green.png);
+		}
+        .item-line-image {
+            width: 100%;
+            height: 1px;
+            position: absolute;
+            left: 26px;
+            top: 100%;
+            image-mode: left;
+            image-src: url(menu_icon_line.png);
+		}
+		.item-text {
+            text-align: left;
+            margin-left: 25px;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			font-size: 16px;
+			font-weight: bold;
+		}
+		.item-mask {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			left: 0px;
+			top: 0px;
+		}
+        .item-left-icon {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 26px;
+            top: 0px;
+            image-mode: left;
+            image-src: url(menu_icon_wodewangcai.png);
+		}
+	</style>
+	
+</ui>

@@ -1,0 +1,7 @@
+package com.example.wangcai;
+
+import android.app.Activity;
+
+class InviteActivity extends Activity {
+
+}

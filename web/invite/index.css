@@ -1,0 +1,7 @@
+html,body { margin:0px; border:0px; }
+
+.bkg { width:100%; min-height:100%; position:relative }
+
+.installbtn { position:absolute; left:4%; width:92%; height:40px; top:20px; }
+
+.codeText { position:absolute; left:4%; width:92%; height:40px; top:100px; text-align:center; vertical-align:middle; font-size:22px; font-weight:bold }

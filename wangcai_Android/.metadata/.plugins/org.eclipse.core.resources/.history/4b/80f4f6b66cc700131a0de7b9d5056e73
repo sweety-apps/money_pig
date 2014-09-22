@@ -1,0 +1,27 @@
+package com.example.wangcai;
+
+import android.app.Activity;
+import android.os.Bundle;
+
+public class WebviewActivity extends Activity implements TitleCtrl.TitleEvent{
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_web);
+        
+        InitView();
+     }
+
+
+    private void InitView()
+    {
+    	TitleCtrl titleCtrl = (TitleCtrl)this.findViewById(R.id.title);
+    	titleCtrl.Init(this);
+    	
+    	WebView webView = (WebView)this.findViewById(R.id.web_view)
+    }
+
+    public void OnRequestClose() {
+    }
+    
+}

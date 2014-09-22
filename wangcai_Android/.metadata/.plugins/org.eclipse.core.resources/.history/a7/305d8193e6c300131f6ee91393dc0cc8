@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">wangcai</string>
+    <string name="hello_world">Hello sssworld!</string>
+    <string name="action_settings">Settings</string>
+	<string name="app_description">旺财</string>
+	<string name="balance">账户余额</string>
+	<string name="balance_unit">元</string>
+	<string name="sign_in">签到捡钱</string>
+	<string name="extract_cash">提取现金</string>
+	<string name="recommand_task">签到捡钱</string>
+	<string name="remain_task_money">今天还能赚：</string>
+	<string name="invite_member_title">填写邀请人</string>
+	<string name="invite_member_tip">与好友一起旺财，填写后领取2元红包</string>
+	<string name="app_wall_title">应用体验中心</string>
+	<string name="app_wall_tip">体验不同的应用赚红包</string>
+	<string name="level_title">旺财升级到LV%1$d</string>
+	<string name="level_tip">再赚%1$s元，即可升级领红包</string>
+	<string name="install_wangcai_title">安装旺财</string>
+	<string name="install_wangcai_tip">安装旺财获得1元红包</string>
+	<string name="record_info_title">安装旺财</string>
+	<string name="record_info_tip">安装旺财获得1元红包</string>
+	<string name="install_wangcai_title">安装旺财</string>
+	<string name="install_wangcai_tip">安装旺财获得1元红包</string>
+	<string name="show_complete_tasks">点击查看已经领取的红包</string>
+</resources>

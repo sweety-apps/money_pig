@@ -1,0 +1,87 @@
+package com.example.wangcai;
+
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.TextView;
+
+public class MyWangcaiActivity extends Activity {
+	static class ItemInfo
+	{
+		ItemInfo(int nLevel,	int nBkgId,	int nLevelImgId, int nTipImgId)
+		{
+			m_nLevel = nLevel;
+			m_nBkgId = nBkgId;
+			m_nLevelImgId = nLevelImgId;
+			m_nTipImgId = nTipImgId;
+		}
+		public int m_nLevel;
+		public int m_nBkgId;
+		public int m_nLevelImgId;
+		public int m_nTipImgId;
+	}
+	private final static ItemInfo sg_listItems[] = {
+		new ItemInfo(3, 
+				R.drawable.mywangcai_cell_baifabaizhong, 
+				R.drawable.mywangcai_cell_baifabaizhong_title,
+				R.drawable.mywangcai_cell_baifabaizhong_des),
+		new ItemInfo(3, 
+				R.drawable.mywangcai_cell_xiongdibang, 
+				R.drawable.mywangcai_cell_xiongdibang_title,
+				R.drawable.mywangcai_cell_xiongdibang_des),
+		new ItemInfo(10, 
+				R.drawable.mywangcai_cell_dianshichengjin, 
+				R.drawable.mywangcai_cell_dianshichengjin_title,
+				R.drawable.mywangcai_cell_dianshichengjin_des)};
+	
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_my_wangcai);
+        
+        Intent intent = getIntent();
+        
+        int nCurrentLevel = intent.getIntExtra(ActivityParams.nLevel, 1)
+        InitView(nCurrentLevel);
+        AttachEvents();
+     }
+
+
+    private void InitView(int nCurrentLevel) {
+    	TextView levelText = (TextView)this.findViewById(R.id.level_value);
+    	levelText.setTag(String.valueOf(nCurrentLevel));
+    	
+    	ViewGroup parentView = (ViewGroup)this.findViewById(R.id.main_wnd);
+    	
+    	for (int i = 0; i < sg_listItems.length; i++) {
+    		ItemInfo itemInfo = sg_listItems[i];
+    		if (nCurrentLevel >= itemInfo.m_nLevel){
+    			continue;
+    		}
+    		AddItem(parentView, itemInfo);
+    	}
+    }
+    
+    private void AddItem(ViewGroup parentView, ItemInfo itemInfo) {
+        Context context = getApplicationContext();
+    	MyWangcaiItem item = new MyWangcaiItem();
+    	View view = item.Create(context, itemInfo.m_nBkgId, itemInfo.m_nLevelImgId, itemInfo.m_nTipImgId);
+    	parentView.addView(view);
+    }
+    private void AttachEvents()
+    {
+    	((Button)this.findViewById(R.id.return_button)).setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+            	finish();
+            }
+        });
+    
+    }
+    
+}

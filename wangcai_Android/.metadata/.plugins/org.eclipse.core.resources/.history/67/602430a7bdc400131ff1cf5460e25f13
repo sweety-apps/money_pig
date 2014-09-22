@@ -1,0 +1,53 @@
+package com.example.wangcai;
+
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+public class MainItem 
+{
+	public MainItem(String strItemName){
+		m_strItemName = strItemName;
+		m_viewRoot = null;
+	}
+
+	public ViewGroup Create(Context context, int nItemIconId, int nTitleStrId, int nTipStrId, int nMoneyIconId, Boolean bComplete){
+		LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		m_viewRoot = (ViewGroup)inflater.inflate(R.layout.main_item,null);
+		InitView(context, nItemIconId, nTitleStrId, nTipStrId, nMoneyIconId, bComplete);
+		return m_viewRoot;
+	}
+	
+	public void SetVisibility(int nVisibility){
+		if (m_viewRoot != null)	{
+			m_viewRoot.setVisibility(nVisibility);
+		}
+	}
+	public View GetView(){
+		return m_viewRoot;
+	}
+	
+	private void InitView(Context context, int nItemIconId, int nTitleStrId, int nTipStrId, int nMoneyIconId, Boolean bComplete){
+		ViewHelper.SetIconId(m_viewRoot, R.id.main_item_icon, nItemIconId);
+		ViewHelper.SetTextStr(m_viewRoot, R.id.main_item_title, context.getString(nTitleStrId));
+		ViewHelper.SetTextStr(m_viewRoot, R.id.main_item_tip, context.getString(nTipStrId));
+		if (bComplete)
+		{
+			ViewHelper.SetChildVisibility(m_viewRoot, R.id.main_item_money_icon, View.GONE);
+			ViewHelper.SetChildVisibility(m_viewRoot, R.id.main_item_task_status, View.VISIBLE);
+		}
+		else
+		{
+			ViewHelper.SetChildVisibility(m_viewRoot, R.id.main_item_task_status, View.GONE);
+			ViewHelper.SetChildVisibility(m_viewRoot, R.id.main_item_money_icon, View.VISIBLE);
+			ViewHelper.SetIconId(m_viewRoot, R.id.main_item_money_icon, nMoneyIconId);
+		}
+	}
+	
+	
+	private String m_strItemName;
+	private ViewGroup m_viewRoot;
+}
+
+

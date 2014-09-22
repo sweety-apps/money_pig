@@ -1,0 +1,24 @@
+[20140905 01:48:14] [DEBUG] INSERT INTO billing_log             SET serial_num = '2014090501481400000000255u', userid = 0, device_id = '794badce379550935db3993f780d3964',                 money = 100, remark = '初次安装奖励', insert_time = NOW()
+[20140905 01:48:14] [DEBUG] SELECT flag FROM anonymous_account WHERE device_id = '794badce379550935db3993f780d3964'
+[20140905 01:48:14] [DEBUG] INSERT INTO anonymous_account                     SET device_id = '794badce379550935db3993f780d3964', money = 100, create_time = NOW()
+[20140905 01:48:14] [DEBUG] SELECT *, UNIX_TIMESTAMP(create_time) AS u_create_time FROM anonymous_account WHERE device_id = '794badce379550935db3993f780d3964'
+[20140905 01:52:39] [DEBUG] SELECT *, UNIX_TIMESTAMP(create_time) AS u_create_time FROM anonymous_account WHERE device_id = '794badce379550935db3993f780d3964'
+[20140905 02:17:29] [DEBUG] SELECT *, UNIX_TIMESTAMP(create_time) AS u_create_time FROM anonymous_account WHERE device_id = '794badce379550935db3993f780d3964'
+[20140905 02:18:13] [DEBUG] SELECT *, UNIX_TIMESTAMP(create_time) AS u_create_time FROM anonymous_account WHERE device_id = '794badce379550935db3993f780d3964'
+[20140905 02:18:13] [DEBUG] INSERT IGNORE INTO billing_account                 SET userid = 1, money = 100, income = 100, create_time = NOW()
+[20140905 02:18:13] [DEBUG] UPDATE anonymous_account SET flag = 1 WHERE device_id = '794badce379550935db3993f780d3964'
+[20140905 02:18:13] [DEBUG] UPDATE billing_log SET userid = 1 WHERE device_id = '794badce379550935db3993f780d3964'
+[20140905 02:18:13] [DEBUG] SELECT *, UNIX_TIMESTAMP(create_time) AS u_create_time FROM billing_account WHERE userid = 1
+[20140905 02:18:24] [DEBUG] SELECT *, UNIX_TIMESTAMP(create_time) AS u_create_time FROM billing_account WHERE userid = 1
+[20140905 02:18:37] [DEBUG] INSERT INTO billing_log             SET serial_num = '2014090502183700000000255v', userid = 1, device_id = '794badce379550935db3993f780d3964',                 money = 10, remark = '抽奖赢得0.1元', insert_time = NOW()
+[20140905 02:18:37] [DEBUG] SELECT status FROM billing_account WHERE userid = 1
+[20140905 02:18:37] [DEBUG] UPDATE billing_account SET money = money + 10, income = income + 10 WHERE userid = 1
+[20140905 02:25:41] [DEBUG] INSERT INTO billing_log             SET serial_num = '2014090502254100000000255w', userid = 1, device_id = '794badce379550935db3993f780d3964',                 money = 10, remark = '好评旺财', insert_time = NOW()
+[20140905 02:25:41] [DEBUG] SELECT status FROM billing_account WHERE userid = 1
+[20140905 02:25:41] [DEBUG] UPDATE billing_account SET money = money + 10, income = income + 10 WHERE userid = 1
+[20140905 02:25:49] [DEBUG] SELECT *, UNIX_TIMESTAMP(create_time) AS u_create_time FROM billing_account WHERE userid = 1
+[20140905 02:26:21] [DEBUG] SELECT *, UNIX_TIMESTAMP(create_time) AS u_create_time FROM billing_account WHERE userid = 1
+[20140907 01:23:00] [DEBUG] INSERT INTO billing_log             SET serial_num = '2014090701230000000000255x', userid = 0, device_id = 'c4349e3b8f9bee145c5b419dc4edc35a',                 money = 100, remark = '初次安装奖励', insert_time = NOW()
+[20140907 01:23:00] [DEBUG] SELECT flag FROM anonymous_account WHERE device_id = 'c4349e3b8f9bee145c5b419dc4edc35a'
+[20140907 01:23:00] [DEBUG] INSERT INTO anonymous_account                     SET device_id = 'c4349e3b8f9bee145c5b419dc4edc35a', money = 100, create_time = NOW()
+[20140907 01:23:00] [DEBUG] SELECT *, UNIX_TIMESTAMP(create_time) AS u_create_time FROM anonymous_account WHERE device_id = 'c4349e3b8f9bee145c5b419dc4edc35a'

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+   <ImageView
+		android:id="@+id/item_icon"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center_vertical|left"
+		 />
+	<TextView 
+		android:id="@+id/item_title"
+		android:text="@string/balance"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_toLeftOf="@id/item_icon"
+	/> 
+	<TextView 
+		android:id="@+id/item_tip"
+		android:text="@string/balance"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_toLeftOf="@id/item_icon"
+		android:layout_below="@id/item_title"
+	/> 
+   <ImageView
+		android:id="@+id/money_icon"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center_vertical|right"
+		android:gravity="right"
+		 />
+	<TextView 
+		android:id="@+id/task_status"
+		android:text="@string/balance"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:gravity="right"
+		android:layout_gravity="center_vertical|right"
+		android:visible="Gone"
+	/> 
+</RelativeLayout>

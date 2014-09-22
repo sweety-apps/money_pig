@@ -1,0 +1,41 @@
+package com.example.wangcai;
+
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+public class MyWangcaiItem 
+{
+	public MyWangcaiItem()  {
+		m_viewRoot = null;
+	}
+
+	public ViewGroup Create(Context context, int nIconId, String strLevelName, String strUnlockTip, String strPrivilege) {
+		LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		m_viewRoot = (ViewGroup)inflater.inflate(R.layout.option_item,null);
+		InitView( nIconId, strLevelName, strUnlockTip, strPrivilege);
+		return m_viewRoot;
+	}
+	
+	public void SetVisibility(int nVisibility) {
+		if (m_viewRoot != null) {
+			m_viewRoot.setVisibility(nVisibility);
+		}
+	}
+	public View GetView() {
+		return m_viewRoot;
+	}
+	
+	private void InitView(int nIconId, String strLevelName, String strUnlockTip, String strPrivilege) {
+		ViewHelper.SetIconId(m_viewRoot, R.id.level_icon, nIconId);
+		ViewHelper.SetTextStr(m_viewRoot, R.id.level_name, strLevelName);
+		ViewHelper.SetTextStr(m_viewRoot, R.id.level_unlock_tip, strUnlockTip);
+		ViewHelper.SetTextStr(m_viewRoot, R.id.level_privilege_tip, strPrivilege);
+	}
+	
+	
+	private ViewGroup m_viewRoot;
+}
+
+

@@ -1,0 +1,42 @@
+package com.example.wangcai;
+
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+public class ViewHelper 
+{
+	public static Boolean SetIconId(View parentView, int nViewId, int nIconId) {
+		ImageView imageView = (ImageView)parentView.findViewById(nViewId);
+		if (imageView == null) {
+			return false;
+		}
+		imageView.setImageResource(nIconId);
+		return true;
+	}
+	public static Boolean SetViewBackground(View parentView, int nViewId, int nBkgId) {
+		ImageView imageView = (ImageView)parentView.findViewById(nViewId);
+		if (imageView == null) {
+			return false;
+		}
+		imageView.setImageResource(nIconId);
+		return true;
+	}
+	public static Boolean SetTextStr(View parentView, int nViewId, String strText) {
+		TextView textView = (TextView)parentView.findViewById(nViewId);
+		if (textView == null) {
+			return false;
+		}
+		textView.setText(strText);
+		return true;
+	}
+	public static Boolean SetChildVisibility(View parentView, int nViewId, int nVisibility) {
+		View view = (View)parentView.findViewById(nViewId);
+		if (view == null) {
+			return false;
+		}
+		view.setVisibility(nVisibility);
+		return true;
+	}
+	
+}

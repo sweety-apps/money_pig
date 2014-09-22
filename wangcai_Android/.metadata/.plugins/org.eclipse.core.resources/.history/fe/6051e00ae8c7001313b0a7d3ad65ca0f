@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">wangcai</string>
+    <string name="hello_world">123123</string>
+    <string name="action_settings">Settings</string>
+	<string name="app_description">旺财</string>
+	<string name="balance">账户余额:</string>
+	<string name="rmb_symbol">￥</string>
+	<string name="balance_unit">元</string>
+	<string name="sign_in">签到捡钱</string>
+	<string name="extract_cash">提取现金</string>
+	<string name="recommand_task">推荐任务</string>
+	<string name="remain_task_money">今天还能赚：</string>
+
+	<string name="invite_member_title">填写邀请人</string>
+	<string name="invite_member_tip">与好友一起旺财，填写后领取2元红包</string>
+	<string name="app_wall_title">应用体验中心</string>
+	<string name="app_wall_tip">体验不同的应用赚红包</string>
+	<string name="level_title">旺财升级到LV%1$d</string>
+	<string name="level_tip">再赚%1$s元，即可升级领红包</string>
+	<string name="install_wangcai_title">安装旺财</string>
+	<string name="install_wangcai_tip">安装旺财获得1元红包</string>
+	<string name="record_info_title">安装旺财</string>
+	<string name="record_info_tip">安装旺财获得1元红包</string>
+	<string name="comment_wangcai_title">好评旺财</string>
+	<string name="comment_wangcai_tip">红包虽小，旺财真心希望得到您的好评</string>
+	<string name="share_title">晒单有奖</string>
+	<string name="share_tip">与好友分享旺财成果</string>
+	<string name="show_complete_tasks">点击查看已经领取的红包</string>
+	<string name="task_complete">已完成</string>
+	
+	<string name="menu">菜单</string>
+	<string name="my_wangcai">我的旺财</string>
+	<string name="cash_extract">现金提取</string>
+	<string name="task_detail">交易明细</string>
+	<string name="exchange_gift">超值兑换</string>
+	<string name="get_money_by_invite">邀请送红包</string>
+	<string name="options">功能设置</string>
+	<string name="help">客服帮助</string>
+	
+	<string name="level_label">等级：</string>
+	<string name="level_unit">级</string>	
+	<string name="level_privilege_tip">可获得%1$s%%额外的红包</string>
+	
+	<string name="write_invite_code_tip">输入邀请码</string>
+	<string name="my_invite_code_tip">我的邀请码</string>
+	
+	
+	<string name="app_wall_win_title">安装应用获得丰厚奖励</string>
+	<string name="app_wall_win_text">请按应用要求安装并试玩一段时间后(部分要求注册)，返回旺财即可领取红包。部分时间由于网络延迟，红包不能立即到账，请耐心等待。注意：相同的应用只能领取一次奖励，且在在接受任务前已安装的应用不能领取红包。</string>
+	<string name="important_tip">重要提示</string>
+	<string name="more">更多</string>
+	
+	
+	
+	<string name="return">返回</string>
+</resources>

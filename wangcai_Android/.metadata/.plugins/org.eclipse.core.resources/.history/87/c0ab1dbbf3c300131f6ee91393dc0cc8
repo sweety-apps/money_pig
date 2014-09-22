@@ -1,0 +1,20 @@
+package com.example.wangcai;
+
+import android.content.Context;
+import android.view.ViewGroup;
+
+public class MainItem 
+{
+	public MainItem(int nItemIconId, String strTitle, String strTip, int nMoneyIconId)
+	{
+	}
+
+	public ViewGroup Create(Context context)
+	{
+		LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		inflater.inflate(R.layout.main_item,null);
+	}
+	
+	private ViewGroup m_pViewRoot;
+
+}

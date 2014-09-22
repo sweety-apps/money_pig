@@ -1,0 +1,67 @@
+package com.example.wangcai;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+import android.view.Window;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.TextView;
+
+public class MyWangcaiActivity extends Activity {
+	class ItemInfo
+	{
+		ItemInfo(int nLevel,	int nBkgId,	int nLevelImgId, int nTipImgId)
+		{
+			m_nLevel = nLevel;
+			m_nBkgId = nBkgId;
+			m_nLevelImgId = nLevelImgId;
+			m_nTipImgId = nTipImgId;
+		}
+		int m_nLevel;
+		int m_nBkgId;
+		int m_nLevelImgId;
+		int m_nTipImgId;
+	}
+	private final static ItemInfo listItems[] = new ItemInfo[3];
+	listItems[0] = new ItemInfo(3, 
+			R.drawable.mywangcai_cell_baifabaizhong, 
+			R.drawable.mywangcai_cell_baifabaizhong_title,
+			R.drawable.mywangcai_cell_baifabaizhong_des);
+
+	listItems[5] = new ItemInfo(3, 
+			R.drawable.mywangcai_cell_dianshichengjin, 
+			R.drawable.mywangcai_cell_baifabaizhong_title,
+			R.drawable.mywangcai_cell_baifabaizhong_des);
+
+	listItems[10] = new ItemInfo(3, 
+			R.drawable.mywangcai_cell_baifabaizhong, 
+			R.drawable.mywangcai_cell_baifabaizhong_title,
+			R.drawable.mywangcai_cell_baifabaizhong_des);
+	
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_my_wangcai);
+        
+        int nCurrentLevel = 123;
+        InitView(nCurrentLevel);
+        AttachEvents();
+     }
+
+
+    private void InitView(int nCurrentLevel) {
+    	TextView levelText = (TextView)this.findViewById(R.id.level_value);
+    	levelText.setTag(String.valueOf(nCurrentLevel));
+    }
+    
+    private void AttachEvents()
+    {
+    	((Button)this.findViewById(R.id.return_button)).setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+            }
+        });
+    
+    }
+    
+}

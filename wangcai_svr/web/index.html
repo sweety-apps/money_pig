@@ -1,0 +1,27 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+  html,body { margin:0px; border:0px; }
+  img {
+  	max-width: 700px;
+  	height: expression_r( this.scrollHeight > 699 ? "699px" : "auto" )
+  }
+</style>
+<script>
+function onInstall() {
+	var sysName = navigator.userAgent.split(";")[0].split('(')[1];//判断系统
+	if ( sysName == "iPhone" || sysName == "iphone" || sysName == "ipad" || sysName == "iPad" || sysName == "iPod" || sysName == "ipod" ) {
+		window.location.href="./app/";
+	} else {
+		alert ("当前只支持iPhone");
+	}
+}
+</script>
+
+<title>欢迎使用旺财</title>
+</head>
+<body>
+<img onclick="onInstall()" src="http://www.getwangcai.com/app/main.png" width="100%"/>
+</body>
+</html>

@@ -1,0 +1,29 @@
+package com.example.wangcai;
+
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+public class OptionItem extends ItemBase
+{
+	public OptionItem(String strItemName) {
+		super(strItemName);
+	}
+
+	public ViewGroup Create(Context context, int nIconId, String strText) {
+		LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		m_viewRoot = (ViewGroup)inflater.inflate(R.layout.option_item,null);
+		InitView(nIconId, strText);
+		return m_viewRoot;
+	}
+	
+
+	
+	private void InitView(int nIconId, String strText) {
+		ViewHelper.SetIconId(m_viewRoot, R.id.option_item_icon, nIconId);
+		ViewHelper.SetTextStr(m_viewRoot, R.id.option_item_text, strText);
+	}
+}
+
+

@@ -1,0 +1,24 @@
+html,body { font-size:12px; width:320px; margin:0px; }
+
+.clear { clear:both; float:none }
+.hide  { display:none; visibility:hidden }
+
+.step { width:292px; position:relative; margin-left:15px; margin-top:10px; }
+
+.step .appinfo { margin-bottom:10px; }
+.step .appinfo .ico { float:left; width:80px; }
+.step .appinfo .info { float:right; width:200px }
+
+.step .thumb { border:solid 1px #CCCCCC; text-align:center; vertical-align:middle; height:164px; display:table-cell; width:279px; padding:6px; }
+.step .thumb img { max-height:100%; max-width:100%; }
+
+.step .info .title { font-size:18px; font-weight:bold }
+.step .info .class { color:#999999; margin-top:6px; }
+.step .info .descTitle { margin-top:18px; font-size:14px; }
+.step .info .desc { line-height:14px; }
+
+.step .install { position:absolute; bottom:10px; }
+
+.step .info .tip { font-size:20px; font-weight:bold; line-height:22px }
+
+.step .suc { position:absolute; top:24%; }

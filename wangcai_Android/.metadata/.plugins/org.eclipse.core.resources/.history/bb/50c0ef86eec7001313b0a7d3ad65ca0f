@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+    
+   <ImageView
+		android:id="@+id/item_bkg"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+   />
+   <ImageView
+		android:id="@+id/level_unlock_tip"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+   />
+
+	<ImageView
+	    android:id="@+id/level_privilege_tip"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+		androdi:layout_
+	    android:layout_alignBottom="@id/level_unlock_tip" />
+ 
+</RelativeLayout>

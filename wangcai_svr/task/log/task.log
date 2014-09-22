@@ -1,0 +1,45 @@
+[20140905 01:48:14] [DEBUG] SELECT * FROM task_base WHERE type <= 9999
+[20140905 01:48:14] [DEBUG] SELECT * FROM task_daily WHERE device_id = '794badce379550935db3993f780d3964' AND date = CURDATE()
+[20140905 01:48:14] [DEBUG] SELECT * FROM task_of_device WHERE device_id = '794badce379550935db3993f780d3964'
+[20140905 01:48:14] [DEBUG] SELECT *, UNIX_TIMESTAMP(ts) AS u_ts FROM task_base WHERE type = 10000 AND status = 0
+[20140905 01:52:39] [DEBUG] SELECT * FROM task_base WHERE type <= 9999
+[20140905 01:52:39] [DEBUG] SELECT * FROM task_daily WHERE device_id = '794badce379550935db3993f780d3964' AND date = CURDATE()
+[20140905 01:52:39] [DEBUG] SELECT * FROM task_of_device WHERE device_id = '794badce379550935db3993f780d3964'
+[20140905 01:52:39] [DEBUG] SELECT *, UNIX_TIMESTAMP(ts) AS u_ts FROM task_base WHERE type = 10000 AND status = 0
+[20140905 02:17:29] [DEBUG] SELECT * FROM task_base WHERE type <= 9999
+[20140905 02:17:29] [DEBUG] SELECT * FROM task_daily WHERE device_id = '794badce379550935db3993f780d3964' AND date = CURDATE()
+[20140905 02:17:29] [DEBUG] SELECT * FROM task_of_device WHERE device_id = '794badce379550935db3993f780d3964'
+[20140905 02:17:29] [DEBUG] SELECT *, UNIX_TIMESTAMP(ts) AS u_ts FROM task_base WHERE type = 10000 AND status = 0
+[20140905 02:18:24] [DEBUG] SELECT * FROM task_base WHERE type <= 9999
+[20140905 02:18:24] [DEBUG] SELECT * FROM task_daily WHERE device_id = '794badce379550935db3993f780d3964' AND date = CURDATE()
+[20140905 02:18:24] [DEBUG] SELECT * FROM task_of_device WHERE device_id = '794badce379550935db3993f780d3964'
+[20140905 02:18:24] [DEBUG] SELECT *, UNIX_TIMESTAMP(ts) AS u_ts FROM task_base WHERE type = 10000 AND status = 0
+[20140905 02:18:24] [DEBUG] SELECT * FROM task_base WHERE type <= 9999
+[20140905 02:18:24] [DEBUG] SELECT * FROM task_daily WHERE userid = 1 AND date = CURDATE()
+[20140905 02:18:24] [DEBUG] SELECT * FROM task_of_user WHERE userid = 1
+[20140905 02:18:37] [DEBUG] SELECT * FROM task_daily WHERE userid = 1 AND date = CURDATE()
+[20140905 02:18:37] [DEBUG] roll: 0.037
+[20140905 02:18:37] [DEBUG] url: http://127.0.0.1:15283/recharge, data: {"money": 10, "remark": "抽奖赢得0.1元", "userid": 1, "device_id": "794badce379550935db3993f780d3964"}
+[20140905 02:18:37] [DEBUG] resp: {"rtn": 0}
+[20140905 02:18:37] [DEBUG] INSERT INTO task_daily                 SET device_id = '794badce379550935db3993f780d3964', userid = 1, date = CURDATE(),                     task_id = 4, type = 4, money = 10, extra = 'check-in: T_1MAO'
+[20140905 02:25:41] [DEBUG] INSERT IGNORE INTO task_of_user                 SET userid = 1, device_id = '794badce379550935db3993f780d3964', task_id = 6,                 type = 6, status = 10, money = 10
+[20140905 02:25:41] [DEBUG] url: http://127.0.0.1:15283/recharge, data: {"money": 10, "remark": "好评旺财", "userid": 1, "device_id": "794badce379550935db3993f780d3964"}
+[20140905 02:25:41] [DEBUG] resp: {"rtn": 0}
+[20140905 02:25:49] [DEBUG] SELECT * FROM task_base WHERE type <= 9999
+[20140905 02:25:49] [DEBUG] SELECT * FROM task_daily WHERE device_id = '794badce379550935db3993f780d3964' AND date = CURDATE()
+[20140905 02:25:49] [DEBUG] SELECT * FROM task_of_device WHERE device_id = '794badce379550935db3993f780d3964'
+[20140905 02:25:49] [DEBUG] SELECT *, UNIX_TIMESTAMP(ts) AS u_ts FROM task_base WHERE type = 10000 AND status = 0
+[20140905 02:25:49] [DEBUG] SELECT * FROM task_base WHERE type <= 9999
+[20140905 02:25:49] [DEBUG] SELECT * FROM task_daily WHERE userid = 1 AND date = CURDATE()
+[20140905 02:25:49] [DEBUG] SELECT * FROM task_of_user WHERE userid = 1
+[20140905 02:26:22] [DEBUG] SELECT * FROM task_base WHERE type <= 9999
+[20140905 02:26:22] [DEBUG] SELECT * FROM task_daily WHERE device_id = '794badce379550935db3993f780d3964' AND date = CURDATE()
+[20140905 02:26:22] [DEBUG] SELECT * FROM task_of_device WHERE device_id = '794badce379550935db3993f780d3964'
+[20140905 02:26:22] [DEBUG] SELECT *, UNIX_TIMESTAMP(ts) AS u_ts FROM task_base WHERE type = 10000 AND status = 0
+[20140905 02:26:22] [DEBUG] SELECT * FROM task_base WHERE type <= 9999
+[20140905 02:26:22] [DEBUG] SELECT * FROM task_daily WHERE userid = 1 AND date = CURDATE()
+[20140905 02:26:22] [DEBUG] SELECT * FROM task_of_user WHERE userid = 1
+[20140907 01:23:01] [DEBUG] SELECT * FROM task_base WHERE type <= 9999
+[20140907 01:23:01] [DEBUG] SELECT * FROM task_daily WHERE device_id = 'c4349e3b8f9bee145c5b419dc4edc35a' AND date = CURDATE()
+[20140907 01:23:01] [DEBUG] SELECT * FROM task_of_device WHERE device_id = 'c4349e3b8f9bee145c5b419dc4edc35a'
+[20140907 01:23:01] [DEBUG] SELECT *, UNIX_TIMESTAMP(ts) AS u_ts FROM task_base WHERE type = 10000 AND status = 0

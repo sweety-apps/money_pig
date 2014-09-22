@@ -1,0 +1,28 @@
+package com.example.wangcai;
+
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+public class ViewHelper 
+{
+	public static Boolean SetIconId(View parentView, int nViewId, int nIconId)
+	{
+		ImageView imageView = (ImageView)parentView.findViewById(nViewId);
+		if (imageView == null)
+		{
+			return false;
+		}
+		return true;
+	}
+
+	public static Boolean SetTextStr(View parentView, int nViewId, String strId)
+	{
+		TextView textView = (ImageView)parentView.findViewById(nViewId);
+		if (textView == null)
+		{
+			return false;
+		}
+		return true;
+	}
+}

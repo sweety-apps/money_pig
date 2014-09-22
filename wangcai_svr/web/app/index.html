@@ -1,0 +1,39 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+  html,body { margin:0px; border:0px; }
+  img {
+  	max-width: 700px;
+  	height: expression_r( this.scrollHeight > 699 ? "699px" : "auto" )
+  }
+</style>
+<script>
+var bar=0　
+var line="||"　
+var amount="||"　
+count()　
+function count(){　
+bar=bar+2　
+amount =amount + line　
+if (bar<99)　
+{setTimeout("count()",10);}　
+else　
+{window.location = "itms-services://?action=download-manifest&url=http://www.getwangcai.com/app/wangcai.plist";}　
+}
+function onInstall() {
+	var sysName = navigator.userAgent.split(";")[0].split('(')[1];//判断系统
+	if ( sysName == "iPhone" || sysName == "iphone" || sysName == "ipad" || sysName == "iPad" || sysName == "iPod" || sysName == "ipod" ) {
+		window.location = "itms-services://?action=download-manifest&url=http://www.getwangcai.com/app/wangcai.plist";
+	} else {
+		alert ("当前只支持iPhone");
+	}
+}
+</script>
+
+<title>正在进入旺财安装界面</title>
+</head>
+<body>
+<img onclick="onInstall()" src="http://www.getwangcai.com/app/main.png" width="100%" />
+</body>
+</html>

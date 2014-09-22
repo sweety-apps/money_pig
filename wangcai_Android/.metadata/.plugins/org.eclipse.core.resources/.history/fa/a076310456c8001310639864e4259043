@@ -1,0 +1,51 @@
+package com.example.wangcai;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+import android.view.Window;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+
+public class InviteActivity extends Activity implements TitleCtrl.TitleEvent {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_invite);
+
+        AttachEvents();
+     }
+
+
+	public void OnRequestClose() {
+		finish();
+	}
+    
+    private void AttachEvents()
+    {
+    	TitleCtrl titleCtrl = (TitleCtrl)this.findViewById(R.id.title);
+    	titleCtrl.SetEventLinstener(this);
+    	
+    	View invitePanel = this.findViewById(R.id.invite_panel);
+    	View inviteCodePanel = this.findViewById(R.id.invite_code_panel);
+    	
+    	((Button)this.findViewById(R.id.option_button)).setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+            	invitePanel.setVisibility(View.VISIBLE);
+            	inviteCodePanel.setVisibility(View.GONE);
+            }
+        });
+
+    	((Button)this.findViewById(R.id.option_button)).setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+            }
+        });
+    }
+
+    @Override 
+    protected void onDestroy() {
+    	TitleCtrl titleCtrl = (TitleCtrl)this.findViewById(R.id.title);
+    	titleCtrl.SetEventLinstener(null);    	
+    }
+}

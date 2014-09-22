@@ -1,0 +1,150 @@
+<com.example.wangcai.BidirSlidingLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.wangcai.MainActivity$PlaceholderFragment" >
+
+    <LinearLayout android:id="@+id/main_wnd"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+       >
+       
+		 <!--标题栏-->
+		 <RelativeLayout android:id="@+id/title"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+		   >
+			<Button 
+				android:id="@+id/option_button"
+				android:text="@string/options" 
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:gravity="center_vertical"
+			/> 
+
+			<TextView
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_centerVertical="true"
+			    android:layout_toRightOf="@id/option_button"
+			    android:gravity="center_vertical"
+			    android:text="@string/app_description"
+			    android:textColor="#0000ff" />
+ 
+			<Button 
+				android:id="@+id/exchange_gift_button"
+				android:text="@string/exchange_gift" 
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+			    android:layout_alignParentRight="true"
+			/> 
+		 </RelativeLayout>
+		 <!--余额-->
+		 <RelativeLayout android:id="@+id/balance"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+		   >
+				<TextView 
+					android:id="@+id/balance_lebal"
+					android:text="@string/balance"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+				/> 
+				<TextView 
+					android:text="@string/rmb_symbol"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_below="@id/balance_lebal"
+				/> 
+
+				<TextView
+				    android:id="@+id/balance_unit"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:layout_alignParentRight="true"
+				    android:text="@string/balance_unit" />
+ 
+				<TextView 
+					android:id="@+id/balance_value"
+					android:text="@string/hello_world"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_toLeftOf="@id/balance_unit"
+				/> 
+		 </RelativeLayout>
+		 <!--签到捡钱，提取现金-->
+		 <RelativeLayout android:id="@+id/tool_bar"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+		   >
+
+			<Button
+			    android:id="@+id/extract_cash"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_alignParentRight="true"
+			    android:text="@string/sign_in" />
+ 
+			<Button 
+				android:id="@+id/sign_in"
+				android:text="@string/extract_cash" 
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_toLeftOf="@id/extract_cash"
+			/> 
+		 </RelativeLayout>
+		 <!--推荐任务-->
+		 <RelativeLayout android:id="@+id/tasks"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+		   >
+			<TextView 
+				android:text="@string/recommand_task"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+			/>		
+			<TextView 
+				android:id="@+id/task_balance_unit"
+				android:text="@string/balance_unit"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+			    android:layout_alignParentRight="true"
+			/> 
+			<TextView 
+				android:id="@+id/remain_taks_balance"
+				android:text="@string/hello_world"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_toLeftOf="@id/task_balance_unit"
+			/> 
+			<!--今天还能赚：-->
+			<TextView 
+				android:text="@string/remain_task_money"	
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_toLeftOf="@id/remain_taks_balance"
+			/> 
+		 </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/menu_page"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+		android:visibility="gone"
+       >
+		<TextView 
+			android:text="@string/menu"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_vertical|right"
+		/> 
+    </LinearLayout>
+</RelativeLayout>

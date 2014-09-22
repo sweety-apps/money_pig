@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChoujiangViewController">
+            <connections>
+                <outlet property="backButton" destination="EKl-f4-Pyr" id="nhx-VA-NLP"/>
+                <outlet property="beilv1x" destination="V1W-5c-JxY" id="0FX-Zg-qnl"/>
+                <outlet property="beilv2x" destination="0hU-1Y-PYv" id="vbc-Rr-6mi"/>
+                <outlet property="beilv3x" destination="OyF-xq-XR7" id="XTK-fd-iD8"/>
+                <outlet property="choice0" destination="TqT-MN-q96" id="jpK-O8-3XA"/>
+                <outlet property="choice1" destination="AX3-Li-ZPS" id="7or-Kz-8et"/>
+                <outlet property="choice10" destination="Afh-PO-Qcw" id="hrY-ft-oPC"/>
+                <outlet property="choice11" destination="etA-Qr-dlT" id="tx5-lA-dQM"/>
+                <outlet property="choice2" destination="grj-LT-q3f" id="MN4-6s-ECO"/>
+                <outlet property="choice3" destination="OZK-iW-INg" id="x2M-yh-2Dy"/>
+                <outlet property="choice4" destination="1pD-t5-gRd" id="5MI-1X-NPm"/>
+                <outlet property="choice5" destination="pMK-IT-Cs7" id="bBB-o7-gyS"/>
+                <outlet property="choice6" destination="Ggl-3K-pKk" id="hEO-hV-41w"/>
+                <outlet property="choice7" destination="hDI-NW-7SS" id="9zV-NO-uxr"/>
+                <outlet property="choice8" destination="5f3-U0-Ghn" id="lot-0B-yUH"/>
+                <outlet property="choice9" destination="zkk-p5-b9B" id="LOj-ws-8VS"/>
+                <outlet property="choiceBorder" destination="OjH-Hq-pSo" id="gyu-f6-9b2"/>
+                <outlet property="choiceCover" destination="Tik-9c-6Of" id="zYO-ps-dLb"/>
+                <outlet property="startButton" destination="o84-6L-b5G" id="etY-yK-1q3"/>
+                <outlet property="view" destination="1" id="3"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="choujiang_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="gBh-Yr-ZI9">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="576"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="choujiang_title.png" translatesAutoresizingMaskIntoConstraints="NO" id="PR7-Z0-ccL">
+                    <rect key="frame" x="0.0" y="15" width="320" height="166"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o84-6L-b5G">
+                    <rect key="frame" x="84" y="194" width="153" height="153"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" backgroundImage="choujiang_start_btn.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected" backgroundImage="choujiang_start_btn_selected.png"/>
+                    <state key="highlighted" backgroundImage="choujiang_start_btn_selected.png"/>
+                    <connections>
+                        <action selector="onPressedStartButton:" destination="-1" eventType="touchUpInside" id="K5q-9i-JCt"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="TopLeft" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKl-f4-Pyr">
+                    <rect key="frame" x="0.0" y="7" width="47" height="54"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" image="choujiang_back_btn.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onPressedBackButton:" destination="-1" eventType="touchDown" id="TQd-EI-vvs"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="choujiang_1mao.png" translatesAutoresizingMaskIntoConstraints="NO" id="TqT-MN-q96">
+                    <rect key="frame" x="8" y="118" width="77" height="77"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="choujiang_1mao.png" translatesAutoresizingMaskIntoConstraints="NO" id="AX3-Li-ZPS">
+                    <rect key="frame" x="84" y="118" width="77" height="77"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="choujiang_1mao.png" translatesAutoresizingMaskIntoConstraints="NO" id="grj-LT-q3f">
+                    <rect key="frame" x="160" y="118" width="77" height="77"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="choujiang_1mao.png" translatesAutoresizingMaskIntoConstraints="NO" id="OZK-iW-INg">
+                    <rect key="frame" x="236" y="118" width="77" height="77"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="choujiang_1mao.png" translatesAutoresizingMaskIntoConstraints="NO" id="1pD-t5-gRd">
+                    <rect key="frame" x="236" y="194" width="77" height="77"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="choujiang_1mao.png" translatesAutoresizingMaskIntoConstraints="NO" id="pMK-IT-Cs7">
+                    <rect key="frame" x="236" y="270" width="77" height="77"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="choujiang_1mao.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ggl-3K-pKk">
+                    <rect key="frame" x="236" y="346" width="77" height="77"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="choujiang_1mao.png" translatesAutoresizingMaskIntoConstraints="NO" id="hDI-NW-7SS">
+                    <rect key="frame" x="160" y="346" width="77" height="77"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="choujiang_1mao.png" translatesAutoresizingMaskIntoConstraints="NO" id="5f3-U0-Ghn">
+                    <rect key="frame" x="84" y="346" width="77" height="77"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="choujiang_1mao.png" translatesAutoresizingMaskIntoConstraints="NO" id="zkk-p5-b9B">
+                    <rect key="frame" x="8" y="346" width="77" height="77"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="choujiang_1mao.png" translatesAutoresizingMaskIntoConstraints="NO" id="Afh-PO-Qcw">
+                    <rect key="frame" x="8" y="270" width="77" height="77"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="choujiang_1mao.png" translatesAutoresizingMaskIntoConstraints="NO" id="etA-Qr-dlT">
+                    <rect key="frame" x="8" y="194" width="77" height="77"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="choujiang_border_moving.png" translatesAutoresizingMaskIntoConstraints="NO" id="Tik-9c-6Of">
+                    <rect key="frame" x="8" y="118" width="77" height="77"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="choujiang_border_selected1.png" translatesAutoresizingMaskIntoConstraints="NO" id="OjH-Hq-pSo">
+                    <rect key="frame" x="4" y="115" width="90" height="90"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="choujiang_zhongjiangbeilv.png" translatesAutoresizingMaskIntoConstraints="NO" id="QYs-MR-GCs">
+                    <rect key="frame" x="85" y="84" width="70" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="choujiang_x1.png" translatesAutoresizingMaskIntoConstraints="NO" id="V1W-5c-JxY">
+                    <rect key="frame" x="155" y="75" width="30" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="choujiang_x2.png" translatesAutoresizingMaskIntoConstraints="NO" id="0hU-1Y-PYv">
+                    <rect key="frame" x="182" y="75" width="30" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="choujiang_x3.png" translatesAutoresizingMaskIntoConstraints="NO" id="OyF-xq-XR7">
+                    <rect key="frame" x="209" y="75" width="30" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="choujiang_1mao.png" width="76" height="76"/>
+        <image name="choujiang_back_btn.png" width="47" height="54"/>
+        <image name="choujiang_bg.png" width="320" height="568"/>
+        <image name="choujiang_border_moving.png" width="76" height="76"/>
+        <image name="choujiang_border_selected1.png" width="84" height="84"/>
+        <image name="choujiang_start_btn.png" width="153" height="153"/>
+        <image name="choujiang_start_btn_selected.png" width="153" height="153"/>
+        <image name="choujiang_title.png" width="320" height="101"/>
+        <image name="choujiang_x1.png" width="23" height="23"/>
+        <image name="choujiang_x2.png" width="23" height="23"/>
+        <image name="choujiang_x3.png" width="23" height="23"/>
+        <image name="choujiang_zhongjiangbeilv.png" width="58" height="14"/>
+    </resources>
+</document>
