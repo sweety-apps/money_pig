@@ -22,11 +22,13 @@
         _bottomLineImage = [[UIImageView alloc] initWithFrame:CGRectZero];
         _redBagIcon = [[UIImageView alloc] initWithFrame:CGRectZero];
         _finshedIcon = [[UIImageView alloc] initWithFrame:CGRectZero];
+        _rightArrowImage = [[UIImageView alloc] initWithFrame:CGRectZero];
         _redLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         _blackLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         _finishedLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         
         _bottomLineImage.image = [UIImage imageNamed:@"table_view_cell_line"];
+        _rightArrowImage.image = [UIImage imageNamed:@"table_view_cell_right_arrow"];
         
         
         _leftIcon.contentMode = UIViewContentModeScaleToFill;
@@ -35,12 +37,12 @@
         _redLabel.textColor = RGB(0, 0, 0);
         _redLabel.backgroundColor = [UIColor clearColor];
         _redLabel.textAlignment = NSTextAlignmentLeft;
-        _redLabel.font = [UIFont systemFontOfSize:16];
+        _redLabel.font = [UIFont fontWithName:@"Heiti SC" size:17];
         
         _blackLabel.textColor = RGB(156, 156, 156);
         _blackLabel.backgroundColor = [UIColor clearColor];
         _blackLabel.textAlignment = NSTextAlignmentLeft;
-        _blackLabel.font = [UIFont systemFontOfSize:9];
+        _blackLabel.font = [UIFont fontWithName:@"Heiti SC" size:11];
         
         _finishedLabel.backgroundColor = [UIColor clearColor];
         _finishedLabel.text = @"已完成";
@@ -71,6 +73,7 @@
         [self.contentView addSubview:_blackLabel];
         [self.contentView addSubview:_finshedIcon];
         [self.contentView addSubview:_finishedLabel];
+        [self.contentView addSubview:_rightArrowImage];
         
         _taskState = CommonTaskTableViewCellStateUnfinish;
         
@@ -94,6 +97,7 @@
     [_blackLabel release];
     [_redBagIcon release];
     [_bottomLineImage release];
+    [_rightArrowImage release];
     [super dealloc];
 }
 
@@ -104,7 +108,7 @@
     rectFrame = CGRectMake(14, 21, 39, 39);
     _leftIcon.frame = rectFrame;
     
-    rectFrame = CGRectMake(0, 73, 320, 1);
+    rectFrame = CGRectMake(0, 76, 320, 4);
     _bottomLineImage.frame = rectFrame;
     
     rectFrame = CGRectMake(224, 10, 79, 60);
@@ -113,18 +117,21 @@
     rectFrame = CGRectMake(250, 24, 60, 30);
     _finishedLabel.frame = rectFrame;
     
+    rectFrame = CGRectMake(320 - 28, 21, 25, 37);
+    _rightArrowImage.frame = rectFrame;
+    
     if (_taskCellType == CommonTaskTableViewCellShowTypeRedTextUp)
     {
         rectFrame = CGRectMake(77, 25, 170, 16);
         _redLabel.frame = rectFrame;
-        rectFrame = CGRectMake(77, 48, 170, 9);
+        rectFrame = CGRectMake(87, 48, 170, 9);
         _blackLabel.frame = rectFrame;
     }
     else
     {
         rectFrame = CGRectMake(77, 25, 170, 9);
         _blackLabel.frame = rectFrame;
-        rectFrame = CGRectMake(77, 41, 170, 16);
+        rectFrame = CGRectMake(87, 41, 170, 16);
         _redLabel.frame = rectFrame;
     }
     

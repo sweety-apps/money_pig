@@ -25,7 +25,7 @@
 
 #pragma mark -
 
-@interface WCMainPageBoard_iPhone()
+@interface WCMainPageBoard_iPhone() <BaseTaskTableViewControllerDelegate>
 {
 	//<#@private var#>
 }
@@ -89,36 +89,29 @@ ON_SIGNAL2( BeeUIBoard, signal )
         CGRect rectFrame = CGRectZero;
         
         //头部导航栏
-        UIImageView* headBgImageView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"main_page_head"]] autorelease];
+        UIView* headBgImageView = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 50)] autorelease];
+        headBgImageView.backgroundColor = [UIColor colorWithRed:0.117 green:0.212 blue:0.525 alpha:1.000];
         rectFrame = headBgImageView.frame;
         headBgImageView.frame = rectFrame;
         
         [self.view addSubview:headBgImageView];
         
-        //上面旺财ICON
-        UIImageView* headWangcaiIconImageView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"head_left_icon"]] autorelease];
-        rectFrame = headWangcaiIconImageView.frame;
-        rectFrame.origin.x = 58;
-        rectFrame.origin.y = 12;
-        headWangcaiIconImageView.frame = rectFrame;
-        [self.view addSubview:headWangcaiIconImageView];
-        
-        //左上角按钮
-        _headLeftBtnImageView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"main_menu1"]] autorelease];
-        _headLeftBtnImageView.contentMode = UIViewContentModeTopLeft;
+        //左上角小猪按钮
+        _headLeftBtnImageView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"table_view_topleft_icon"]] autorelease];
+        _headLeftBtnImageView.contentMode = UIViewContentModeScaleToFill;
         rectFrame = _headLeftBtnImageView.frame;
-        rectFrame.origin.x = 18;
-        rectFrame.origin.y = 11;
+        rectFrame.origin.x = 0;
+        rectFrame.origin.y = 0;
         _headLeftBtnImageView.frame = rectFrame;
         
-        rectFrame = CGRectMake(0, 0, 107, 48);
+        rectFrame = CGRectMake(0, 0, 100, 110);
         UIButton* headLeftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         headLeftBtn.backgroundColor = [UIColor clearColor];
         headLeftBtn.frame = rectFrame;
         [headLeftBtn addTarget:self action:@selector(onPressedLeftBackBtn:) forControlEvents:UIControlEventTouchUpInside];
         
         [self.view addSubview:_headLeftBtnImageView];
-        [self.view addSubview:headLeftBtn];
+        //[self.view addSubview:headLeftBtn];
         
         //右上角按钮
         UIImageView* headRightBtnImageView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"msg_icon1"]] autorelease];
@@ -137,13 +130,13 @@ ON_SIGNAL2( BeeUIBoard, signal )
         [headRightBtn addTarget:self action:@selector(onTouchReleaseRightBtn:) forControlEvents:UIControlEventTouchCancel];
         
         
-        [self.view addSubview:headRightBtnImageView];
-        [self.view addSubview:headRightBtn];
+        //[self.view addSubview:headRightBtnImageView];
+        //[self.view addSubview:headRightBtn];
         
         //判断是否是首次启动
         BOOL isFirst = [SettingLocalRecords isFirstRun];
         if ( isFirst ) {
-            [self showLeftAni:YES];
+            //[self showLeftAni:YES];
         }
         
         //列表
@@ -151,6 +144,7 @@ ON_SIGNAL2( BeeUIBoard, signal )
         [self.view insertSubview:taskTableViewController.view belowSubview:headExtensionImageView];
         _taskTableViewController = taskTableViewController;
         
+        _taskTableViewController.delegate = self;
         _taskTableViewController.view.frame = CGRectMake(0, headBgImageView.frame.size.height, self.view.frame.size.width, self.view.frame.size.height);
         _taskTableViewController.beeStack = self.stack;
         //_taskTableViewController.containTableView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - headBgImageView.frame.size.height);
@@ -226,7 +220,7 @@ ON_SIGNAL2( BeeUINavigationBar, signal )
 
 -(void)onPressedLeftBackBtn:(id)sender
 {
-    [self showLeftAni:NO];
+    //[self showLeftAni:NO];
     [self postNotification:@"showMenu"];
 }
 
@@ -329,6 +323,29 @@ ON_NOTIFICATION( notification )
         
         [_headLeftBtnImageView setImage:[UIImage imageNamed:@"main_menu1"]];
     }
+}
+
+#pragma mark <BaseTaskTableViewControllerDelegate>
+
+- (void)taskTableViewController:(BaseTaskTableViewController*)ctrl
+            scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    CGFloat scale = 1.0;
+    
+    CGRect rectFrame = CGRectMake(0, 0, 100, 110);
+    CGFloat minScale = 50.f / 110.f;
+    
+    scale = (rectFrame.size.height - scrollView.contentOffset.y) / rectFrame.size.height;
+    if (scale < minScale)
+    {
+        scale = minScale;
+    }
+    
+    rectFrame.size.width *= scale;
+    rectFrame.size.height *= scale;
+    _headLeftBtnImageView.frame = rectFrame;
+    //_headLeftBtnImageView.alpha = scale;
+    
 }
 
 @end

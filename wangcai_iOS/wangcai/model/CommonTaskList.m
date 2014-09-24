@@ -207,6 +207,94 @@ static CommonTaskList* gInstance = nil;
     return _awardTaskFinished;
 }
 
+- (void)resetTaskListWithPigList
+{
+    NSArray* tasklistArr =
+  @[
+    @{
+        @"id": @1,
+        @"type":[NSNumber numberWithInt:kTaskTypeOfferWall],
+        @"title":@"应用安装任务",
+        @"status":@0,
+        @"money":@0,
+        @"icon":@"table_view_cell_icon_install_app",
+        @"intro":@"",
+        @"desc":@"做任务赚钱",
+        @"level":@0,
+        @"steps":@[],
+        @"rediect_url":@""
+        },
+    @{
+        @"id": @2,
+        @"type":[NSNumber numberWithInt:kTaskTypeEverydaySign],
+        @"title":@"每日签到赚钱",
+        @"status":@0,
+        @"money":@0,
+        @"icon":@"table_view_cell_icon_checkin",
+        @"intro":@"",
+        @"desc":@"签个到，领零用钱",
+        @"level":@0,
+        @"steps":@[],
+        @"rediect_url":@""
+        },
+    @{
+        @"id": @3,
+        @"type":[NSNumber numberWithInt:kTaskTypeInviteFriends],
+        @"title":@"分享赚钱",
+        @"status":@0,
+        @"money":@0,
+        @"icon":@"table_view_cell_icon_share",
+        @"intro":@"",
+        @"desc":@"分享给小伙伴，一起拿奖励",
+        @"level":@0,
+        @"steps":@[],
+        @"rediect_url":@""
+        },
+    @{
+        @"id": @4,
+        @"type":[NSNumber numberWithInt:kTaskTypeExchange],
+        @"title":@"兑换现金",
+        @"status":@0,
+        @"money":@0,
+        @"icon":@"table_view_cell_icon_exchange",
+        @"intro":@"",
+        @"desc":@"兑换现金及购物卡，优惠到爆",
+        @"level":@0,
+        @"steps":@[],
+        @"rediect_url":@""
+        },
+    @{
+        @"id": @5,
+        @"type":[NSNumber numberWithInt:kTaskTypeBillingHistory],
+        @"title":@"交易明细",
+        @"status":@0,
+        @"money":@0,
+        @"icon":@"table_view_cell_icon_billing_history",
+        @"intro":@"",
+        @"desc":@"查看我的小账本",
+        @"level":@0,
+        @"steps":@[],
+        @"rediect_url":@""
+        },
+    @{
+        @"id": @6,
+        @"type":[NSNumber numberWithInt:kTaskTypeAbout],
+        @"title":@"关于我们",
+        @"status":@0,
+        @"money":@0,
+        @"icon":@"table_view_cell_icon_about",
+        @"intro":@"",
+        @"desc":@"赚钱小猪的故事",
+        @"level":@0,
+        @"steps":@[],
+        @"rediect_url":@""
+        },
+    ];
+    
+    
+    [self resetTaskListWithJsonArray:tasklistArr];
+}
+
 - (void)resetTaskListWithJsonArray:(NSArray*)jsonArray
 {
     NSArray* taskList = jsonArray;
@@ -263,11 +351,11 @@ static CommonTaskList* gInstance = nil;
         {
             case kTaskTypeInstallWangcai:
                 task.taskIsLocalIcon = YES;
-                task.taskIconUrl = @"about_wangcai_cell_icon";
+                //task.taskIconUrl = @"about_wangcai_cell_icon";
                 break;
             case kTaskTypeUserInfo:
                 task.taskIsLocalIcon = YES;
-                task.taskIconUrl = @"person_info_icon";
+                //task.taskIconUrl = @"person_info_icon";
                 if ([task.taskStatus integerValue] != 1)
                 {
                     _containsUserInfoTask = YES;
@@ -279,10 +367,10 @@ static CommonTaskList* gInstance = nil;
                 break;
             case kTaskTypeInviteFriends:
                 task.taskIsLocalIcon = YES;
-                task.taskIconUrl = @"qrcode_cell_icon";
+                //task.taskIconUrl = @"qrcode_cell_icon";
                 break;
             case kTaskTypeEverydaySign:
-                task.taskIsLocalIcon = NO;
+                task.taskIsLocalIcon = YES;
                 if ([task.taskStatus intValue] == 10)
                 {
                     [SettingLocalRecords setCheckIn:YES];
@@ -291,7 +379,7 @@ static CommonTaskList* gInstance = nil;
                 {
                     [SettingLocalRecords setCheckIn:NO];
                 }
-                shouldAddTask = NO;
+                //shouldAddTask = NO;
                 //task.taskIconUrl = @"";
                 break;
             case kTaskTypeIntallApp:
@@ -304,12 +392,12 @@ static CommonTaskList* gInstance = nil;
                 break;
             case kTaskTypeOfferWall:
                 task.taskIsLocalIcon = YES;
-                task.taskIconUrl = @"tiyanzhongxin_cell_icon";
+                //task.taskIconUrl = @"tiyanzhongxin_cell_icon";
                 //task.taskIconUrl = @"";
                 break;
             case kTaskTypeCommetWangcai:
                 task.taskIsLocalIcon = YES;
-                task.taskIconUrl = @"rate_app_cell_icon";
+                //task.taskIconUrl = @"rate_app_cell_icon";
                 if ([task.taskStatus intValue] == 10)
                 {
                     [SettingLocalRecords setRatedApp:YES];
@@ -321,11 +409,23 @@ static CommonTaskList* gInstance = nil;
                 break;
             case KTaskTypeUpgrade:
                 task.taskIsLocalIcon = YES;
-                task.taskIconUrl = @"upgrade";
+                //task.taskIconUrl = @"upgrade";
                 break;
             case kTaskTypeShare:
                 task.taskIsLocalIcon = YES;
-                task.taskIconUrl = @"share_cell_icon";
+                //task.taskIconUrl = @"share_cell_icon";
+                break;
+            case kTaskTypeExchange:
+                task.taskIsLocalIcon = YES;
+                //task.taskIconUrl = @"qrcode_cell_icon";
+                break;
+            case kTaskTypeBillingHistory:
+                task.taskIsLocalIcon = YES;
+                //task.taskIconUrl = @"qrcode_cell_icon";
+                break;
+            case kTaskTypeAbout:
+                task.taskIsLocalIcon = YES;
+                //task.taskIconUrl = @"qrcode_cell_icon";
                 break;
             default:
                 if ([task.taskIconUrl rangeOfString:@"http://"].length > 0)
@@ -432,7 +532,8 @@ static CommonTaskList* gInstance = nil;
         if ([result integerValue] == 0)
         {
             NSArray* taskList = [body objectForKey:@"task_list"];
-            [self resetTaskListWithJsonArray:taskList];
+            //[self resetTaskListWithJsonArray:taskList];
+            [self resetTaskListWithPigList];
         }
     }
     

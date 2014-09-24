@@ -223,6 +223,7 @@ static int  gChoujiang = 0;
     self.containTableViewFooterJuhuaView = nil;
     self.containTableViewFooterViewButton = nil;
     self.staticCells = nil;
+    self.headerBgLongView = nil;
     [_checkOfferWallTimer invalidate];
     
     if ( _alertBalanceTip != nil ) {
@@ -235,13 +236,15 @@ static int  gChoujiang = 0;
 
 - (void)addHeader
 {
-    UIView* longView = [[[UIView alloc] initWithFrame:CGRectMake(0, -300, 320, 370)] autorelease];
-    longView.backgroundColor = RGB(25, 138, 191);
+    UIView* longView = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 0)] autorelease];
+    longView.backgroundColor = [UIColor colorWithRed:0.084 green:0.406 blue:0.796 alpha:1.000];
     MJRefreshHeaderView *header = [MJRefreshHeaderView header];
     header.backgroundColor = RGB(25, 138, 191);
-    [header insertSubview:longView atIndex:0];
+    self.headerBgLongView = longView;
+    //[header insertSubview:longView atIndex:0];
+    [self.view insertSubview:longView belowSubview:self.containTableView];
     //self.containTableView.backgroundColor = RGB(25, 138, 191);
-    header.scrollView = self.containTableView;
+    //header.scrollView = self.containTableView;
     header.beginRefreshingBlock = ^(MJRefreshBaseView *refreshView) {
         // 进入刷新状态就会回调这个Block
 
@@ -318,7 +321,7 @@ static int  gChoujiang = 0;
     [_staticCells removeAllObjects];
     
     [_staticCells addObject:self.zhanghuYuEHeaderCell];
-    [_staticCells addObject:self.infoCell];
+    //[_staticCells addObject:self.infoCell];
 }
 
 - (void)onLoadHistoricalFinishedList
@@ -543,7 +546,7 @@ static int  gChoujiang = 0;
         //CGFloat height = cell.frame.size.height;
         return cell.frame.size.height;
     }
-    return 74.f;
+    return 80.f;
 }
 
 - (void) onClickInstallApp: (CommonTaskInfo* ) task {
@@ -738,7 +741,9 @@ static int  gChoujiang = 0;
                 break;
                 
             case kTaskTypeEverydaySign:
+            {
                 
+            }
                 break;
             case kTaskTypeInviteFriends:
             {
@@ -775,6 +780,21 @@ static int  gChoujiang = 0;
                 [[BeeUIRouter sharedInstance] open:@"my_wangcai" animated:YES];
             }
                 break;
+            case kTaskTypeExchange:
+            {
+                
+            }
+                break;
+            case kTaskTypeBillingHistory:
+            {
+                
+            }
+                break;
+            case kTaskTypeAbout:
+            {
+                
+            }
+                break;
             case kTaskTypeYoumiEc:
             {
                 ECManager *mgr = [[ECManager alloc]init];
@@ -795,7 +815,10 @@ static int  gChoujiang = 0;
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    /*
+    CGRect rectHeaderLongView = CGRectMake(0, 0, scrollView.frame.size.width, -scrollView.contentOffset.y);
+    self.headerBgLongView.frame = rectHeaderLongView;
+    
+#if 0
     if (scrollView.contentOffset.y < 100)
     {
         if (_bounceHeader)
@@ -811,7 +834,7 @@ static int  gChoujiang = 0;
     {
         self.containTableView.bounces = YES;
     }
-     */
+#endif
     
     if (!_justOnePage && !_isUIZhuanJuhuaing && (scrollView.contentOffset.y+scrollView.frame.size.height) > scrollView.contentSize.height)
     {
@@ -821,6 +844,11 @@ static int  gChoujiang = 0;
         [self performSelector:@selector(onLoadHistoricalFinishedList) withObject:nil afterDelay:0.5];
         //[self onLoadHistoricalFinishedList];
     }
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(taskTableViewController:scrollViewDidScroll:)])
+    {
+        [self.delegate taskTableViewController:self scrollViewDidScroll:scrollView];
+    }
 }
 
 #pragma mark - other
@@ -828,7 +856,7 @@ static int  gChoujiang = 0;
 - (void)resetFooter
 {
     self.containTableViewFooterJuhuaView.hidden = YES;
-    self.containTableView.tableFooterView = self.containTableViewFooterView;
+    //self.containTableView.tableFooterView = self.containTableViewFooterView;
     
     if (self.containTableView.contentSize.height < self.containTableView.frame.size.height)
     {

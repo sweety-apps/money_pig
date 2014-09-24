@@ -40,6 +40,8 @@
 - (void)dealloc
 {
     self.yuENumView = nil;
+    [_bindphoneLabel release];
+    [_bindphoneButton release];
     [super dealloc];
 }
 

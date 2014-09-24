@@ -26,6 +26,7 @@ typedef NSInteger CommonTaskTableViewCellState;
     UIImageView* _finshedIcon;
     UIImageView* _redBagIcon;
     UIImageView* _bottomLineImage;
+    UIImageView* _rightArrowImage;
     UILabel* _redLabel;
     UILabel* _blackLabel;
     UILabel* _finishedLabel;

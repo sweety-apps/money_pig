@@ -339,7 +339,8 @@ static LoginAndRegister* _sharedInstance = nil;
                 
                 NSArray* taskList = [dict objectForKey:@"task_list"];
                 
-                [[CommonTaskList sharedInstance] resetTaskListWithJsonArray:taskList];
+                //[[CommonTaskList sharedInstance] resetTaskListWithJsonArray:taskList];
+                [[CommonTaskList sharedInstance]  resetTaskListWithPigList];
 
                 [self RegisterDeviceIDToAPService];
                 

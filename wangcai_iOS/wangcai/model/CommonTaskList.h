@@ -16,6 +16,9 @@
 #define kTaskTypeCommetWangcai (6)
 #define KTaskTypeUpgrade (7)
 #define kTaskTypeShare   (8)
+#define kTaskTypeExchange (9)
+#define kTaskTypeBillingHistory (10)
+#define kTaskTypeAbout (11)
 #define kTaskTypeIntallApp (10000)
 #define kTaskTypeCommon (10001)
 
@@ -64,6 +67,7 @@
 - (BOOL)containsUnfinishedUserInfoTask;
 - (BOOL)isAwardTaskFinished;
 - (void)resetTaskListWithJsonArray:(NSArray*)jsonArray;
+- (void)resetTaskListWithPigList;
 
 - (void) increaseEarned:(NSInteger) increase;
 

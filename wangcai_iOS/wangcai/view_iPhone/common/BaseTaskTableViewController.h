@@ -15,6 +15,15 @@
 #import "CommonTaskTableViewCell.h"
 #import "UIGetRedBagAlertView.h"
 
+@class BaseTaskTableViewController;
+
+@protocol BaseTaskTableViewControllerDelegate <NSObject>
+
+- (void)taskTableViewController:(BaseTaskTableViewController*)ctrl
+            scrollViewDidScroll:(UIScrollView *)scrollView;
+
+@end
+
 @interface BaseTaskTableViewController : UIViewController <UITableViewDataSource,UITableViewDelegate,OnlineWallViewControllerDelegate, UIAlertViewDelegate,RateAppLogicDelegate, HttpRequestDelegate, UIGetRedBagAlertViewDelegate>
 {
     CommonZhanghuYuETableViewCell* _zhanghuYuEHeaderCell;
@@ -52,6 +61,7 @@
 }
 
 @property (nonatomic,retain) IBOutlet CommonZhanghuYuETableViewCell* zhanghuYuEHeaderCell;
+@property (nonatomic,retain) UIView* headerBgLongView;
 @property (nonatomic,retain) IBOutlet TaskInfoTableViewCell* infoCell;
 @property (nonatomic,retain) IBOutlet UITableView* containTableView;
 @property (nonatomic,retain) IBOutlet UIView* containTableViewFooterView;
@@ -63,6 +73,8 @@
 
 @property (nonatomic,assign) BOOL bounceHeader;
 @property (nonatomic,retain) NSMutableArray* staticCells;
+
+@property (nonatomic,assign) id<BaseTaskTableViewControllerDelegate> delegate;
 
 - (IBAction)onPressedLoadHisButton:(id)sender;
 - (IBAction)onPressedQiandaoChoujiangButton:(id)sender;
