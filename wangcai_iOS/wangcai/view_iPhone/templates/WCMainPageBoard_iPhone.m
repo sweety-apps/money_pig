@@ -141,6 +141,7 @@ ON_SIGNAL2( BeeUIBoard, signal )
         
         //列表
         BaseTaskTableViewController* taskTableViewController = [[BaseTaskTableViewController alloc] initWithNibName:@"BaseTaskTableViewController" bundle:nil];
+        taskTableViewController.parentUIBoard = self;
         [self.view insertSubview:taskTableViewController.view belowSubview:headExtensionImageView];
         _taskTableViewController = taskTableViewController;
         
@@ -192,7 +193,7 @@ ON_SIGNAL2( BeeUIBoard, signal )
         
         [_taskTableViewController viewDidAppear:NO];
         
-        [[AppBoard_iPhone sharedInstance] setPanable:YES];
+        [[AppBoard_iPhone sharedInstance] setPanable:NO];
     }
     else if ( [signal is:BeeUIBoard.WILL_DISAPPEAR] )
     {
@@ -334,11 +335,16 @@ ON_NOTIFICATION( notification )
     
     CGRect rectFrame = CGRectMake(0, 0, 100, 110);
     CGFloat minScale = 50.f / 110.f;
+    CGFloat maxScale = 2.5f;
     
     scale = (rectFrame.size.height - scrollView.contentOffset.y) / rectFrame.size.height;
     if (scale < minScale)
     {
         scale = minScale;
+    }
+    if (scale > maxScale)
+    {
+        scale = maxScale;
     }
     
     rectFrame.size.width *= scale;

@@ -11,6 +11,7 @@
 #import "DMOfferWallManager.h"
 #import "HttpRequest.h"
 #import "UICustomAlertView.h"
+#import "CommonYuENumSmallView.h"
 #import "YouMiConfig.h"
 #import <immobSDK/immobView.h>
 #import "SiWeiWall.h"
@@ -63,11 +64,15 @@
 
 + (OnlineWallViewController*) sharedInstance;
 
+@property (nonatomic,retain) UIView* headerBgLongView;
 @property (nonatomic, retain)immobView *adView_adWall;
+@property (retain, nonatomic) IBOutlet UILabel *yueLbl;
+@property (retain, nonatomic) IBOutlet CommonYuENumSmallView *yueView;
+@property (retain, nonatomic) IBOutlet UITableView *tableView;
 
 -(void)setViewController:(UIViewController*) viewController;
 -(void)setTaskTableViewController:(id)taskTableViewController;
-
+- (void)setNeedRefreshUI;
 
 -(void)enterAdWall;
 -(void)QueryScore;
@@ -93,4 +98,7 @@
 - (IBAction)clickClose:(id)sender;
 
 - (IBAction)onClickBack:(id)sender;
+
+- (IBAction)onClickNaviback:(id)sender;
+
 @end

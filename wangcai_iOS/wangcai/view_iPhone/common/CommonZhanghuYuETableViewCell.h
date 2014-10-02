@@ -22,7 +22,9 @@
 @property (nonatomic,retain) IBOutlet UIImageView* qiandaoRedDotBubble;
 @property (nonatomic,retain) IBOutlet UILabel* qiandaoLabel;
 
+@property (retain, nonatomic) IBOutlet UIImageView *bindphoneBubble;
 @property (retain, nonatomic) IBOutlet UILabel *bindphoneLabel;
 @property (retain, nonatomic) IBOutlet UIButton *bindphoneButton;
+@property (retain, nonatomic) IBOutlet UIView *bindphoneBottomLineView;
 
 @end

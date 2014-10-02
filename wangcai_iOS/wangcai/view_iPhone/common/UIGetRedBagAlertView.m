@@ -51,7 +51,7 @@ static UIGetRedBagAlertView* gInstance = nil;
     
     CGRect rectRmb = _rmbLbl.frame;
     rectRmb.size.width = lblWidth;
-    _rmbLbl.frame = rectRmb;
+    //_rmbLbl.frame = rectRmb;
     _rmbLbl.text = rmb;
     
     CGRect rectYuan = _yuanLbl.frame;
@@ -137,7 +137,7 @@ static UIGetRedBagAlertView* gInstance = nil;
         [_getMoneyBtn setImage:[UIImage imageNamed:@"redbag_mb_btn_pressed"] forState:UIControlStateHighlighted];
         [_getMoneyBtn addTarget:self action:@selector(pressedGetButton) forControlEvents:UIControlEventTouchUpInside];
         _getMoneyBtn.contentMode = UIViewContentModeTopLeft;
-        rect = CGRectOffset(rectAlertView, 16, 136);
+        rect = CGRectOffset(rectAlertView, 252, 265);
         rect.size = [UIImage imageNamed:@"redbag_mb_btn_pressed"].size;
         _getMoneyBtn.frame = rect;
         
@@ -151,6 +151,7 @@ static UIGetRedBagAlertView* gInstance = nil;
         rect.size = [UIImage imageNamed:@"redbag_mb_close"].size;
         _closeBtn.frame = rect;
         _closeBtn.contentMode = UIViewContentModeTopLeft;
+        _closeBtn.hidden = YES;
         
         rect = CGRectOffset(rectAlertView, 31, 13);
         rect.size = CGSizeMake(200, 20);
@@ -162,15 +163,17 @@ static UIGetRedBagAlertView* gInstance = nil;
         _titleLbl.frame = rect;
         _titleLbl.text = @"获得红包";
         _titleLbl.contentMode = UIViewContentModeTopLeft;
+        _titleLbl.hidden = YES;
         
         
-        rect = CGRectOffset(rectAlertView, 30, 42);
-        rect.size = CGSizeMake(100, 60);
+        rect = CGRectOffset(rectAlertView, 112, 104);
+        rect.size = CGSizeMake(120, 75);
         _rmbLbl = [[UILabel alloc] initWithFrame:rect];
-        _rmbLbl.textColor = RGB(209, 13, 13);
+        _rmbLbl.textColor = [UIColor whiteColor];
         _rmbLbl.backgroundColor = [UIColor clearColor];
         _rmbLbl.font = [UIFont systemFontOfSize:60.0f];
-        _rmbLbl.textAlignment = NSTextAlignmentLeft;
+        _rmbLbl.textAlignment = NSTextAlignmentCenter;
+        _rmbLbl.adjustsFontSizeToFitWidth = YES;
         _rmbLbl.frame = rect;
         _rmbLbl.text = @"0.0";
         _rmbLbl.contentMode = UIViewContentModeTopLeft;
@@ -185,6 +188,7 @@ static UIGetRedBagAlertView* gInstance = nil;
         _yuanLbl.frame = rect;
         _yuanLbl.text = @"元";
         _yuanLbl.contentMode = UIViewContentModeTopLeft;
+        _yuanLbl.hidden = YES;
         
         rect = CGRectOffset(rectAlertView, 132, 113);
         rect.size = CGSizeMake(150, 15);
@@ -196,6 +200,7 @@ static UIGetRedBagAlertView* gInstance = nil;
         _levelBounusLbl.frame = rect;
         _levelBounusLbl.text = @"等级加成 +1%";
         _levelBounusLbl.contentMode = UIViewContentModeTopLeft;
+        _levelBounusLbl.hidden = YES;
         
         rect = CGRectOffset(rectAlertView, 30, 113);
         rect.size = CGSizeMake(320, 15);
@@ -220,6 +225,7 @@ static UIGetRedBagAlertView* gInstance = nil;
         _lvLbl.text = @"LV1";
         _lvLbl.adjustsFontSizeToFitWidth = YES;
         _lvLbl.contentMode = UIViewContentModeTopLeft;
+        _lvLbl.hidden = YES;
         
         UIImage* imgBlk = [UIImage imageNamed:@"redbag_mb_lv_unget"];
         rect = CGRectOffset(rectAlertView, 62, 114);
@@ -229,6 +235,7 @@ static UIGetRedBagAlertView* gInstance = nil;
             _levelBlock[i] = [[UIImageView alloc] initWithImage:imgBlk];
             _levelBlock[i].frame = rect;
             rect.origin.x += (rect.size.width + 2);
+            _levelBlock[i].hidden = YES;
         }
         
         [self addSubview:_bgView];

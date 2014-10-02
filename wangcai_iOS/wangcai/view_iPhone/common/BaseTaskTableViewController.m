@@ -88,7 +88,7 @@ static int  gChoujiang = 0;
     _bounceHeader = NO;
     _alertBalanceTip = nil;
     
-    _hasLoadedHistoricalFinishedList = NO;
+    _hasLoadedHistoricalFinishedList = YES;
     
     [self addHeader];
     [self resetFooter];
@@ -98,6 +98,7 @@ static int  gChoujiang = 0;
     [self.infoCell setJinTianHaiNengZhuanNumLabelTextNum:[[CommonTaskList sharedInstance] allMoneyCanBeEarnedInRMBYuan]];
     
     [self.zhanghuYuEHeaderCell.yuENumView setNum:[[LoginAndRegister sharedInstance] getBalance]];
+    [[OnlineWallViewController sharedInstance].yueView setNum:[[LoginAndRegister sharedInstance] getBalance]];
     
     int nPollingInterval = [[LoginAndRegister sharedInstance] getPollingInterval];
     _checkOfferWallTimer = [NSTimer scheduledTimerWithTimeInterval:nPollingInterval target:self selector:@selector(checkDMOfferWall) userInfo:nil repeats:NO];
@@ -186,6 +187,7 @@ static int  gChoujiang = 0;
     else
     {
         [self.zhanghuYuEHeaderCell.yuENumView setNum:[[LoginAndRegister sharedInstance] getBalance]];
+        [[OnlineWallViewController sharedInstance].yueView setNum:[[LoginAndRegister sharedInstance] getBalance]];
     }
 }
 
@@ -193,6 +195,26 @@ static int  gChoujiang = 0;
 {
     [super viewWillAppear:animated];
     [self refreshChoujiangButton];
+    
+    NSString* phoneNum = [[LoginAndRegister sharedInstance] getPhoneNum];
+    if ([phoneNum length] > 0)
+    {
+        self.zhanghuYuEHeaderCell.bindphoneButton.enabled = NO;
+        self.zhanghuYuEHeaderCell.bindphoneBubble.hidden = YES;
+        self.zhanghuYuEHeaderCell.bindphoneLabel.hidden = NO;
+        self.zhanghuYuEHeaderCell.bindphoneBottomLineView.hidden = YES;
+        self.zhanghuYuEHeaderCell.bindphoneLabel.text = @"√ 已绑定手机";
+        self.zhanghuYuEHeaderCell.bindphoneLabel.textColor = [UIColor colorWithRed:0.269 green:0.672 blue:0.882 alpha:1.000];
+    }
+    else
+    {
+        self.zhanghuYuEHeaderCell.bindphoneButton.enabled = YES;
+        self.zhanghuYuEHeaderCell.bindphoneBubble.hidden = NO;
+        self.zhanghuYuEHeaderCell.bindphoneLabel.hidden = NO;
+        self.zhanghuYuEHeaderCell.bindphoneBottomLineView.hidden = NO;
+        self.zhanghuYuEHeaderCell.bindphoneLabel.text = @"未绑定手机";
+        self.zhanghuYuEHeaderCell.bindphoneLabel.textColor = [UIColor whiteColor];
+    }
 }
 
 - (void)refreshChoujiangButton
@@ -637,6 +659,15 @@ static int  gChoujiang = 0;
     [[UIApplication sharedApplication] openURL:url];
 }
 
+- (IBAction)onPressedBindPhone:(id)sender
+{
+    NSString* phoneNum = [[LoginAndRegister sharedInstance] getPhoneNum];
+    if ( phoneNum == nil || [phoneNum isEqualToString:@""] )
+    {
+        [[BeeUIRouter sharedInstance] open:@"phone_validation" animated:YES];
+    }
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
@@ -644,19 +675,21 @@ static int  gChoujiang = 0;
     if (row < [_staticCells count])
     {
         //测试数字动画
-        //[self setYuENumberWithAnimationFrom:0.1 toNum:150000];
+#if 0
+        [self setYuENumberWithAnimationFrom:0.1 toNum:50000];
         
-        //int consume = 54;
-        //UIGetRedBagAlertView* testAlertView = [UIGetRedBagAlertView sharedInstance];
-        //[testAlertView setRMBString:[[NSString stringWithFloatRoundToPrecision:((float)consume)/100.f precision:2 ignoreBackZeros:YES] retain]];
-        //[testAlertView setLevel:3];
-        //[testAlertView setShowCurrentBanlance:[[LoginAndRegister sharedInstance] getBalance] andIncrease:281];
-        //[testAlertView show];
+        int consume = 2254;
+        UIGetRedBagAlertView* testAlertView = [UIGetRedBagAlertView sharedInstance];
+        [testAlertView setRMBString:[[NSString stringWithFloatRoundToPrecision:((float)consume)/100.f precision:2 ignoreBackZeros:YES] retain]];
+        [testAlertView setLevel:3];
+        [testAlertView setShowCurrentBanlance:[[LoginAndRegister sharedInstance] getBalance] andIncrease:281];
+        [testAlertView show];
         
         //static int level = 1;
         //UILevelUpAlertView* talert = [UILevelUpAlertView sharedInstance];
         //[talert setLevel:level++];
         //[talert show];
+#endif
     }
     else
     {
@@ -696,8 +729,11 @@ static int  gChoujiang = 0;
                 break;
             case kTaskTypeOfferWall:
             {
+#if 1
                 [MobClick event:@"task_list_offer_wall" attributes:@{@"currentpage":@"任务列表"}];
-                [[OnlineWallViewController sharedInstance] showWithModal];
+                [[OnlineWallViewController sharedInstance] setNeedRefreshUI];
+                [self.parentUIBoard.stack pushViewController:[OnlineWallViewController sharedInstance] animated:YES];
+#endif
             }
                 break;
             case kTaskTypeIntallApp:
@@ -742,7 +778,7 @@ static int  gChoujiang = 0;
                 
             case kTaskTypeEverydaySign:
             {
-                
+                [self onPressedQiandaoChoujiangButton:nil];
             }
                 break;
             case kTaskTypeInviteFriends:
@@ -894,7 +930,8 @@ static int  gChoujiang = 0;
         [self.containTableView reloadData];
         [self.infoCell setJinTianHaiNengZhuanNumLabelTextNum:[taskList allMoneyCanBeEarnedInRMBYuan]];
         [self.zhanghuYuEHeaderCell.yuENumView setNum:[[LoginAndRegister sharedInstance] getBalance]];
-        [self doneWithView:_header];
+        [[OnlineWallViewController sharedInstance].yueView setNum:[[LoginAndRegister sharedInstance] getBalance]];
+        //[self doneWithView:_header];
         [self resetFooter];
         [self refreshChoujiangButton];
         [self.containTableView reloadData];

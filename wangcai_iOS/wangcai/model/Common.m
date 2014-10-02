@@ -247,7 +247,7 @@ NSString * macaddress()
 
 + (void)_initAudioPlayer
 {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"gotcoins" ofType:@"aiff"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"gotcoins" ofType:@"m4a"];
     
     
     if (path) {

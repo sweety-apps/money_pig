@@ -42,6 +42,8 @@
     self.yuENumView = nil;
     [_bindphoneLabel release];
     [_bindphoneButton release];
+    [_bindphoneBubble release];
+    [_bindphoneBottomLineView release];
     [super dealloc];
 }
 

@@ -22,4 +22,8 @@
 
 -(void)animateNumFrom:(int)oldNum to:(int)num withAnimation:(BOOL)animated;
 
+#pragma mark 子类覆盖
+
+- (void)initClassVars;
+
 @end

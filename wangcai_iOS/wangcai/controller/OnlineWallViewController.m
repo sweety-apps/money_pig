@@ -392,6 +392,9 @@ static OnlineWallViewController* _sharedInstance;
     }
 }
 
+- (IBAction)onClickNaviback:(id)sender {
+}
+
 - (IBAction)clickYoumi:(id)sender {
     if ( _alertView != nil ) {
         [_alertView hideAlertView];
@@ -567,6 +570,9 @@ static OnlineWallViewController* _sharedInstance;
     [PBOfferWall sharedOfferWall].delegate = nil;
     [[PBOfferWall sharedOfferWall] closeOfferWall];
     
+    [_yueLbl release];
+    [_yueView release];
+    [_tableView release];
     [super dealloc];
 }
 
@@ -837,6 +843,8 @@ static OnlineWallViewController* _sharedInstance;
 #import "MobClick.h"
 #import "BeeUIBoard+ModalBoard.h"
 #import "WebPageController.h"
+#import "OfferwallTipTableViewCell.h"
+#import "OfferwallTableViewCell.h"
 
 #import "JupengConfig.h"
 #import "JupengWall.h"
@@ -851,7 +859,10 @@ static OnlineWallViewController* _sharedInstance;
 #import "AdwoOfferWall.h"
 
 @interface OnlineWallViewController ()
-
+{
+    NSMutableArray* _tableViewDataDictArr;
+    BOOL _needRefreshUI;
+}
 @end
 
 @implementation OnlineWallViewController
@@ -955,8 +966,47 @@ static OnlineWallViewController* _sharedInstance;
         [deviceId release];
         
         [[PBOfferWall sharedOfferWall] loadOfferWall:[PBADRequest request]];
+        
+        [self _generateDataArray];
     }
     return self;
+}
+
+- (void) _generateDataArray
+{
+    if (_tableViewDataDictArr)
+    {
+        [_tableViewDataDictArr release];
+        _tableViewDataDictArr = nil;
+    }
+    _tableViewDataDictArr = [NSMutableArray arrayWithArray:
+                             @[
+                               @{
+                                   @"icon":@"task_icon_punchbox",
+                                   @"name":@"触控应用任务",
+                                   @"type":@"punchbox",
+                                   @"ishot":@1
+                                   },
+                               @{
+                                   @"icon":@"task_icon_youmi",
+                                   @"name":@"有米应用任务",
+                                   @"type":@"youmi",
+                                   @"ishot":@0
+                                   },
+                               @{
+                                   @"icon":@"task_icon_domob",
+                                   @"name":@"触控应用任务",
+                                   @"type":@"domob",
+                                   @"ishot":@0
+                                   },
+                               @{
+                                   @"icon":@"task_icon_dianru",
+                                   @"name":@"点入应用任务",
+                                   @"type":@"dianru",
+                                   @"ishot":@0
+                                   }
+                               ]];
+    [_tableViewDataDictArr retain];
 }
 
 - (void)setFullScreenWindow:(UIWindow*) window {
@@ -1368,6 +1418,42 @@ static OnlineWallViewController* _sharedInstance;
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    UIView* longView = [[[UIView alloc] initWithFrame:CGRectMake(0, 50, 320, 0)] autorelease];
+    longView.backgroundColor = RGB(35, 172, 229);
+    [self.view insertSubview:longView belowSubview:self.tableView];
+    [self.tableView setBackgroundColor:[UIColor clearColor]];
+    self.headerBgLongView = longView;
+    [self.tableView registerNib:[UINib nibWithNibName:@"OfferwallTableViewCell" bundle:nil] forCellReuseIdentifier:@"OfferwallTableViewCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"OfferwallTipTableViewCell" bundle:nil] forCellReuseIdentifier:@"OfferwallTipTableViewCell"];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    CGRect rect = self.view.frame;
+    rect.origin = CGPointZero;
+    rect.origin.y = 50;
+    rect.size.height -= 50;
+    self.tableView.frame = rect;
+    [self.yueView setNum:[[LoginAndRegister sharedInstance] getBalance] withAnimation:NO];
+    [self _generateDataArray];
+    if (_needRefreshUI)
+    {
+        [self refreshUI];
+    }
+}
+
+- (void)setNeedRefreshUI
+{
+    _needRefreshUI = YES;
+}
+
+- (void)refreshUI
+{
+    [self.tableView setContentOffset:CGPointZero animated:NO];
+    [self.tableView reloadData];
+    _needRefreshUI = NO;
 }
 
 - (void) dealloc {
@@ -1382,6 +1468,14 @@ static OnlineWallViewController* _sharedInstance;
     
     [PBOfferWall sharedOfferWall].delegate = nil;
     [[PBOfferWall sharedOfferWall] closeOfferWall];
+    
+    if (_tableViewDataDictArr)
+    {
+        [_tableViewDataDictArr release];
+        _tableViewDataDictArr = nil;
+    }
+    
+    self.headerBgLongView = nil;
     
     [super dealloc];
 }
@@ -1553,6 +1647,106 @@ static OnlineWallViewController* _sharedInstance;
     [deviceId release];
     
     return userid;
+}
+
+#pragma mark - <UITableViewDelegate>
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    int row = indexPath.row;
+    if (row == 0)
+    {
+        return 172;
+    }
+    return 80;//[_tableViewDataDictArr ]
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    int row = indexPath.row;
+    if (row > 0)
+    {
+        int index = row - 1;
+        NSString* type = _tableViewDataDictArr[index][@"type"];
+        if ([type isEqualToString:@"punchbox"])
+        {
+            [self clickPunchBox:nil];
+        }
+        else if ([type isEqualToString:@"youmi"])
+        {
+            [self clickYoumi:nil];
+        }
+        else if ([type isEqualToString:@"domob"])
+        {
+            [self clickDomob:nil];
+        }
+        else if ([type isEqualToString:@"dianru"])
+        {
+            [self clickDianru:nil];
+        }
+    }
+}
+
+#pragma mark - <UITableViewDataSource>
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 1+[_tableViewDataDictArr count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    int row = indexPath.row;
+    UITableViewCell* retCell = nil;
+    if (row == 0)
+    {
+        OfferwallTipTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"OfferwallTipTableViewCell" forIndexPath:indexPath];
+        if (cell == nil)
+        {
+            cell = CREATE_NIBVIEW(@"OfferwallTipTableViewCell");
+        }
+        retCell = cell;
+    }
+    else
+    {
+        int index = row - 1;
+        OfferwallTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"OfferwallTableViewCell" forIndexPath:indexPath];
+        if (cell == nil)
+        {
+            cell = CREATE_NIBVIEW(@"OfferwallTableViewCell");
+        }
+        cell.iconImageView.image = [UIImage imageFromString:_tableViewDataDictArr[index][@"icon"]];
+        cell.hotMarkImageView.hidden = YES;
+        if ([_tableViewDataDictArr[index][@"ishot"] intValue])
+        {
+            cell.hotMarkImageView.hidden = NO;
+        }
+        cell.nameLabel.text = _tableViewDataDictArr[index][@"name"];
+        retCell = cell;
+    }
+    
+    return retCell;
+}
+
+#pragma mark - <UIScrollViewDelegate>
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    CGRect rectHeaderLongView = CGRectMake(0, 50, scrollView.frame.size.width, -scrollView.contentOffset.y);
+    if (rectHeaderLongView.size.height < 0)
+    {
+        rectHeaderLongView.size.height = 0;
+    }
+    self.headerBgLongView.frame = rectHeaderLongView;
+}
+
+#pragma mark -
+
+
+- (IBAction)onClickNaviback:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

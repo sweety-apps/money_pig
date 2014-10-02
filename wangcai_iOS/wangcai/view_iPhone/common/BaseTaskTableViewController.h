@@ -76,6 +76,8 @@
 
 @property (nonatomic,assign) id<BaseTaskTableViewControllerDelegate> delegate;
 
+@property (nonatomic,assign) BeeUIBoard* parentUIBoard;
+
 - (IBAction)onPressedLoadHisButton:(id)sender;
 - (IBAction)onPressedQiandaoChoujiangButton:(id)sender;
 - (IBAction)onPressedTiquxianjinButton:(id)sender;
@@ -93,4 +95,5 @@
 
 - (IBAction)onClickCancelInstall:(id)sender;
 - (IBAction)onClickInstall:(id)sender;
+- (IBAction)onPressedBindPhone:(id)sender;
 @end

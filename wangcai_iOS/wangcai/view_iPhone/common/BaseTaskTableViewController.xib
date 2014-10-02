@@ -95,7 +95,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" id="mX3-pt-3Er" customClass="CommonYuENumView">
-                        <rect key="frame" x="81" y="72" width="202" height="56"/>
+                        <rect key="frame" x="84" y="72" width="202" height="56"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </view>
@@ -136,17 +136,21 @@
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qiandao_button_red_dot.png" id="8EZ-iY-bfQ">
+                    <imageView hidden="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qiandao_button_red_dot.png" id="8EZ-iY-bfQ">
                         <rect key="frame" x="71" y="67" width="13" height="13"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qiandao_button_red_dot.png" id="Of1-RJ-ZAi">
+                        <rect key="frame" x="67" y="67" width="13" height="13"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
                     <view contentMode="scaleToFill" id="9MO-jh-Ilq">
-                        <rect key="frame" x="6" y="91" width="80" height="1"/>
+                        <rect key="frame" x="6" y="91" width="70" height="1"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未绑定手机" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="j3J-oM-KJl">
-                        <rect key="frame" x="14" y="71" width="67" height="21"/>
+                        <rect key="frame" x="10" y="71" width="97" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="12"/>
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -159,6 +163,9 @@
                         <state key="normal">
                             <attributedString key="attributedTitle"/>
                         </state>
+                        <connections>
+                            <action selector="onPressedBindPhone:" destination="-1" eventType="touchUpInside" id="zT0-A6-Dq0"/>
+                        </connections>
                     </button>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -166,6 +173,8 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
+                <outlet property="bindphoneBottomLineView" destination="9MO-jh-Ilq" id="dyk-Sy-L8d"/>
+                <outlet property="bindphoneBubble" destination="Of1-RJ-ZAi" id="gNZ-Qi-bvt"/>
                 <outlet property="bindphoneButton" destination="0UN-41-kEF" id="5pY-70-IJ3"/>
                 <outlet property="bindphoneLabel" destination="j3J-oM-KJl" id="n9B-rk-PLU"/>
                 <outlet property="qiandaoButton" destination="r1d-Do-os4" id="CYJ-cL-X32"/>
