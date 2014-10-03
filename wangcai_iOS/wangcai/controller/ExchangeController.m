@@ -402,7 +402,7 @@
 -(void) onClickExchange : (id) sender {
     if ([[LoginAndRegister sharedInstance] getNoWithDraw] != 0)
     {
-        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"休假通知" message:@"感谢各位对旺财的内测支持，春节期间由于假期关系，暂停取现充值功能，请在假期结束后（2月9日）执行相关操作，祝大家新年红包满满。" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
+        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"休假通知" message:@"感谢各位对赚钱小猪的内测支持，春节期间由于假期关系，暂停取现充值功能，请在假期结束后（2月9日）执行相关操作，祝大家新年红包满满。" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
         [alertView show];
         return;
     }

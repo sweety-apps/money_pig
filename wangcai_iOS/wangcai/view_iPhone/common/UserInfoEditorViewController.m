@@ -521,7 +521,7 @@
         // 给用户加一块钱
         if (_shouldAddMoney)
         {
-            NSString* strIncome = [NSString stringWithFloatRoundToPrecision:1.f precision:2 ignoreBackZeros:YES];
+            NSString* strIncome = [NSString stringWithFloatRoundToPrecision:1.f precision:2 ignoreBackZeros:NO];
             UIGetRedBagAlertView* getMoneyAlertView = [UIGetRedBagAlertView sharedInstance];
             [getMoneyAlertView setRMBString:strIncome];
             [getMoneyAlertView setLevel:3];

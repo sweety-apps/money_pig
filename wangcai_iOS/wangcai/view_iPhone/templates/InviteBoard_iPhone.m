@@ -60,7 +60,7 @@ ON_SIGNAL2( BeeUIBoard, signal )
         //self.view.hintString = @"";
         //self.view.backgroundColor = [UIColor whiteColor];
     
-        //[self setTitleString:@"我的旺财"];
+        //[self setTitleString:@"我的赚钱小猪"];
         if ([[[self stack] name] isEqualToString:@"invite_fill_code"])
         {
             [_inviteController switchView:nil];

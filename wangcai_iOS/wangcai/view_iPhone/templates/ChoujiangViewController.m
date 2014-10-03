@@ -95,6 +95,9 @@
     self.infoImage = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"choujiang_guize"]] autorelease];
     self.cloudImage = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"choujiang_bottom_cloud"]] autorelease];
     
+    self.infoImage.hidden = YES;
+    self.cloudImage.hidden = YES;
+    
     [self.backButton.superview insertSubview:self.cloudImage aboveSubview:self.backButton];
     [self.backButton.superview insertSubview:self.infoImage aboveSubview:self.cloudImage];
     
@@ -172,18 +175,18 @@
     
     //奖项
     NSString* jiangxiang[12] = {
-        @"choujiang_5mao",  //0
-        @"choujiang_thanks1",   //1
-        @"choujiang_1mao",  //2
-        @"choujiang_thanks4",   //3
-        @"choujiang_8yuan", //4
+        @"choujiang_5mao1",  //0
+        @"choujiang_thanks2",   //1
+        @"choujiang_1yuan",  //2
+        @"choujiang_thanks3",   //3
+        @"choujiang_5yuan", //4
         @"choujiang_thanks2",   //5
         @"choujiang_1mao",  //6
-        @"choujiang_3yuan", //7
+        @"choujiang_3mao", //7
         @"choujiang_thanks3",   //8
-        @"choujiang_5mao",  //9
+        @"choujiang_5mao2",  //9
         @"choujiang_1mao",  //10
-        @"choujiang_thanks4"    //11
+        @"choujiang_thanks1"    //11
     };
     
     for (int i = 0; i < [_choiceViews count]; ++i)
@@ -324,10 +327,9 @@
         case 8:
         case 11:
             //没中
-            title = @"旺财你不给力啊:(";
-            msg = @"两手空空";
+            title = @"人品没有爆发:(";
+            msg = @"骚年，继续怒吧！";
             break;
-        case 2:
         case 6:
         case 10:
             //1毛
@@ -351,26 +353,37 @@
             [MobClick event:@"money_get_from_all" attributes:@{@"RMB":[NSString stringWithFormat:@"%d",50],@"FROM":@"签到"}];
             break;
         case 7:
-            //3元
+            //3毛
             title = @"获得签到红包";
-            msg = @"3元";
+            msg = @"3毛";
             _share = YES;
-            income = 300;
+            income = 30;
             //加钱
-            [[LoginAndRegister sharedInstance] increaseBalance:300];
+            [[LoginAndRegister sharedInstance] increaseBalance:30];
             //统计
-            [MobClick event:@"money_get_from_all" attributes:@{@"RMB":[NSString stringWithFormat:@"%d",300],@"FROM":@"签到"}];
+            [MobClick event:@"money_get_from_all" attributes:@{@"RMB":[NSString stringWithFormat:@"%d",30],@"FROM":@"签到"}];
+            break;
+        case 2:
+            //1元
+            title = @"获得签到红包";
+            msg = @"1元";
+            income = 100;
+            _share = YES;
+            //加钱
+            [[LoginAndRegister sharedInstance] increaseBalance:100];
+            //统计
+            [MobClick event:@"money_get_from_all" attributes:@{@"RMB":[NSString stringWithFormat:@"%d",100],@"FROM":@"签到"}];
             break;
         case 4:
-            //8元
+            //5元
             title = @"获得签到红包";
-            msg = @"8元";
-            income = 800;
+            msg = @"5元";
+            income = 500;
             _share = YES;
             //加钱
-            [[LoginAndRegister sharedInstance] increaseBalance:800];
+            [[LoginAndRegister sharedInstance] increaseBalance:500];
             //统计
-            [MobClick event:@"money_get_from_all" attributes:@{@"RMB":[NSString stringWithFormat:@"%d",800],@"FROM":@"签到"}];
+            [MobClick event:@"money_get_from_all" attributes:@{@"RMB":[NSString stringWithFormat:@"%d",500],@"FROM":@"签到"}];
             break;
             
         default:
@@ -381,7 +394,7 @@
     if (income > 0)
     {
         UIGetRedBagAlertView* getMoneyAlertView = [UIGetRedBagAlertView sharedInstance];
-        [getMoneyAlertView setRMBString:[NSString stringWithFloatRoundToPrecision:((float)income)/100.f precision:2 ignoreBackZeros:YES]];
+        [getMoneyAlertView setRMBString:[NSString stringWithFloatRoundToPrecision:((float)income)/100.f precision:2 ignoreBackZeros:NO]];
         [getMoneyAlertView setLevel:3];
         [getMoneyAlertView setTitle:title];
         [getMoneyAlertView setDelegate:self];
@@ -410,7 +423,7 @@
             break;
         case kGetAwardType1Mao:
         {
-            int indexs[3] = {2,6,10};
+            int indexs[2] = {6,10};
             srand(time(NULL));
             target = indexs[rand()%3];
         }
@@ -422,14 +435,21 @@
             target = indexs[rand()%2];
         }
             break;
-        case kGetAwardType3Yuan:
+        case kGetAwardType3Mao:
         {
             int indexs[1] = {7};
             srand(time(NULL));
             target = indexs[rand()%1];
         }
             break;
-        case kGetAwardType8Yuan:
+        case kGetAwardType1Yuan:
+        {
+            int indexs[1] = {2};
+            srand(time(NULL));
+            target = indexs[rand()%1];
+        }
+            break;
+        case kGetAwardType5Yuan:
         {
             int indexs[1] = {4};
             srand(time(NULL));
@@ -530,11 +550,14 @@
                     case kGetAwardType5Mao:
                         value = @"5毛";
                         break;
-                    case kGetAwardType3Yuan:
-                        value = @"3元";
+                    case kGetAwardType3Mao:
+                        value = @"3毛";
                         break;
-                    case kGetAwardType8Yuan:
-                        value = @"8元";
+                    case kGetAwardType1Yuan:
+                        value = @"1元";
+                        break;
+                    case kGetAwardType5Yuan:
+                        value = @"5元";
                         break;
                     default:
                         break;

@@ -182,7 +182,7 @@
         //统计
         [MobClick event:@"money_get_from_all" attributes:@{@"RMB":@"10",@"FROM":@"用户评价"}];
         
-        NSString* strIncome = [NSString stringWithFloatRoundToPrecision:((float)income)/100.f precision:2 ignoreBackZeros:YES];
+        NSString* strIncome = [NSString stringWithFloatRoundToPrecision:((float)income)/100.f precision:2 ignoreBackZeros:NO];
         
         UIGetRedBagAlertView* getMoneyAlertView = [UIGetRedBagAlertView sharedInstance];
         [getMoneyAlertView setRMBString:strIncome];

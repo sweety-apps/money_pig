@@ -720,7 +720,7 @@ static OnlineWallViewController* _sharedInstance;
             }
             
             NSArray* wangcaiIncome = [body valueForKey:@"wangcai_income"];
-            int nWangcaiIncome = 0; // 旺财任务获得的钱
+            int nWangcaiIncome = 0; // 赚钱小猪任务获得的钱
             if ( wangcaiIncome != nil ) {
                 for ( int i = 0; i < [wangcaiIncome count]; i ++ ) {
                     NSDictionary* item = [wangcaiIncome objectAtIndex:i];
@@ -1558,7 +1558,7 @@ static OnlineWallViewController* _sharedInstance;
             }
             
             NSArray* wangcaiIncome = [body valueForKey:@"wangcai_income"];
-            int nWangcaiIncome = 0; // 旺财任务获得的钱
+            int nWangcaiIncome = 0; // 赚钱小猪任务获得的钱
             if ( wangcaiIncome != nil ) {
                 for ( int i = 0; i < [wangcaiIncome count]; i ++ ) {
                     NSDictionary* item = [wangcaiIncome objectAtIndex:i];

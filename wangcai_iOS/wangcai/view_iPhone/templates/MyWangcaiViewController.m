@@ -175,7 +175,7 @@
 - (IBAction)onPressedBindPhone:(id)sender
 {
     // 绑定手机
-    [MobClick event:@"click_bind_phone" attributes:@{@"currentpage":@"我的旺财"}];
+    [MobClick event:@"click_bind_phone" attributes:@{@"currentpage":@"我的赚钱小猪"}];
     PhoneValidationController* phoneVal = [PhoneValidationController shareInstance];
     [self->_beeStack pushViewController:phoneVal animated:YES];
 }

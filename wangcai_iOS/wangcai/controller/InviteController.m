@@ -226,7 +226,7 @@
     
     NSString* imagePath = [[NSBundle mainBundle] pathForResource:@"Icon@2x" ofType:@"png"];
     
-    id<ISSContent> publishContent = [ShareSDK content: @"妈妈再也不用担心我的话费了" defaultContent:@"" image:[ShareSDK imageWithPath:imagePath] title: @"玩应用领红包" url: [NSString stringWithFormat: INVITE_URL, _inviteCode] description: @"旺财分享" mediaType: SSPublishContentMediaTypeNews];
+    id<ISSContent> publishContent = [ShareSDK content: @"妈妈再也不用担心我的话费了" defaultContent:@"" image:[ShareSDK imageWithPath:imagePath] title: @"玩应用领红包" url: [NSString stringWithFormat: INVITE_URL, _inviteCode] description: @"赚钱小猪分享" mediaType: SSPublishContentMediaTypeNews];
     
     [ShareSDK showShareActionSheet: nil shareList: nil content: publishContent statusBarTips: YES authOptions: nil shareOptions: nil result: ^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end)
      {
@@ -383,7 +383,7 @@
         [self updateErrorMsg: NO msg: nil];
         
         UIGetRedBagAlertView* getMoneyAlertView = [UIGetRedBagAlertView sharedInstance];
-        [getMoneyAlertView setRMBString:[NSString stringWithFloatRoundToPrecision:2 precision:2 ignoreBackZeros:YES]];
+        [getMoneyAlertView setRMBString:[NSString stringWithFloatRoundToPrecision:2 precision:2 ignoreBackZeros:NO]];
         [getMoneyAlertView setLevel:3];
         [getMoneyAlertView setTitle:@"邀请码红包"];
         [getMoneyAlertView setShowCurrentBanlance:[[LoginAndRegister sharedInstance] getBalance] andIncrease:200];

@@ -86,7 +86,7 @@
                 [_alertForceUpdate release];
             }
             
-            _alertForceUpdate = [[UIAlertView alloc]initWithTitle:@"提示" message:@"发现新版旺财！更安全更好赚，请立即升级。" delegate:self cancelButtonTitle:@"更新" otherButtonTitles:nil, nil];
+            _alertForceUpdate = [[UIAlertView alloc]initWithTitle:@"提示" message:@"发现新版赚钱小猪！更安全更好赚，请立即升级。" delegate:self cancelButtonTitle:@"更新" otherButtonTitles:nil, nil];
             [_alertForceUpdate show];
         } else {
             [[OnlineWallViewController sharedInstance] setFullScreenWindow:_delegate.window];

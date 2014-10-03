@@ -15,8 +15,9 @@ typedef NSInteger GetAwardType;
 #define kGetAwardTypeNothing (0)
 #define kGetAwardType1Mao (1)
 #define kGetAwardType5Mao (2)
-#define kGetAwardType3Yuan (3)
-#define kGetAwardType8Yuan (4)
+#define kGetAwardType3Mao (3)
+#define kGetAwardType1Yuan (4)
+#define kGetAwardType5Yuan (5)
 
 @class ChoujiangLogic;
 

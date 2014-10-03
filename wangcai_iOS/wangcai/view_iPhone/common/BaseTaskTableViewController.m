@@ -30,6 +30,7 @@
 #import "ECManager.h"
 #import "EcomConfig.h"
 #import "Common.h"
+#import "BillingHistoryViewController.h"
 #import <Foundation/Foundation.h>
 #import <ShareSDK/ShareSDK.h>
 
@@ -140,11 +141,11 @@ static int  gChoujiang = 0;
     {
         if ([[[LoginAndRegister sharedInstance] getPhoneNum] length] <= 0 && [[LoginAndRegister sharedInstance] getBalance] == 100)
         {
-            //首次启动弹出安装旺财奖励窗口，未绑定状态
+            //首次启动弹出安装赚钱小猪奖励窗口，未绑定状态
             UIGetRedBagAlertView* getMoneyAlertView = [UIGetRedBagAlertView sharedInstance];
-            [getMoneyAlertView setRMBString:[NSString stringWithFloatRoundToPrecision:((float)100)/100.f precision:2 ignoreBackZeros:YES]];
+            [getMoneyAlertView setRMBString:[NSString stringWithFloatRoundToPrecision:((float)100)/100.f precision:2 ignoreBackZeros:NO]];
             [getMoneyAlertView setLevel:[[LoginAndRegister sharedInstance] getUserLevel]];
-            [getMoneyAlertView setTitle:@"新装旺财获得红包"];
+            [getMoneyAlertView setTitle:@"新装赚钱小猪获得红包"];
             //[getMoneyAlertView setDelegate:self];
             [getMoneyAlertView setShowCurrentBanlance:[[LoginAndRegister sharedInstance] getBalance] andIncrease:100];
             [getMoneyAlertView show];
@@ -450,7 +451,7 @@ static int  gChoujiang = 0;
         {
             [comCell setTaskCellType:CommonTaskTableViewCellShowTypeRedTextUp];
             [comCell setUpText:@"补充个人信息"];
-            [comCell setDownText:@"让旺财知道你喜欢什么，赚更多的红包"];
+            [comCell setDownText:@"让赚钱小猪知道你喜欢什么，赚更多的红包"];
             [comCell setRedBagIcon:@"package_icon_one"];
             [comCell setLeftIconNamed:@"person_info_icon"];
             [comCell hideFinishedIcon:YES];
@@ -458,7 +459,7 @@ static int  gChoujiang = 0;
         else if (rowExceptStaticCells == 1)
         {
             [comCell setTaskCellType:CommonTaskTableViewCellShowTypeRedTextUp];
-            [comCell setUpText:@"关注旺财"];
+            [comCell setUpText:@"关注赚钱小猪"];
             [comCell setDownText:@"用微信随时随地领红包"];
             [comCell setRedBagIcon:@"package_icon_8"];
             [comCell setLeftIconNamed:@"about_wangcai_cell_icon"];
@@ -680,7 +681,7 @@ static int  gChoujiang = 0;
         
         int consume = 2254;
         UIGetRedBagAlertView* testAlertView = [UIGetRedBagAlertView sharedInstance];
-        [testAlertView setRMBString:[[NSString stringWithFloatRoundToPrecision:((float)consume)/100.f precision:2 ignoreBackZeros:YES] retain]];
+        [testAlertView setRMBString:[[NSString stringWithFloatRoundToPrecision:((float)consume)/100.f precision:2 ignoreBackZeros:NO] retain]];
         [testAlertView setLevel:3];
         [testAlertView setShowCurrentBanlance:[[LoginAndRegister sharedInstance] getBalance] andIncrease:281];
         [testAlertView show];
@@ -823,7 +824,8 @@ static int  gChoujiang = 0;
                 break;
             case kTaskTypeBillingHistory:
             {
-                
+                BillingHistoryViewController *ctrl = [BillingHistoryViewController controller];
+                [self.parentUIBoard.stack pushViewController:ctrl animated:YES];
             }
                 break;
             case kTaskTypeAbout:
@@ -969,7 +971,7 @@ static int  gChoujiang = 0;
         }
         
         UIGetRedBagAlertView* getMoneyAlertView = [UIGetRedBagAlertView sharedInstance];
-        [getMoneyAlertView setRMBString:[NSString stringWithFloatRoundToPrecision:((float)(consume + income))/100.f precision:2 ignoreBackZeros:YES]];
+        [getMoneyAlertView setRMBString:[NSString stringWithFloatRoundToPrecision:((float)(consume + income))/100.f precision:2 ignoreBackZeros:NO]];
         [getMoneyAlertView setLevel:3];
         [getMoneyAlertView setTitle:@"获得应用体验红包"];
         [getMoneyAlertView setDelegate:self];
@@ -992,7 +994,7 @@ static int  gChoujiang = 0;
         if ( forceUpdate == 1 ) {
             // 强制升级
             _needUpdateApp = YES;
-            UIAlertView* alertForceUpdate = [[[UIAlertView alloc]initWithTitle:@"提示" message:@"发现新版旺财！更安全更好赚，请立即升级。" delegate:self cancelButtonTitle:@"更新" otherButtonTitles:nil, nil] autorelease];
+            UIAlertView* alertForceUpdate = [[[UIAlertView alloc]initWithTitle:@"提示" message:@"发现新版赚钱小猪！更安全更好赚，请立即升级。" delegate:self cancelButtonTitle:@"更新" otherButtonTitles:nil, nil] autorelease];
             [alertForceUpdate show];
             
             if ([[LoginAndRegister sharedInstance] checkAndConsumeLevel])
@@ -1074,7 +1076,7 @@ static int  gChoujiang = 0;
     
     if ( _alertLevel != nil && [_alertLevel isEqual:alertView] ) {
         if ( buttonIndex == 1 ) {
-            // 显示我的旺财
+            // 显示我的赚钱小猪
             [[BeeUIRouter sharedInstance] open:@"my_wangcai" animated:YES];
         }
     } else if ( _alertChoujiangeShare != nil && [_alertChoujiangeShare isEqual:alertView] ) {
@@ -1083,9 +1085,9 @@ static int  gChoujiang = 0;
             NSString* imagePath = [[NSBundle mainBundle] pathForResource:@"Icon@2x" ofType:@"png"];
             
             NSString* invite = [[LoginAndRegister sharedInstance] getInviteCode];
-            NSString* content = [NSString stringWithFormat:@"今日大吉，签到都中了%d元红包。来旺财签到赚话费吧。旺财下载地址:%@", (gChoujiang / 100), [NSString stringWithFormat: INVITE_TASK, invite] ];
+            NSString* content = [NSString stringWithFormat:@"今日大吉，签到都中了%d元红包。来赚钱小猪签到赚话费吧。赚钱小猪下载地址:%@", (gChoujiang / 100), [NSString stringWithFormat: INVITE_TASK, invite] ];
             
-            id<ISSContent> publishContent = [ShareSDK content:content defaultContent:@"" image:[ShareSDK imageWithPath:imagePath] title: @"中奖了！" url: [NSString stringWithFormat: INVITE_TASK, invite] description: @"旺财分享" mediaType: SSPublishContentMediaTypeNews];
+            id<ISSContent> publishContent = [ShareSDK content:content defaultContent:@"" image:[ShareSDK imageWithPath:imagePath] title: @"中奖了！" url: [NSString stringWithFormat: INVITE_TASK, invite] description: @"赚钱小猪分享" mediaType: SSPublishContentMediaTypeNews];
             
             [ShareSDK showShareActionSheet: nil shareList: nil content: publishContent statusBarTips: YES authOptions: nil shareOptions: nil result: ^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end)
              {
@@ -1117,7 +1119,7 @@ static int  gChoujiang = 0;
         [MobClick event:@"money_get_from_all" attributes:@{@"RMB":@"10",@"FROM":@"用户评价"}];
         
         _needAddCommentIncome = YES;
-        NSString* strIncome = [NSString stringWithFloatRoundToPrecision:((float)income)/100.f precision:2 ignoreBackZeros:YES];
+        NSString* strIncome = [NSString stringWithFloatRoundToPrecision:((float)income)/100.f precision:2 ignoreBackZeros:NO];
         
         UIGetRedBagAlertView* getMoneyAlertView = [UIGetRedBagAlertView sharedInstance];
         [getMoneyAlertView setRMBString:strIncome];
@@ -1156,7 +1158,7 @@ ON_NOTIFICATION( notification )
         int nLevel = [[LoginAndRegister sharedInstance] getUserLevel];
         int nExp = [[LoginAndRegister sharedInstance] getNextLevelExp] - [[LoginAndRegister sharedInstance] getCurrentExp];
         
-        NSString* upText = [NSString stringWithFormat:@"旺财升级到LV%d", (nLevel+1)];
+        NSString* upText = [NSString stringWithFormat:@"赚钱小猪升级到LV%d", (nLevel+1)];
         NSString* downText = [NSString stringWithFormat:@"再赚%.2f元，即可升级领红包", 1.0*nExp / 100];
         [_levelCell setUpText:upText];
         [_levelCell setDownText:downText];
@@ -1177,9 +1179,9 @@ ON_NOTIFICATION( notification )
     
     NSString* invite = [[LoginAndRegister sharedInstance] getInviteCode];
     int nBalance = [[LoginAndRegister sharedInstance] getIncome];
-    NSString* content = [NSString stringWithFormat:@"我用旺财赚了%d元，你也可以的，填我的邀请码%@可领取2元红包。旺财下载地址:%@", nBalance/100, invite, [NSString stringWithFormat: INVITE_TASK, invite]];
+    NSString* content = [NSString stringWithFormat:@"我用赚钱小猪赚了%d元，你也可以的，填我的邀请码%@可领取2元红包。赚钱小猪下载地址:%@", nBalance/100, invite, [NSString stringWithFormat: INVITE_TASK, invite]];
                          
-    id<ISSContent> publishContent = [ShareSDK content:content defaultContent:@"" image:[ShareSDK imageWithPath:imagePath] title: @"玩应用领红包" url: [NSString stringWithFormat: INVITE_TASK, invite] description: @"旺财分享" mediaType: SSPublishContentMediaTypeNews];
+    id<ISSContent> publishContent = [ShareSDK content:content defaultContent:@"" image:[ShareSDK imageWithPath:imagePath] title: @"玩应用领红包" url: [NSString stringWithFormat: INVITE_TASK, invite] description: @"赚钱小猪分享" mediaType: SSPublishContentMediaTypeNews];
     
     [ShareSDK showShareActionSheet: nil shareList: nil content: publishContent statusBarTips: YES authOptions: nil shareOptions: nil result: ^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end)
      {
@@ -1213,7 +1215,7 @@ ON_NOTIFICATION( notification )
             int nIncome = [[body objectForKey:@"income"] intValue];
             if ( nIncome > 0 ) {
                 // 获得了金币
-                NSString* strIncome = [NSString stringWithFloatRoundToPrecision:((float)nIncome)/100.f precision:2 ignoreBackZeros:YES];
+                NSString* strIncome = [NSString stringWithFloatRoundToPrecision:((float)nIncome)/100.f precision:2 ignoreBackZeros:NO];
                 
                 UIGetRedBagAlertView* getMoneyAlertView = [UIGetRedBagAlertView sharedInstance];
                 [getMoneyAlertView setRMBString:strIncome];

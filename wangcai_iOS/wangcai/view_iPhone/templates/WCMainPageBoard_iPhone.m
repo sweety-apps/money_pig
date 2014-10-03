@@ -69,7 +69,7 @@ ON_SIGNAL2( BeeUIBoard, signal )
         self.view.clipsToBounds = NO;
 		
         [self hideNavigationBarAnimated:NO];
-        //[self setTitleString:@"旺财"];
+        //[self setTitleString:@"赚钱小猪"];
         
         //列表后面的白色背景
         UIView* listBgView = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 1024)] autorelease];

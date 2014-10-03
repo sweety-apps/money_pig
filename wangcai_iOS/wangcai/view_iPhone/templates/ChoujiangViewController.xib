@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChoujiangViewController">
@@ -39,7 +39,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="choujiang_title.png" translatesAutoresizingMaskIntoConstraints="NO" id="PR7-Z0-ccL">
-                    <rect key="frame" x="0.0" y="15" width="320" height="166"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="166"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o84-6L-b5G">
@@ -114,7 +114,7 @@
                     <rect key="frame" x="8" y="194" width="77" height="77"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="choujiang_border_moving.png" translatesAutoresizingMaskIntoConstraints="NO" id="Tik-9c-6Of">
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="choujiang_border_moving.png" translatesAutoresizingMaskIntoConstraints="NO" id="Tik-9c-6Of">
                     <rect key="frame" x="8" y="118" width="77" height="77"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
@@ -122,19 +122,19 @@
                     <rect key="frame" x="4" y="115" width="90" height="90"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="choujiang_zhongjiangbeilv.png" translatesAutoresizingMaskIntoConstraints="NO" id="QYs-MR-GCs">
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="choujiang_zhongjiangbeilv.png" translatesAutoresizingMaskIntoConstraints="NO" id="QYs-MR-GCs">
                     <rect key="frame" x="85" y="84" width="70" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="choujiang_x1.png" translatesAutoresizingMaskIntoConstraints="NO" id="V1W-5c-JxY">
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="choujiang_x1.png" translatesAutoresizingMaskIntoConstraints="NO" id="V1W-5c-JxY">
                     <rect key="frame" x="155" y="75" width="30" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="choujiang_x2.png" translatesAutoresizingMaskIntoConstraints="NO" id="0hU-1Y-PYv">
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="choujiang_x2.png" translatesAutoresizingMaskIntoConstraints="NO" id="0hU-1Y-PYv">
                     <rect key="frame" x="182" y="75" width="30" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="choujiang_x3.png" translatesAutoresizingMaskIntoConstraints="NO" id="OyF-xq-XR7">
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="choujiang_x3.png" translatesAutoresizingMaskIntoConstraints="NO" id="OyF-xq-XR7">
                     <rect key="frame" x="209" y="75" width="30" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
@@ -146,13 +146,13 @@
     </objects>
     <resources>
         <image name="choujiang_1mao.png" width="76" height="76"/>
-        <image name="choujiang_back_btn.png" width="47" height="54"/>
+        <image name="choujiang_back_btn.png" width="9" height="19"/>
         <image name="choujiang_bg.png" width="320" height="568"/>
         <image name="choujiang_border_moving.png" width="76" height="76"/>
         <image name="choujiang_border_selected1.png" width="84" height="84"/>
-        <image name="choujiang_start_btn.png" width="153" height="153"/>
-        <image name="choujiang_start_btn_selected.png" width="153" height="153"/>
-        <image name="choujiang_title.png" width="320" height="101"/>
+        <image name="choujiang_start_btn.png" width="152" height="156"/>
+        <image name="choujiang_start_btn_selected.png" width="152" height="156"/>
+        <image name="choujiang_title.png" width="320" height="107"/>
         <image name="choujiang_x1.png" width="23" height="23"/>
         <image name="choujiang_x2.png" width="23" height="23"/>
         <image name="choujiang_x3.png" width="23" height="23"/>

@@ -11,7 +11,7 @@
         <linear orientation="v" class="wrapper">
             <image id="item-bg" class="item-bg"/>
             <linear orientation="v" class="item-wrapper">
-                <label class="item-text">我的旺财</label>
+                <label class="item-text">我的赚钱小猪</label>
                 <button id="my_wangcai" class="item-mask"/>
                 <image id="item-line-image0" class="item-line-image"/>
             </linear>

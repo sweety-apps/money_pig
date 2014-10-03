@@ -266,7 +266,7 @@ static CommonTaskList* gInstance = nil;
     @{
         @"id": @5,
         @"type":[NSNumber numberWithInt:kTaskTypeBillingHistory],
-        @"title":@"交易明细",
+        @"title":@"收支明细",
         @"status":@0,
         @"money":@0,
         @"icon":@"table_view_cell_icon_billing_history",
@@ -502,12 +502,12 @@ static CommonTaskList* gInstance = nil;
     task = [[[CommonTaskInfo alloc] init] autorelease];
     task.taskId = [NSNumber numberWithInt:10];
     task.taskType = [NSNumber numberWithInt:kTaskTypeCommetWangcai];
-    task.taskTitle = @"评价旺财";
+    task.taskTitle = @"评价赚钱小猪";
     task.taskStatus = finished ? [NSNumber numberWithInt:10] : [NSNumber numberWithInt:0];
     task.taskMoney = [NSNumber numberWithInt:50];
     task.taskIconUrl = @"about_wangcai_cell_icon";
     task.taskIntro = @"";
-    task.taskDesc = @"评价旺财，给旺财打个赏";
+    task.taskDesc = @"评价赚钱小猪，给赚钱小猪打个赏";
     task.taskIsLocalIcon = YES;
     task.taskStepStrings = [NSArray array];
     

@@ -59,7 +59,7 @@ ON_SIGNAL2( BeeUIBoard, signal )
         self.view.backgroundColor = [UIColor whiteColor];
 		
         [self showNavigationBarAnimated:NO];
-        [self setTitleString:@"我的旺财"];
+        [self setTitleString:@"我的赚钱小猪"];
     }
     else if ( [signal is:BeeUIBoard.DELETE_VIEWS] )
     {
