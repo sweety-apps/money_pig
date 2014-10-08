@@ -194,6 +194,11 @@
     _request.TIMEOUT(10);
 }
 
+- (BeeHTTPRequest*) getBeeHttpRequest
+{
+    return _request;
+}
+
 - (void) handleRequest:(BeeHTTPRequest *)req {
     if ( req.sending) {
     } else if ( req.recving ) {

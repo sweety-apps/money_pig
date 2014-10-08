@@ -30,4 +30,6 @@
 - (void) request : (NSString*) url Param:(NSDictionary*) params method:(NSString*)getOrPost;
 - (void) request : (NSString*) url Param:(NSDictionary*) params method:(NSString*)getOrPost Aes:(BOOL) aes;
 
+- (BeeHTTPRequest*) getBeeHttpRequest;
+
 @end

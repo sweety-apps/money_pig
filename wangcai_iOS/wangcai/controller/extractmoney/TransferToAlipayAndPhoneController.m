@@ -233,7 +233,7 @@
 - (IBAction)clickBack:(id)sender {
     // 收起键盘
     [self hideKeyboard];
-    [self.navigationController popViewControllerAnimated:YES];
+    [self->_beeStack popViewControllerAnimated:YES];
 }
 
 - (void) dealloc {

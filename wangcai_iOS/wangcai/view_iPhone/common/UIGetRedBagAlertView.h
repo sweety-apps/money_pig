@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#define kUIGetRedBagAlertViewShownNotification @"UIGetRedBagAlertViewShown"
+
 @class UIGetRedBagAlertView;
 
 @protocol UIGetRedBagAlertViewDelegate <NSObject>

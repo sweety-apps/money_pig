@@ -1419,6 +1419,8 @@ static OnlineWallViewController* _sharedInstance;
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onRedBagAlertViewHasShown) name:kUIGetRedBagAlertViewShownNotification object:nil];
+    
     UIView* longView = [[[UIView alloc] initWithFrame:CGRectMake(0, 50, 320, 0)] autorelease];
     longView.backgroundColor = RGB(35, 172, 229);
     [self.view insertSubview:longView belowSubview:self.tableView];
@@ -1457,6 +1459,8 @@ static OnlineWallViewController* _sharedInstance;
 }
 
 - (void) dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
     _offerWallController.delegate = nil;
     [_offerWallController release];
     _offerWallController = nil;
@@ -1743,6 +1747,10 @@ static OnlineWallViewController* _sharedInstance;
 
 #pragma mark -
 
+- (void)onRedBagAlertViewHasShown
+{
+    [self.yueView setNum:[[LoginAndRegister sharedInstance] getBalance] withAnimation:YES];
+}
 
 - (IBAction)onClickNaviback:(id)sender
 {

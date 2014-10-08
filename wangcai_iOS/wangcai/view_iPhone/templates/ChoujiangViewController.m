@@ -328,7 +328,7 @@
         case 11:
             //没中
             title = @"人品没有爆发:(";
-            msg = @"骚年，继续怒吧！";
+            msg = @"骚年，不要灰心，继续努力吧！";
             break;
         case 6:
         case 10:
@@ -485,7 +485,10 @@
     [self onPressedBackButton:self.backButton];
 }
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    //返回
+    [self onPressedBackButton:self.backButton];
 }
 
 - (void)onPressedGetRmbUIGetRedBagAlertView:(UIGetRedBagAlertView*)alertView

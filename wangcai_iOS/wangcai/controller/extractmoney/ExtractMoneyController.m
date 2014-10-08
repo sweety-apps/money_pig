@@ -127,7 +127,8 @@
 }
 
 - (IBAction)clickBack:(id)sender {
-	[[BeeUIRouter sharedInstance] open:@"wc_main" animated:YES];
+	//[[BeeUIRouter sharedInstance] open:@"wc_main" animated:YES];
+    [self->_beeStack popViewControllerAnimated:YES];
 }
 
 - (void)updateBalance {

@@ -30,7 +30,7 @@
     alert.bodyText = body;
     alert.hudType = type;
     alert.hudHideDelay = delay;
-    alert.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.9];
+    alert.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.7];
     
     if(type == MBAlertViewHUDTypeExclamationMark)
     {
@@ -149,12 +149,12 @@
     
     else if(_hudType == MBAlertViewHUDTypeActivityIndicator)
     {
-        _activityIndicator = [MBSpinningCircle circleWithSize:NSSpinningCircleSizeLarge color:[UIColor colorWithRed:50.0/255.0 green:155.0/255.0 blue:255.0/255.0 alpha:1.0]];
+        _activityIndicator = [MBSpinningCircle circleWithSize:NSSpinningCircleSizeLarge color:[UIColor whiteColor]];
         CGRect circleRect = _activityIndicator.frame;
         circleRect.origin = CGPointMake(self.view.bounds.size.width/2.0 - circleRect.size.width/2.0, -5);
         _activityIndicator.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
         _activityIndicator.frame = circleRect;
-        _activityIndicator.circleSize = NSSpinningCircleSizeLarge;
+        _activityIndicator.circleSize = NSSpinningCircleSizeSmall;
         _activityIndicator.hasGlow = YES;
         _activityIndicator.isAnimating = YES;
         _activityIndicator.speed = 0.55;

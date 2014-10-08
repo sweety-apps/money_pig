@@ -31,6 +31,7 @@
 #import "EcomConfig.h"
 #import "Common.h"
 #import "BillingHistoryViewController.h"
+#import "ExtractAndExchangeViewController.h"
 #import <Foundation/Foundation.h>
 #import <ShareSDK/ShareSDK.h>
 
@@ -819,7 +820,9 @@ static int  gChoujiang = 0;
                 break;
             case kTaskTypeExchange:
             {
-                
+                ExtractAndExchangeViewController* ctrl = [ExtractAndExchangeViewController controller];
+                ctrl.beeUIStack = self.parentUIBoard.stack;
+                [self.parentUIBoard.stack pushViewController:ctrl animated:YES];
             }
                 break;
             case kTaskTypeBillingHistory:

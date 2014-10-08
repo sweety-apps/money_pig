@@ -47,7 +47,16 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"BillingHisIncomeTableViewCell" bundle:nil] forCellReuseIdentifier:@"BillingHisIncomeTableViewCell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"BillingHisOutgoTableViewCell" bundle:nil] forCellReuseIdentifier:@"BillingHisOutgoTableViewCell"];
     
-    [self.header beginRefreshing];
+    //[self.header performSelector:@selector(beginRefreshing) withObject:nil afterDelay:2];
+    [self onStartHeaderRefresh];
+    
+    CGFloat offY = CGRectGetMaxY(self.tipCell.frame);
+    CGRect rect = self.view.frame;
+    rect.origin = CGPointZero;
+    rect.origin.y = offY;
+    rect.size.height -= offY;
+    self.tableView.frame = rect;
+    self.yueContainerView.hidden = YES;
 }
 
 - (void)didReceiveMemoryWarning
@@ -65,12 +74,6 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    CGFloat offY = CGRectGetMaxY(self.tipCell.frame);
-    CGRect rect = self.view.frame;
-    rect.origin = CGPointZero;
-    rect.origin.y = offY;
-    rect.size.height -= offY;
-    self.tableView.frame = rect;
     
     self.tipCell.balanceLabel.text = [NSString stringWithFormat:@"￥%@",[NSNumber numberWithFloat:((float)[[LoginAndRegister sharedInstance] getBalance])/100.f]];
     self.tipCell.incomeLabel.text = [NSString stringWithFormat:@"￥%@",[NSNumber numberWithFloat:((float)[[LoginAndRegister sharedInstance] getIncome])/100.f]];

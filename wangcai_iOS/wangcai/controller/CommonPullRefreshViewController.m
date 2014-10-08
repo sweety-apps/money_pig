@@ -7,6 +7,8 @@
 //
 
 #import "CommonPullRefreshViewController.h"
+#import "LoginAndRegister.h"
+#import "UIGetRedBagAlertView.h"
 
 @interface CommonPullRefreshViewController ()
 
@@ -27,12 +29,15 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onRedBagAlertViewHasShown) name:kUIGetRedBagAlertViewShownNotification object:nil];
+    
     [self _setupSubViews];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [self.yueView setNum:[[LoginAndRegister sharedInstance] getBalance] withAnimation:NO];
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,6 +48,8 @@
 
 - (void)dealloc
 {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
     self.tableView = nil;
     self.headerBgLongView = nil;
     self.header = nil;
@@ -50,6 +57,8 @@
     self.navigationBarTitleLabel = nil;
     self.navigationBarView = nil;
     
+    [_yueContainerView release];
+    [_yueView release];
     [super dealloc];
 }
 
@@ -60,6 +69,10 @@
     self.headerBgLongView = longView;
     [self.view insertSubview:longView belowSubview:self.tableView];
 
+    //tableView
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    
     // Header
     MJRefreshHeaderView *header = [MJRefreshHeaderView header];
     header.backgroundColor = [UIColor clearColor];
@@ -143,10 +156,6 @@
     footer.activityView.color = RGB(15, 151, 208);
     footer.lastUpdateTimeLabel.textColor = RGB(15, 151, 208);
     self.footer = footer;
-    
-    //tableView
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
 }
 
 - (void)doneWithView:(MJRefreshBaseView *)refreshView
@@ -203,6 +212,11 @@
 - (IBAction)onClickNaviback:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)onRedBagAlertViewHasShown
+{
+    [self.yueView setNum:[[LoginAndRegister sharedInstance] getBalance] withAnimation:YES];
 }
 
 #pragma mark 子类覆盖

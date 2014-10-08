@@ -276,6 +276,7 @@ static UIGetRedBagAlertView* gInstance = nil;
         [_delegate onPressedCloseUIGetRedBagAlertView:self];
     }
     [self hideAlertView];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kUIGetRedBagAlertViewShownNotification object:nil];
 }
 
 - (void)pressedGetButton {
@@ -284,6 +285,7 @@ static UIGetRedBagAlertView* gInstance = nil;
         [_delegate onPressedGetRmbUIGetRedBagAlertView:self];
     }
     [self hideAlertView];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kUIGetRedBagAlertViewShownNotification object:nil];
 }
 
 -(void) show

@@ -13,7 +13,7 @@
 
 #pragma mark - BillingHistoryRecord
 
-@implementation BillingHistoryRecord : NSObject
+@implementation BillingHistoryRecord
 
 @synthesize userid;
 @synthesize deviceId;
@@ -133,7 +133,7 @@ DEF_SINGLETON(BillingHistoryList)
     id<BillingHistoryListDelegate> delegate = req.extensionContext;
     
     NSNumber* result = [NSNumber numberWithInt:-1];
-    NSString* msg = @"";
+    NSString* msg = @"网络不通，请检查网络";
     //_awardCode = kGetAwardTypeRequestFailed;
     BOOL succeed = NO;
     NSMutableArray* newHisArr = nil;
@@ -167,8 +167,9 @@ DEF_SINGLETON(BillingHistoryList)
             {
                 _isEndPage = YES;
             }
+            
+            succeed = YES;
         }
-        succeed = YES;
     }
     
     if (delegate)

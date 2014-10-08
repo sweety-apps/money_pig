@@ -9,12 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "MJRefreshHeaderView.h"
 #import "MJRefreshFooterView.h"
+#import "CommonYuENumSmallView.h"
 
 @interface CommonPullRefreshViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,retain) UIView* headerBgLongView;
 @property (nonatomic,retain) MJRefreshHeaderView* header;
 @property (nonatomic,retain) MJRefreshFooterView* footer;
+
+@property (retain, nonatomic) IBOutlet UIView *yueContainerView;
+@property (retain, nonatomic) IBOutlet CommonYuENumSmallView *yueView;
 
 @property (retain, nonatomic) IBOutlet UIView *navigationBarView;
 @property (retain, nonatomic) IBOutlet UILabel *navigationBarTitleLabel;

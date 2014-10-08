@@ -218,8 +218,7 @@
 }
 
 - (IBAction)clickBack:(id)sender {
-	[[BeeUIRouter sharedInstance] open:@"wc_main" animated:YES];
-    //[self postNotification:@"showMenu"];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
