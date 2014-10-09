@@ -158,18 +158,18 @@
 }
 
 - (IBAction)clickAlipay:(id)sender {
-    TransferToAlipayAndPhoneController* controller = [[[TransferToAlipayAndPhoneController alloc]init:1 BeeUIStack:_beeStack] autorelease];
+    TransferToAlipayAndPhoneController* controller = [[[TransferToAlipayAndPhoneController alloc]init:1 BeeUIStack:_beeStack andItem:nil] autorelease];
         
     [self->_beeStack pushViewController:controller animated:YES];
 }
 
 - (IBAction)clickPhone:(id)sender {
-    TransferToAlipayAndPhoneController* controller = [[[TransferToAlipayAndPhoneController alloc]init:2 BeeUIStack:_beeStack] autorelease];
+    TransferToAlipayAndPhoneController* controller = [[[TransferToAlipayAndPhoneController alloc]init:2 BeeUIStack:_beeStack andItem:nil] autorelease];
     [self->_beeStack pushViewController:controller animated:YES];
 }
 
 - (IBAction)clickQBi:(id)sender {
-    TransferToAlipayAndPhoneController* controller = [[[TransferToAlipayAndPhoneController alloc]init:3 BeeUIStack:_beeStack] autorelease];
+    TransferToAlipayAndPhoneController* controller = [[[TransferToAlipayAndPhoneController alloc]init:3 BeeUIStack:_beeStack andItem:nil] autorelease];
     [self->_beeStack pushViewController:controller animated:YES];
 }
 

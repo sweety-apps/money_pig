@@ -48,6 +48,16 @@
     self.navigationBarView.backgroundColor = RGB(66, 193, 206);
     self.navigationBarTitleLabel.text = @"兑换现金";
     
+    self.header.arrowImage.image = [UIImage imageNamed:@"table_view_pull_icon_exhange"];
+    self.header.statusLabel.textColor = RGB(66, 193, 206);
+    self.header.activityView.color = RGB(66, 193, 206);
+    self.header.lastUpdateTimeLabel.textColor = RGB(66, 193, 206);
+    
+    self.footer.statusLabel.textColor = RGB(66, 193, 206);
+    self.footer.activityView.color = RGB(66, 193, 206);
+    self.footer.lastUpdateTimeLabel.textColor = RGB(66, 193, 206);
+    self.footer.arrowImage.image = [UIImage imageNamed:@"table_view_pull_icon_exhange"];
+    
     self.footer.scrollView = nil;
     self.footer.hidden = YES;
     
@@ -75,16 +85,16 @@
 
 #pragma mark 
 
-- (void)clickAlipay
+- (void)clickAlipay:(ExtractAndExchangeListItem*)item
 {
-    TransferToAlipayAndPhoneController* controller = [[[TransferToAlipayAndPhoneController alloc]init:1 BeeUIStack:self.beeUIStack] autorelease];
+    TransferToAlipayAndPhoneController* controller = [[[TransferToAlipayAndPhoneController alloc]init:1 BeeUIStack:self.beeUIStack andItem:item] autorelease];
     
     [self.beeUIStack pushViewController:controller animated:YES];
 }
 
-- (void)clickPhone
+- (void)clickPhone:(ExtractAndExchangeListItem*)item
 {
-    TransferToAlipayAndPhoneController* controller = [[[TransferToAlipayAndPhoneController alloc]init:2 BeeUIStack:self.beeUIStack] autorelease];
+    TransferToAlipayAndPhoneController* controller = [[[TransferToAlipayAndPhoneController alloc]init:2 BeeUIStack:self.beeUIStack andItem:item] autorelease];
     [self.beeUIStack pushViewController:controller animated:YES];
 }
 
@@ -135,12 +145,12 @@
             
         case ExtractAndExchangeTypeAlipay:
         {
-            [self clickAlipay];
+            [self clickAlipay:rcd];
         }
             break;
         case ExtractAndExchangeTypePhonePay:
         {
-            [self clickPhone];
+            [self clickPhone:rcd];
         }
             break;
         default:

@@ -34,6 +34,8 @@
     rcd.price = dict[@"price"];
     rcd.remain = dict[@"remain"];
     rcd.is_most_cheap = dict[@"is_most_cheap"];
+    rcd.succeedTip = dict[@"succeed_tip"];
+    
     return rcd;
 }
 
@@ -45,6 +47,7 @@
     self.price = nil;
     self.remain = nil;
     self.is_most_cheap = nil;
+    self.succeedTip = nil;
     
     [super dealloc];
 }

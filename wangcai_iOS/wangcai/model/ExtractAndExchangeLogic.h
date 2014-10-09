@@ -36,6 +36,7 @@ typedef enum : NSUInteger {
 @property (nonatomic,assign) ExtractAndExchangeType type;
 @property (nonatomic, retain) NSString* name;
 @property (nonatomic, retain) NSString* desString;
+@property (nonatomic, retain) NSString* succeedTip;
 @property (nonatomic, retain) NSString* iconUrl;
 @property (nonatomic,retain) NSNumber* price;
 @property (nonatomic,retain) NSNumber* remain;

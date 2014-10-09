@@ -54,6 +54,9 @@
         btn = (UIButton*)[self.view viewWithTag:11];
     }
     
+    btn.layer.masksToBounds = YES;
+    btn.layer.cornerRadius = 4.0f;
+    
     //[btn addTarget:self action:@selector(onClick:) forControlEvents:UIControlEventTouchUpInside];
     
     if ( reward == 0 ) {
@@ -66,12 +69,12 @@
         [[self.view viewWithTag:44] setHidden:YES];
         
         UILabel* label = (UILabel*)[self.view viewWithTag:31];
-        NSString* text = [NSString stringWithFormat:@"%d 元", amount / 100];
+        NSString* text = @"无折扣";
         [label setText:text];
     } else {
         [[self.view viewWithTag:31] setHidden:YES];
         
-        [[self.view viewWithTag:41] setHidden:NO];
+        [[self.view viewWithTag:41] setHidden:YES];
         [[self.view viewWithTag:42] setHidden:NO];
         [[self.view viewWithTag:43] setHidden:NO];
         [[self.view viewWithTag:44] setHidden:NO];
@@ -84,6 +87,22 @@
         NSString* text2 = [NSString stringWithFormat:@"%d", reward / 100];
         [label2 setText:text2];
     }
+    
+    if (amount == 1000)
+    {
+        //10元
+        self.iconImageView.image = [UIImage imageNamed:@"exchange_icon_value_10"];
+    }
+    else if (amount == 3000)
+    {
+        //30元
+        self.iconImageView.image = [UIImage imageNamed:@"exchange_icon_value_30"];
+    }
+    else if (amount == 5000)
+    {
+        //50元
+        self.iconImageView.image = [UIImage imageNamed:@"exchange_icon_value_50"];
+    }
 }
 
 - (IBAction) onClick:(id)sender {
@@ -93,4 +112,8 @@
 }
 
 
+- (void)dealloc {
+    [_iconImageView release];
+    [super dealloc];
+}
 @end

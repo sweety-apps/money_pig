@@ -38,8 +38,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    //加个icon到title上
+    UIImageView* iconImageView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"table_view_pull_icon_balance"]] autorelease];
+    CGRect rectIcon = iconImageView.frame;
+    rectIcon.origin = CGPointMake(90, -3);
+    iconImageView.frame = rectIcon;
+    [self.navigationBarView insertSubview:iconImageView belowSubview:self.navigationBarTitleLabel];
+    
     self.navigationBarView.backgroundColor = RGB(15, 151, 208);
-    self.navigationBarTitleLabel.text = @"收支明细";
+    self.navigationBarTitleLabel.text = @"        收支明细";
+    
     self.tipCell = CREATE_NIBVIEW(@"BillingHisTotalTableViewCell");
     self.tipCell.frame = CGRectMake(0, 50, self.tipCell.frame.size.width, self.tipCell.frame.size.height);
     [self.view addSubview:self.tipCell];

@@ -17,14 +17,17 @@
 #import "PhoneValidationController.h"
 
 @interface TransferToAlipayAndPhoneController ()
+
+@property (retain, nonatomic) ExtractAndExchangeListItem* item;
+
 @end
 
 @implementation TransferToAlipayAndPhoneController
 
 // type=1 支付宝  2 话费充值  3 qq币
-- (id) init:(int) type BeeUIStack:(BeeUIStack*) stack
+- (id) init:(int) type BeeUIStack:(BeeUIStack*) stack andItem:(ExtractAndExchangeListItem*)item
 {
-    self = [super initWithNibName:@"TransferToAlipayAndPhoneController" bundle:nil];
+    self = [super initWithNibName:@"CommonPullRefreshViewController" bundle:nil];
     if (self) {
         // Custom initialization
         self->_type = type;
@@ -34,45 +37,7 @@
         self->_alertView = nil;
         self->_orderId = nil;
         self->_beeStack = stack;
-        
-        self.view = [[[NSBundle mainBundle] loadNibNamed:@"TransferToAlipayAndPhoneController" owner:self options:nil] firstObject];
-
-        UILabel* label = (UILabel*)[self.view viewWithTag:1];
-        if ( _type == 1 ) {
-            label.text = @"现金提取";
-            self._containerView = [[[NSBundle mainBundle] loadNibNamed:@"TransferToAlipayAndPhoneController" owner:self options:nil] objectAtIndex:2];
-        } else if ( _type == 2 ) {
-            label.text = @"话费充值";
-            self._containerView = [[[NSBundle mainBundle] loadNibNamed:@"TransferToAlipayAndPhoneController" owner:self options:nil] objectAtIndex:1];
-        } else if ( _type == 3 ) {
-            label.text = @"腾讯Q币";
-            self._containerView = [[[NSBundle mainBundle] loadNibNamed:@"TransferToAlipayAndPhoneController" owner:self options:nil] objectAtIndex:3];
-        }
-        
-        self._completeView = [[[NSBundle mainBundle] loadNibNamed:@"TransferToAlipayAndPhoneController" owner:self options:nil] objectAtIndex:4];
-        
-        CGRect rect = CGRectMake( 0.0f, 54.0f, self._containerView.frame.size.width, self._containerView.frame.size.height);
-        self._containerView.frame = rect;
-        self._completeView.frame = rect;
-        
-        [self.view insertSubview:self._containerView atIndex:0];
-        [self.view addSubview:self._completeView];
-        
-        [self._completeView setHidden:YES];
-        [self._containerView setHidden:NO];
-
-        self._textField = (UITextField*)[self._containerView viewWithTag:71];
-        self._textCheck = (UITextField*)[self._containerView viewWithTag:72];
-        
-        self._textFieldTip = (UILabel*)[self._containerView viewWithTag:51];
-        self._textCheckTip = (UILabel*)[self._containerView viewWithTag:52];
-        
-        if ( _type == 1 ) {
-            self._textName = (UITextField*)[self._containerView viewWithTag:73];
-            self._textNameTip = (UILabel*)[self._containerView viewWithTag:53];
-        }
-        
-        [self initBtn];
+        self.item = item;
     }
     
     return self;
@@ -86,22 +51,22 @@
     if ( _type == 1 ) {
         rect.origin.y = 252;
     } else if ( _type == 2 ) {
-        rect.origin.y = 200;
+        rect.origin.y = 195;
     } else if ( _type == 3 ) {
-        rect.origin.y = 200;
+        rect.origin.y = 195;
     }
     
     _btn1 = [[UIPayButton alloc] initWithNibName:@"UIPayButton" bundle:nil];
     _btn2 = [[UIPayButton alloc] initWithNibName:@"UIPayButton" bundle:nil];
     _btn3 = [[UIPayButton alloc] initWithNibName:@"UIPayButton" bundle:nil];
     
-    rect.origin.x = 10;
+    rect.origin.x = 5;
     [_btn1.view setFrame:rect];
     
-    rect.origin.x = 113;
+    rect.origin.x = 110;
     [_btn2.view setFrame:rect];
     
-    rect.origin.x = 216;
+    rect.origin.x = 215;
     [_btn3.view setFrame:rect];
     
     [self._containerView addSubview:_btn1.view];
@@ -143,12 +108,105 @@
         
         [_btn3 setAmount:nAmount Reward:(nAmount-nPrice) Hot:bHot Delegate:self];
     }
+    
+    [self.view addGestureRecognizer:self.tapGestureRecognizer];
+}
+
+- (void)_initSubViews
+{
+    UILabel* label = self.navigationBarTitleLabel;
+    if ( _type == 1 ) {
+        label.text = @"现金提取";
+        self._containerView = [[[NSBundle mainBundle] loadNibNamed:@"TransferToAlipayAndPhoneController" owner:self options:nil] objectAtIndex:2];
+    } else if ( _type == 2 ) {
+        label.text = @"话费充值";
+        self._containerView = [[[NSBundle mainBundle] loadNibNamed:@"TransferToAlipayAndPhoneController" owner:self options:nil] objectAtIndex:1];
+    } else if ( _type == 3 ) {
+        label.text = @"腾讯Q币";
+        self._containerView = [[[NSBundle mainBundle] loadNibNamed:@"TransferToAlipayAndPhoneController" owner:self options:nil] objectAtIndex:3];
+    }
+    
+    self._completeView = [[[NSBundle mainBundle] loadNibNamed:@"TransferToAlipayAndPhoneController" owner:self options:nil] objectAtIndex:4];
+    
+    CGRect rect = CGRectMake( 0.0f, 50.0f, self._containerView.frame.size.width, self._containerView.frame.size.height);
+    self._containerView.frame = rect;
+    self._completeView.frame = rect;
+    
+    [self.view insertSubview:self._containerView atIndex:0];
+    [self.view addSubview:self._completeView];
+    
+    [self._completeView setHidden:YES];
+    [self._containerView setHidden:NO];
+    
+    self._textFieldBgView = [self._containerView viewWithTag:91];
+    self._textCheckBgView = [self._containerView viewWithTag:92];
+    
+    self._textFieldBgView.layer.masksToBounds = YES;
+    self._textFieldBgView.layer.borderColor = [UIColor blackColor].CGColor;
+    self._textFieldBgView.layer.borderWidth = 1.0f;
+    self._textFieldBgView.layer.cornerRadius = 2.0f;
+    
+    self._textCheckBgView.layer.masksToBounds = YES;
+    self._textCheckBgView.layer.borderColor = [UIColor blackColor].CGColor;
+    self._textCheckBgView.layer.borderWidth = 1.0f;
+    self._textCheckBgView.layer.cornerRadius = 2.0f;
+    
+    self._textField = (UITextField*)[self._textFieldBgView viewWithTag:71];
+    self._textCheck = (UITextField*)[self._textCheckBgView viewWithTag:72];
+    
+    self._textFieldTip = (UILabel*)[self._textFieldBgView viewWithTag:51];
+    self._textCheckTip = (UILabel*)[self._textCheckBgView viewWithTag:52];
+    
+    if ( _type == 1 ) {
+        self._textNameBgView = [self._containerView viewWithTag:93];
+        
+        self._textNameBgView.layer.masksToBounds = YES;
+        self._textNameBgView.layer.borderColor = [UIColor blackColor].CGColor;
+        self._textNameBgView.layer.borderWidth = 1.0f;
+        self._textNameBgView.layer.cornerRadius = 2.0f;
+        
+        self._textName = (UITextField*)[self._textNameBgView viewWithTag:73];
+        self._textNameTip = (UILabel*)[self._textNameBgView viewWithTag:53];
+    }
+    
+    [self initBtn];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    [self _initSubViews];
+    
+    self.header.scrollView = nil;
+    self.header.hidden = YES;
+    self.footer.scrollView = nil;
+    self.footer.hidden = YES;
+    self.tableView.hidden = YES;
+    
+    NSString* titleIconName = @"";
+    
+    UILabel* label = self.navigationBarTitleLabel;
+    if ( _type == 1 ) {
+        label.text = @"   支付宝余额充值";
+        titleIconName = @"exchange_icon_alipay";
+        self.navigationBarView.backgroundColor = RGB(186, 186, 186);
+    } else if ( _type == 2 ) {
+        label.text = @" 手机话费充值";
+        titleIconName = @"exchange_icon_phonepay";
+        self.navigationBarView.backgroundColor = RGB(38, 141, 204);
+    } else if ( _type == 3 ) {
+        label.text = @"    腾讯Q币";
+    }
+    
+    //加个icon到title上
+    UIImageView* iconImageView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:titleIconName]] autorelease];
+    CGRect rectIcon = iconImageView.frame;
+    rectIcon.origin = CGPointMake(48, -12);
+    iconImageView.frame = rectIcon;
+    [self.navigationBarView insertSubview:iconImageView belowSubview:self.navigationBarTitleLabel];
+    self.navigationBarView.clipsToBounds = YES;
 }
 
 - (IBAction)hideKeyboard:(id)sender
@@ -174,6 +232,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {    // Called when the view is about to made visible. Default does nothing
     // 绑定键盘事件
+    [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:NO];
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
@@ -181,6 +240,7 @@
 }
 
 - (void)viewWillDisappear:(BOOL)animated { // Called when the view is dismissed, covered or otherwise hidden. Default does nothing
+    [super viewWillDisappear:animated];
     [[NSNotificationCenter defaultCenter]removeObserver:self name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter]removeObserver:self name:UIKeyboardWillHideNotification object:nil];
 }
@@ -237,6 +297,8 @@
 }
 
 - (void) dealloc {
+    [self.view removeGestureRecognizer:self.tapGestureRecognizer];
+    
     if ( _alertView != nil ) {
         [_alertView release];
         _alertView = nil;
@@ -250,6 +312,10 @@
     [_btn1 release];
     [_btn2 release];
     [_btn3 release];
+    
+    [_tapGestureRecognizer release];
+    
+    self.item = nil;
     
     [super dealloc];
 }
@@ -310,23 +376,23 @@
 {
     if ( [textField isEqual:self._textField] ) {
         [self._textFieldTip setHidden:YES];
-        [[self._containerView viewWithTag:81] setHidden:NO];
+        [[self._textFieldBgView viewWithTag:81] setHidden:NO];
     } else {
-        [[self._containerView viewWithTag:81] setHidden:YES];
+        [[self._textFieldBgView viewWithTag:81] setHidden:YES];
     }
   
     if ( [textField isEqual:self._textCheck] ) {
         [self._textCheckTip setHidden:YES];
-        [[self._containerView viewWithTag:82] setHidden:NO];
+        [[self._textCheckBgView viewWithTag:82] setHidden:NO];
     } else {
-        [[self._containerView viewWithTag:82] setHidden:YES];
+        [[self._textCheckBgView viewWithTag:82] setHidden:YES];
     }
     
     if ( _type == 1 && [textField isEqual:self._textName] ) {
         [self._textNameTip setHidden:YES];
-        [[self._containerView viewWithTag:83] setHidden:NO];
+        [[self._textNameBgView viewWithTag:83] setHidden:NO];
     } else {
-        [[self._containerView viewWithTag:83] setHidden:YES];
+        [[self._textNameBgView viewWithTag:83] setHidden:YES];
     }
     
 }
@@ -361,9 +427,9 @@
         }
     }
     
-    [[self._containerView viewWithTag:81] setHidden:YES];
-    [[self._containerView viewWithTag:82] setHidden:YES];
-    [[self._containerView viewWithTag:83] setHidden:YES];
+    [[self._textFieldBgView viewWithTag:81] setHidden:YES];
+    [[self._textCheckBgView viewWithTag:82] setHidden:YES];
+    [[self._textNameBgView viewWithTag:83] setHidden:YES];
 }
 
 - (BOOL) checkPhoneNum : phoneNum {
@@ -459,12 +525,12 @@
         NSString* info2 = nil;
         
         if ( self->_nAmount == self->_nDiscount ) {
-            info2 = [[NSString alloc] initWithFormat:@"提现金额：%.0f元", (1.0*self->_nDiscount/100)];
+            info2 = [[NSString alloc] initWithFormat:@"取现金额：%.0f元\n实扣金额：%.0f元", (1.0*self->_nDiscount/100.f),(1.0*self->_nDiscount/100.f)];
         } else {
-            info2 = [[NSString alloc]initWithFormat:@"提现金额：%.0f元，返现%.0f元", (1.0*self->_nAmount/100), (1.0*(self->_nAmount-self->_nDiscount)/100)];
+            info2 = [[NSString alloc]initWithFormat:@"取现金额：%.0f元\n实扣金额：%.0f元", (1.0*self->_nAmount/100), (1.0*(self->_nDiscount)/100)];
         }
         
-        [self checkExchange:info1 Text:info2 Tip:@"注：提现在一个工作日内到账，请耐心等待" Button:@"确认提现"];
+        [self checkExchange:info1 Text:info2 Tip:self.item.succeedTip Button:@"确认取现"];
         
         [info1 release];
         [info2 release];
@@ -482,12 +548,12 @@
         NSString* info2 = nil;
         
         if ( self->_nAmount == self->_nDiscount ) {
-            info2 = [[NSString alloc] initWithFormat:@"充值金额：%.0f元", (1.0*self->_nAmount/100)];
+            info2 = [[NSString alloc] initWithFormat:@"充值金额：%.0f元\n实扣金额：%.0f元", (1.0*self->_nAmount/100),(1.0*self->_nAmount/100)];
         } else {
-            info2 = [[NSString alloc]initWithFormat:@"充值金额：%.0f元，返现%.0f元", (1.0*self->_nAmount/100), (1.0*(self->_nAmount-self->_nDiscount)/100)];
+            info2 = [[NSString alloc]initWithFormat:@"充值金额：%.0f元\n实扣金额：%.0f元", (1.0*self->_nAmount/100), (1.0*(self->_nDiscount)/100)];
         }
         
-        [self checkExchange:info1 Text:info2 Tip:@"注：提现在一个工作日内到账，请耐心等待" Button:@"确认充值"];
+        [self checkExchange:info1 Text:info2 Tip:self.item.succeedTip Button:@"确认充值"];
         
         [info1 release];
         [info2 release];
@@ -506,12 +572,12 @@
         NSString* info2 = nil;
         
         if ( self->_nAmount == self->_nDiscount ) {
-            info2 = [[NSString alloc] initWithFormat:@"充值金额：%.0f元", (1.0*self->_nAmount/100)];
+            info2 = [[NSString alloc] initWithFormat:@"充值金额：%.0f元\n实扣金额：%.0f元", (1.0*self->_nAmount/100),(1.0*self->_nAmount/100)];
         } else {
-            info2 = [[NSString alloc]initWithFormat:@"充值金额：%.0f元，返现%.0f元", (1.0*self->_nAmount/100), (1.0*(self->_nAmount-self->_nDiscount)/100)];
+            info2 = [[NSString alloc]initWithFormat:@"充值金额：%.0f元\n实扣金额：%.0f元", (1.0*self->_nAmount/100), (1.0*(self->_nDiscount)/100)];
         }
         
-        [self checkExchange:info1 Text:info2 Tip:@"注：提现在一个工作日内到账，请耐心等待" Button:@"确认充值"];
+        [self checkExchange:info1 Text:info2 Tip:self.item.succeedTip Button:@"确认充值"];
         
         [info1 release];
         [info2 release];
@@ -523,44 +589,35 @@
         [_alertView release];
     }
     
-    UIView* view = [[[[NSBundle mainBundle] loadNibNamed:@"TransferToAlipayAndPhoneController" owner:self options:nil] lastObject] autorelease];
-    view.layer.masksToBounds = YES;
-    view.layer.cornerRadius = 10.0;
-    view.layer.borderWidth = 0.0;
-    view.layer.borderColor = [[UIColor whiteColor] CGColor];
+    NSString* msg = @"";
+    if ([text1 length] > 0)
+    {
+        msg = [msg stringByAppendingString:text1];
+    }
+    if ([text2 length] > 0)
+    {
+        msg = [msg stringByAppendingFormat:@"\n%@",text2];
+    }
+    if ([tip length] > 0)
+    {
+        msg = [msg stringByAppendingFormat:@"\n\n%@",tip];
+    }
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"请确认信息" message:msg delegate:self cancelButtonTitle:@"取消" otherButtonTitles:btnText, nil];
     
-    UIColor *color = [UIColor colorWithRed:179.0/255 green:179.0/255 blue:179.0/255 alpha:1];
-    
-    UIButton* btn = (UIButton*)[view viewWithTag:11];
-    [btn.layer setBorderWidth:0.5];
-    [btn.layer setBorderColor:[color CGColor]];
-    [btn setTitleColor:color forState:UIControlStateHighlighted];
-    
-    btn = (UIButton*)[view viewWithTag:12];
-    [btn.layer setBorderWidth:0.5];
-    [btn.layer setBorderColor:[color CGColor]];
-    [btn setTitleColor:color forState:UIControlStateHighlighted];
-    
-    [btn setTitle:btnText forState:UIControlStateNormal];
-    
-    ((UILabel*)[view viewWithTag:21]).text = text1;
-    ((UILabel*)[view viewWithTag:22]).text = text2;
-    ((UILabel*)[view viewWithTag:23]).text = tip;
-    
-    _alertView = [[UICustomAlertView alloc]init:view];
+    _alertView = alert;
     
     [_alertView show];
 }
 
 - (IBAction)clickCancel:(id)sender {
     if ( _alertView != nil ) {
-        [_alertView hideAlertView];
+        [_alertView dismissWithClickedButtonIndex:_alertView.cancelButtonIndex animated:YES];
     }
 }
 
 - (IBAction)clickContinue:(id)sender {
     if ( _alertView != nil ) {
-        [_alertView hideAlertView];
+        [_alertView dismissWithClickedButtonIndex:0 animated:YES];
     }
     
     // 发起请求
@@ -659,17 +716,32 @@
     [[LoginAndRegister sharedInstance] increaseBalance:(-1*self->_nDiscount)];
     _orderId = [orderId copy];
     
-    UIButton* btn = (UIButton*)[self._completeView viewWithTag:33];
+    UIButton* btn = (UIButton*)[self._completeView viewWithTag:34];
+    btn.layer.masksToBounds = YES;
+    btn.layer.cornerRadius = 4.0f;
+    
+    btn = (UIButton*)[self._completeView viewWithTag:33];
+    [btn setTitleColor:self.navigationBarView.backgroundColor forState:UIControlStateNormal];
     [btn setTitle:_orderId forState:UIControlStateNormal];
     
-    [UIView beginAnimations:@"view curldown" context:nil];
-    [UIView setAnimationDuration:0.5];
+    UILabel* tipLabel = (UILabel*)[self._completeView viewWithTag:23];
+    tipLabel.text = self.item.succeedTip;
     
+    self._completeView.alpha = 0.0f;
+    self._containerView.alpha = 1.0f;
     [self._completeView setHidden:NO];
-    [self._containerView setHidden:YES];
+    [self._containerView setHidden:NO];
     
-    [UIView setAnimationDelegate:self];
-    [UIView commitAnimations];
+    [UIView animateWithDuration:0.35 animations:^(){
+        self._completeView.alpha = 1.0f;
+        self._containerView.alpha = 0.0f;
+    } completion:^(BOOL finished) {
+        self._completeView.alpha = 1.0f;
+        self._containerView.alpha = 1.0f;
+        [self._completeView setHidden:NO];
+        [self._containerView setHidden:YES];
+    }];
+    
 }
 
 -(BOOL) checkBalanceAndBindPhone :(float) fCoin {
@@ -714,11 +786,18 @@
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if ( _alertBindPhone != nil ) {
+    if ( _alertBindPhone == alertView ) {
         if ( [_alertBindPhone isEqual:alertView] ) {
             if ( buttonIndex == 1 ) {
                 [self onAttachPhone];
             }
+        }
+    }
+    else if ( _alertView == alertView)
+    {
+        if (buttonIndex != alertView.cancelButtonIndex)
+        {
+            [self clickContinue:nil];
         }
     }
 }

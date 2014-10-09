@@ -11,11 +11,13 @@
 #import "TabController.h"
 #import "UICustomAlertView.h"
 #import "UIPayButton.h"
+#import "CommonPullRefreshViewController.h"
+#import "ExtractAndExchangeLogic.h"
 
-@interface TransferToAlipayAndPhoneController : UIViewController<UITextFieldDelegate, HttpRequestDelegate, UIAlertViewDelegate, UIPayButtonDelegate> {
+@interface TransferToAlipayAndPhoneController : CommonPullRefreshViewController<UITextFieldDelegate, HttpRequestDelegate, UIAlertViewDelegate, UIPayButtonDelegate> {
     int _nDiscount;
     int _nAmount;
-    UICustomAlertView* _alertView;
+    UIAlertView* _alertView;
     UIAlertView*    _alertBindPhone;
     BeeUIStack*     _beeStack;
     NSString* _orderId;
@@ -26,8 +28,16 @@
     UIPayButton* _btn3;
 }
 
+@property (retain, nonatomic) IBOutlet UITapGestureRecognizer *tapGestureRecognizer;
+@property (retain, nonatomic, readonly) ExtractAndExchangeListItem* item;
+
 @property (assign, nonatomic) UIView *_completeView;
 @property (assign, nonatomic) UIView *_containerView;
+
+@property (assign, nonatomic) UIView *_textFieldBgView;
+@property (assign, nonatomic) UIView *_textCheckBgView;
+@property (assign, nonatomic) UIView *_textNameBgView;
+
 @property (assign, nonatomic) UITextField *_textField;
 @property (assign, nonatomic) UITextField *_textCheck;
 @property (assign, nonatomic) UITextField *_textName;
@@ -36,8 +46,8 @@
 @property (assign, nonatomic) UILabel *_textCheckTip;
 @property (assign, nonatomic) UILabel *_textNameTip;
 
-// type=1 支付宝  2 话费充值  3 qq币
-- (id) init:(int) type BeeUIStack:(BeeUIStack*) stack;
+// type=1 支付宝  2 话费充值  3 qq币 100 支付宝 101 话费
+- (id) init:(int) type BeeUIStack:(BeeUIStack*) stack andItem:(ExtractAndExchangeListItem*)item;
 
 - (IBAction)clickBack:(id)sender;
 - (IBAction)hideKeyboard:(id)sender;

@@ -19,6 +19,7 @@
     int _reward;
 }
 
+@property (retain, nonatomic) IBOutlet UIImageView *iconImageView;
 - (void) setAmount:(int) amount Reward:(int) reward Hot:(BOOL) hot Delegate:(id) delegate;
 
 @end
