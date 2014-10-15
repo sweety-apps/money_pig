@@ -15,6 +15,7 @@
 #import "WebPageController.h"
 #import "MobClick.h"
 #import "PhoneValidationController.h"
+#import "OrderDetailViewController.h"
 
 @interface TransferToAlipayAndPhoneController ()
 
@@ -625,11 +626,8 @@
 }
 
 - (IBAction)clickOrderInfo:(id)sender {
-    NSString* url = [[WEB_ORDER_INFO copy] autorelease];
-    url = [url stringByAppendingFormat:@"?ordernum=%@", _orderId];
-    
     BeeUIStack* stack = self.stack;
-    WebPageController* controller = [[[WebPageController alloc] initOrder:_orderId Url:url Stack:stack] autorelease];
+    OrderDetailViewController* controller = [OrderDetailViewController controllerWithOrderId:_orderId andType:self.item.type];
     [stack pushViewController:controller animated:YES];
 }
 

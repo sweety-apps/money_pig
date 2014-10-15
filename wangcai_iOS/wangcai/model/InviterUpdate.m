@@ -12,6 +12,8 @@
 
 @implementation InviterUpdate 
 
+DEF_SINGLETON(InviterUpdate)
+
 -(id) init {
     self = [super init];
     if ( self != nil ) {

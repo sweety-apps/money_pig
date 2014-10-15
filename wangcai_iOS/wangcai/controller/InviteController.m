@@ -18,174 +18,95 @@
 #import "MobClick.h"
 #import "UIGetRedBagAlertView.h"
 #import "NSString+FloatFormat.h"
+#import "InviteViewTableViewCell.h"
 
 @interface InviteController ()
+
+@property (nonatomic, retain) UITapGestureRecognizer * tapGestureRecognizer;
+@property (nonatomic, retain) InviteViewTableViewCell* inviteCell;
+@property (nonatomic, retain) NSString* inviteCode;
+@property (nonatomic, retain) NSString* inviteUrl;
 
 @end
 
 @implementation InviteController
 
+@synthesize inviteCode = _inviteCode;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (void) _setupCell:(InviteViewTableViewCell*)cell
 {
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])
-    {
-        self.view = [[[NSBundle mainBundle] loadNibNamed:nibNameOrNil owner:self options:nil] firstObject];
-        
-        [self load:nibNameOrNil];
-        
-        self._beeStack = nil;
-        self.title = @"邀请送红包";
-        _inviterUpdate = [[InviterUpdate alloc] init];
-    }
-    return self;
-}
-
-- (NSArray *)constrainSubview: (UIView *)subview toMatchWithSuperview: (UIView *)superview
-{
-    subview.translatesAutoresizingMaskIntoConstraints = NO;
-    NSDictionary* viewsDictionary = NSDictionaryOfVariableBindings(subview);
-    
-    NSArray* constraints = [NSLayoutConstraint constraintsWithVisualFormat: @"H:|[subview]|" options: 0 metrics: nil views: viewsDictionary];
-    constraints = [constraints arrayByAddingObjectsFromArray: [NSLayoutConstraint constraintsWithVisualFormat: @"V:|[subview]|" options: 0 metrics: nil views: viewsDictionary]];
-    [superview addConstraints: constraints];
-    
-    return constraints;
-}
-
-- (void) load:(NSString*)nibNameOrNil {
-    self.inviteView = [[[NSBundle mainBundle] loadNibNamed:nibNameOrNil owner:self options:nil] objectAtIndex:1];
-    self.invitedView = [[[NSBundle mainBundle] loadNibNamed:nibNameOrNil owner:self options:nil] objectAtIndex:2];
-    
-    self.containerView = [self.view viewWithTag:11];
-    self.errorImage = (UIImageView*)[self.invitedView viewWithTag:12];
-    self.errorMessage = (UILabel*)[self.invitedView viewWithTag:13];
-    self.inviteCodeLabel = (UILabel*)[self.inviteView viewWithTag:14];
-    self.invitedButton = (UIButton*)[self.invitedView viewWithTag:15];
-    self.invitedPeopleTextfield = (UITextField*)[self.invitedView viewWithTag:16];
-    self.inviterLabel = (UILabel*)[self.invitedView viewWithTag:17];
-    self.inviteUrlTextField = (UITextField*)[self.inviteView viewWithTag:18];
-    self.qrcodeView = (UIImageView*)[self.inviteView viewWithTag:20];
-    self.segment = (UISegmentedControl*)[self.view viewWithTag:21];
-    self.shareButton = (UIButton*)[self.inviteView viewWithTag:22];
-    self.inputInviteTip = (UILabel*)[self.invitedView viewWithTag:33];
-    
-    
-    self.inviteIncome = (UILabel*)[self.inviteView viewWithTag:41];
-    self.inviteIncomeTip = (UILabel*)[self.inviteView viewWithTag:42];
-    
-    self.invitedPeopleTextfield.delegate = self;
-    
-    [self.containerView addSubview: self.inviteView];
-    
-    self.priorConstraints = [self constrainSubview: self.inviteView toMatchWithSuperview: self.containerView];
-    
-    UIImage* shareButtonBkg = [[UIImage imageNamed: @"invite_share_button"] resizableImageWithCapInsets: UIEdgeInsetsMake(8, 8, 8, 8)];
-    [self.shareButton setBackgroundImage: shareButtonBkg forState:UIControlStateNormal];
-    [self.invitedButton setBackgroundImage: shareButtonBkg forState: UIControlStateNormal];
-    
-    UIImage* segmentSelected = [[UIImage imageNamed: @"invite_seg_select"] resizableImageWithCapInsets: UIEdgeInsetsMake(9, 8, 9, 8)];
-    
-    UIImage* segmentUnselected = [[UIImage imageNamed: @"invite_seg_normal"] resizableImageWithCapInsets: UIEdgeInsetsMake(9, 8, 9, 8)];
-    
-    UIImage* segmentSelectedUnselected = [UIImage imageNamed: @"invite_seg_sel_unsel"];
-    
-    UIImage* segmentUnselectedSelected = [UIImage imageNamed: @"invite_seg_unsel_sel"];
-    
-    UIImage* segmentUnselectedUnselected = [UIImage imageNamed: @"invite_seg_unsel_unsel"];
-    
-    UIImage* segmentSelectedSelected = [UIImage imageNamed: @"invite_seg_sel_sel"];
-    
-    [self.segment setBackgroundImage: segmentUnselected forState: UIControlStateNormal barMetrics: UIBarMetricsDefault];
-    [self.segment setBackgroundImage: segmentSelected forState: UIControlStateSelected barMetrics: UIBarMetricsDefault];
-    [self.segment setBackgroundImage: segmentSelected forState: UIControlStateHighlighted barMetrics: UIBarMetricsDefault];
-    
-    [self.segment setDividerImage: segmentSelectedUnselected forLeftSegmentState: UIControlStateSelected rightSegmentState: UIControlStateNormal barMetrics: UIBarMetricsDefault];
-    [self.segment setDividerImage: segmentUnselectedSelected forLeftSegmentState: UIControlStateNormal rightSegmentState: UIControlStateSelected barMetrics: UIBarMetricsDefault];
-    [self.segment setDividerImage: segmentUnselectedUnselected forLeftSegmentState: UIControlStateNormal rightSegmentState: UIControlStateNormal barMetrics: UIBarMetricsDefault];
-    
-    [self.segment setDividerImage: segmentSelectedSelected forLeftSegmentState: UIControlStateHighlighted rightSegmentState: UIControlStateSelected barMetrics: UIBarMetricsDefault];
-    [self.segment setDividerImage: segmentSelectedSelected forLeftSegmentState: UIControlStateSelected rightSegmentState: UIControlStateHighlighted barMetrics: UIBarMetricsDefault];
-    
-    NSDictionary* textAttributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:17], UITextAttributeFont, [UIColor grayColor], UITextAttributeTextColor, nil];
-    [self.segment setTitleTextAttributes:textAttributes forState:UIControlStateNormal];
-    
-    textAttributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:17], UITextAttributeFont, [UIColor whiteColor], UITextAttributeTextColor, nil];
-    [self.segment setTitleTextAttributes:textAttributes forState:UIControlStateSelected];
+    self.inviteCell = cell;
     
     NSString* inviteCode = [[LoginAndRegister sharedInstance] getInviteCode];
     if (inviteCode != nil)
     {
-        [self setInviteCode: inviteCode];
+        [self setInviteCode: inviteCode toCell:cell];
     }
     
     NSString* inviter = [[LoginAndRegister sharedInstance] getInviter];
     if (!(inviter == nil || [inviter length] == 0))
     {
-        [self.inputInviteTip setHidden:YES];
-        [self setInvitedPeople: inviter];
-        [self updateInvitersControls: YES];
+        [cell setHasBindCode:YES];
+        cell.otherCodeField.text = inviter;
     }
     else
     {
-        [self.inputInviteTip setHidden:NO];
-        [self updateInvitersControls: NO];
+        [cell setHasBindCode:NO];
+        cell.otherCodeField.text = nil;
     }
-    
-    [self updateErrorMsg: NO msg: nil];
-    
     
     int income = [[LoginAndRegister sharedInstance] getInviteIncome];
-    if ( income < 0 ) {
-        [[self.view viewWithTag:40] setHidden:YES];
-        [[self.view viewWithTag:41] setHidden:YES];
-    } else {
-        NSString* nsIncome = [[NSString alloc]initWithFormat:@"%.2f元", 1.0*income/100];
     
-        self.inviteIncome.text = nsIncome;
-        [nsIncome release];
+    if ( income < 0 )
+    {
+        income = 0;
     }
     
-    self.inviteIncomeTip.text = @"获得额外10%的好友任务奖励";
+    NSNumber* nsIncome = [NSNumber numberWithFloat:((float)income)/100.f];
+    NSString* inviteIncomeContent = [NSString stringWithFormat:@"小伙伴帮你赚了￥%@哦！",nsIncome];
+    
+    cell.friendShareEarnLabel.text = inviteIncomeContent;
+    
+    cell.otherCodeField.delegate = self;
+    
+    [cell.commitOtherCodeBtn addTarget:self action:@selector(updateInviter:) forControlEvents:UIControlEventTouchUpInside];
+    [cell.shareButton addTarget:self action:@selector(share:) forControlEvents:UIControlEventTouchUpInside];
+}
+
++ (InviteController*) controller
+{
+    InviteController* ret = [[[InviteController alloc] initWithNibName:@"CommonPullRefreshViewController" bundle:nil] autorelease];
+    return ret;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    
+    [self _setupHeaderFooterNavibar];
+    self.tapGestureRecognizer = [[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard:)] autorelease];
+    [self.view addGestureRecognizer:self.tapGestureRecognizer];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"InviteViewTableViewCell" bundle:nil] forCellReuseIdentifier:@"InviteViewTableViewCell"];
+    
+    [self.tableView reloadData];
 }
 
-- (void)updateViewConstraints
+- (void)viewWillAppear:(BOOL)animated
 {
-    [super updateViewConstraints];
+    [super viewWillAppear:animated];
 }
 
-- (void)updateErrorMsg: (BOOL)error msg: (NSString *)errMsg
+- (void) _setupHeaderFooterNavibar
 {
-    if (error)
-    {
-        [self.errorImage setHidden: NO];
-        [self.errorMessage setHidden: NO];
-        [self.errorMessage setText: errMsg];
-    }
-    else
-    {
-        [self.errorImage setHidden: YES];
-        [self.errorMessage setHidden: YES];
-    }
-}
-
-- (void)updateInvitersControls: (BOOL)hasInviter
-{
-    if (hasInviter)
-    {
-        self.invitedPeopleTextfield.enabled = NO;
-        self.invitedButton.hidden = YES;
-    }
-    else
-    {
-        self.invitedPeopleTextfield.enabled = YES;
-        self.invitedButton.hidden = NO;
-    }
+    self.navigationBarView.backgroundColor = RGB(168, 207, 73);
+    self.navigationBarTitleLabel.text = @"分享赚钱";
+    
+    self.header.scrollView = nil;
+    self.header.hidden = YES;
+    self.footer.scrollView = nil;
+    self.footer.hidden = YES;
 }
 
 - (void)didReceiveMemoryWarning
@@ -195,21 +116,21 @@
 
 - (void)dealloc {
     self._beeStack = nil;
-    [self.inviteView release];
-    [self.invitedView release];
-    [self.inviteCode release];
-    [self.invitedPeople release];
-    [_inviterUpdate release];
+    self.inviteCode = nil;
+    self.inviteUrl = nil;
+    self.inviteCell = nil;
+    self.tapGestureRecognizer = nil;
     [super dealloc];
 }
 
--(void) ShareCompleted : (id) share State:(SSResponseState) state Err:(id<ICMErrorInfo>) error {
+-(void) ShareCompleted : (id) share State:(SSResponseState) state Err:(id<ICMErrorInfo>) error
+{
 }
 
 - (IBAction)copyUrl:(id)sender
 {
     UIPasteboard* pasteboard = [UIPasteboard generalPasteboard];
-    pasteboard.string = self.inviteUrlTextField.text;
+    pasteboard.string = self.inviteUrl;
     
     //统计
     [MobClick event:@"click_copy_to_clipboard" attributes:@{@"current_page":@"邀请",@"content":pasteboard.string}];
@@ -226,9 +147,12 @@
     
     NSString* imagePath = [[NSBundle mainBundle] pathForResource:@"Icon@2x" ofType:@"png"];
     
-    id<ISSContent> publishContent = [ShareSDK content: @"妈妈再也不用担心我的话费了" defaultContent:@"" image:[ShareSDK imageWithPath:imagePath] title: @"玩应用领红包" url: [NSString stringWithFormat: INVITE_URL, _inviteCode] description: @"赚钱小猪分享" mediaType: SSPublishContentMediaTypeNews];
+    id<ISSContent> publishContent = [ShareSDK content: [NSString stringWithFormat:@"真金白银的福利哦！ %@",self.inviteUrl] defaultContent:@"" image:[ShareSDK imageWithPath:imagePath] title: @"玩应用领红包" url: self.inviteUrl description: @"来玩小猪猪哟！" mediaType: SSPublishContentMediaTypeNews];
     
-    [ShareSDK showShareActionSheet: nil shareList: nil content: publishContent statusBarTips: YES authOptions: nil shareOptions: nil result: ^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end)
+    id<ISSContainer> container = [ShareSDK container];
+    NSArray *sharelist = [ShareSDK getShareListWithType:ShareTypeWeixiTimeline,ShareTypeWeixiSession,ShareTypeQQ,ShareTypeSinaWeibo,ShareTypeTencentWeibo,ShareTypeDouBan,ShareTypeSMS,ShareTypeMail,ShareTypeCopy, nil];
+    [container setIPhoneContainerWithViewController:self];
+    [ShareSDK showShareActionSheet:container  shareList: sharelist content: publishContent statusBarTips: YES authOptions: nil shareOptions: nil result: ^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end)
      {
          if (state == SSResponseStateSuccess)
          {
@@ -242,59 +166,17 @@
      }];
 }
 
-- (IBAction)switchView:(id)sender
-{
-    UIView* fromView, *toView;
-    
-    if ([self.inviteView superview] != nil)
-    {
-        fromView = self.inviteView;
-        toView = self.invitedView;
-        self.segment.selectedSegmentIndex = 1;
-    }
-    else
-    {
-        fromView = self.invitedView;
-        toView = self.inviteView;
-        self.segment.selectedSegmentIndex = 0;
-    }
-    
-    NSArray* priorConstraints = self.priorConstraints;
-    [UIView transitionFromView: fromView toView: toView duration: 0.4 options: UIViewAnimationOptionTransitionCrossDissolve completion: ^(BOOL finished)
-    {
-        [self.containerView removeConstraints: priorConstraints];
-    }];
-    self.priorConstraints = [self constrainSubview: toView toMatchWithSuperview: self.containerView];
-}
-
-- (void)setInviteCode: (NSString *)inviteCode
+- (void)setInviteCode: (NSString *)inviteCode toCell:(InviteViewTableViewCell*)cell
 {
     if (_inviteCode != inviteCode)
     {
         [_inviteCode release];
         _inviteCode = [inviteCode copy];
         
-        self.inviteCodeLabel.text = _inviteCode;
-        self.inviteUrlTextField.text = [NSString stringWithFormat: INVITE_URL, _inviteCode];
-        self.qrcodeView.image = [self QRCodeGenerator: [NSString stringWithFormat: INVITE_URL, _inviteCode] andLightColor: [UIColor whiteColor] andDarkColor: [UIColor blackColor] andQuietZone: 1 andSize: 128];
+        cell.myCodeLabel.text = _inviteCode;
+        self.inviteUrl = [NSString stringWithFormat: INVITE_URL, _inviteCode];
+        cell.qrcodeImageView.image = [self QRCodeGenerator: [NSString stringWithFormat: INVITE_URL, _inviteCode] andLightColor: [UIColor whiteColor] andDarkColor: [UIColor blackColor] andQuietZone: 1 andSize: 128];
     }
-}
-
-- (void)setInvitedPeople: (NSString *)invitedPeople
-{
-    if (_invitedPeople != invitedPeople)
-    {
-        [_invitedPeople release];
-        _invitedPeople = [invitedPeople copy];
-        
-        self.invitedPeopleTextfield.text = _invitedPeople;
-    }
-}
-
-- (void)setReceiveMoney:(NSUInteger)receiveMoney
-{
-    _receiveMoney = receiveMoney;
-    self.receiveMoneyLabel.text = [NSString stringWithFormat: @"%lu", (unsigned long)_receiveMoney];
 }
 
 - (UIImage *)QRCodeGenerator: (NSString *)iData andLightColor: (UIColor *)iLightColor andDarkColor: (UIColor *)iDarkColor andQuietZone: (NSInteger)iQuietZone andSize: (NSInteger)iSize
@@ -339,14 +221,9 @@
     return ret;
 }
 
-- (IBAction)clickBack:(id)sender
-{
-    [[BeeUIRouter sharedInstance] open:@"wc_main" animated:YES];
-}
-
 - (IBAction)hideKeyboard:(id)sender
 {
-    [_invitedPeopleTextfield resignFirstResponder];
+    [self.inviteCell.otherCodeField resignFirstResponder];
 }
 
 - (void)showLoading
@@ -361,13 +238,13 @@
 
 - (IBAction)updateInviter:(id)sender
 {
-    NSString* inviter = self.invitedPeopleTextfield.text;
-    if (inviter != nil)
+    NSString* inviter = self.inviteCell.otherCodeField.text;
+    if ([inviter length] > 0)
     {
         //统计
         [MobClick event:@"click_submit_invite_code" attributes:@{@"current_page":@"邀请",@"code":inviter}];
         
-        [_inviterUpdate updateInviter: inviter delegate: self];
+        [[InviterUpdate sharedInstance] updateInviter: inviter delegate: self];
         [self showLoading];
     }
 }
@@ -378,14 +255,14 @@
     if (suc)
     {
         // 发送成功
-        [self setInvitedPeople: self.invitedPeopleTextfield.text];
-        [self updateInvitersControls: YES];
-        [self updateErrorMsg: NO msg: nil];
+        [[LoginAndRegister sharedInstance] setInviter:self.inviteCell.otherCodeField.text];
+        [[LoginAndRegister sharedInstance] login];
+        [self.tableView reloadData];
         
         UIGetRedBagAlertView* getMoneyAlertView = [UIGetRedBagAlertView sharedInstance];
         [getMoneyAlertView setRMBString:[NSString stringWithFloatRoundToPrecision:2 precision:2 ignoreBackZeros:NO]];
         [getMoneyAlertView setLevel:3];
-        [getMoneyAlertView setTitle:@"邀请码红包"];
+        [getMoneyAlertView setTitle:@"邀请红包"];
         [getMoneyAlertView setShowCurrentBanlance:[[LoginAndRegister sharedInstance] getBalance] andIncrease:200];
         [getMoneyAlertView show];
         
@@ -401,36 +278,29 @@
         // 发送失败
         if (errMsg == nil)
         {
-            [self updateErrorMsg: YES msg: @"绑定邀请人失败"];
+            errMsg = @"绑定邀请人失败";
         }
-        else
-        {
-            [self updateErrorMsg: YES msg: errMsg];
-        }
+        
+        UIAlertView* av = [[UIAlertView alloc] initWithTitle:errMsg message:nil delegate:nil cancelButtonTitle:@"关闭" otherButtonTitles:nil];
+        [av show];
     }
 }
 
 #pragma mark - Text Field Delegate
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
-    [self.inputInviteTip setHidden:YES];
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
-    NSString* text = textField.text;
-    NSUInteger n = text.length;
-    if ( n == 0 ) {
-        [self.inputInviteTip setHidden:NO];
-    } else {
-        [self.inputInviteTip setHidden:YES];
-    }
+    //NSString* text = textField.text;
+    //NSUInteger n = text.length;
 }
 
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {  // return NO to not change text
     if ([@"\n" isEqualToString:string] ) {
-        [_invitedPeopleTextfield resignFirstResponder];
+        [self.inviteCell.otherCodeField resignFirstResponder];
         return NO;
     }
     return YES;
@@ -444,6 +314,51 @@
     WebPageController* controller = [[[WebPageController alloc] init:@"如何成为推广员"
                                                                  Url:url Stack:stack] autorelease];
     [stack pushViewController:controller animated:YES];
+}
+
+#pragma mark 子类覆盖
+- (void) onStartHeaderRefresh
+{
+    //[[BillingHistoryList sharedInstance] requestOrderDetailWithOrderid:self.orderid delegate:self];
+}
+
+- (void) onStartFooterRefresh
+{
+    //[[BillingHistoryList sharedInstance] requestGetMoreBillingHis:self];
+}
+
+#pragma mark - <UITableViewDelegate>
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 370;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+}
+
+#pragma mark - <UITableViewDataSource>
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    int row = indexPath.row;
+    UITableViewCell* retCell = nil;
+    
+    InviteViewTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"InviteViewTableViewCell" forIndexPath:indexPath];
+    if (cell == nil)
+    {
+        cell = CREATE_NIBVIEW(@"InviteViewTableViewCell");
+    }
+    retCell = cell;
+    
+    [self _setupCell:cell];
+    
+    return retCell;
 }
 
 @end

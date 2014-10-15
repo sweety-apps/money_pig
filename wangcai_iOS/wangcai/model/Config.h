@@ -13,15 +13,15 @@
 
 #if TARGET_VERSION_LITE == 1 
 #define APP_NAME   @"WangCai"
-#define INVITE_URL @"http://invite.getwangcai.com/index.php?code=%@"
+#define INVITE_URL @"http://223.4.33.112/page/invite_code?code=%@"
 
-#define INVITE_TASK @"http://www.getwangcai.com/?code=%@&name=wangcai"
+#define INVITE_TASK @"http://223.4.33.112/page/invite_code?code=%@"
 
 #define WEB_FORCE_UPDATE    @"http://wangcai.meme-da.com/web/update.php?app=wangcai&"
 
 
-#define YOUMI_APP_ID    @"4a2807f06fd8d2df"
-#define YOUMI_APP_SECRET    @"83b758c99c63593d"
+#define YOUMI_APP_ID    @"e33d09dafc2d5674"
+#define YOUMI_APP_SECRET    @"7e99ac31ec845b97"
 
 #define DOMOB_PUBLISHER_ID @"96ZJ2I4gzeykPwTACk"
 
@@ -49,9 +49,9 @@
 #elif TARGET_VERSION_LITE == 2
 
 #define APP_NAME   @"WangCaiFriend"
-#define INVITE_URL @"http://invite.getwangcai.com/index.php?app=wangcaifriend&code=%@"
+#define INVITE_URL @"http://223.4.33.112/page/invite_code?code=%@"
 
-#define INVITE_TASK @"http://www.getwangcai.com/?code=%@&name=wangcaifriend"
+#define INVITE_TASK @"http://223.4.33.112/page/invite_code?code=%@"
 
 #define WEB_FORCE_UPDATE    @"http://wangcai.meme-da.com/web/update.php?app=wangcaifriend&"
 
@@ -128,6 +128,9 @@
 
 #define HTTP_BILLING_HISTORY         @"https://ssl.getwangcai.com/0/account/billing_history"
 
+#define HTTP_ORDER_DETAIL         @"https://ssl.getwangcai.com/0/order/detail"
+
+#define WEB_JD_ENCHARGE_CODE        @"https://passport.m.jd.com/card/optionGiftCard.action"
 
 #define WEB_EXTRACT_MONEY @"http://wangcai.meme-da.com/web/extract_money.php"
 #define WEB_TASK          @"http://wangcai.meme-da.com/web/task/app_task.php"
@@ -168,6 +171,10 @@
 #define HTTP_TASK_SHARE         @"http://223.4.33.112/0/task/share"
 
 #define HTTP_BILLING_HISTORY         @"http://223.4.33.112/0/account/billing_history"
+
+#define HTTP_ORDER_DETAIL         @"http://223.4.33.112/0/order/detail"
+
+#define WEB_JD_ENCHARGE_CODE        @"https://passport.m.jd.com/card/optionGiftCard.action"
 
 #define WEB_EXTRACT_MONEY         @"http://dev.meme-da.com/web/extract_money.php"
 #define WEB_TASK                  @"http://dev.meme-da.com/web/task/app_task.php"

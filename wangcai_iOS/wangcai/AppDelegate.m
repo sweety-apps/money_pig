@@ -38,7 +38,7 @@
 #import "WXApi.h"
 #import <TencentOpenAPI/QQApiInterface.h>
 #import <TencentOpenAPI/TencentOAuth.h>
-#import "WBApi.h"
+//#import "WBApi.h"
 #import <RennSDK/RennSDK.h>
 #import "WeiboSDK.h"
 #import "model/MobClick.h"

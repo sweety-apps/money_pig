@@ -9,6 +9,7 @@
 #import "BillingHistoryViewController.h"
 #import "LoginAndRegister.h"
 #import "MBHUDView.h"
+#import "OrderDetailViewController.h"
 
 @interface BillingHistoryViewController ()
 
@@ -86,7 +87,7 @@
     self.tipCell.balanceLabel.text = [NSString stringWithFormat:@"￥%@",[NSNumber numberWithFloat:((float)[[LoginAndRegister sharedInstance] getBalance])/100.f]];
     self.tipCell.incomeLabel.text = [NSString stringWithFormat:@"￥%@",[NSNumber numberWithFloat:((float)[[LoginAndRegister sharedInstance] getIncome])/100.f]];
     self.tipCell.outgoLabel.text = [NSString stringWithFormat:@"￥%@",[NSNumber numberWithFloat:((float)[[LoginAndRegister sharedInstance] getOutgo])/100.f]];
-    NSString* btnStr = [NSString stringWithFormat:@"好友帮你赚了:%@元 >",[NSNumber numberWithFloat:((float)[[LoginAndRegister sharedInstance] getInviteIncome])/100.f]];
+    NSString* btnStr = [NSString stringWithFormat:@"好友帮你赚了:%@元",[NSNumber numberWithFloat:((float)[[LoginAndRegister sharedInstance] getInviteIncome])/100.f]];
     [self.tipCell.shareIncomeBtn setTitle:btnStr forState:UIControlStateNormal];
 }
 
@@ -118,6 +119,8 @@
     if ([rcd.money floatValue] < 0)
     {
         //跳转交易详情页
+        OrderDetailViewController* controller = [OrderDetailViewController controllerWithOrderId:rcd.orderid andType:ExtractAndExchangeTypeUndefined];
+        [self.navigationController pushViewController:controller animated:YES];
     }
 }
 

@@ -6,7 +6,7 @@
 //  Copyright (c) 2013年 1528studio. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "Bee.h"
 #import "HttpRequest.h"
 
 @protocol InviterUpdateDelegate <NSObject>
@@ -19,6 +19,8 @@
 {
     id _updateDelegate;
 }
+
+AS_SINGLETON(InviterUpdate)
 
 -(id) init;
 

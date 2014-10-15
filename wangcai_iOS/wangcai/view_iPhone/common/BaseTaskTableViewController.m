@@ -32,6 +32,7 @@
 #import "Common.h"
 #import "BillingHistoryViewController.h"
 #import "ExtractAndExchangeViewController.h"
+#import "InviteController.h"
 #import <Foundation/Foundation.h>
 #import <ShareSDK/ShareSDK.h>
 
@@ -573,6 +574,22 @@ static int  gChoujiang = 0;
     return 80.f;
 }
 
+- (void)onTouchedInvite:(BOOL)switchToFillInvitedCodeView
+{
+    // 判断是否绑定了手机
+    NSString* phoneNum = [[LoginAndRegister sharedInstance] getPhoneNum];
+    if ( phoneNum == nil || [phoneNum isEqualToString:@""] ) {
+        _needBindPhone = YES;
+        UIAlertView* alertView = [[[UIAlertView alloc] initWithTitle:@"提示" message:@"尚未绑定手机，请先绑定手机" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"绑定手机", nil] autorelease];;
+        [alertView show];
+    } else {
+        [phoneNum release];
+        
+        InviteController* ctrl = [InviteController controller];
+        [self.beeStack pushViewController:ctrl animated:YES];
+    }
+}
+
 - (void) onClickInstallApp: (CommonTaskInfo* ) task {
     if ( _alertInstallApp != nil ) {
         [_alertInstallApp release];
@@ -788,7 +805,7 @@ static int  gChoujiang = 0;
                 [MobClick event:@"task_list_click_inviter" attributes:@{@"currentpage":@"任务列表"}];
                 if ([task.taskStatus intValue] == 0)
                 {
-                    [[AppBoard_iPhone sharedInstance] onTouchedInvite:YES];
+                    [self onTouchedInvite:YES];
                 }
             }
                 break;

@@ -240,12 +240,12 @@ static CommonTaskList* gInstance = nil;
     @{
         @"id": @3,
         @"type":[NSNumber numberWithInt:kTaskTypeInviteFriends],
-        @"title":@"分享赚钱",
+        @"title":@"填邀请码赚钱",
         @"status":@0,
         @"money":@0,
         @"icon":@"table_view_cell_icon_share",
         @"intro":@"",
-        @"desc":@"分享给小伙伴，一起拿奖励",
+        @"desc":@"填写和分享邀请码，和小伙伴一起拿奖励",
         @"level":@0,
         @"steps":@[],
         @"rediect_url":@""

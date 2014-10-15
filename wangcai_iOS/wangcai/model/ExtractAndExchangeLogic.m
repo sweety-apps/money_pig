@@ -12,6 +12,7 @@
 #import "HttpRequest.h"
 #import "Common.h"
 #import "LoginAndRegister.h"
+#import "UIImage+imageUtils.h"
 
 #pragma mark - BillingHistoryRecord
 
@@ -121,6 +122,67 @@ DEF_SINGLETON(ExtractAndExchangeLogic)
     return _allItems;
 }
 
+- (UIImage*)iconForExtractAndExchangeType:(ExtractAndExchangeType)type
+{
+    static NSDictionary* localIconDict = nil;
+    if (localIconDict == nil)
+    {
+        localIconDict =
+        @{
+          [NSString stringWithFormat:@"%d",ExtractAndExchangeTypeUndefined]:@"table_view_pull_icon_exhange",
+          [NSString stringWithFormat:@"%d",ExtractAndExchangeTypeJingdong]:@"exchange_icon_jd_50",
+          [NSString stringWithFormat:@"%d",ExtractAndExchangeTypeXLVip]:@"exchange_icon_jd_50",
+          [NSString stringWithFormat:@"%d",ExtractAndExchangeTypeAlipay]:@"exchange_icon_alipay",
+          [NSString stringWithFormat:@"%d",ExtractAndExchangeTypePhonePay]:@"exchange_icon_phonepay"
+          };
+        [localIconDict retain];
+    }
+    NSString* typeKey = [NSString stringWithFormat:@"%d",type];
+    UIImage* img = [UIImage imageNamed:localIconDict[typeKey]];
+    return img;
+}
+
+- (UIColor*)colorForExtractAndExchangeType:(ExtractAndExchangeType)type
+{
+    static NSDictionary* localColorDict = nil;
+    if (localColorDict == nil)
+    {
+        localColorDict =
+        @{
+          [NSString stringWithFormat:@"%d",ExtractAndExchangeTypeUndefined]:RGB(15, 151, 208),
+          [NSString stringWithFormat:@"%d",ExtractAndExchangeTypeJingdong]:RGB(203, 32, 38),
+          [NSString stringWithFormat:@"%d",ExtractAndExchangeTypeXLVip]:RGB(186, 186, 186),
+          [NSString stringWithFormat:@"%d",ExtractAndExchangeTypeAlipay]:RGB(186, 186, 186),
+          [NSString stringWithFormat:@"%d",ExtractAndExchangeTypePhonePay]:RGB(38, 141, 204)
+          };
+        [localColorDict retain];
+    }
+    NSString* typeKey = [NSString stringWithFormat:@"%d",type];
+    UIColor* color = localColorDict[typeKey];
+    return color;
+}
+
+- (UIImage*)pullIconForExtractAndExchangeType:(ExtractAndExchangeType)type
+{
+    static NSDictionary* localPullIconDict = nil;
+    if (localPullIconDict == nil)
+    {
+        UIImage* img = [UIImage imageNamed:@"table_view_pull_icon_white"];
+        localPullIconDict =
+        @{
+          [NSString stringWithFormat:@"%d",ExtractAndExchangeTypeUndefined]:[img imageBlendWithColor:[self colorForExtractAndExchangeType:ExtractAndExchangeTypeUndefined]],
+          [NSString stringWithFormat:@"%d",ExtractAndExchangeTypeJingdong]:[img imageBlendWithColor:[self colorForExtractAndExchangeType:ExtractAndExchangeTypeJingdong]],
+          [NSString stringWithFormat:@"%d",ExtractAndExchangeTypeXLVip]:[img imageBlendWithColor:[self colorForExtractAndExchangeType:ExtractAndExchangeTypeXLVip]],
+          [NSString stringWithFormat:@"%d",ExtractAndExchangeTypeAlipay]:[img imageBlendWithColor:[self colorForExtractAndExchangeType:ExtractAndExchangeTypeAlipay]],
+          [NSString stringWithFormat:@"%d",ExtractAndExchangeTypePhonePay]:[img imageBlendWithColor:[self colorForExtractAndExchangeType:ExtractAndExchangeTypePhonePay]],
+          };
+        [localPullIconDict retain];
+    }
+    NSString* typeKey = [NSString stringWithFormat:@"%d",type];
+    UIImage* img = localPullIconDict[typeKey];
+    return img;
+}
+
 #pragma mark <HttpRequestDelegate>
 
 -(void) HttpRequestCompleted : (id) request HttpCode:(int)httpCode Body:(NSDictionary*) body
@@ -183,6 +245,7 @@ DEF_SINGLETON(ExtractAndExchangeLogic)
     
     NSNumber* result = [NSNumber numberWithInt:-1];
     NSString* msg = @"网络不通，请检查网络";
+    NSString* orderid = @"";
     BOOL succeed = NO;
     
     if (httpCode == 200)
@@ -191,7 +254,7 @@ DEF_SINGLETON(ExtractAndExchangeLogic)
         msg = [body objectForKey:@"msg"];
         int nRes = [result intValue];
         if (nRes == 0) {
-            NSString* exchange_code = [body valueForKey: @"order_id"];
+            orderid = [body valueForKey: @"order_id"];
             [[LoginAndRegister sharedInstance] increaseBalance:(-1*[price doubleValue])];
             
             [self _reduceRemainCount:type];
@@ -202,9 +265,7 @@ DEF_SINGLETON(ExtractAndExchangeLogic)
     
     if (delegate)
     {
-        [delegate onFinishedRequestExtractAndExchangeList:self
-                                                isSucceed:succeed
-                                                   errMsg:msg];
+        [delegate onFinishedRequestExchangeCode:self orderid:orderid exchangeType:type isSucceed:succeed errMsg:msg];
     }
     
     

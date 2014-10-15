@@ -25,6 +25,7 @@ typedef enum : NSUInteger {
                                          errMsg:(NSString*)msg;
 
 - (void)onFinishedRequestExchangeCode:(ExtractAndExchangeLogic*)logic
+                              orderid:(NSString*)orderid
                          exchangeType:(ExtractAndExchangeType)type
                             isSucceed:(BOOL)succeed
                                errMsg:(NSString*)msg;
@@ -58,5 +59,9 @@ AS_SINGLETON(ExtractAndExchangeLogic)
 - (void) requestExchangeCode:(ExtractAndExchangeType)type
                        price:(NSNumber*)price
                 withDelegate:(id<ExtractAndExchangeLogicDelegate>)delegate;
+
+- (UIImage*)iconForExtractAndExchangeType:(ExtractAndExchangeType)type;
+- (UIColor*)colorForExtractAndExchangeType:(ExtractAndExchangeType)type;
+- (UIImage*)pullIconForExtractAndExchangeType:(ExtractAndExchangeType)type;
 
 @end

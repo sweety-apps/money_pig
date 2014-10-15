@@ -122,16 +122,16 @@
     
     if (_taskCellType == CommonTaskTableViewCellShowTypeRedTextUp)
     {
-        rectFrame = CGRectMake(77, 25, 170, 16);
+        rectFrame = CGRectMake(77, 25, 200, 16);
         _redLabel.frame = rectFrame;
-        rectFrame = CGRectMake(87, 48, 170, 9);
+        rectFrame = CGRectMake(87, 48, 200, 9);
         _blackLabel.frame = rectFrame;
     }
     else
     {
-        rectFrame = CGRectMake(77, 25, 170, 9);
+        rectFrame = CGRectMake(77, 25, 200, 9);
         _blackLabel.frame = rectFrame;
-        rectFrame = CGRectMake(87, 41, 170, 16);
+        rectFrame = CGRectMake(87, 41, 200, 16);
         _redLabel.frame = rectFrame;
     }
     

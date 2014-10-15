@@ -368,7 +368,7 @@
             title = @"获得签到红包";
             msg = @"1元";
             income = 100;
-            _share = YES;
+            //_share = YES;
             //加钱
             [[LoginAndRegister sharedInstance] increaseBalance:100];
             //统计
@@ -379,7 +379,7 @@
             title = @"获得签到红包";
             msg = @"5元";
             income = 500;
-            _share = YES;
+            //_share = YES;
             //加钱
             [[LoginAndRegister sharedInstance] increaseBalance:500];
             //统计

@@ -11,6 +11,7 @@
 #import "MBHUDView.h"
 #import "ExtractAndExchangeLogic.h"
 #import "TransferToAlipayAndPhoneController.h"
+#import "OrderDetailViewController.h"
 
 #define kAlertViewTypeNotEnoughRemain (1)
 #define kAlertViewTypeContinueExchange (2)
@@ -187,23 +188,8 @@
     }
     else
     {
-        static NSDictionary* localIconDict = nil;
-        if (localIconDict == nil)
-        {
-            localIconDict =
-            @{
-              [NSString stringWithFormat:@"%d",ExtractAndExchangeTypeJingdong]:@"exchange_icon_jd_50",
-              [NSString stringWithFormat:@"%d",ExtractAndExchangeTypeXLVip]:@"exchange_icon_jd_50",
-              [NSString stringWithFormat:@"%d",ExtractAndExchangeTypeAlipay]:@"exchange_icon_alipay",
-              [NSString stringWithFormat:@"%d",ExtractAndExchangeTypePhonePay]:@"exchange_icon_phonepay"
-              };
-            [localIconDict retain];
-        }
-        
         [cell.iconImageView setUrl:nil];
-        NSString* typeKey = [NSString stringWithFormat:@"%d",rcd.type];
-        UIImage* img = [UIImage imageNamed:localIconDict[typeKey]];
-        [cell.iconImageView setImage:img];
+        [cell.iconImageView setImage:[[ExtractAndExchangeLogic sharedInstance] iconForExtractAndExchangeType:rcd.type]];
     }
     
     return retCell;
@@ -240,6 +226,7 @@
 }
 
 - (void)onFinishedRequestExchangeCode:(ExtractAndExchangeLogic*)logic
+                              orderid:(NSString*)orderid
                          exchangeType:(ExtractAndExchangeType)type
                             isSucceed:(BOOL)succeed
                                errMsg:(NSString*)msg
@@ -249,6 +236,8 @@
     if (succeed)
     {
         [self.header beginRefreshing];
+        OrderDetailViewController* controller = [OrderDetailViewController controllerWithOrderId:orderid andType:type];
+        [self.navigationController pushViewController:controller animated:YES];
     }
     else
     {
