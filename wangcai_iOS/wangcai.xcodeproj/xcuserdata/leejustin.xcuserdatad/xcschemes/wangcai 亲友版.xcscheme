@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F3359E6318882F8000C1E636"
-               BuildableName = "wangcai copy.app"
+               BuildableName = "zhuanqianpig.app"
                BlueprintName = "wangcai &#x4eb2;&#x53cb;&#x7248;"
                ReferencedContainer = "container:wangcai.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F3359E6318882F8000C1E636"
-            BuildableName = "wangcai copy.app"
+            BuildableName = "zhuanqianpig.app"
             BlueprintName = "wangcai &#x4eb2;&#x53cb;&#x7248;"
             ReferencedContainer = "container:wangcai.xcodeproj">
          </BuildableReference>
@@ -52,7 +52,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F3359E6318882F8000C1E636"
-            BuildableName = "wangcai copy.app"
+            BuildableName = "zhuanqianpig.app"
             BlueprintName = "wangcai &#x4eb2;&#x53cb;&#x7248;"
             ReferencedContainer = "container:wangcai.xcodeproj">
          </BuildableReference>
@@ -70,7 +70,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F3359E6318882F8000C1E636"
-            BuildableName = "wangcai copy.app"
+            BuildableName = "zhuanqianpig.app"
             BlueprintName = "wangcai &#x4eb2;&#x53cb;&#x7248;"
             ReferencedContainer = "container:wangcai.xcodeproj">
          </BuildableReference>

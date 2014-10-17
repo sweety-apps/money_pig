@@ -172,7 +172,9 @@
     [ShareSDK connectSinaWeiboWithAppKey: @"2574513086" appSecret: @"95b577420870440927287600606a83d9" redirectUri: @"https://api.weibo.com/oauth2/default.html" weiboSDKCls: [WeiboSDK class]];
     
     // 添加QQ应用
-    [ShareSDK connectQQWithAppId: @"100577453" qqApiCls: [QQApiInterface class]];
+    [ShareSDK connectQQWithQZoneAppKey:@"1103369545"                 //该参数填入申请的QQ AppId
+                     qqApiInterfaceCls:[QQApiInterface class]
+                       tencentOAuthCls:[TencentOAuth class]];
     // 微信
     // wxb36cb2934f410866
     
@@ -185,7 +187,7 @@
     [ShareSDK connectWeChatSessionWithAppId: @"wxf3b81b618060b1fc" wechatCls: [WXApi class]];
     
     // 豆瓣
-    [ShareSDK connectDoubanWithAppKey: @"0d9c9584fb4ecf4328d5c08ef1ec6dc9" appSecret: @"68634119648e5dd3" redirectUri: @"http://www.bghills.com/app"];
+    [ShareSDK connectDoubanWithAppKey: @"0d9c9584fb4ecf4328d5c08ef1ec6dc9" appSecret: @"68634119648e5dd3" redirectUri: @"http://dev.kumoway.com/braininference/infos.php"];
     
     // 腾讯微博
     [ShareSDK connectTencentWeiboWithAppKey: @"801546594" appSecret: @"31189f068f46f828c76edfb7e8594346" redirectUri: @"http://www.bghills.com/app" wbApiCls: [WeiboApi class]];

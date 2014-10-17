@@ -42,10 +42,10 @@
 
 + (BOOL)isFirstRun;
 
-
-
 + (void)setClickMaxID:(int) mid;
 + (int) getClickMaxID;
 
++ (BOOL)hasAgreedPrivacyPolicy;
++ (void)setAgreedPrivacyPolicy:(BOOL)agreed;
 
 @end

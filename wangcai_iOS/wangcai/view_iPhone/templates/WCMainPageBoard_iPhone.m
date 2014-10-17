@@ -22,10 +22,11 @@
 #import "MobClick.h"
 #import "SettingLocalRecords.h"
 #import "MessageViewController.h"
+#import "PrivacyPolicyView.h"
 
 #pragma mark -
 
-@interface WCMainPageBoard_iPhone() <BaseTaskTableViewControllerDelegate>
+@interface WCMainPageBoard_iPhone() <BaseTaskTableViewControllerDelegate,PrivacyPolicyViewDelegate>
 {
 	//<#@private var#>
 }
@@ -194,6 +195,14 @@ ON_SIGNAL2( BeeUIBoard, signal )
         [_taskTableViewController viewDidAppear:NO];
         
         [[AppBoard_iPhone sharedInstance] setPanable:NO];
+        
+        if (![SettingLocalRecords hasAgreedPrivacyPolicy])
+        {
+            PrivacyPolicyView* ppview = [PrivacyPolicyView privacyPolicyView];
+            [ppview setShouldFinishReading:YES];
+            ppview.delegate = self;
+            [ppview showInWindow:NO];
+        }
     }
     else if ( [signal is:BeeUIBoard.WILL_DISAPPEAR] )
     {
@@ -352,6 +361,13 @@ ON_NOTIFICATION( notification )
     _headLeftBtnImageView.frame = rectFrame;
     //_headLeftBtnImageView.alpha = scale;
     
+}
+
+#pragma mark <PrivacyPolicyViewDelegate>
+
+- (void) privacyPolicyViewHasDismissedWithAgreed:(PrivacyPolicyView*)view
+{
+    [SettingLocalRecords setAgreedPrivacyPolicy:YES];
 }
 
 @end

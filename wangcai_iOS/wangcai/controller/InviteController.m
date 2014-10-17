@@ -150,18 +150,28 @@
     id<ISSContent> publishContent = [ShareSDK content: [NSString stringWithFormat:@"真金白银的福利哦！ %@",self.inviteUrl] defaultContent:@"" image:[ShareSDK imageWithPath:imagePath] title: @"玩应用领红包" url: self.inviteUrl description: @"来玩小猪猪哟！" mediaType: SSPublishContentMediaTypeNews];
     
     id<ISSContainer> container = [ShareSDK container];
-    NSArray *sharelist = [ShareSDK getShareListWithType:ShareTypeWeixiTimeline,ShareTypeWeixiSession,ShareTypeQQ,ShareTypeSinaWeibo,ShareTypeTencentWeibo,ShareTypeDouBan,ShareTypeSMS,ShareTypeMail,ShareTypeCopy, nil];
+    NSArray *sharelist = [ShareSDK getShareListWithType:ShareTypeWeixiTimeline,ShareTypeWeixiSession,ShareTypeQQ,ShareTypeSMS,ShareTypeMail, nil];
     [container setIPhoneContainerWithViewController:self];
     [ShareSDK showShareActionSheet:container  shareList: sharelist content: publishContent statusBarTips: YES authOptions: nil shareOptions: nil result: ^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end)
      {
+         NSString* msg = @"分享";
+         if (type == ShareTypeCopy)
+         {
+             msg = @"复制";
+         }
          if (state == SSResponseStateSuccess)
          {
              // todo 分享成功
+             msg = [msg stringByAppendingString:@"成功！"];
              [SettingLocalRecords saveLastShareDateTime:[NSDate date]];
+             [MBHUDView hudWithBody:msg type:MBAlertViewHUDTypeCheckmark hidesAfter:1.5 show:YES];
          }
          else if (state == SSResponseStateFail)
          {
              // todo 分享失败
+             msg = [msg stringByAppendingString:@"失败:("];
+             UIAlertView* av = [[[UIAlertView alloc] initWithTitle:msg message:nil delegate:nil cancelButtonTitle:@"关闭" otherButtonTitles:nil] autorelease];
+             [av show];
          }
      }];
 }

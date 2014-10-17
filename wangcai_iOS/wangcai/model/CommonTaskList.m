@@ -279,12 +279,12 @@ static CommonTaskList* gInstance = nil;
     @{
         @"id": @6,
         @"type":[NSNumber numberWithInt:kTaskTypeAbout],
-        @"title":@"关于我们",
+        @"title":@"用户帮助",
         @"status":@0,
         @"money":@0,
         @"icon":@"table_view_cell_icon_about",
         @"intro":@"",
-        @"desc":@"赚钱小猪的故事",
+        @"desc":@"小猪的客服信息，萌萌哒",
         @"level":@0,
         @"steps":@[],
         @"rediect_url":@""

@@ -86,7 +86,7 @@
 "ShareType_18" = "邮件";
 "ShareType_19" = "短信";
 "ShareType_20" = "打印";
-"ShareType_21" = "拷贝";
+"ShareType_21" = "复制链接";
 "ShareType_22" = "微信好友";
 "ShareType_23" = "微信朋友圈";
 "ShareType_24" = "QQ";

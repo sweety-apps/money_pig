@@ -926,8 +926,8 @@ static OnlineWallViewController* _sharedInstance;
         [SiWeiAdConfig setDeveloperParam:did];
         [SiWeiPointsManger enableSiweiWall];
         
-        _mopanAdWallControl = [[MopanAdWall alloc] initWithMopan:MOPAN_APP_ID withAppSecret:MOPAN_APP_SECRET];
-        [_mopanAdWallControl setCustomUserID:did];
+        //_mopanAdWallControl = [[MopanAdWall alloc] initWithMopan:MOPAN_APP_ID withAppSecret:MOPAN_APP_SECRET];
+        //[_mopanAdWallControl setCustomUserID:did];
         
         [PunchBoxAd setUserInfo:did];
         

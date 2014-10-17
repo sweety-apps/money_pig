@@ -21,6 +21,7 @@
 #define kShareTimeArray @"shareTimeArray"
 //#define kLastOfferWallAlertView @"offerWallClearPoint"
 #define kClickMaxID @"clickMaxID"
+#define kAgreedPP @"agreedPP"
 
 #define NKEY(x) ([SettingLocalRecords getUserNamedKey:(x)])
 
@@ -360,6 +361,25 @@
     }
     
     return 0;
+}
+
++ (BOOL)hasAgreedPrivacyPolicy
+{
+    NSNumber* num = [[NSUserDefaults standardUserDefaults] objectForKey:kAgreedPP];
+    if (num)
+    {
+        return [num intValue];
+    }
+    
+    return NO;
+}
+
++ (void)setAgreedPrivacyPolicy:(BOOL)agreed
+{
+    NSNumber* number = [NSNumber numberWithInt:agreed];
+    
+    [[NSUserDefaults standardUserDefaults] setObject:number forKey:kAgreedPP];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 + (void)setPopedInstallWangcaiAlertView:(BOOL)alerted

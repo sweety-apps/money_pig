@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "JupengAdOpenData.h"
-
+#import "JupengWallDelegate.h"
 
 
 
@@ -23,6 +23,12 @@
  * \returns 是否显示积分墙成功，积分墙显示不成功并不会调用didShowBlock和didDismissBlock
  */
 + (void)showOffers:(UIViewController*)hostViewController didShowBlock:(void (^)(void))didShowBlock didDismissBlock:(void (^)(void))didDismissBlock;
+
+/*! 显示积分墙
+ * \param hostViewController 显示积分墙的ViewController
+ * \param delegate 显示或者关闭积分墙的delegate
+ */
++ (void)showOffers:(UIViewController*)hostViewController withWallDelegate:(id<JupengWallDelegate>) delegate;
 
 // 获取用户总积分
 // \param didGetBlock NSError: 如果成功，返回空，如果失败，返回具体的错误值；NSInteger 返回用户账目上的总积分
@@ -55,6 +61,9 @@
  *  param ad: 通过requestAdOpenData获得的广告
  */
 + (void) installClickAd:(JupengAdOpenData *)ad;
+
+
+
 
 @end
 

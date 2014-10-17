@@ -33,6 +33,7 @@
 #import "BillingHistoryViewController.h"
 #import "ExtractAndExchangeViewController.h"
 #import "InviteController.h"
+#import "UserHelpViewController.h"
 #import <Foundation/Foundation.h>
 #import <ShareSDK/ShareSDK.h>
 
@@ -850,7 +851,8 @@ static int  gChoujiang = 0;
                 break;
             case kTaskTypeAbout:
             {
-                
+                UserHelpViewController* ctrl = [UserHelpViewController controller];
+                [self.parentUIBoard.stack pushViewController:ctrl animated:YES];
             }
                 break;
             case kTaskTypeYoumiEc:

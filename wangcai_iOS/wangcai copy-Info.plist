@@ -28,10 +28,10 @@
 			<key>CFBundleURLIconFile</key>
 			<string></string>
 			<key>CFBundleURLName</key>
-			<string>1528studio.wangcai</string>
+			<string>xiaozhu</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>1528wangcai</string>
+				<string>xiaozhu</string>
 			</array>
 		</dict>
 		<dict>
@@ -42,11 +42,10 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>tencent100577453</string>
-				<string>rm2455281528studio.wangcai</string>
-				<string>wb801457140</string>
+				<string>wb2574513086</string>
 				<string>wb338240125</string>
 				<string>wxf3b81b618060b1fc</string>
-				<string>QQ05FEB0AD</string>
+				<string>QQ41C41549</string>
 			</array>
 		</dict>
 	</array>
