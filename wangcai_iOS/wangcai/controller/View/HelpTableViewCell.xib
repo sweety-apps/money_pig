@@ -42,11 +42,19 @@
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ver 1.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QXd-Uu-yq8">
+                        <rect key="frame" x="204" y="10" width="96" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="12"/>
+                        <color key="textColor" red="0.32941176470588235" green="0.32941176470588235" blue="0.32941176470588235" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </tableViewCellContentView>
             <connections>
                 <outlet property="privacyPolicyBtn" destination="VEw-6k-GaJ" id="9Bl-QT-A8w"/>
                 <outlet property="qqCopyBtn" destination="kcH-0p-NAe" id="l8K-R2-f0I"/>
+                <outlet property="versionLabel" destination="QXd-Uu-yq8" id="Vlx-07-gC6"/>
                 <outlet property="wxCopyBtn" destination="ak1-gE-Kpb" id="CRL-UY-Lf2"/>
             </connections>
         </tableViewCell>

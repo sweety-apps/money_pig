@@ -12,5 +12,6 @@
 @property (retain, nonatomic) IBOutlet UIButton *privacyPolicyBtn;
 @property (retain, nonatomic) IBOutlet UIButton *qqCopyBtn;
 @property (retain, nonatomic) IBOutlet UIButton *wxCopyBtn;
+@property (retain, nonatomic) IBOutlet UILabel *versionLabel;
 
 @end

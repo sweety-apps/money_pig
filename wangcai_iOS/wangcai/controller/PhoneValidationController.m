@@ -12,10 +12,13 @@
 #import "BaseTaskTableViewController.h"
 #import "Common.h"
 
-@interface PhoneValidationController ()
+@interface PhoneValidationController () <UIAlertViewDelegate>
 {
     NSDate* _startDate;
 }
+
+@property (nonatomic, retain) UIAlertView* succAlert;
+
 @end
 
 @implementation PhoneValidationController
@@ -68,6 +71,8 @@
         _phoneFieldTip = (UILabel*)[self.view viewWithTag:65];
         _smsCodeTip = (UILabel*)[self.view viewWithTag:66];
         _resendBtn = (UIButton*)[self.view viewWithTag:99];
+        _phoneBgView = [self.view viewWithTag:100];
+        _smsCodeBgView =  [self.view viewWithTag:101];
         
         _smsCode.delegate = self;
         _phoneField.delegate = self;
@@ -75,9 +80,32 @@
         [self setStatus:1]; // 等待输入手机号
         
         self->phoneValidation = [[PhoneValidation alloc] init];
+        
+        [self _setupUIAppearence];
     }
     return self;
 }
+
+- (void) _setupUIAppearence
+{
+    _phoneBgView.layer.masksToBounds = YES;
+    _phoneBgView.layer.borderColor = [UIColor blackColor].CGColor;
+    _phoneBgView.layer.borderWidth = 1.0f;
+    _phoneBgView.layer.cornerRadius = 2.0f;
+    
+    _smsCodeBgView.layer.masksToBounds = YES;
+    _smsCodeBgView.layer.borderColor = [UIColor blackColor].CGColor;
+    _smsCodeBgView.layer.borderWidth = 1.0f;
+    _smsCodeBgView.layer.cornerRadius = 2.0f;
+    
+    _smsBtn.layer.masksToBounds = YES;
+    _smsBtn.layer.cornerRadius = 4.0f;
+    _nextBtn.layer.masksToBounds = YES;
+    _nextBtn.layer.cornerRadius = 4.0f;
+    _resendBtn.layer.masksToBounds = YES;
+    _resendBtn.layer.cornerRadius = 4.0f;
+}
+
 
 - (void)viewWillAppear:(BOOL)animated {    // Called when the view is about to made visible. Default does nothing
     // 绑定键盘事件
@@ -131,15 +159,6 @@
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:animationDuration];
     
-    CGRect rect = _nextBtn.frame;
-    if ( DEVICE_IS_IPHONE5 ) {
-        rect.origin.y = 277; //399
-    } else {
-        rect.origin.y = 203; //399
-    }
-    
-    [_nextBtn setFrame:rect];
-    
     [UIView commitAnimations];
 }
 
@@ -153,11 +172,6 @@
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:animationDuration];
  
-    
-    CGRect rect = _nextBtn.frame;
-    rect.origin.y = 399;
-    [_nextBtn setFrame:rect];
-    
     [UIView commitAnimations];
 }
 
@@ -263,6 +277,9 @@
     }
     
     [self->phoneValidation dealloc];
+    
+    self.succAlert = nil;
+    
     [super dealloc];
 }
 
@@ -307,31 +324,38 @@
     _status = status;
     if ( status == 1 ) {
         _phoneField.enabled = YES;
-        _phoneClear.hidden = NO;
+        _phoneClear.hidden = YES;
         _smsBkg.highlighted = NO;
         _smsCode.hidden = YES;
         _smsBtn.hidden = NO;
         _smsTime.hidden = YES;
         _resendBtn.hidden = YES;
+        
         [self updateNextBtnStatus];
         
         [_smsCode setText:@""];
         [_smsCodeTip setText:@""];
+        
+        [_smsBtn setTitle:@"获取验证码" forState:UIControlStateNormal];
+        
     } else if ( status == 2 ) {
         _phoneField.enabled = NO;   // 手机号不可再编辑，要等倒计时结束
         _phoneClear.hidden = YES;
         _smsBkg.highlighted = YES;
         _smsCode.hidden = NO;
         _smsBtn.hidden = YES;
-        _smsTime.hidden = NO;
-        [_smsCodeTip setText:@"请输入验证码"];
-        _resendBtn.hidden = YES;
+        _smsTime.hidden = YES;
+        [_smsCodeTip setText:@""];
+        //[_smsBtn setTitle:@"请输入验证码" forState:UIControlStateNormal];
+        _resendBtn.hidden = NO;
+        _resendBtn.enabled = NO;
+        _resendBtn.backgroundColor = [UIColor lightGrayColor];
         [self updateNextBtnStatus];
         
         [_smsCode becomeFirstResponder];
     } else if ( status == 3 ) {
         _phoneField.enabled = YES;   //
-        _phoneClear.hidden = NO;
+        _phoneClear.hidden = YES;
         _smsBkg.highlighted = YES;
         _smsCode.hidden = NO;
         
@@ -340,24 +364,39 @@
             _smsBtn.hidden = NO;
         } else {
             _resendBtn.hidden = NO;
+            _resendBtn.enabled = YES;
             _smsBtn.hidden = YES;
+            _resendBtn.backgroundColor = RGB(250, 161, 45);
+            [_resendBtn setTitle:@"重新获取" forState:UIControlStateNormal];
         }
         
         _smsTime.hidden = YES;
-        [_smsCodeTip setText:@"请输入验证码"];
+        [_smsCodeTip setText:@""];
         [self updateNextBtnStatus];
     }
 }
 
 - (void) updateNextBtnStatus {
+    _nextBtn.hidden = NO;
+    _smsCodeBgView.hidden = NO;
     if ( _status == 2 || _status == 3 ) {
         if ( [_smsCode.text length] == 5 ) {
             _nextBtn.enabled = YES;
+            _nextBtn.backgroundColor = RGB(128, 195, 26);
         } else {
             _nextBtn.enabled = NO;
+            _nextBtn.backgroundColor = [UIColor lightGrayColor];
+            if (_firstSend)
+            {
+                _nextBtn.hidden = YES;
+                _smsCodeBgView.hidden = YES;
+            }
         }
     } else {
+        _nextBtn.hidden = YES;
+        _smsCodeBgView.hidden = YES;
         _nextBtn.enabled = NO;
+        _nextBtn.backgroundColor = [UIColor lightGrayColor];
     }
 }
 
@@ -398,7 +437,7 @@
     }
     
     NSString *text = [[NSString alloc] initWithFormat:@"%d秒后重发", self->_nTime];
-    _smsTime.text = text;
+    [_resendBtn setTitle:text forState:UIControlStateDisabled];
     [text release];
 }
 
@@ -408,7 +447,7 @@
     self->_timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerTick:) userInfo:nil repeats:YES];
 
     NSString *text = [[NSString alloc] initWithFormat:@"60秒后重发"];
-    _smsTime.text = text;
+    [_resendBtn setTitle:text forState:UIControlStateDisabled];
     [text release];
 }
 
@@ -429,34 +468,14 @@
     [self hideLoading];
     if ( suc ) {
         // 发送完成，进入下一步
-        if (boundPhoneNum > 0)
-        {
-            NSString* msg = [NSString stringWithFormat:@"一个手机号一个月内最多绑定3台设备，你已绑定了第%d台设备，请谨慎使用剩余机会。",boundPhoneNum+1];
-            UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"注意" message:msg delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
-            [alertView show];
-        }
         [[LoginAndRegister sharedInstance] attachPhone:_phoneNum UserId:userId InviteCode:inviteCode];
         
         [self onBindPhoneCompeted];
         
-        UIView* sucView = [[[NSBundle mainBundle] loadNibNamed:@"PhoneValidationController" owner:self options:nil] lastObject];
-        if ( DEVICE_IS_IPHONE5 ) {
-            UIView* view = [sucView viewWithTag:1];
-            CGRect rect = view.frame;
-            rect.origin.y = 102;
-            [view setFrame:rect];
-            
-            view = [sucView viewWithTag:2];
-            rect = view.frame;
-            rect.origin.y = 51;
-            [view setFrame:rect];
-            
-            view = [sucView viewWithTag:3];
-            rect = view.frame;
-            rect.origin.y = 208;
-            [view setFrame:rect];
-        }
-        [self.view addSubview:sucView];
+        NSString* msg = [NSString stringWithFormat:@"已绑定手机号: %@",_phoneNum];
+        UIAlertView* succAlert = [[[UIAlertView alloc] initWithTitle:@"绑定成功！" message:msg delegate:self cancelButtonTitle:@"返回" otherButtonTitles: nil] autorelease];
+        self.succAlert = succAlert;
+        [succAlert show];
     } else {
         // 发送失败，错误提示
         if ( errMsg == nil ) {
@@ -563,4 +582,15 @@
         }
     }
 }
+
+#pragma mark <UIAlertViewDelegate>
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (alertView == self.succAlert)
+    {
+        [self clickBack:nil];
+    }
+}
+
 @end

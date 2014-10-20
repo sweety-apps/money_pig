@@ -98,12 +98,13 @@ ON_SIGNAL2( BeeUIBoard, signal )
         [self.view addSubview:headBgImageView];
         
         //左上角小猪按钮
-        _headLeftBtnImageView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"table_view_topleft_icon"]] autorelease];
+        _headLeftBtnImageView = [UIButton buttonWithType:UIButtonTypeCustom];
+        UIImage* pigIconImg = [UIImage imageNamed:@"table_view_topleft_icon"];
+        [_headLeftBtnImageView setBackgroundImage:pigIconImg forState:UIControlStateNormal];
         _headLeftBtnImageView.contentMode = UIViewContentModeScaleToFill;
-        rectFrame = _headLeftBtnImageView.frame;
-        rectFrame.origin.x = 0;
-        rectFrame.origin.y = 0;
+        rectFrame = CGRectMake(0, 0, 100, 110);
         _headLeftBtnImageView.frame = rectFrame;
+        [_headLeftBtnImageView addTarget:self action:@selector(onPressedPigIcon) forControlEvents:UIControlEventTouchUpInside];
         
         rectFrame = CGRectMake(0, 0, 100, 110);
         UIButton* headLeftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -111,6 +112,8 @@ ON_SIGNAL2( BeeUIBoard, signal )
         headLeftBtn.frame = rectFrame;
         [headLeftBtn addTarget:self action:@selector(onPressedLeftBackBtn:) forControlEvents:UIControlEventTouchUpInside];
         
+        _headLeftBtnImageView.hidden = NO;
+        _headLeftBtnImageView.alpha = 1;
         [self.view addSubview:_headLeftBtnImageView];
         //[self.view addSubview:headLeftBtn];
         
@@ -313,26 +316,11 @@ ON_NOTIFICATION( notification )
 }
 
 - (void) showLeftAni:(BOOL) show {
-    if ( show ) {
-        [_headLeftBtnImageView stopAnimating];
-        
-        NSMutableArray* imageArray = [NSMutableArray array];
-        
-        for (int i = 0; i < 4; ++i)
-        {
-            UIImage* image = [UIImage imageNamed:[NSString stringWithFormat:@"main_menu%d",i+1]];
-            [imageArray addObject:image];
-        }
-        
-        _headLeftBtnImageView.animationImages = imageArray;
-        _headLeftBtnImageView.animationDuration = 0.6;
-        _headLeftBtnImageView.animationRepeatCount = 0;
-        [_headLeftBtnImageView startAnimating];
-    } else {
-        [_headLeftBtnImageView stopAnimating];
-        
-        [_headLeftBtnImageView setImage:[UIImage imageNamed:@"main_menu1"]];
-    }
+}
+
+- (void) onPressedPigIcon
+{
+    [_taskTableViewController onPressedOffWall];
 }
 
 #pragma mark <BaseTaskTableViewControllerDelegate>

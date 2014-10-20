@@ -7,6 +7,7 @@
 //
 
 #import "OrderDetailTableViewCell.h"
+#import "UIImage+imageUtils.h"
 
 @implementation OrderDetailTableViewCell
 
@@ -28,7 +29,11 @@
     self.extraBgView.layer.cornerRadius = 2.0f;
     
     self.checkButton.layer.masksToBounds = YES;
-    self.checkButton.layer.cornerRadius = 4.0f;
+    self.checkButton.layer.cornerRadius = 5.0f;
+    
+    [self.checkButton setBackgroundImage:[UIImage imageWithPureColor:self.checkButton.backgroundColor] forState:UIControlStateNormal];
+    self.checkButton.backgroundColor = [UIColor clearColor];
+    
     
     [self.checkButton addTarget:self action:@selector(onPressedCheckButton) forControlEvents:UIControlEventTouchUpInside];
 }

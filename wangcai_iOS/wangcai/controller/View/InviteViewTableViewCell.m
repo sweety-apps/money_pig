@@ -7,13 +7,14 @@
 //
 
 #import "InviteViewTableViewCell.h"
+#import "UIImage+imageUtils.h"
 
 @implementation InviteViewTableViewCell
 
 - (void)awakeFromNib
 {
     // Initialization code
-    [self setToBinded];
+    [self setToUnbind];
 }
 
 - (void)setHasBindCode:(BOOL)hasBind
@@ -30,7 +31,15 @@
 
 - (void)setToBinded
 {
+    self.commitOtherCodeBtn.layer.masksToBounds = YES;
+    self.otherCodeField.layer.masksToBounds = YES;
+    self.shareButton.layer.masksToBounds = YES;
+    self.myCodeLabel.layer.masksToBounds = YES;
+    
+    [self.commitOtherCodeBtn setBackgroundImage:nil forState:UIControlStateNormal];
     self.commitOtherCodeBtn.backgroundColor = RGB(159, 171, 175);
+    
+    self.commitOtherCodeBtnShadowView.hidden = YES;
     
     self.otherCodeField.layer.borderWidth = 0.0f;
     self.otherCodeField.layer.borderColor = [UIColor clearColor].CGColor;
@@ -47,7 +56,15 @@
     self.commitOtherCodeBtn.layer.masksToBounds = YES;
     self.commitOtherCodeBtn.layer.cornerRadius = 5.0f;
     
-    self.commitOtherCodeBtn.backgroundColor = RGB(132, 196, 77);
+    [self.commitOtherCodeBtn setBackgroundImage:[UIImage imageWithPureColor:RGB(250, 161, 45)] forState:UIControlStateNormal];
+    self.commitOtherCodeBtn.backgroundColor = [UIColor clearColor];
+    
+    self.commitOtherCodeBtnShadowView.layer.masksToBounds = YES;
+    self.commitOtherCodeBtnShadowView.layer.cornerRadius = 5.0f;
+    
+    self.commitOtherCodeBtnShadowView.backgroundColor = RGB(176, 104, 27);
+    
+    self.commitOtherCodeBtnShadowView.hidden = NO;
     
     self.otherCodeField.layer.masksToBounds = YES;
     self.otherCodeField.layer.borderWidth = 1.0f;
@@ -59,7 +76,13 @@
     self.shareButton.layer.masksToBounds = YES;
     self.shareButton.layer.cornerRadius = 5.0f;
     
-    self.shareButton.backgroundColor = RGB(132, 196, 77);
+    [self.shareButton setBackgroundImage:[UIImage imageWithPureColor:RGB(250, 161, 45)] forState:UIControlStateNormal];
+    self.shareButton.backgroundColor = [UIColor clearColor];
+    
+    self.shareButtonShadowView.layer.masksToBounds = YES;
+    self.shareButtonShadowView.layer.cornerRadius = 5.0f;
+    
+    self.shareButtonShadowView.backgroundColor = RGB(176, 104, 27);
     
     self.myCodeLabel.layer.masksToBounds = YES;
     self.myCodeLabel.layer.cornerRadius = 2.0f;
@@ -84,6 +107,8 @@
     [_otherCodeField release];
     [_commitOtherCodeBtn release];
     [_qrcodeImageView release];
+    [_shareButtonShadowView release];
+    [_commitOtherCodeBtnShadowView release];
     [super dealloc];
 }
 @end

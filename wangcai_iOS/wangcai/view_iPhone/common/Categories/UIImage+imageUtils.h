@@ -10,6 +10,7 @@
 
 @interface UIImage (imageUtils)
 
++ (UIImage *)imageWithPureColor:(UIColor *)color;
 - (UIImage *)imageBlendWithColor:(UIColor *)color;
 
 @end

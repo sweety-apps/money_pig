@@ -96,4 +96,6 @@
 - (IBAction)onClickCancelInstall:(id)sender;
 - (IBAction)onClickInstall:(id)sender;
 - (IBAction)onPressedBindPhone:(id)sender;
+- (void)onPressedOffWall;
+
 @end

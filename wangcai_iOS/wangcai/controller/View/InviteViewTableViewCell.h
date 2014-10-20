@@ -19,6 +19,8 @@
 @property (retain, nonatomic) IBOutlet UITextField *otherCodeField;
 @property (retain, nonatomic) IBOutlet UIButton *commitOtherCodeBtn;
 @property (retain, nonatomic) IBOutlet UIImageView *qrcodeImageView;
+@property (retain, nonatomic) IBOutlet UIView *shareButtonShadowView;
+@property (retain, nonatomic) IBOutlet UIView *commitOtherCodeBtnShadowView;
 
 
 - (void)setHasBindCode:(BOOL)hasBind;

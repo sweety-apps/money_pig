@@ -39,11 +39,16 @@
                                 <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="18"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" id="Rpp-SL-Dt8">
+                                <rect key="frame" x="225" y="42" width="75" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.68936729429999999" green="0.40592774749999999" blue="0.1053219438" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="iMa-yV-7NR">
                                 <rect key="frame" x="225" y="39" width="75" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.51764705879999995" green="0.76862745099999996" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="18"/>
+                                <color key="backgroundColor" red="0.98039215690000003" green="0.63137254899999995" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="18"/>
                                 <state key="normal" title="分享">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -96,11 +101,16 @@
                                 <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <view contentMode="scaleToFill" id="Rgy-fo-ebj">
+                                <rect key="frame" x="225" y="42" width="75" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.68936729431152344" green="0.40592774748802185" blue="0.10532194375991821" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="dVj-yH-dkj">
                                 <rect key="frame" x="225" y="39" width="75" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.51764705882352935" green="0.76862745098039209" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="18"/>
+                                <color key="backgroundColor" red="0.98039215686274506" green="0.63137254901960782" blue="0.1764705882352941" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="18"/>
                                 <state key="normal" title="领2元">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -112,6 +122,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="commitOtherCodeBtn" destination="dVj-yH-dkj" id="bKn-Bq-2Tq"/>
+                <outlet property="commitOtherCodeBtnShadowView" destination="Rgy-fo-ebj" id="3aL-gC-dLl"/>
                 <outlet property="firendEarnDetailBtn" destination="f46-bx-CBn" id="gjw-mN-HWY"/>
                 <outlet property="friendShareEarnLabel" destination="cMx-0p-avD" id="ceZ-A1-JZz"/>
                 <outlet property="myBgView" destination="sue-0N-hLX" id="cMU-PK-998"/>
@@ -120,6 +131,7 @@
                 <outlet property="otherCodeField" destination="kPP-Xb-hn3" id="Tpg-bP-39R"/>
                 <outlet property="qrcodeImageView" destination="dts-bu-y9d" id="R6a-ri-TVF"/>
                 <outlet property="shareButton" destination="iMa-yV-7NR" id="eg0-e3-HVX"/>
+                <outlet property="shareButtonShadowView" destination="Rpp-SL-Dt8" id="XjG-VE-PZv"/>
             </connections>
         </tableViewCell>
     </objects>

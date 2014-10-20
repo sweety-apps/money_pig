@@ -13,9 +13,9 @@
 
 #if TARGET_VERSION_LITE == 1 
 #define APP_NAME   @"WangCai"
-#define INVITE_URL @"http://223.4.33.112/page/invite_code?code=%@"
+#define INVITE_URL @"http://www.bghills.com/page/invite_code?code=%@"
 
-#define INVITE_TASK @"http://223.4.33.112/page/invite_code?code=%@"
+#define INVITE_TASK @"http://www.bghills.com/page/invite_code?code=%@"
 
 #define WEB_FORCE_UPDATE    @"http://wangcai.meme-da.com/web/update.php?app=wangcai&"
 
@@ -34,7 +34,7 @@
 
 #define PUNCHBOX_APP_SECRET @"100142-99B3FD-3DD7-15B3-957E55CAD324"
 
-#define UMENG_KEY   @"5334f6df56240b43b309cfaa"
+#define UMENG_KEY   @"5440f04efd98c51e4b001cb3"
 
 #define APP_MIIDI_ID       @"17251"
 #define APP_MIIDI_SECRET   @"dtl59j3m47wclc1g"
@@ -49,9 +49,9 @@
 #elif TARGET_VERSION_LITE == 2
 
 #define APP_NAME   @"WangCaiFriend"
-#define INVITE_URL @"http://223.4.33.112/page/invite_code?code=%@"
+#define INVITE_URL @"http://www.bghills.com/page/invite_code?code=%@"
 
-#define INVITE_TASK @"http://223.4.33.112/page/invite_code?code=%@"
+#define INVITE_TASK @"http://www.bghills.com/page/invite_code?code=%@"
 
 #define WEB_FORCE_UPDATE    @"http://wangcai.meme-da.com/web/update.php?app=wangcaifriend&"
 
@@ -71,7 +71,7 @@
 
 #define PUNCHBOX_APP_SECRET @"888177895-3D63E6-40EE-D4E0-9730BCE45"
 
-#define UMENG_KEY   @"5334f7c756240b43a00a9aaa"
+#define UMENG_KEY   @"5440f04efd98c51e4b001cb3"
 
 
 #define APP_MIIDI_ID       @"17250"
@@ -143,36 +143,36 @@
 #define SERVER_HOST_NAME(x)
 
 
-#define HTTP_LOGIN_AND_REGISTER @"http://223.4.33.112/0/register"
-#define HTTP_BIND_PHONE         @"http://223.4.33.112/0/account/bind_phone"
+#define HTTP_LOGIN_AND_REGISTER @"http://www.bghills.com/0/register"
+#define HTTP_BIND_PHONE         @"http://www.bghills.com/0/account/bind_phone"
 
-#define HTTP_SEND_SMS_CODE      @"http://223.4.33.112/0/sms/resend_sms_code"
-#define HTTP_CHECK_SMS_CODE     @"http://223.4.33.112/0/account/bind_phone_confirm"
-#define HTTP_READ_ACCOUNT_INFO     @"http://223.4.33.112/0/account/info"
-#define HTTP_WRITE_ACCOUNT_INFO     @"http://223.4.33.112/0/account/update_user_info"
-#define HTTP_UPDATE_INVITER     @"http://223.4.33.112/0/account/update_inviter"
+#define HTTP_SEND_SMS_CODE      @"http://www.bghills.com/0/sms/resend_sms_code"
+#define HTTP_CHECK_SMS_CODE     @"http://www.bghills.com/0/account/bind_phone_confirm"
+#define HTTP_READ_ACCOUNT_INFO     @"http://www.bghills.com/0/account/info"
+#define HTTP_WRITE_ACCOUNT_INFO     @"http://www.bghills.com/0/account/update_user_info"
+#define HTTP_UPDATE_INVITER     @"http://www.bghills.com/0/account/update_inviter"
 
-#define HTTP_READ_TASK_LIST     @"http://223.4.33.112/0/task/list"
-#define HTTP_TAKE_AWARD     @"http://223.4.33.112/0/task/check-in"
+#define HTTP_READ_TASK_LIST     @"http://www.bghills.com/0/task/list"
+#define HTTP_TAKE_AWARD     @"http://www.bghills.com/0/task/check-in"
 
-#define HTTP_DOWNLOAD_APP       @"http://223.4.33.112/0/task/download_app"
+#define HTTP_DOWNLOAD_APP       @"http://www.bghills.com/0/task/download_app"
 
-#define HTTP_PHONE_PAY         @"http://223.4.33.112/0/order/phone_pay"
-#define HTTP_ALIPAY_PAY         @"http://223.4.33.112/0/order/alipay"
-#define HTTP_QQ_PAY         @"http://223.4.33.112/0/order/qb_pay"
+#define HTTP_PHONE_PAY         @"http://www.bghills.com/0/order/phone_pay"
+#define HTTP_ALIPAY_PAY         @"http://www.bghills.com/0/order/alipay"
+#define HTTP_QQ_PAY         @"http://www.bghills.com/0/order/qb_pay"
 
-#define HTTP_EXCHANGE_LIST         @"http://223.4.33.112/0/order/exchange_list"
-#define HTTP_EXCHANGE_CODE         @"http://223.4.33.112/0/order/exchange_code"
+#define HTTP_EXCHANGE_LIST         @"http://www.bghills.com/0/order/exchange_list"
+#define HTTP_EXCHANGE_CODE         @"http://www.bghills.com/0/order/exchange_code"
 
-#define HTTP_TASK_OFFERWALL         @"http://223.4.33.112/0/task/poll"
+#define HTTP_TASK_OFFERWALL         @"http://www.bghills.com/0/task/poll"
 
-#define HTTP_TASK_COMMENT         @"http://223.4.33.112/0/task/comment"
+#define HTTP_TASK_COMMENT         @"http://www.bghills.com/0/task/comment"
 
-#define HTTP_TASK_SHARE         @"http://223.4.33.112/0/task/share"
+#define HTTP_TASK_SHARE         @"http://www.bghills.com/0/task/share"
 
-#define HTTP_BILLING_HISTORY         @"http://223.4.33.112/0/account/billing_history"
+#define HTTP_BILLING_HISTORY         @"http://www.bghills.com/0/account/billing_history"
 
-#define HTTP_ORDER_DETAIL         @"http://223.4.33.112/0/order/detail"
+#define HTTP_ORDER_DETAIL         @"http://www.bghills.com/0/order/detail"
 
 #define WEB_JD_ENCHARGE_CODE        @"https://passport.m.jd.com/card/optionGiftCard.action"
 

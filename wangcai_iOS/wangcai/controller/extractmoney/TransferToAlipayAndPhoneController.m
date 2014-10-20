@@ -190,7 +190,7 @@
     
     UILabel* label = self.navigationBarTitleLabel;
     if ( _type == 1 ) {
-        label.text = @"   支付宝余额充值";
+        label.text = @"   支付宝卡充值";
         titleIconName = @"exchange_icon_alipay";
         self.navigationBarView.backgroundColor = RGB(186, 186, 186);
     } else if ( _type == 2 ) {

@@ -60,6 +60,8 @@ static LoginAndRegister* _sharedInstance = nil;
     self->_aliPay = nil;
     self->_qbiPay = nil;
     
+    self->_offerwall_list = [[NSMutableArray alloc] init];
+    
     _tipsString = @"";
     
     return self;
@@ -68,6 +70,12 @@ static LoginAndRegister* _sharedInstance = nil;
 - (void) dealloc {
     if ( _delegate != nil ) {
         [_delegate release];
+    }
+    
+    if (self->_offerwall_list)
+    {
+        [self->_offerwall_list release];
+        self->_offerwall_list = nil;
     }
     
     [super dealloc];
@@ -263,6 +271,13 @@ static LoginAndRegister* _sharedInstance = nil;
                     [EcomConfig launchWithAppID:@"76f21df6134acdee" appSecret:@"b914719dcac278e9"];
                     
                     [ECManager ecWallPreload];
+                }
+                
+                NSArray* offerwalllist = [dict valueForKey:@"offerwall_list"];
+                [self->_offerwall_list removeAllObjects];
+                if (offerwalllist)
+                {
+                    [self->_offerwall_list addObjectsFromArray:offerwalllist];
                 }
                 
                 NSDictionary* offerwall = [dict valueForKey:@"offerwall"];
@@ -897,6 +912,11 @@ static LoginAndRegister* _sharedInstance = nil;
 
 -(NSArray*) getQbiPay {
     return _qbiPay;
+}
+
+-(NSArray*) getOfferwallList
+{
+    return _offerwall_list;
 }
 
 @end

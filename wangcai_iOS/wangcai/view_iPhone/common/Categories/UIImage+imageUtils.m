@@ -10,6 +10,17 @@
 
 @implementation UIImage (imageUtils)
 
++ (UIImage *)imageWithPureColor:(UIColor *)color
+{
+    CGSize imageSize = CGSizeMake(10, 10);
+    UIGraphicsBeginImageContextWithOptions(imageSize, NO, [UIScreen mainScreen].scale);
+    [color set];
+    UIRectFill(CGRectMake(0, 0, imageSize.width, imageSize.height));
+    UIImage *pressedColorImg = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return pressedColorImg;
+}
+
 - (UIImage *)imageBlendWithColor:(UIColor *)color
 {
     UIGraphicsBeginImageContextWithOptions(self.size, NO, self.scale);

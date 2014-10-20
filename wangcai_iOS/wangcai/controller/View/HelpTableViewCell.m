@@ -13,6 +13,11 @@
 - (void)awakeFromNib
 {
     // Initialization code
+    
+    NSDictionary* dict = [[NSBundle mainBundle] infoDictionary];
+    NSString* ver = [dict objectForKey:@"CFBundleVersion"];
+    ver = [NSString stringWithFormat:@"版本 %@",ver];
+    self.versionLabel.text = ver;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
@@ -26,6 +31,7 @@
     [_privacyPolicyBtn release];
     [_qqCopyBtn release];
     [_wxCopyBtn release];
+    [_versionLabel release];
     [super dealloc];
 }
 @end

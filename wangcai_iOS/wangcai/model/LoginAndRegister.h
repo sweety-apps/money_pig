@@ -88,6 +88,7 @@ typedef enum LoginStatus {
     NSArray*   _phonePay;
     NSArray*   _aliPay;
     NSArray*   _qbiPay;
+    NSMutableArray*   _offerwall_list;
 }
 
 +(id) sharedInstance;
@@ -192,5 +193,7 @@ typedef enum LoginStatus {
 -(NSArray*) getPhonePay;
 -(NSArray*) getAlipay;
 -(NSArray*) getQbiPay;
+
+-(NSArray*) getOfferwallList;
 
 @end

@@ -979,6 +979,7 @@ static OnlineWallViewController* _sharedInstance;
         [_tableViewDataDictArr release];
         _tableViewDataDictArr = nil;
     }
+#if 0
     _tableViewDataDictArr = [NSMutableArray arrayWithArray:
                              @[
                                @{
@@ -995,7 +996,7 @@ static OnlineWallViewController* _sharedInstance;
                                    },
                                @{
                                    @"icon":@"task_icon_domob",
-                                   @"name":@"触控应用任务",
+                                   @"name":@"多盟应用任务",
                                    @"type":@"domob",
                                    @"ishot":@0
                                    },
@@ -1006,6 +1007,10 @@ static OnlineWallViewController* _sharedInstance;
                                    @"ishot":@0
                                    }
                                ]];
+#else
+    _tableViewDataDictArr = [NSMutableArray arrayWithArray:
+                             [[LoginAndRegister sharedInstance] getOfferwallList]];
+#endif
     [_tableViewDataDictArr retain];
 }
 

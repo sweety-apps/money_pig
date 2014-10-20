@@ -34,6 +34,9 @@
     NSString*    _token;
     NSString*    _phoneNum;
     
+    UIView*     _phoneBgView;
+    UIView*     _smsCodeBgView;
+    
     NSTimer*    _timer;
     int        _nTime;
     

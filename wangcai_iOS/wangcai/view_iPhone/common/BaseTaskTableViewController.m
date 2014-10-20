@@ -157,23 +157,6 @@ static int  gChoujiang = 0;
         [SettingLocalRecords setPopedInstallWangcaiAlertView:YES];
     }
     
-    // 超过5元
-    if ( _alertBalanceTip == nil && !gNeedShowChoujiangShare ) {
-        NSString* phoneNum = [[LoginAndRegister sharedInstance] getPhoneNum];
-        
-        if ( [[LoginAndRegister sharedInstance] getBalance] >= 500 && (phoneNum == nil || [phoneNum length] == 0) ) {
-            
-            _needBindPhone = YES;
-            _alertBalanceTip = [[UIAlertView alloc] initWithTitle:@"提示" message:@"您已积累了超过5元红包，为了红包的安全建议立即绑定手机号。" delegate:self cancelButtonTitle:@"关闭" otherButtonTitles:@"绑定手机", nil];
-            
-            [_alertBalanceTip show];
-        }
-        
-        if ( phoneNum != nil ) {
-            [phoneNum release];
-        }
-    }
-    
     if (gNeedReloadTaskList)
     {
         [self refreshTaskList];
@@ -581,13 +564,36 @@ static int  gChoujiang = 0;
     NSString* phoneNum = [[LoginAndRegister sharedInstance] getPhoneNum];
     if ( phoneNum == nil || [phoneNum isEqualToString:@""] ) {
         _needBindPhone = YES;
-        UIAlertView* alertView = [[[UIAlertView alloc] initWithTitle:@"提示" message:@"尚未绑定手机，请先绑定手机" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"绑定手机", nil] autorelease];;
+        UIAlertView* alertView = [[[UIAlertView alloc] initWithTitle:@"提示" message:@"先绑定手机，才能继续操作哟！" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"绑定手机", nil] autorelease];
+        
+        _alertBalanceTip = alertView;
+        
         [alertView show];
     } else {
         [phoneNum release];
         
         InviteController* ctrl = [InviteController controller];
         [self.beeStack pushViewController:ctrl animated:YES];
+    }
+}
+
+- (void)onTouchedExtract
+{
+    // 判断是否绑定了手机
+    NSString* phoneNum = [[LoginAndRegister sharedInstance] getPhoneNum];
+    if ( phoneNum == nil || [phoneNum isEqualToString:@""] ) {
+        _needBindPhone = YES;
+        UIAlertView* alertView = [[[UIAlertView alloc] initWithTitle:@"提示" message:@"先绑定手机，才能继续操作哟！" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"绑定手机", nil] autorelease];
+        
+        _alertBalanceTip = alertView;
+        
+        [alertView show];
+    } else {
+        [phoneNum release];
+        
+        ExtractAndExchangeViewController* ctrl = [ExtractAndExchangeViewController controller];
+        ctrl.beeUIStack = self.parentUIBoard.stack;
+        [self.parentUIBoard.stack pushViewController:ctrl animated:YES];
     }
 }
 
@@ -679,6 +685,12 @@ static int  gChoujiang = 0;
     [[UIApplication sharedApplication] openURL:url];
 }
 
+- (void)onPressedOffWall
+{
+    [[OnlineWallViewController sharedInstance] setNeedRefreshUI];
+    [self.parentUIBoard.stack pushViewController:[OnlineWallViewController sharedInstance] animated:YES];
+}
+
 - (IBAction)onPressedBindPhone:(id)sender
 {
     NSString* phoneNum = [[LoginAndRegister sharedInstance] getPhoneNum];
@@ -751,8 +763,7 @@ static int  gChoujiang = 0;
             {
 #if 1
                 [MobClick event:@"task_list_offer_wall" attributes:@{@"currentpage":@"任务列表"}];
-                [[OnlineWallViewController sharedInstance] setNeedRefreshUI];
-                [self.parentUIBoard.stack pushViewController:[OnlineWallViewController sharedInstance] animated:YES];
+                [self onPressedOffWall];
 #endif
             }
                 break;
@@ -838,9 +849,7 @@ static int  gChoujiang = 0;
                 break;
             case kTaskTypeExchange:
             {
-                ExtractAndExchangeViewController* ctrl = [ExtractAndExchangeViewController controller];
-                ctrl.beeUIStack = self.parentUIBoard.stack;
-                [self.parentUIBoard.stack pushViewController:ctrl animated:YES];
+                [self onTouchedExtract];
             }
                 break;
             case kTaskTypeBillingHistory:
@@ -1066,9 +1075,7 @@ static int  gChoujiang = 0;
                 // 绑定手机
                 [MobClick event:@"click_bind_phone" attributes:@{@"currentpage":@"任务列表"}];
                 
-                PhoneValidationController* phoneVal = [PhoneValidationController shareInstance];
-                
-                [self.beeStack pushViewController:phoneVal animated:YES];
+                [self onPressedBindPhone:nil];
             }
         }
     }

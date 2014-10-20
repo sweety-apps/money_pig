@@ -178,13 +178,13 @@
     // 微信
     // wxb36cb2934f410866
     
-    [ShareSDK connectWeChatWithAppId: @"wxf3b81b618060b1fc" wechatCls: [WXApi class]];
+    [ShareSDK connectWeChatWithAppId: @"wxc873ba331620d084" wechatCls: [WXApi class]];
             
     // 微信朋友圈
-    [ShareSDK connectWeChatTimelineWithAppId: @"wxf3b81b618060b1fc" wechatCls: [WXApi class]];
+    [ShareSDK connectWeChatTimelineWithAppId: @"wxc873ba331620d084" wechatCls: [WXApi class]];
     
     // 微信好友
-    [ShareSDK connectWeChatSessionWithAppId: @"wxf3b81b618060b1fc" wechatCls: [WXApi class]];
+    [ShareSDK connectWeChatSessionWithAppId: @"wxc873ba331620d084" wechatCls: [WXApi class]];
     
     // 豆瓣
     [ShareSDK connectDoubanWithAppKey: @"0d9c9584fb4ecf4328d5c08ef1ec6dc9" appSecret: @"68634119648e5dd3" redirectUri: @"http://dev.kumoway.com/braininference/infos.php"];
