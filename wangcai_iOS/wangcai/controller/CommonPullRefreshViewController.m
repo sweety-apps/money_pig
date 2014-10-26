@@ -9,6 +9,7 @@
 #import "CommonPullRefreshViewController.h"
 #import "LoginAndRegister.h"
 #import "UIGetRedBagAlertView.h"
+#import "UINavigationController+UIGestureRecognizerDelegate.h"
 
 @interface CommonPullRefreshViewController ()
 
@@ -30,6 +31,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onRedBagAlertViewHasShown) name:kUIGetRedBagAlertViewShownNotification object:nil];
+    
+    //开启侧滑Pop功能
+    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)])
+    {
+        self.navigationController.interactivePopGestureRecognizer.delegate = self.navigationController;
+    }
     
     [self _setupSubViews];
 }

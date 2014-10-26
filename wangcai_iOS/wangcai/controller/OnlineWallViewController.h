@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DMOfferWallViewController.h"
 #import "DMOfferWallManager.h"
 #import "HttpRequest.h"
 #import "UICustomAlertView.h"
@@ -18,15 +17,7 @@
 #import "MopanAdWall.h"
 #import "PBOfferWall.h"
 
-#import "MiidiManager.h"
-#import "MiidiAdWallSpendPointsDelegate.h"
-#import "MiidiAdWallAwardPointsDelegate.h"
-#import "MiidiAdWallGetPointsDelegate.h"
-#import "MiidiAdWallShowAppOffersDelegate.h"
-#import "MiidiAdWallRequestToggleDelegate.h"
-
-#import "MiidiAdWall.h"
-#import "MiidiAdDesc.h"
+#import "MyOfferAPI.h"
 
 #import "DianRuAdWall.h"
 
@@ -34,8 +25,8 @@
 - (void) onRequestAndConsumePointCompleted : (BOOL) suc Consume:(NSInteger) consume Level:(int) change wangcaiIncome:(int) income;
 @end
 
-@interface OnlineWallViewController : UIViewController<DianRuAdWallDelegate, DMOfferWallDelegate, DMOfferWallManagerDelegate, immobViewDelegate, HttpRequestDelegate, PBOfferWallDelegate, MiidiAdWallShowAppOffersDelegate> {
-    DMOfferWallViewController* _offerWallController;
+@interface OnlineWallViewController : UIViewController<DianRuAdWallDelegate, DMOfferWallManagerDelegate, immobViewDelegate, HttpRequestDelegate, PBOfferWallDelegate, MyOfferAPIDelegate> {
+    DMOfferWallManager* _offerWallManager;
     NSInteger                  _nConsume;
     id<OnlineWallViewControllerDelegate>        _delegate;
     

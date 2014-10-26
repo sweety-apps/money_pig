@@ -8,25 +8,32 @@
 
 #import <UIKit/UIKit.h>
 
-/*
- *YouMiWallSpotView提供给开发者自定义积分插播的展现动画，展现的位置，背景等等
- *使用的时候用init来初始化，不要使用用initWithFrame。
- */
+
+
+// YouMiWallSpotView is offered for developers to customize the showing animation, position and background of rewarded interstitials ADs.
+// Use init to initialize. Don't use initWithFrame.
+//
+// YouMiWallSpotView提供给开发者自定义积分插播的展现动画，展现的位置，背景等等
+// 使用的时候用init来初始化，不要使用用initWithFrame。
 @interface YouMiWallSpotView : UIView
-/*
- *设置偏移量
- *插播大小已经固定，只提供设置center的接口
- */
+
+
+
+// Set up the offset
+// The size of interstitials ADs is fix. Only offer the interface to set up center.
+// 设置偏移量
+// 插播大小已经固定，只提供设置center的接口
 - (void)setCenter:(CGPoint)center;
 
-/*
- *获取插播view的大小
- */
+
+
+// Acquire the size of interstitials view
+// 获取插播view的大小
 - (CGSize)getSpotViewSize;
 
-/*
- * 当isReady返回true的时候，才显示view
- */
+
+// Show view only when the return value of isReady is true
+// 当isReady返回true的时候，才显示view
 -  (BOOL)isReady;
 
 @end

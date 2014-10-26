@@ -905,7 +905,7 @@ static OnlineWallViewController* _sharedInstance;
         [PBOfferWall sharedOfferWall].delegate = self;
         
         // 米迪
-        [MiidiManager setAppPublisher:APP_MIIDI_ID withAppSecret:APP_MIIDI_SECRET];
+        [MyOfferAPI setMiidiAppPublisher:APP_MIIDI_ID withMiidiAppSecret:APP_MIIDI_SECRET];
         
         // 巨朋
         [JupengConfig launchWithAppID:APP_JUPENG_ID withAppSecret:APP_JUPENG_SECRET];
@@ -917,10 +917,11 @@ static OnlineWallViewController* _sharedInstance;
 #if TEST == 1
         NSString* did = [[NSString alloc] initWithFormat:@"dev_%@", deviceId];
         
-        _offerWallController = [[DMOfferWallViewController alloc] initWithPublisherID:DOMOB_PUBLISHER_ID andUserID:did];
-        _offerWallController.delegate = self;
-        
         [YouMiConfig setUserID:did];
+        
+        //多盟
+        _offerWallManager = [[DMOfferWallManager alloc] initWithPublisherID:DOMOB_PUBLISHER_ID andUserID:did];
+        _offerWallManager.delegate = self;
         
         [SiWeiAdConfig launchWithAppID:MOBSMAR_APP_ID];//初始化appid
         [SiWeiAdConfig setDeveloperParam:did];
@@ -931,7 +932,7 @@ static OnlineWallViewController* _sharedInstance;
         
         [PunchBoxAd setUserInfo:did];
         
-        [MiidiAdWall setUserParam:did];
+        [MyOfferAPI setMiidiUserParam:did];
         
         [JupengWall setServerUserID:did];
 #else 
@@ -992,6 +993,12 @@ static OnlineWallViewController* _sharedInstance;
                                    @"icon":@"task_icon_youmi",
                                    @"name":@"有米应用任务",
                                    @"type":@"youmi",
+                                   @"ishot":@0
+                                   },
+                               @{
+                                   @"icon":@"task_icon_miidi",
+                                   @"name":@"米迪应用任务",
+                                   @"type":@"miidi",
                                    @"ishot":@0
                                    },
                                @{
@@ -1396,7 +1403,7 @@ static OnlineWallViewController* _sharedInstance;
     }
     
     [MobClick event:@"task_list_click_duomeng" attributes:@{@"currentpage":@"任务列表"}];
-    [_offerWallController presentOfferWall];
+    [_offerWallManager presentOfferWallWithViewController:self type:eDMOfferWallTypeList];
 }
 
 - (IBAction)clickClose:(id)sender {
@@ -1466,9 +1473,9 @@ static OnlineWallViewController* _sharedInstance;
 - (void) dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     
-    _offerWallController.delegate = nil;
-    [_offerWallController release];
-    _offerWallController = nil;
+    _offerWallManager.delegate = nil;
+    [_offerWallManager release];
+    _offerWallManager = nil;
     
     if ( self->_alertView != nil ) {
         [self->_alertView release];
@@ -1613,7 +1620,7 @@ static OnlineWallViewController* _sharedInstance;
         [_alertView hideAlertView];
     }
     
-    [MiidiAdWall showAppOffers:_viewController withDelegate:self];
+    [MyOfferAPI showMiidiAppOffers:_viewController withMiidiDelegate:self];
 }
 
 - (IBAction)clickJupeng:(id)sender {
@@ -1689,6 +1696,10 @@ static OnlineWallViewController* _sharedInstance;
         else if ([type isEqualToString:@"domob"])
         {
             [self clickDomob:nil];
+        }
+        else if ([type isEqualToString:@"miidi"])
+        {
+            [self clickMiidi:nil];
         }
         else if ([type isEqualToString:@"dianru"])
         {

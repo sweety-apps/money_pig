@@ -28,6 +28,8 @@
     UILabel* _balanceIncreaseLbl;
     
     UIImageView* _levelBlock[5];
+    
+    CGRect _rectAlertViewContainer;
 }
 
 @end
@@ -119,7 +121,8 @@ static UIGetRedBagAlertView* gInstance = nil;
         _bgView = [[UIView alloc] initWithFrame:self.frame];
         [_bgView setBackgroundColor:[UIColor blackColor]];
         
-        _alertViewContainer = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, _bgView.frame.size.width, _bgView.frame.size.height)] autorelease];
+        _rectAlertViewContainer = CGRectMake(0, 0, _bgView.frame.size.width, _bgView.frame.size.height);
+        _alertViewContainer = [[[UIView alloc] initWithFrame:_rectAlertViewContainer] autorelease];
         _alertViewContainer.backgroundColor = [UIColor clearColor];
         [self addSubview:_alertViewContainer];
         
@@ -318,14 +321,63 @@ static UIGetRedBagAlertView* gInstance = nil;
 {
     _bgView.alpha = 0;
     _alertViewContainer.alpha = 1.0;
-    _alertViewContainer.transform = CGAffineTransformMakeScale(0.0f, 0.0f);
-    [UIView animateWithDuration:0.2f delay:0.0f options:UIViewAnimationOptionCurveEaseOut animations:^(){
-        _alertViewContainer.transform = CGAffineTransformMakeScale(1.1, 1.1);
+    _alertViewContainer.transform = CGAffineTransformIdentity;
+    
+    CGRect rect0 = _rectAlertViewContainer;
+    CGRect rect1 = _rectAlertViewContainer;
+    CGRect rect2 = _rectAlertViewContainer;
+    CGRect rect3 = _rectAlertViewContainer;
+    CGRect rect4 = _rectAlertViewContainer;
+    
+    rect0.origin.y -= _rectAlertViewContainer.size.height;
+    rect1.origin.y += 20;
+    rect2.origin.y -= 10;
+    rect3.origin.y += 5;
+    rect4.origin.y -= 0;
+    
+    CGAffineTransform trans0 = CGAffineTransformIdentity;
+    CGAffineTransform trans1 = CGAffineTransformIdentity;
+    CGAffineTransform trans2 = CGAffineTransformMakeRotation(-M_PI / 30);//CGAffineTransformIdentity;//
+    CGAffineTransform trans3 = CGAffineTransformMakeRotation(M_PI / 30);//CGAffineTransformIdentity;//
+    CGAffineTransform trans4 = CGAffineTransformIdentity;
+    
+    _alertViewContainer.frame = rect0;
+    _alertViewContainer.transform = trans0;
+    _alertViewContainer.alpha = 0.0;
+    _getMoneyBtn.transform = CGAffineTransformMakeScale(0, 0);
+    
+    [Common playAddCoinSound];
+    [UIView animateWithDuration:0.25f delay:0.0f options:UIViewAnimationOptionCurveEaseIn animations:^(){
+        _alertViewContainer.frame = rect1;
+        _alertViewContainer.alpha = 1.0;
+        _alertViewContainer.transform = trans1;
     } completion:^(BOOL finished){
-        [Common playAddCoinSound];
-        [UIView animateWithDuration:0.1f delay:0.0f options:UIViewAnimationOptionCurveEaseIn animations:^(){
-            _alertViewContainer.transform = CGAffineTransformIdentity;
+        _alertViewContainer.alpha = 1.0;
+        [UIView animateWithDuration:0.08f delay:0.0f options:UIViewAnimationOptionCurveEaseInOut animations:^(){
+            _alertViewContainer.frame = rect2;
+            _alertViewContainer.transform = trans2;
         } completion:^(BOOL finished){
+            [UIView animateWithDuration:0.05f delay:0.0f options:UIViewAnimationOptionCurveEaseInOut animations:^(){
+                _alertViewContainer.frame = rect3;
+                _alertViewContainer.transform = trans3;
+            } completion:^(BOOL finished){
+                [UIView animateWithDuration:0.02f delay:0.0f options:UIViewAnimationOptionCurveEaseInOut animations:^(){
+                    _alertViewContainer.frame = rect4;
+                    _alertViewContainer.transform = trans4;
+                } completion:^(BOOL finished){
+                    _alertViewContainer.frame = _rectAlertViewContainer;
+                    _alertViewContainer.transform = CGAffineTransformIdentity;
+                    [UIView animateWithDuration:0.1f delay:0.0f options:UIViewAnimationOptionCurveEaseOut animations:^(){
+                        _getMoneyBtn.transform = CGAffineTransformMakeScale(2.5, 2.5);
+                    } completion:^(BOOL finished){
+                        [UIView animateWithDuration:0.1f delay:0.0f options:UIViewAnimationOptionCurveEaseIn animations:^(){
+                            _getMoneyBtn.transform = CGAffineTransformIdentity;
+                        } completion:^(BOOL finished){
+                            _getMoneyBtn.transform = CGAffineTransformIdentity;
+                        }];
+                    }];
+                }];
+            }];
         }];
     }];
     

@@ -941,6 +941,11 @@
 		F3F3BFF3189626AA003809D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = (
+					armv7,
+					armv7s,
+					arm64,
+				);
 				DSTROOT = /tmp/ALSystemUtilities_Lib.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ALSystemUtilities/ALSystemUtilities-Prefix.pch";
@@ -959,6 +964,11 @@
 		F3F3BFF4189626AA003809D5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = (
+					armv7,
+					armv7s,
+					arm64,
+				);
 				DSTROOT = /tmp/ALSystemUtilities_Lib.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ALSystemUtilities/ALSystemUtilities-Prefix.pch";

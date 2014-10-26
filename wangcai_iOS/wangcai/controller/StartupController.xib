@@ -11,15 +11,19 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Default.png" translatesAutoresizingMaskIntoConstraints="NO" id="3hf-Sh-DqZ">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                <imageView userInteractionEnabled="NO" tag="13" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="table_view_topleft_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="FKJ-0M-445">
+                    <rect key="frame" x="40" y="260" width="200" height="220"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" tag="12" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="startup_page_front.png" translatesAutoresizingMaskIntoConstraints="NO" id="3hf-Sh-DqZ">
+                    <rect key="frame" x="0.0" y="-42" width="320" height="480"/>
                 </imageView>
                 <activityIndicatorView opaque="NO" tag="11" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="TmD-Q2-unp">
                     <rect key="frame" x="280" y="440" width="20" height="20"/>
-                    <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </activityIndicatorView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.0" green="0.36862745099999999" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
         </view>
@@ -27,16 +31,19 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="default568.png" translatesAutoresizingMaskIntoConstraints="NO" id="cuT-Hk-6Xp">
+                <imageView userInteractionEnabled="NO" tag="13" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="table_view_topleft_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="9Vp-2i-L8s">
+                    <rect key="frame" x="40" y="302" width="200" height="220"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" tag="12" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="startup_page_front.png" translatesAutoresizingMaskIntoConstraints="NO" id="cuT-Hk-6Xp">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                 </imageView>
-                <activityIndicatorView opaque="NO" tag="11" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="4Hy-ub-4d8">
-                    <rect key="frame" x="150" y="511" width="20" height="20"/>
+                <activityIndicatorView opaque="NO" tag="12" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="4Hy-ub-4d8">
+                    <rect key="frame" x="273" y="520" width="20" height="20"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </activityIndicatorView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.0" green="0.36862745098039218" blue="0.71764705882352942" alpha="1" colorSpace="calibratedRGB"/>
             <nil key="simulatedStatusBarMetrics"/>
         </view>
         <view contentMode="scaleToFill" id="DhE-jI-iid">
@@ -73,8 +80,8 @@
         </view>
     </objects>
     <resources>
-        <image name="Default.png" width="320" height="480"/>
-        <image name="default568.png" width="320" height="568"/>
+        <image name="startup_page_front.png" width="320" height="568"/>
+        <image name="table_view_topleft_icon.png" width="200" height="220"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

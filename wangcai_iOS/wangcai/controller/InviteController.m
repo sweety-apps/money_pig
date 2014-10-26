@@ -150,7 +150,7 @@
     id<ISSContent> publishContent = [ShareSDK content: [NSString stringWithFormat:@"真金白银的福利哦！ %@",self.inviteUrl] defaultContent:@"" image:[ShareSDK imageWithPath:imagePath] title: @"玩应用领红包" url: self.inviteUrl description: @"来玩小猪猪哟！" mediaType: SSPublishContentMediaTypeNews];
     
     id<ISSContainer> container = [ShareSDK container];
-    NSArray *sharelist = [ShareSDK getShareListWithType:ShareTypeWeixiTimeline,ShareTypeWeixiSession,ShareTypeQQ,ShareTypeSMS,ShareTypeMail, nil];
+    NSArray *sharelist = [ShareSDK getShareListWithType:ShareTypeWeixiTimeline,ShareTypeWeixiSession,ShareTypeQQ,ShareTypeSMS,ShareTypeCopy, nil];
     [container setIPhoneContainerWithViewController:self];
     [ShareSDK showShareActionSheet:container  shareList: sharelist content: publishContent statusBarTips: YES authOptions: nil shareOptions: nil result: ^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end)
      {

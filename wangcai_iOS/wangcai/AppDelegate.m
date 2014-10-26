@@ -51,12 +51,15 @@
 
 #import "SiWeiAdConfig.h"
 #import "SiWeiPointsManger.h"
+#import "SettingLocalRecords.h"
 
 #pragma mark -
 
 @interface AppDelegate ()
 {
     StartupController* _startupController;
+    NSArray* _gallaryImageNames;
+    UIImageView* _gallaryImageView;
 }
 @property (nonatomic,assign) StartupController* startupController;
 
@@ -88,13 +91,29 @@
 
     [UIApplication sharedApplication].statusBarHidden = YES;
     
+    _gallaryImageNames = [@[
+                            @"holding_page_0"
+                            ] retain];
+    
     [MobClick startWithAppkey:UMENG_KEY];
 }
 
 - (void)unload
 {
+    if (_gallaryImageNames != nil)
+    {
+        [_gallaryImageNames release];
+        _gallaryImageNames = nil;
+    }
+    
 	if ( _nsRemoteNotifications != nil ) {
         [_nsRemoteNotifications release];
+    }
+    
+    if (_gallaryImageView != nil)
+    {
+        [_gallaryImageView release];
+        _gallaryImageView = nil;
     }
 }
 
@@ -178,6 +197,19 @@
             _nsRemoteNotifications = nil;
         }
     }
+    
+    [self hideBackgroundGalleryImage];
+}
+
+- (void)applicationDidEnterBackground:(UIApplication *)application
+{
+    [super applicationDidEnterBackground:application];
+}
+
+- (void)applicationWillResignActive:(UIApplication *)application
+{
+    [self showBackgroundGalleryImage];
+    [super applicationWillResignActive:application];
 }
 
 -(void) onShowPageFromRootNotification:(NSDictionary*) remoteNotifications {
@@ -201,4 +233,41 @@
         [[AppBoard_iPhone sharedInstance] openUrlFromRomoteNotification:title Url:url];
     }
 }
+
+- (void) showBackgroundGalleryImage
+{
+    if (![SettingLocalRecords hasAgreedPrivacyPolicy])
+    {
+        return;
+    }
+    int index = arc4random_uniform([_gallaryImageNames count]);
+    UIImage* img = [UIImage imageNamed:_gallaryImageNames[index]];
+    if (_gallaryImageView == nil)
+    {
+        CGRect rect = self.window.frame;
+        rect.origin = CGPointZero;
+        _gallaryImageView = [[UIImageView alloc] initWithFrame:rect];
+        [self.window addSubview:_gallaryImageView];
+        _gallaryImageView.hidden = YES;
+    }
+    [self.window bringSubviewToFront:_gallaryImageView];
+    _gallaryImageView.image = img;
+    _gallaryImageView.alpha = 0.0f;
+    _gallaryImageView.alpha = 1.0f;
+    _gallaryImageView.hidden = NO;
+}
+
+- (void) hideBackgroundGalleryImage
+{
+    if (![SettingLocalRecords hasAgreedPrivacyPolicy])
+    {
+        return;
+    }
+    [UIView animateWithDuration:0.15 animations:^(){
+        _gallaryImageView.alpha = 0.0f;
+    } completion:^(BOOL finished) {
+        _gallaryImageView.hidden = YES;
+    }];
+}
+
 @end

@@ -7,6 +7,9 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+
+    #import "MiidiObfuscation.h"
     #import "Bee.h"
     #import "NibLoader.h"
+
 #endif

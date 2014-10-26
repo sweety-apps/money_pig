@@ -23,6 +23,8 @@
 #import "SettingLocalRecords.h"
 #import "MessageViewController.h"
 #import "PrivacyPolicyView.h"
+#import "UINavigationController+UIGestureRecognizerDelegate.h"
+
 
 #pragma mark -
 
@@ -159,6 +161,12 @@ ON_SIGNAL2( BeeUIBoard, signal )
         
         [[OnlineWallViewController sharedInstance] setTaskTableViewController:_taskTableViewController];
         
+        //开启侧滑Pop功能
+        if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)])
+        {
+            self.navigationController.interactivePopGestureRecognizer.delegate = self.navigationController;
+        }
+        
         //[self.view addSubview:testImageView];
         
         //抗锯齿
@@ -188,6 +196,14 @@ ON_SIGNAL2( BeeUIBoard, signal )
     else if ( [signal is:BeeUIBoard.WILL_APPEAR] )
     {
         [_taskTableViewController viewWillAppear:NO];
+        
+        if (![SettingLocalRecords hasAgreedPrivacyPolicy])
+        {
+            PrivacyPolicyView* ppview = [PrivacyPolicyView privacyPolicyView];
+            [ppview setShouldFinishReading:YES];
+            ppview.delegate = self;
+            [ppview showInWindow:NO];
+        }
     }
     else if ( [signal is:BeeUIBoard.DID_APPEAR] )
     {
@@ -198,14 +214,6 @@ ON_SIGNAL2( BeeUIBoard, signal )
         [_taskTableViewController viewDidAppear:NO];
         
         [[AppBoard_iPhone sharedInstance] setPanable:NO];
-        
-        if (![SettingLocalRecords hasAgreedPrivacyPolicy])
-        {
-            PrivacyPolicyView* ppview = [PrivacyPolicyView privacyPolicyView];
-            [ppview setShouldFinishReading:YES];
-            ppview.delegate = self;
-            [ppview showInWindow:NO];
-        }
     }
     else if ( [signal is:BeeUIBoard.WILL_DISAPPEAR] )
     {

@@ -23,7 +23,7 @@
 #define YOUMI_APP_ID    @"e33d09dafc2d5674"
 #define YOUMI_APP_SECRET    @"7e99ac31ec845b97"
 
-#define DOMOB_PUBLISHER_ID @"96ZJ2I4gzeykPwTACk"
+#define DOMOB_PUBLISHER_ID @"96ZJ200wzeBMbwTBdr"
 
 #define LIMEI_ID           @"6ec9f39b6b38ac4d8b6c1764d68b91e4"
 
@@ -36,8 +36,8 @@
 
 #define UMENG_KEY   @"5440f04efd98c51e4b001cb3"
 
-#define APP_MIIDI_ID       @"17251"
-#define APP_MIIDI_SECRET   @"dtl59j3m47wclc1g"
+#define APP_MIIDI_ID       @"19889"
+#define APP_MIIDI_SECRET   @"dh9v28y5iw27n1zx"
 
 #define APP_JUPENG_ID      @"10073"
 #define APP_JUPENG_SECRET  @"er6hqigbccbh9bvp"
@@ -55,12 +55,12 @@
 
 #define WEB_FORCE_UPDATE    @"http://wangcai.meme-da.com/web/update.php?app=wangcaifriend&"
 
-#define YOUMI_APP_ID    @"c43af0b9f90601cf"
+#define YOUMI_APP_ID    @"e33d09dafc2d5674"
 
 
-#define YOUMI_APP_SECRET    @"14706b7214e01b2b"
+#define YOUMI_APP_SECRET    @"7e99ac31ec845b97"
 
-#define DOMOB_PUBLISHER_ID @"96ZJ0Q7gzeykPwTAVP"
+#define DOMOB_PUBLISHER_ID @"96ZJ200wzeBMbwTBdr"
 
 #define LIMEI_ID           @"a0b29d7891bffc58f7618f6788d3aaaa"
 
@@ -74,8 +74,8 @@
 #define UMENG_KEY   @"5440f04efd98c51e4b001cb3"
 
 
-#define APP_MIIDI_ID       @"17250"
-#define APP_MIIDI_SECRET   @"zujvxsva5xt3v9nr"
+#define APP_MIIDI_ID       @"19889"
+#define APP_MIIDI_SECRET   @"dh9v28y5iw27n1zx"
 
 #define APP_JUPENG_ID      @"10072"
 #define APP_JUPENG_SECRET  @"8s92a9febf2faxdr"
