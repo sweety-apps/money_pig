@@ -31,6 +31,7 @@ def query_anonymous_account(device_id):
         account.money       = int(res['money'])
         account.flag        = int(res['flag'])
         account.create_time = int(res['u_create_time'])
+        account.offerwall_income = int(res['offerwall_income'])
         return account
 
 def query_billing_account(userid):
@@ -53,6 +54,7 @@ def query_billing_account(userid):
         account.shared_income = int(res['shared_income'])
         account.status      = int(res['status'])
         account.create_time = int(res['u_create_time'])
+        account.offerwall_income = int(res['offerwall_income'])
         return account
 
 
@@ -121,7 +123,7 @@ def update_err_msg(cursor, serial_num, err, msg):
     cursor.execute(stmt)
 
 
-def recharge_anonymous_account(device_id, money, remark):
+def recharge_anonymous_account(device_id, money, remark, offerwall_money):
     serial_num = gen_serial_num()
 
     conn.autocommit(False)
@@ -145,13 +147,13 @@ def recharge_anonymous_account(device_id, money, remark):
             return err
         else:
             stmt = "UPDATE anonymous_account \
-                        SET money = money + %d WHERE device_id = '%s'" \
-                        % (money, MySQLdb.escape_string(device_id))
+                        SET money = money + %d, offerwall_income = offerwall_income + %d WHERE device_id = '%s'" \
+                        % (money, offerwall_money, MySQLdb.escape_string(device_id))
     else:
         #账户不存在,新建账户
         stmt = "INSERT INTO anonymous_account \
-                    SET device_id = '%s', money = %d, create_time = NOW()" \
-                    % (MySQLdb.escape_string(device_id), money)
+                    SET device_id = '%s', money = %d, offerwall_income = %d, create_time = NOW()" \
+                    % (MySQLdb.escape_string(device_id), money, offerwall_money)
         
     logger.debug(stmt)
     cur.execute(stmt)
@@ -159,7 +161,7 @@ def recharge_anonymous_account(device_id, money, remark):
     return 0
 
 
-def recharge_billing_account(userid, device_id, money, remark):
+def recharge_billing_account(userid, device_id, money, remark, offerwall_money):
     serial_num = gen_serial_num()
 
     conn.autocommit(False)
@@ -176,8 +178,8 @@ def recharge_billing_account(userid, device_id, money, remark):
 #        err = BillingError.E_NO_SUCH_ACCOUNT
 #        update_err_msg(cur, serial_num, err, BillingError.strerror(err))
         stmt = "INSERT INTO billing_account \
-                    SET userid = %d, money = %d, income = %d, create_time = NOW()" \
-                    % (userid, money, money)
+                    SET userid = %d, money = %d, income = %d, offerwall_income = offerwall_income + %d, create_time = NOW()" \
+                    % (userid, money, money, offerwall_money)
         logger.debug(stmt)
         cur.execute(stmt)
         conn.commit()
@@ -186,8 +188,8 @@ def recharge_billing_account(userid, device_id, money, remark):
         res = cur.fetchone()
         status = int(res[0])
 
-    stmt = "UPDATE billing_account SET money = money + %d, income = income + %d WHERE userid = %d" \
-                % (money, money, userid)
+    stmt = "UPDATE billing_account SET money = money + %d, income = income + %d, offerwall_income = offerwall_income + %d WHERE userid = %d" \
+                % (money, money, offerwall_money, userid)
     logger.debug(stmt)
     cur.execute(stmt)
     conn.commit()

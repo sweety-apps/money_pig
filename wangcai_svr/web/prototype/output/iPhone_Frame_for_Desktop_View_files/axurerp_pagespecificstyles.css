@@ -1,0 +1,139 @@
+﻿body {
+    margin: 0px;
+}
+
+div {
+    background-repeat: no-repeat;
+}
+
+.raw_image {
+    width: 100%;
+    height: 100%;
+}
+
+.preload {
+    display: none;
+}
+#main_container {
+}
+
+.form_sketch {
+    border-color: transparent;
+    background-color: transparent;
+}
+
+.u0_normal {
+    background-image: url('../iPhone_Frame_for_Desktop_View_files/iPhone_Body_u0_normal.png');
+}
+
+.u0_container {
+    position:absolute;
+    left:20px;
+    top:30px;
+    width:450px;
+    height:731px;
+}
+
+#u0_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:450px;
+    height:731px;
+}
+
+.u1 {
+    position:absolute;
+    left:2px;
+    top:358px;
+    width:446px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u3_normal {
+    background-image: url('../iPhone_Frame_for_Desktop_View_files/Status_Bar_u3_normal.png');
+}
+
+.u3_container {
+    position:absolute;
+    left:85px;
+    top:150px;
+    width:320px;
+    height:20px;
+}
+
+#u3_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:320px;
+    height:20px;
+}
+
+.u4 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:316px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u5 {
+    position:absolute;
+    left:500px;
+    top:208px;
+    width:450px;
+    height:45px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u6_start {
+    background-image: url('../iPhone_Frame_for_Desktop_View_files/u6_start.png');
+}
+
+.u6_start {
+    position:absolute;
+    left:-4px;
+    top:-5px;
+    width:14px;
+    height:20px;
+}
+
+.u6_line {
+    background-image: url('../iPhone_Frame_for_Desktop_View_files/u6_line.png');
+}
+
+.u6_line {
+    position:absolute;
+    left:0px;
+    top:3px;
+    width:80px;
+    height:5px;
+}
+
+.u6 {
+    position:absolute;
+    left:410px;
+    top:210px;
+    width:80px;
+    height:10px;
+    
+}
+

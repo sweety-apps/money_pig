@@ -45,9 +45,14 @@
         _blackLabel.font = [UIFont fontWithName:@"Heiti SC" size:11];
         
         _finishedLabel.backgroundColor = [UIColor clearColor];
-        _finishedLabel.text = @"已完成";
+        _finishedLabel.text = @"已签到";
         _finishedLabel.font = [UIFont boldSystemFontOfSize:20.0f];
-        _finishedLabel.textAlignment = NSTextAlignmentLeft;
+        _finishedLabel.textAlignment = NSTextAlignmentCenter;
+        _finishedLabel.layer.masksToBounds = YES;
+        _finishedLabel.layer.cornerRadius = 5.0f;
+        _finishedLabel.layer.borderWidth = 2.0f;
+        _finishedLabel.autoresizesSubviews = NO;
+        _finishedLabel.transform = CGAffineTransformMakeRotation(M_PI / 20);
         
         //抗锯齿
         //_leftIcon.layer.shouldRasterize = YES;
@@ -114,7 +119,7 @@
     rectFrame = CGRectMake(224, 10, 79, 60);
     _redBagIcon.frame = rectFrame;
     
-    rectFrame = CGRectMake(250, 24, 60, 30);
+    rectFrame = CGRectMake(230, 14, 80, 50);
     _finishedLabel.frame = rectFrame;
     
     rectFrame = CGRectMake(320 - 28, 21, 25, 37);
@@ -124,12 +129,12 @@
     {
         rectFrame = CGRectMake(77, 25, 200, 16);
         _redLabel.frame = rectFrame;
-        rectFrame = CGRectMake(87, 48, 200, 9);
+        rectFrame = CGRectMake(87, 48, 200, 12);
         _blackLabel.frame = rectFrame;
     }
     else
     {
-        rectFrame = CGRectMake(77, 25, 200, 9);
+        rectFrame = CGRectMake(77, 25, 200, 12);
         _blackLabel.frame = rectFrame;
         rectFrame = CGRectMake(87, 41, 200, 16);
         _redLabel.frame = rectFrame;
@@ -144,6 +149,7 @@
             _finishedLabel.textColor = RGB(156, 156, 156);
             _finishedLabel.hidden = YES;
             _redBagIcon.hidden = NO;
+            _rightArrowImage.hidden = NO;
             break;
             
         case CommonTaskTableViewCellStateFinished:
@@ -152,11 +158,14 @@
             _finishedLabel.textColor = RGB(156, 156, 156);
             _finishedLabel.hidden = NO;
             _redBagIcon.hidden = YES;
+            _rightArrowImage.hidden = YES;
             break;
             
         default:
             break;
     }
+    
+    _finishedLabel.layer.borderColor = _finishedLabel.textColor.CGColor;
 }
 
 - (NSString*)getUpText

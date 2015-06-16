@@ -1,0 +1,1128 @@
+/*
+h1 {text-align: center; font: "Hei Bold"; font-size: 14pt;}
+h2 {text-align: center; font: "Hei Tiny"; font-size: 14pt;}
+p {text-align: left; font: "Hei"; font-size: 14pt;}
+img {left: 2.5%; position: relative; text-align: center; width: 95%; box-shadow:1px 1px 7px #000000;}
+*/
+
+
+body {
+
+}
+
+/* 几个主页面框架 */
+#view_bg {
+    position: absolute;
+    visibility: visible;
+    margin:0;
+    border:0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    overflow-x:hidden; /*裁剪水平方向多出来的区域*/
+    overflow-y:hidden; /*裁剪水平方向多出来的区域*/
+    top:0;
+    left:0;
+}
+
+#view_preloading {
+    position: absolute;
+    visibility: visible;
+    top: 40%;
+    text-align: center;
+    width: 100%;
+    color: #a1a1a1;
+    z-index: 50;
+}
+
+#view_content_bg {
+    position: absolute;
+    visibility: visible;
+    margin:0;
+    border:0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x:hidden; /*裁剪水平方向多出来的区域*/
+    overflow-y:hidden; /*裁剪水平方向多出来的区域*/
+    top:0;
+    left:0;
+    background-color: #ffffff;
+}
+
+#view_main {
+    position: absolute;
+    visibility: hidden;
+    opacity: 1.0;
+    z-index: 110;
+    width: 100%;
+    height: 100%;
+}
+
+#view_edit {
+    position: absolute;
+    visibility: hidden;
+    opacity: 1.0;
+    z-index: 120;
+    width: 100%;
+    height: 100%;
+}
+
+#view_select_pic {
+    position: absolute;
+    visibility: hidden;
+    opacity: 1.0;
+    z-index: 130;
+    width: 100%;
+    height: 100%;
+}
+
+#view_select_tmp {
+    position: absolute;
+    visibility: hidden;
+    opacity: 1.0;
+    z-index: 140;
+    width: 100%;
+    height: 100%;
+}
+
+#view_save_help {
+    position: absolute;
+    visibility: hidden;
+    opacity: 1.0;
+    z-index: 150;
+    width: 100%;
+    height: 100%;
+}
+
+#view_data_context {
+    position: absolute;
+    visibility: hidden;
+    z-index: -9999;
+    width: 0;
+    height: 0;
+}
+
+
+/*===================== main页面元素 ===============================*/
+
+/*结果图片包裹框，保证结果图片居中展示*/
+#view_main_image_container {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+
+/*结果图片*/
+#view_main_image {
+    position: relative;
+    text-align: center;
+    opacity: 1.0;
+    width: 75%; /*傻逼手机QQ浏览器使用vw做宽度会有BUG*/
+    /*left: 12.5%;*/
+    top: 9.8vw;
+    z-index: 112;
+}
+
+/*测试蒙层类*/
+.test_cover_bg {
+    opacity: 0.0;
+    /*background-color: #00ff00;*/
+}
+
+/*上边蒙层*/
+#view_main_cover_top {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: 9.8vw;
+    left: 0%;
+    top: 0;
+    z-index: 115;
+}
+
+/*左边蒙层*/
+#view_main_cover_left {
+    position: absolute;
+    text-align: center;
+    width: 12.5%;
+    height: 100%;
+    left: 0%;
+    top: 0;
+    z-index: 115;
+}
+
+/*右边蒙层*/
+#view_main_cover_right {
+    position: absolute;
+    text-align: center;
+    width: 20%;
+    height: 100%;
+    left: 78.5%;
+    top: 0;
+    z-index: 115;
+}
+
+/*底部蒙层*/
+#view_main_cover_bottom {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    left: 12.5%;
+    top: 85vw;
+    z-index: 115;
+}
+
+
+/*保存图片的包裹框，确保跟结果图片对齐*/
+#view_main_save_tips_container {
+    position: absolute;
+    width: 100%;
+    height: 75vw;
+    top: 7.8vw;
+    max-height: 65%;
+    text-align: center;
+}
+
+/*保存图片*/
+#view_main_save_tips_img {
+    position: relative;
+    opacity: 0.0;
+    width: 100vw;
+    top: 100%;
+    z-index: 113;
+    transform:scaleX(0.0);
+    -moz-transform:scaleX(0.0);
+    -webkit-transform:scaleX(0.0);
+    -o-transform:scaleX(0.0);
+}
+
+/*保存提示*/
+#view_main_save_tips {
+    position: absolute;
+    opacity: 0.0;
+    width: 100vw;
+    z-index: 116;
+    transform:scaleX(0.0);
+    -moz-transform:scaleX(0.0);
+    -webkit-transform:scaleX(0.0);
+    -o-transform:scaleX(0.0);
+}
+
+/*开始按钮图片*/
+#view_main_start_btn_img {
+    position: absolute;
+    opacity: 0.0;
+    visibility: hidden;
+    width: 34.53vw;
+    left: 68vw;
+    top: 65%;
+    z-index: 113;
+}
+
+/*开始按钮用于接收点击事件的区域*/
+#view_main_start_btn {
+    position: absolute;
+    opacity: 0.0;
+    z-index: 116;
+    background-color: transparent;
+}
+
+/*加号更多按钮图片*/
+#view_main_more_btn_img {
+    position: absolute;
+    opacity: 0.0;
+    visibility: hidden;
+    left: 0%;
+    bottom: 0%;
+    width: 24%;
+}
+
+/*加号更多按钮点击事件区域*/
+#view_main_more_btn {
+    position: absolute;
+    opacity: 0.0;
+    z-index: 116;
+    background-color: transparent;
+}
+
+/*分享提示*/
+#view_main_share_tips {
+    position: absolute;
+    visibility: hidden;
+    left: 78.5%;
+    top:0.0%;
+    z-index: 113;
+    width: 21.48%;
+}
+
+/*经验值条图片*/
+#view_main_exp_label_img {
+    position: absolute;
+    visibility: hidden;
+    left: 0;
+    top: 2vw;
+    width: 53.125%;
+}
+
+/*经验值文字连接*/
+#view_main_exp_label {
+    position: absolute;
+    visibility: hidden;
+    left: 0;
+    top: 2vw;
+    z-index: 116;
+    line-height: 7.8vw;
+    font-size: 3.3vw;
+    font-family: "Heiti",sans-serif;
+    text-align: center;
+}
+
+#view_main_exp_label a:link {
+    color: #222222;
+}
+#view_main_exp_label a:visited {
+    color: #222222;
+}
+
+/*===================== edit页面元素 ===============================*/
+
+/* 完成按钮图片 */
+#view_edit_finish_btn_img {
+    position: absolute;
+    opacity: 0.0;
+    visibility: hidden;
+    width: 34.53vw;
+    left: 68vw;
+    top: 65vh;
+    z-index: 123;
+}
+
+/* 完成按钮 */
+#view_edit_finish_btn {
+    position: absolute;
+    opacity: 0.0;
+    z-index: 126;
+    background-color: transparent;
+}
+
+/* 模板按钮图片 */
+#view_edit_template_btn_img {
+    position: absolute;
+    opacity: 0.0;
+    visibility: hidden;
+    width: 34.53vw;
+    left: -2.53vw;
+    top: 65vh;
+    z-index: 123;
+}
+
+/* 模板按钮 */
+#view_edit_template_btn {
+    position: absolute;
+    opacity: 0.0;
+    z-index: 126;
+    background-color: transparent;
+}
+
+/* 图片按钮包裹框，保证结果图片居中展示*/
+#view_edit_picture_container {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+
+/* 点击裂痕效果图片 */
+#view_edit_picture_btn_effect_img {
+    position: absolute;
+    opacity: 0.0;
+    z-index: 121;
+    background-color: transparent;
+}
+
+/* 图片按钮框图片 */
+#view_edit_picture_btn_img {
+    position: relative;
+    text-align: center;
+    visibility: hidden;
+    opacity: 1.0;
+    width: 64.84%;
+    /*left: 12.5%;*/
+    top: 5vw;
+    z-index: 123;
+}
+
+/* 图片按钮框 */
+#view_edit_picture_btn{
+    position: absolute;
+    opacity: 0.0;
+    z-index: 126;
+    background-color: transparent;
+}
+
+/* 图片按钮中间图片 */
+#view_edit_picture {
+    position: absolute;
+    text-align: center;
+    visibility: hidden;
+    opacity: 1.0;
+    width: 64.84vw;
+    /*left: 12.5%;*/
+    top: 5vw;
+    z-index: 122;
+}
+
+/* 放弃编辑叉叉按钮图片 */
+#view_edit_cancel_btn_img {
+    position: absolute;
+    opacity: 0.0;
+    visibility: hidden;
+    width: 16vw;
+    right: 0;
+    top: 0;
+    z-index: 123;
+}
+
+/* 放弃编辑叉叉按钮 */
+#view_edit_cancel_btn {
+    position: absolute;
+    opacity: 0.0;
+    z-index: 126;
+    background-color: transparent;
+}
+
+/* 两行文字包裹框，确保跟图片对齐 */
+#view_edit_text_container {
+    position: absolute;
+    width: 100%;
+    height: 60vw;
+    top: 7.8vw;
+    max-height: 43vh;
+    text-align: center;
+    background-color: transparent;
+}
+
+/* 第一行文字编辑框背景图片 */
+#view_edit_text_bg_img {
+    position: relative;
+    text-align: center;
+    visibility: hidden;
+    opacity: 1.0;
+    width: 87.5vw;
+    /*left: 12.5%;*/
+    top: 100%;
+    z-index: 121;
+}
+
+/* 第一行文字编辑框 */
+#view_edit_text {
+    font-size: 4.5vw;
+    font-family: "Heiti",sans-serif;
+    text-align:center;
+    position: absolute;
+    z-index: 127;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: #222222;
+    resize: none;
+}
+
+/* 第一行文字的placeholder */
+#view_edit_text::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #a1a1a1;
+}
+#view_edit_text:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    #a1a1a1;
+}
+#view_edit_text::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #a1a1a1;
+}
+#view_edit_text:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    #a1a1a1;
+}
+#view_edit_text::-o-placeholder { /* Mozilla Firefox 19+ */
+    color:    #a1a1a1;
+}
+#view_edit_text:-o-input-placeholder { /* Internet Explorer 10+ */
+    color:    #a1a1a1;
+}
+
+/* 第一行文字编辑框开始编辑按钮图 */
+#view_edit_text_edit_btn_img {
+    position: absolute;
+    opacity: 0.0;
+    visibility: hidden;
+    z-index: 123;
+}
+
+/* 第一行文字编辑框开始编辑按钮 */
+#view_edit_text_edit_btn {
+    position: absolute;
+    opacity: 0.0;
+    z-index: 126;
+    background-color: transparent;
+}
+
+/* 第一行文字编辑框清空按钮图 */
+#view_edit_text_clear_btn_img {
+    position: absolute;
+    opacity: 0.0;
+    visibility: hidden;
+    z-index: 123;
+}
+
+/* 第一行文字编辑框清空按钮 */
+#view_edit_text_clear_btn {
+    position: absolute;
+    opacity: 0.0;
+    z-index: 126;
+    background-color: transparent;
+}
+
+/* 第二行文字编辑框背景图片 */
+#view_edit_text2_bg_img {
+    position: relative;
+    text-align: center;
+    visibility: hidden;
+    opacity: 1.0;
+    width: 87.5vw;
+    /*left: 12.5%;*/
+    top: 100%;
+    z-index: 121;
+}
+
+/* 第二行文字编辑框 */
+#view_edit_text2 {
+    font-size: 2.8vw;
+    font-family: "Heiti",sans-serif;
+    text-align:center;
+    position: absolute;
+    z-index: 127;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: #222222;
+    resize: none;
+}
+
+/* 第二行文字的placeholder */
+#view_edit_text2::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #a1a1a1;
+}
+#view_edit_text2:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    #a1a1a1;
+}
+#view_edit_text2::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #a1a1a1;
+}
+#view_edit_text2:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    #a1a1a1;
+}
+#view_edit_text2::-o-placeholder { /* Mozilla Firefox 19+ */
+    color:    #a1a1a1;
+}
+#view_edit_text2:-o-input-placeholder { /* Internet Explorer 10+ */
+    color:    #a1a1a1;
+}
+
+/* 第二行文字编辑框开始编辑按钮图 */
+#view_edit_text2_edit_btn_img {
+    position: absolute;
+    opacity: 0.0;
+    visibility: hidden;
+    z-index: 123;
+}
+
+/* 第二行文字编辑框开始编辑按钮 */
+#view_edit_text2_edit_btn {
+    position: absolute;
+    opacity: 0.0;
+    z-index: 126;
+    background-color: transparent;
+}
+
+/* 第二行文字编辑框清空按钮图 */
+#view_edit_text2_clear_btn_img {
+    position: absolute;
+    opacity: 0.0;
+    visibility: hidden;
+    z-index: 123;
+}
+
+/* 第二行文字编辑框清空按钮 */
+#view_edit_text2_clear_btn {
+    position: absolute;
+    opacity: 0.0;
+    z-index: 126;
+    background-color: transparent;
+}
+
+/* 整个蒙层 */
+#view_edit_cover {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    left: 0%;
+    top: 0%;
+    z-index: 125;
+}
+
+/*===================== 模板弹框页面元素 ===============================*/
+#view_save_help_content_box {
+    position: absolute;
+    top: 13%;
+    left: 0.5%;
+    width: 99%;
+    height: 87%;
+    padding-left: 0;
+    overflow: hidden;
+    background-color: transparent;
+    visibility: hidden;
+    text-align: center;
+    z-index: 301;
+}
+
+#view_save_help_text_box {
+    text-align: center;
+    width: 100%;
+    height: auto;
+    background: transparent;
+    visibility: hidden;
+    font-size: 1.0vh;
+    color: #222222;
+    font-family: "Heiti",sans-serif;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+
+/*===================== 模板弹框页面元素 ===============================*/
+#view_select_tmp_up_tips_container {
+    position: absolute;
+    z-index: 9;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    visibility: hidden;
+    text-align: center;
+}
+
+.view_select_tmp_up_content_cell {
+    position: relative;
+    width: 42vw;
+    height: 50.55vw;
+    max-width: 200px;
+    max-height: 241px;
+    background-color: transparent;
+    visibility: hidden;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.view_select_tmp_up_content_cell_border {
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+}
+
+.view_select_tmp_up_content_cell_img {
+    z-index: 0;
+    position: absolute;
+    left: 17%;
+    top: 8%;
+    width: 66%;
+    height: 57%;
+    visibility: hidden;
+}
+
+.view_select_tmp_up_content_cell_text {
+    z-index: 0;
+    position: absolute;
+    text-align: center;
+    left: 7.5%;
+    top: 63%;
+    width: 86%;
+    font-size: 3.0vw;
+    color: #222222;
+    font-family: "Heiti",sans-serif;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    visibility: hidden;
+    display:block;
+    background-color: transparent;
+}
+
+.view_select_tmp_up_content_cell_text p {
+    word-wrap:break-word; word-break:normal;
+    margin: 5%;
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+}
+
+/*===================== 选择图片弹框页面元素 ===============================*/
+#view_select_pic_up_tips_container {
+    position: absolute;
+    z-index: 9;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    visibility: hidden;
+    text-align: center;
+}
+
+.view_select_pic_up_content_cell {
+    position: relative;
+    width: 28vw;
+    height: 28vw;
+    max-height: 160px;
+    max-width: 160px;
+    background-color: transparent;
+    visibility: hidden;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.view_select_pic_up_content_cell_border {
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+}
+
+.view_select_pic_up_content_cell_img {
+    z-index: 0;
+    position: absolute;
+    left: 5%;
+    top: 4.78%;
+    width: 90.425%;
+    height: 90.425%;
+    visibility: hidden;
+}
+
+/*===================== 通用弹框页面元素 ===============================*/
+
+.view_pop_box_up_content_title {
+    position: relative;
+    width: 100%;
+    margin: 0 0 0 0;
+    padding-top: 1.3%;
+    font-size: 3.2vh;
+    color: #222222;
+    font-family: "Heiti",sans-serif;
+    background-color: transparent;
+    visibility: hidden;
+}
+
+.view_pop_box_up_content_subtitle {
+    position: relative;
+    width: 100%;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    font-size: 1.6vh;
+    color: #222222;
+    font-family: "Heiti",sans-serif;
+    background-color: transparent;
+    visibility: hidden;
+}
+
+.view_pop_box_up_content_box {
+    position: absolute;
+    top: 16.5%;
+    left: 0.5%;
+    width: 99%;
+    height: 83.5%;
+    padding-left: 0;
+    overflow: hidden;
+    background-color: transparent;
+    visibility: hidden;
+    text-align: center;
+}
+
+.view_pop_box_up_content_inner_blockflow_out_box {
+    text-align: center;
+    width: 100%;
+    height: auto;
+    background: transparent;
+    visibility: hidden;
+}
+
+.view_pop_box_up_content_inner_blockflow_inner_box {
+    width: 86vw;
+    max-width: 100%;
+    height: auto;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    background: transparent;
+    visibility: hidden;
+}
+
+
+/*===================== 通用控件 ===============================*/
+
+#view_debug_label {
+    position: absolute;
+    z-index: 200;
+    top: 200px;
+    left: 0;
+    font-size: 20px;
+    color: #ff0000;
+    visibility: visible;
+}
+
+/* 使用iScroll风格滚动条的框 */
+.iscroll_type_element {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/*===================== 无内容弹框 ===============================*/
+
+/* 弹出框背景 */
+.common_popbox {
+    position:absolute;
+    width:100%;
+    height: 100%;
+    background-color: transparent;
+    text-align: center;
+    z-index: 200;
+    visibility: hidden;
+}
+
+.cp_bg {
+    position:absolute;
+    width:100%;
+    height: 100%;
+    opacity: 0.3;
+    background-color: #000000;
+}
+
+.cp_container {
+    position:absolute;
+    left: 0;
+    top: 0;
+    width:100%;
+    height: 100%;
+    background-color: transparent;
+}
+
+.cp_bg_img {
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 200;
+}
+
+.cp_close_btn {
+    position:absolute;
+    visibility: hidden;
+    opacity: 0.2;
+    background-color: transparent;
+    z-index: 203;
+}
+
+.cp_close_btn_img {
+    position:absolute;
+    visibility: hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 212;
+}
+
+.cp_t_l, .cp_t_m, .cp_t_r, .cp_m_l, .cp_m_r, .cp_b_l, .cp_b_m, .cp_b_r {
+    position:absolute;
+    left: 0;
+    top: 0;
+    z-index: 200;
+}
+
+.cp_m_m{
+    position:absolute;
+    width:100%;
+    z-index: 200;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #ffffff;
+}
+
+.cp_content_box{
+    position:absolute;
+    left:6.75%;
+    top:10.5%;
+    width:87.5%;
+    height:82%;
+    font-size:12px;
+    color:#222222;
+    z-index: 201;
+    visibility: hidden;
+    background-color: transparent;
+}
+
+/* tips框 */
+.tips_container_full {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1001;
+    visibility: hidden;
+    background-color: transparent;
+}
+
+.tips_loading_icon {
+    position: relative;
+    top: 50%;
+    visibility: hidden;
+    z-index: 1000;
+}
+
+/*===================== 底部tabbar（含上面框） ===============================*/
+
+/* tab侧滑页 */
+.common_bottom_tabbar_selector {
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    z-index: 251;
+    background-color: transparent;
+}
+
+.bts_up_container {
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:75%;
+    z-index: 251;
+    background-color: transparent;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+.bts_bottom_container {
+    position:absolute;
+    left:0.5%;
+    top:75%;
+    width:99%;
+    height:25%;
+    z-index: 251;
+    background-color: transparent;
+    overflow: hidden;
+}
+
+.bts_bottom_inner_content {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 500%;
+    height: 100%;
+    z-index: 251;
+    background-color: transparent;
+}
+
+.bts_mid_line {
+    position:absolute;
+    left:0;
+    top:75%;
+    width:100%;
+    height:5%;
+    z-index: 251;
+    background-color: transparent;
+}
+
+.bts_mid_line_img {
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.bts_slide_tab_cell {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 23%;
+    height: 100%;
+    z-index: 252;
+    text-align: center;
+    background-color: transparent;
+}
+
+.bts_slide_tab_cell_arrow {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 23%;
+    height: 100%;
+    z-index: 253;
+    opacity: 1.0;
+    text-align: center;
+    background-color: transparent;
+}
+
+.bts_slide_tab_cell_arrow_img {
+    position: absolute;
+    left: 37%;
+    top: 0;
+    width: 26%;
+    z-index: 253;
+    background-color: transparent;
+}
+
+/* 滑动tab页的图片定位 */
+.bts_slide_tab_cell_image_div {
+    position: absolute;
+    overflow: hidden;
+    left: 5%;
+    top: 5%;
+    width: 90%;
+    height: 74%;
+    z-index: 253;
+    text-align: center;
+    background-color: transparent;
+}
+
+/* 滑动tab页的图片 */
+.bts_slide_tab_cell_image {
+    position: absolute;
+    left: 12.5%;
+    bottom: 0;
+    width: 75%;
+    height: 0;
+    padding-bottom: 75%;
+    z-index: 252;
+    text-align: center;
+    background-color: transparent;
+}
+
+/* 滑动tab页的图片（选中） */
+.bts_slide_tab_cell_image_selected {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0;
+    padding-top: 100%;
+    z-index: 252;
+    text-align: center;
+    background-color: transparent;
+}
+
+/* tab图片的框 */
+.bts_slide_tab_cell_image_border {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 251;
+    text-align: center;
+    background-color: transparent;
+}
+
+/* tab图片的图标 */
+.bts_slide_tab_cell_image_icon {
+    position: absolute;
+    left: 3.9%;
+    top: 3.9%;
+    width: 93.14%;
+    height: 93.14%;
+    z-index: 250;
+    text-align: center;
+    background-color: transparent;
+}
+
+/* 滑动tab页的文字 */
+.bts_slide_tab_cell_text {
+    position: absolute;
+    left: 0;
+    top: 80%;
+    width: 100%;
+    height: 20%;
+    z-index: 252;
+    font-size: 3px;
+    font-family: "Heiti",sans-serif;
+    text-align:center;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+}
+
+
+/**************** iScroll 滚动条样式 *****************/
+
+.iScrollHorizontalScrollbar {
+    position: absolute;
+    z-index: 9999;
+    height: 0.5%;
+    left: 3px;
+    right: 3px;
+    bottom: 1px;
+    overflow: hidden;
+}
+
+.iScrollHorizontalScrollbar.iScrollBothScrollbars {
+    right: 18px;
+}
+
+.iScrollVerticalScrollbar {
+    position: absolute;
+    z-index: 9999;
+    width: 0.5%;
+    bottom: 3px;
+    top: 3px;
+    right: 1px;
+    overflow: hidden;
+}
+
+.iScrollVerticalScrollbar.iScrollBothScrollbars {
+    bottom: 18px;
+}
+
+.iScrollIndicator {
+    position: absolute;
+    background: #222222;
+    border-width: 0px;
+    border-style: solid;
+    border-color: #222222 #222222 #222222 #222222;
+    border-radius: 0.25%;
+}
+
+.iScrollHorizontalScrollbar .iScrollIndicator {
+    height: 100%;
+    background: -moz-linear-gradient(left,  transparent 50%, #222222 100%);
+    background: -webkit-linear-gradient(left,  transparent 50%, #222222 100%);
+    background: -o-linear-gradient(left,  transparent 50%, #222222 100%);
+    background: -ms-linear-gradient(left,  transparent 50%, #222222 100%);
+    background: linear-gradient(to right,  transparent 50%, #222222 100%);
+}
+
+.iScrollVerticalScrollbar .iScrollIndicator {
+    width: 100%;
+    background: -moz-linear-gradient(top, transparent 50%, #222222 100%);
+    background: -webkit-linear-gradient(top, transparent 50%, #222222 100%);
+    background: -o-linear-gradient(top, transparent 50%, #222222 100%);
+    background: -ms-linear-gradient(top, transparent 50%, #222222 100%);
+    background: linear-gradient(to bottom,  transparent 50%, #222222 100%);
+}

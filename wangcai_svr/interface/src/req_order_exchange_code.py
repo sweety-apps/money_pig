@@ -63,7 +63,7 @@ class Handler:
 
 
     def get_exchange_code_jingdong(self, userid, device_id):
-        price = 4500  #京东兑换码,折后45元
+        price = 4000  #京东兑换码,折后40元
         #冻结
         rtn, sn = BillingClient.instance().freeze(userid, device_id, price, '兑换50元京东礼品卡')
         if rtn != 0:

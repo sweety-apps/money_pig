@@ -49,7 +49,7 @@ def make_request(url, method='GET', data={}, timeout=3):
             return {'rtn': -2}
 
 def list_order(num):
-    url = 'http://gm.getwangcai.com/order/list'
+    url = 'http://127.0.0.1:19866/order/list'
     resp = make_request(url, data={'num':num})
     if resp['rtn'] != 0:
         logger.error('list error!! rtn:%d', resp['rtn'])
@@ -58,23 +58,23 @@ def list_order(num):
             yield each
 
 def alipay_perform(userid, order_id):
-    url = 'http://gm.getwangcai.com/order/alipay/perform'
+    url = 'http://127.0.0.1:19866/order/alipay/perform'
     data = {'userid':userid, 'order_id': order_id}
     print url, str(data)
     #return
     resp = make_request(url, 'POST', data)
     if resp['rtn'] != 0:
-        logger.error('alipay perform failed!! rtn:%d', resp['rtn'])
+        logger.error('alipay perform failed!! rtn:%d' %(resp['rtn']))
         print '支付宝转账失败, userid:%d, order_id:%s' %(userid, order_id)
         if 'msg' in resp:
-            print 'msg: %s' %resp['msg']
+            logger.error('msg: %s' %resp['msg'])
     else:
         logger.info('alipay perform successfully, userid:%d, order_id:%s' %(userid, order_id))
         print '支付宝转账成功, userid:%d, order_id:%s' %(userid, order_id)
         time.sleep(1)
 
 def phone_charge(userid, order_id):
-    url = 'http://gm.getwangcai.com/order/phone/charge'
+    url = 'http://127.0.0.1:19866/order/phone/charge'
     data = {'userid':userid, 'order_id': order_id}
     print url, str(data)
     resp = make_request(url, 'POST', data)
@@ -154,6 +154,8 @@ if __name__ == '__main__':
         sys.exit(1)
     else:
         print '单日提现已%d元' %n
+
+    logger.info('Cronjob Test')
 
     n = 0
     for order in list_order(500):

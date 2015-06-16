@@ -920,7 +920,7 @@ static OnlineWallViewController* _sharedInstance;
         [YouMiConfig setUserID:did];
         
         //多盟
-        _offerWallManager = [[DMOfferWallManager alloc] initWithPublisherID:DOMOB_PUBLISHER_ID andUserID:did];
+        _offerWallManager = [[AssetZoneManager alloc] initWithPublisherID:DOMOB_PUBLISHER_ID andUserID:did];
         _offerWallManager.delegate = self;
         
         [SiWeiAdConfig launchWithAppID:MOBSMAR_APP_ID];//初始化appid
@@ -1403,7 +1403,7 @@ static OnlineWallViewController* _sharedInstance;
     }
     
     [MobClick event:@"task_list_click_duomeng" attributes:@{@"currentpage":@"任务列表"}];
-    [_offerWallManager presentOfferWallWithViewController:self type:eDMOfferWallTypeList];
+    [_offerWallManager presentAssetZoneWithViewController:self type:eAssetZoneTypeList];
 }
 
 - (IBAction)clickClose:(id)sender {
@@ -1535,7 +1535,7 @@ static OnlineWallViewController* _sharedInstance;
     
     NSMutableDictionary* dictionary = [[[NSMutableDictionary alloc] init] autorelease];
     
-    [request request:HTTP_TASK_OFFERWALL Param:dictionary method:@"get"];
+    [request request:HTTP_TASK_OFFERWALL Param:dictionary method:@"post"];
 }
 
 

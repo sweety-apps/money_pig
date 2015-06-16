@@ -111,6 +111,8 @@ class ReportOfferWall_Req(Request):
         self.type = int(input.type)
         self.increment = int(input.increment)
         self.inviter = int(input.inviter)
+        self.remark = input.remark
+        self.unique_task_id = input.get('unique_task_id','')
 
 class ReportOfferWall_Resp(Response):
     def __init__(self):

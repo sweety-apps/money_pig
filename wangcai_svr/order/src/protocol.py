@@ -126,6 +126,8 @@ class OrderDetail_Resp(Response):
         self.confirm_time = 0
         self.operate_time = 0
         self.extra = ''
+        self.name = ''
+        self.exchange_type = 0
 
 
 ######################################

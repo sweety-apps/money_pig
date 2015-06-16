@@ -23,6 +23,7 @@ class Handler:
                 resp.balance = account.money
                 resp.income = account.money
                 resp.outgo = 0
+                resp.offerwall_income = account.offerwall_income
                 resp.shared_income = 0
         else:
             account = db_helper.query_billing_account(req.userid)
@@ -33,6 +34,7 @@ class Handler:
                 resp.balance = account.money - account.freeze
                 resp.income = account.income
                 resp.outgo = account.outgo + account.freeze
+                resp.offerwall_income = account.offerwall_income
                 resp.shared_income = account.shared_income
             
         return resp.dump_json()

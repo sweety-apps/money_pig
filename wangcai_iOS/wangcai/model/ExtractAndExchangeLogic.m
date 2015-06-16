@@ -102,7 +102,7 @@ DEF_SINGLETON(ExtractAndExchangeLogic)
     [dictionary setObject:appVersion forKey:@"ver"];
     [dictionary setObject:APP_NAME forKey:@"app"];
     
-    [req request:HTTP_EXCHANGE_LIST Param:dictionary method:@"get"];
+    [req request:HTTP_EXCHANGE_LIST Param:dictionary method:@"post"];
 }
 
 - (void) requestExchangeCode:(ExtractAndExchangeType)type
@@ -129,7 +129,7 @@ DEF_SINGLETON(ExtractAndExchangeLogic)
     {
         localIconDict =
         @{
-          [NSString stringWithFormat:@"%d",ExtractAndExchangeTypeUndefined]:@"table_view_pull_icon_exhange",
+          [NSString stringWithFormat:@"%d",ExtractAndExchangeTypeUndefined]:@"table_view_pull_icon_white",
           [NSString stringWithFormat:@"%d",ExtractAndExchangeTypeJingdong]:@"exchange_icon_jd_50",
           [NSString stringWithFormat:@"%d",ExtractAndExchangeTypeXLVip]:@"exchange_icon_jd_50",
           [NSString stringWithFormat:@"%d",ExtractAndExchangeTypeAlipay]:@"exchange_icon_alipay",
@@ -193,10 +193,14 @@ DEF_SINGLETON(ExtractAndExchangeLogic)
         [self onGetListCompleted:request
                         HttpCode:httpCode
                             Body:body];
+        
+        [request autorelease];
     }
     else if ([[[req getBeeHttpRequest].url absoluteString] rangeOfString:HTTP_EXCHANGE_CODE].length > 0)
     {
         [self onExchangeCompleted:request HttpCode:httpCode Body:body];
+        
+        [request autorelease];
     }
 }
 

@@ -39,6 +39,6 @@ class Handler:
         else:
             sms.update_status(req.token, SMSStatus.SMS_FAIL)
             resp.res = 1
-            resp.msg = 'error'
+            resp.msg = '短信发送数量已超过限额'
 
         return resp.dump_json()

@@ -97,6 +97,16 @@ ON_SIGNAL2( BeeUIBoard, signal )
         rectFrame = headBgImageView.frame;
         headBgImageView.frame = rectFrame;
         
+        //免费购文字
+        UILabel* label = [[[UILabel alloc] initWithFrame:CGRectMake(55, 0, 220, 50)] autorelease];
+        label.textColor = [UIColor whiteColor];
+        label.textAlignment = NSTextAlignmentCenter;
+        label.backgroundColor = [UIColor clearColor];
+        label.font = [UIFont fontWithName:@"STHeitiSC-Medium" size:18];
+        label.text = @"免费购";
+        
+        [headBgImageView addSubview:label];
+        
         [self.view addSubview:headBgImageView];
         
         //左上角小猪按钮
@@ -196,6 +206,8 @@ ON_SIGNAL2( BeeUIBoard, signal )
     else if ( [signal is:BeeUIBoard.WILL_APPEAR] )
     {
         [_taskTableViewController viewWillAppear:NO];
+        
+        [[UIApplication sharedApplication] setStatusBarHidden:YES];
         
         if (![SettingLocalRecords hasAgreedPrivacyPolicy])
         {
@@ -328,7 +340,7 @@ ON_NOTIFICATION( notification )
 
 - (void) onPressedPigIcon
 {
-    [_taskTableViewController onPressedOffWall];
+    [_taskTableViewController onPressedArticle];
 }
 
 #pragma mark <BaseTaskTableViewControllerDelegate>

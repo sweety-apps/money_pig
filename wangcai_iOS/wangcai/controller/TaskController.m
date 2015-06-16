@@ -104,9 +104,9 @@
             [self hideLoading];
         
             if (result) {
-                // HttpGet
+                // HttpPost
                 NSString* reportUrl = [self BuildURL:HTTP_DOWNLOAD_APP AppId:appId];
-                [self HttpGet:reportUrl];
+                [self HttpPost:reportUrl];
                 [reportUrl release];
                 
                 [self presentViewController:storeProductVC animated:YES completion:nil];
@@ -120,7 +120,7 @@
         }];
     } else {
         NSString* reportUrl = [self BuildURL:HTTP_DOWNLOAD_APP AppId:appId];
-        [self HttpGet:reportUrl];
+        [self HttpPost:reportUrl];
         [reportUrl release];
         
         NSString* urlStr = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/us/app/id%@?mt=8", appId];
@@ -144,7 +144,7 @@
     return newUrl;
 }
 
-- (void) HttpGet:(NSString*) url {
+- (void) HttpPost:(NSString*) url {
     BeeHTTPRequest* request = self.HTTP_GET(url);
  
     request.TIMEOUT(10);

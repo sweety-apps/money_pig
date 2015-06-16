@@ -9,6 +9,12 @@
 #import "OrderDetailTableViewCell.h"
 #import "UIImage+imageUtils.h"
 
+@interface OrderDetailTableViewCell()
+
+@property (nonatomic,retain) BillingHistoryOrderDetailRecord* record;
+
+@end
+
 @implementation OrderDetailTableViewCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -77,8 +83,9 @@
     {
         case ExtractAndExchangeTypeAlipay:
         {
-            self.checkButton.hidden = YES;
+            self.checkButton.hidden = NO;
             extraStr = [NSString stringWithFormat:@"充值账号：%@",record.extra];
+            buttonStr = @"查看使用帮助";
         }
             break;
         case ExtractAndExchangeTypePhonePay:
@@ -112,13 +119,23 @@
     self.statusLabel.text = statusStr;
     self.extraLabel.text = extraStr;
     [self.checkButton setTitle:buttonStr forState:UIControlStateNormal];
+    
+    self.record = record;
 }
 
 - (void)onPressedCheckButton
 {
     if (self.delegate)
     {
-        [self.delegate onPressedCheckButtonOfOrderDetailCell:self];
+        switch(self.record.exchange_type)
+        {
+            case ExtractAndExchangeTypeAlipay:
+                [self.delegate onPressedHelpButtonOfOrderDetailCell:self];
+                break;
+            default:
+                [self.delegate onPressedCheckButtonOfOrderDetailCell:self];
+                break;
+        }
     }
 }
 
@@ -136,6 +153,7 @@
     [_checkButton release];
     [_extraBgView release];
     [_extraLabel release];
+    self.record = nil;
     [super dealloc];
 }
 @end

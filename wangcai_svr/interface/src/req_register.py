@@ -49,8 +49,70 @@ class Handler:
         if SWITCH_SERVER_TIPS == 1:
             resp.tips = SWITCH_SERVER_TIPS_CONTENT
 
-        #配置积分墙开关
-        resp.offerwall = {'domob': 0, 'youmi': 1}
+        #配置积分墙开关（已废弃）
+        resp.offerwall = {'domob': 0, 'youmi': 0}
+
+        #配置积分墙列表
+        resp.offerwall_list = [
+            {
+                'icon':'task_icon_punchbox',
+                'name':'触控应用任务',
+                'type':'punchbox',
+                'ishot':1
+            },
+            {
+                'icon':'task_icon_youmi',
+                'name':'有米应用任务',
+                'type':'youmi',
+                'ishot':0
+            },
+            {
+                'icon':'task_icon_miidi',
+                'name':'米迪应用任务',
+                'type':'miidi',
+                'ishot':0
+            },
+            {
+                'icon':'task_icon_domob',
+                'name':'多盟应用任务',
+                'type':'domob',
+                'ishot':0
+            }
+        ]
+        '''
+        resp.offerwall_list = [
+            {
+                'icon':'task_icon_punchbox',
+                'name':'触控应用任务',
+                'type':'punchbox',
+                'ishot':1
+            },
+            {
+                'icon':'task_icon_youmi',
+                'name':'有米应用任务',
+                'type':'youmi',
+                'ishot':1
+            },
+            {
+                'icon':'task_icon_domob',
+                'name':'多盟应用任务',
+                'type':'domob',
+                'ishot':0
+            },
+            {
+                'icon':'task_icon_dianru',
+                'name':'点入应用任务',
+                'type':'dianru',
+                'ishot':0
+            },
+            {
+                'icon':'task_icon_miidi',
+                'name':'米迪应用任务',
+                'type':'miidi',
+                'ishot':0
+            }
+        ]
+        '''
 
         #配置强制升级
         if cookies.get('app', '').lower() != 'wangcai' and cookies.get('ver', '') in ['1.1', '1.1.1', '1.2', '1.3', '']:
@@ -58,12 +120,12 @@ class Handler:
             return resp.dump_json()
 
         #屏蔽2g/3g用户
-        if cookies.get('app', '').lower() != 'wangcai' and cookies.get('net', '') == '3g':
-            logger.info('2g/3g user, ban! idfa:%s, mac:%s' %(req.idfa, req.mac))
-            resp.res = 403
-            resp.msg = '错误$当前IP访问的机器数过高，为了保证广告商的推广效果，您的设备今日无法继续使用旺财，请明日再试。'
-            return resp.dump_json()
-
+        if False:
+            if cookies.get('app', '').lower() != 'wangcai' and cookies.get('net', '') == '3g':
+                logger.info('2g/3g user, ban! idfa:%s, mac:%s' %(req.idfa, req.mac))
+                resp.res = 403
+                resp.msg = '错误$由于一些不可告人的技术原因，赚钱小猪只能在Wifi下面跑，请原谅，萌萌哒。'
+                return resp.dump_json()
 
         data = {
             'idfa': req.idfa,
@@ -79,11 +141,11 @@ class Handler:
         r = http_request(url, data)
         if r['rtn'] == 1:
             resp.res = 403
-            resp.msg = '错误$当前IP访问的机器数过高，为了保证广告商的推广效果，您的设备今日无法继续使用旺财，请明日再试。'
+            resp.msg = '错误$当前IP访问的机器数过高，为了保证广告投放商大爷的推广效果，您的设备今日无法继续使用小猪，请明日再试。'
             return resp.dump_json()
         elif r['rtn'] == 2:
             resp.res = 403
-            resp.msg = '错误$您当前的IP及绑定账号被广告商判断为异常，您的账号已被冻结，导致此问题的原因可能是通过重置系统重复完成任务。如需申诉，请邮件手机号及问题至wangcai@188.com。'
+            resp.msg = '错误$您当前的IP及绑定账号被广告投放商判断为异常，您的账号已被冻结，导致此问题的原因可能是通过重置系统重复完成任务。如需申诉，请邮件手机号及问题至baygun@foxmail.com。'
             return resp.dump_json()
         elif r['rtn'] != 0:
             resp.res = 1
@@ -117,6 +179,7 @@ class Handler:
             resp.income = r['income']
             resp.outgo = r['outgo']
             resp.shared_income = r['shared_income']
+            resp.offerwall_income = r['offerwall_income']
             resp.task_list = self.query_task_list(userid, device_id)
 
         return resp.dump_json()

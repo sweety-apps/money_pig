@@ -6,6 +6,7 @@
 //  Copyright (c) 2013年 1528studio. All rights reserved.
 //
 
+#import <CoreLocation/CoreLocation.h>
 #import "LoginAndRegister.h"
 #import "Config.h"
 #import "Common.h"
@@ -20,9 +21,19 @@
 #import "ECManager.h"
 #import "EcomConfig.h"
 
+#define kUnkownLocationValue (360.0)
+
 @implementation BalanceInfo
 @synthesize _newBalance;
 @synthesize _oldBalance;
+@end
+
+@interface LoginAndRegister () <CLLocationManagerDelegate>
+
+@property (nonatomic, retain) CLLocationManager * locationMgr;
+@property (nonatomic, assign) double currentLatitude;
+@property (nonatomic, assign) double currentLongitude;
+
 @end
 
 @implementation LoginAndRegister
@@ -62,6 +73,17 @@ static LoginAndRegister* _sharedInstance = nil;
     
     self->_offerwall_list = [[NSMutableArray alloc] init];
     
+    self.currentLatitude = kUnkownLocationValue;
+    self.currentLongitude = kUnkownLocationValue;
+    self.locationMgr = [[[CLLocationManager alloc] init] autorelease];
+    self.locationMgr.delegate = self;
+    // 设置精度
+    self.locationMgr.desiredAccuracy = kCLLocationAccuracyBest;
+    // 设置移动多少米后重新定位
+    self.locationMgr.distanceFilter = 5.0f;
+    
+    [self.locationMgr startUpdatingLocation];
+    
     _tipsString = @"";
     
     return self;
@@ -77,6 +99,8 @@ static LoginAndRegister* _sharedInstance = nil;
         [self->_offerwall_list release];
         self->_offerwall_list = nil;
     }
+    
+    self.locationMgr = nil;
     
     [super dealloc];
 }
@@ -116,9 +140,9 @@ static LoginAndRegister* _sharedInstance = nil;
 - (NSHTTPCookie*) getCookie {
     NSMutableDictionary* properties = [[[NSMutableDictionary alloc] init] autorelease];
     
-    [properties setValue:@".getwangcai.com" forKey:NSHTTPCookieDomain];
+    [properties setValue:@".bghills.com" forKey:NSHTTPCookieDomain];
     [properties setValue:[NSDate dateWithTimeIntervalSinceNow:60*60] forKey:NSHTTPCookieExpires];
-    [properties setValue:@"/asi-http-request/wangcai" forKey:NSHTTPCookiePath];
+    [properties setValue:@"/asi-http-request/bghills" forKey:NSHTTPCookiePath];
     
     [properties setValue:@"p" forKey:NSHTTPCookieName];
     
@@ -157,7 +181,6 @@ static LoginAndRegister* _sharedInstance = nil;
         nsParam = [nsParam stringByAppendingFormat:@"phone=%@&", _phoneNum];
     }
     
-    
     NSString* idfa = [Common getIDFAAddress];
     nsParam = [nsParam stringByAppendingFormat:@"idfa=%@&", idfa];
 
@@ -166,6 +189,15 @@ static LoginAndRegister* _sharedInstance = nil;
     
     NSString* timestamp = [Common getTimestamp];
     nsParam = [nsParam stringByAppendingFormat:@"timestamp=%@", timestamp];
+    
+    NSString* isJailBreak = [BeeSystemInfo isJailBroken] ? @"1" : @"0";
+    nsParam = [nsParam stringByAppendingFormat:@"&is_jailbreak=%@", isJailBreak];
+    
+    NSString* latitude = [NSString stringWithFormat:@"%lf",self.currentLatitude];
+    nsParam = [nsParam stringByAppendingFormat:@"&latitude=%@", latitude];
+    
+    NSString* longitude = [NSString stringWithFormat:@"%lf",self.currentLongitude];
+    nsParam = [nsParam stringByAppendingFormat:@"&longitude=%@", longitude];
 
 #if TARGET_VERSION_LITE == 2 
     // 亲友版带上openudid
@@ -174,7 +206,6 @@ static LoginAndRegister* _sharedInstance = nil;
 #endif
     
     NSMutableData* data = [[NSMutableData alloc] init];
-    
     
     NSString* encodedString = [nsParam stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     //[nsParam release];
@@ -186,7 +217,8 @@ static LoginAndRegister* _sharedInstance = nil;
     
     // 设置https访问证书
     [req setValidatesSecureCertificate:NO];
-    //[req setClientCertificateIdentity: [Common getSecIdentityRef]];
+    [req setClientCertificateIdentity: [Common getSecIdentityRef]];
+    [req setAllowCompressedResponse:YES];
     //
     
     req.postBody = [[data copy] autorelease];
@@ -259,10 +291,11 @@ static LoginAndRegister* _sharedInstance = nil;
                 _offerwallIncome = [[dict valueForKey:@"offerwall_income"] intValue];
                 
                 _pollingInterval = [[dict valueForKey:@"polling_interval"] intValue];
-                if ( _pollingInterval < 5 ) {
-                    _pollingInterval = 5;
+                if ( _pollingInterval < 10 ) {
+                    _pollingInterval = 10;
                 }
 
+                /*
                 if ( _inReview == 1 ) {
                     [YouMiConfig setIsTesting:YES];
                     // 初始化电商墙
@@ -272,6 +305,7 @@ static LoginAndRegister* _sharedInstance = nil;
                     
                     [ECManager ecWallPreload];
                 }
+                 */
                 
                 NSArray* offerwalllist = [dict valueForKey:@"offerwall_list"];
                 [self->_offerwall_list removeAllObjects];
@@ -355,7 +389,7 @@ static LoginAndRegister* _sharedInstance = nil;
                 NSArray* taskList = [dict objectForKey:@"task_list"];
                 
                 //[[CommonTaskList sharedInstance] resetTaskListWithJsonArray:taskList];
-                [[CommonTaskList sharedInstance]  resetTaskListWithPigList];
+                [[CommonTaskList sharedInstance]  resetTaskListWithPigList:taskList];
 
                 [self RegisterDeviceIDToAPService];
                 
@@ -917,6 +951,25 @@ static LoginAndRegister* _sharedInstance = nil;
 -(NSArray*) getOfferwallList
 {
     return _offerwall_list;
+}
+
+#pragma mark - CLLocationManagerDelegate
+// 地理位置发生改变时触发
+- (void)locationManager:(CLLocationManager *)manager
+     didUpdateLocations:(NSArray *)locations
+{
+    CLLocation *currentLocation = [locations lastObject];
+    
+    // 获取经纬度
+    self.currentLatitude = currentLocation.coordinate.latitude;
+    self.currentLongitude = currentLocation.coordinate.longitude;
+}
+
+// 定位失误时触发
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    self.currentLongitude = kUnkownLocationValue;
+    self.currentLatitude = kUnkownLocationValue;
 }
 
 @end

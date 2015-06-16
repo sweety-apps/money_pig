@@ -22,11 +22,16 @@ import req_task_comment
 import req_task_download_app
 import req_task_domob
 import req_task_offerwall
+import req_task_poll
 import req_order_alipay
 import req_order_phone_pay
 import req_order_exchange_code
 import req_order_exchange_list
 import req_order_detail
+import req_offerwall_chukong
+import req_offerwall_youmi_ios
+import req_offerwall_miidi_ios
+import req_offerwall_domob_ios
 import logging
 
 
@@ -45,12 +50,17 @@ urls = (
     '/0/task/comment', req_task_comment.Handler,
     '/0/task/download_app', req_task_download_app.Handler,
     '/0/task/domob',  req_task_domob.Handler,
-    '/0/task/offerwall',  req_task_offerwall.Handler,
+#    '/0/task/offerwall',  req_task_offerwall.Handler,
+    '/0/task/poll',  req_task_poll.Handler,
     '/0/order/alipay', req_order_alipay.Handler,
     '/0/order/phone_pay', req_order_phone_pay.Handler,
     '/0/order/exchange_code', req_order_exchange_code.Handler,
     '/0/order/exchange_list', req_order_exchange_list.Handler,
-    '/0/order/detail', req_order_detail.Handler
+    '/0/order/detail', req_order_detail.Handler,
+    '/0/offerwall/chukong',  req_offerwall_chukong.Handler,
+    '/0/offerwall/youmi/ios', req_offerwall_youmi_ios.Handler,
+    '/0/offerwall/miidi/ios', req_offerwall_miidi_ios.Handler,
+    '/0/offerwall/domob/ios', req_offerwall_domob_ios.Handler
 )
 
 web.config.debug = True

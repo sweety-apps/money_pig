@@ -100,7 +100,7 @@
 
 - (void) _setupHeaderFooterNavibar
 {
-    self.navigationBarView.backgroundColor = RGB(168, 207, 73);
+    self.navigationBarView.backgroundColor = RGB(244, 163, 167);
     self.navigationBarTitleLabel.text = @"分享赚钱";
     
     self.header.scrollView = nil;
@@ -147,7 +147,7 @@
     
     NSString* imagePath = [[NSBundle mainBundle] pathForResource:@"Icon@2x" ofType:@"png"];
     
-    id<ISSContent> publishContent = [ShareSDK content: [NSString stringWithFormat:@"真金白银的福利哦！ %@",self.inviteUrl] defaultContent:@"" image:[ShareSDK imageWithPath:imagePath] title: @"玩应用领红包" url: self.inviteUrl description: @"来玩小猪猪哟！" mediaType: SSPublishContentMediaTypeNews];
+    id<ISSContent> publishContent = [ShareSDK content: [NSString stringWithFormat:@"用了这个APP，网购可以免费了，“女朋友”保住了！ %@",self.inviteUrl] defaultContent:@"" image:[ShareSDK imageWithPath:imagePath] title: @"我们没情怀，直接发钱" url: self.inviteUrl description: @"双十一像个爷们儿！" mediaType: SSPublishContentMediaTypeNews];
     
     id<ISSContainer> container = [ShareSDK container];
     NSArray *sharelist = [ShareSDK getShareListWithType:ShareTypeWeixiTimeline,ShareTypeWeixiSession,ShareTypeQQ,ShareTypeSMS,ShareTypeCopy, nil];
@@ -270,17 +270,17 @@
         [self.tableView reloadData];
         
         UIGetRedBagAlertView* getMoneyAlertView = [UIGetRedBagAlertView sharedInstance];
-        [getMoneyAlertView setRMBString:[NSString stringWithFloatRoundToPrecision:2 precision:2 ignoreBackZeros:NO]];
+        [getMoneyAlertView setRMBString:[NSString stringWithFloatRoundToPrecision:1 precision:2 ignoreBackZeros:NO]];
         [getMoneyAlertView setLevel:3];
         [getMoneyAlertView setTitle:@"邀请红包"];
-        [getMoneyAlertView setShowCurrentBanlance:[[LoginAndRegister sharedInstance] getBalance] andIncrease:200];
+        [getMoneyAlertView setShowCurrentBanlance:[[LoginAndRegister sharedInstance] getBalance] andIncrease:100];
         [getMoneyAlertView show];
         
         //统计
-        [MobClick event:@"money_get_from_all" attributes:@{@"RMB":[NSString stringWithFormat:@"%d",200],@"FROM": @"绑定邀请人成功"}];
+        [MobClick event:@"money_get_from_all" attributes:@{@"RMB":[NSString stringWithFormat:@"%d",100],@"FROM": @"绑定邀请人成功"}];
         
         // 给用户加二块钱
-        [[LoginAndRegister sharedInstance] increaseBalance:200];
+        [[LoginAndRegister sharedInstance] increaseBalance:100];
         [BaseTaskTableViewController setNeedReloadTaskList];
     }
     else

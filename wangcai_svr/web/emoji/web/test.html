@@ -1,0 +1,35 @@
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Thinking in VML</title>
+
+    <script src="./js/libs/jquery/jquery-1.11.2.js"></script>
+</head>
+<script>
+
+    function testJson()
+    {
+        var url = "http://localhost/emoji/web/api/get_picture_list.jon";
+        var params = {"type":"abc"};
+        $.ajax({
+            type: "get",
+            url: url,
+            dataType: "json",
+            cache: false,
+            data: params,
+            success: function (json) {
+                $('#content').html(json.ret);
+                console.log('Success: ')
+            },
+            error: function(xhr, status, error) {
+                console.log('Error: ' + error.message);
+                $('#content').html('Error connecting to the server.');
+            }
+        });
+    }
+
+</script>
+<body>
+<p id="content">123456<p>
+<button onclick="testJson()">点我</button>
+</body>
+</html>

@@ -472,7 +472,15 @@
         
         [self onBindPhoneCompeted];
         
-        NSString* msg = [NSString stringWithFormat:@"已绑定手机号: %@",_phoneNum];
+        NSString* msg = nil;
+        
+        msg = [NSString stringWithFormat:@"已绑定手机号: %@",_phoneNum];
+        
+        if (boundPhoneNum > 1)
+        {
+            msg = [msg stringByAppendingFormat:@"\n\n小猪重要提醒: 小猪鼓励您绑定手机和Pad一起使用小猪，但一个手机号绑定设备最好不要超过3台，绑定过多系统会判断为作弊者而 封！禁! 哦。\n已绑定设备数: %d",boundPhoneNum+1];
+        }
+        
         UIAlertView* succAlert = [[[UIAlertView alloc] initWithTitle:@"绑定成功！" message:msg delegate:self cancelButtonTitle:@"返回" otherButtonTitles: nil] autorelease];
         self.succAlert = succAlert;
         [succAlert show];

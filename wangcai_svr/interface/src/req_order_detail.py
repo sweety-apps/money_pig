@@ -39,5 +39,7 @@ class Handler:
             resp.confirm_time = r['confirm_time']
             resp.complete_time = r['operate_time']
             resp.extra = r['extra']
+            resp.name = r['name']
+            resp.exchange_type = r['exchange_type']
 
         return resp.dump_json()

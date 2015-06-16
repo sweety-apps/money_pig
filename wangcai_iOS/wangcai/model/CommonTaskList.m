@@ -120,7 +120,7 @@ static CommonTaskList* gInstance = nil;
     
     NSMutableDictionary* dictionary = [[[NSMutableDictionary alloc] init] autorelease];
     
-    [req request:HTTP_READ_TASK_LIST Param:dictionary method:@"get"];
+    [req request:HTTP_READ_TASK_LIST Param:dictionary method:@"post"];
 }
 
 - (NSArray*)getUnfinishedTaskList
@@ -207,89 +207,115 @@ static CommonTaskList* gInstance = nil;
     return _awardTaskFinished;
 }
 
-- (void)resetTaskListWithPigList
+- (void)resetTaskListWithPigList:(NSArray*)oldTaskList
 {
-    NSArray* tasklistArr =
-  @[
-    @{
-        @"id": @1,
-        @"type":[NSNumber numberWithInt:kTaskTypeOfferWall],
-        @"title":@"应用安装任务",
-        @"status":@0,
-        @"money":@0,
-        @"icon":@"table_view_cell_icon_install_app",
-        @"intro":@"",
-        @"desc":@"做任务赚钱",
-        @"level":@0,
-        @"steps":@[],
-        @"rediect_url":@""
-        },
-    @{
-        @"id": @2,
-        @"type":[NSNumber numberWithInt:kTaskTypeEverydaySign],
-        @"title":@"每日签到赚钱",
-        @"status":@0,
-        @"money":@0,
-        @"icon":@"table_view_cell_icon_checkin",
-        @"intro":@"",
-        @"desc":@"签个到，领零用钱",
-        @"level":@0,
-        @"steps":@[],
-        @"rediect_url":@""
-        },
-    @{
-        @"id": @3,
-        @"type":[NSNumber numberWithInt:kTaskTypeInviteFriends],
-        @"title":@"填邀请码赚钱",
-        @"status":@0,
-        @"money":@0,
-        @"icon":@"table_view_cell_icon_share",
-        @"intro":@"",
-        @"desc":@"填写和分享邀请码，和小伙伴一起拿奖励",
-        @"level":@0,
-        @"steps":@[],
-        @"rediect_url":@""
-        },
-    @{
-        @"id": @4,
-        @"type":[NSNumber numberWithInt:kTaskTypeExchange],
-        @"title":@"兑换现金",
-        @"status":@0,
-        @"money":@0,
-        @"icon":@"table_view_cell_icon_exchange",
-        @"intro":@"",
-        @"desc":@"兑换现金及购物卡，优惠到爆",
-        @"level":@0,
-        @"steps":@[],
-        @"rediect_url":@""
-        },
-    @{
-        @"id": @5,
-        @"type":[NSNumber numberWithInt:kTaskTypeBillingHistory],
-        @"title":@"收支明细",
-        @"status":@0,
-        @"money":@0,
-        @"icon":@"table_view_cell_icon_billing_history",
-        @"intro":@"",
-        @"desc":@"查看我的小账本",
-        @"level":@0,
-        @"steps":@[],
-        @"rediect_url":@""
-        },
-    @{
-        @"id": @6,
-        @"type":[NSNumber numberWithInt:kTaskTypeAbout],
-        @"title":@"用户帮助",
-        @"status":@0,
-        @"money":@0,
-        @"icon":@"table_view_cell_icon_about",
-        @"intro":@"",
-        @"desc":@"小猪的客服信息，萌萌哒",
-        @"level":@0,
-        @"steps":@[],
-        @"rediect_url":@""
-        },
-    ];
+    NSNumber* checkinStatus = @0;
+    for(NSDictionary* taskDict in oldTaskList)
+    {
+        NSNumber* type = taskDict[@"type"];
+        if(type && [type isKindOfClass:[NSNumber class]] &&
+           [type integerValue] == kTaskTypeEverydaySign)
+        {
+            checkinStatus = taskDict[@"status"];
+        }
+    }
+    
+    NSMutableArray* tasklistArr = [NSMutableArray arrayWithArray:
+                            @[
+                              @{
+                                  @"id": @0,
+                                  @"type":[NSNumber numberWithInt:kTaskTypeAriticle],
+                                  @"title":@"免费购物攻略",
+                                  @"status":@0,
+                                  @"money":@0,
+                                  @"icon":@"table_view_cell_icon_wechat",
+                                  @"intro":@"",
+                                  @"desc":@"免费购物攻略，11月11再也不用剁手了!",
+                                  @"level":@0,
+                                  @"steps":@[],
+                                  @"rediect_url":@""
+                                  },
+                              @{
+                                  @"id": @1,
+                                  @"type":[NSNumber numberWithInt:kTaskTypeOfferWall],
+                                  @"title":@"应用安装任务",
+                                  @"status":@0,
+                                  @"money":@0,
+                                  @"icon":@"table_view_cell_icon_install_app",
+                                  @"intro":@"",
+                                  @"desc":@"做任务赚钱",
+                                  @"level":@0,
+                                  @"steps":@[],
+                                  @"rediect_url":@""
+                                  },
+                              @{
+                                  @"id": @2,
+                                  @"type":[NSNumber numberWithInt:kTaskTypeEverydaySign],
+                                  @"title":@"每日签到赚钱",
+                                  @"status":checkinStatus,
+                                  @"money":@0,
+                                  @"icon":@"table_view_cell_icon_checkin",
+                                  @"intro":@"",
+                                  @"desc":@"签个到，领零用钱",
+                                  @"level":@0,
+                                  @"steps":@[],
+                                  @"rediect_url":@""
+                                  },
+                              @{
+                                  @"id": @3,
+                                  @"type":[NSNumber numberWithInt:kTaskTypeInviteFriends],
+                                  @"title":@"填邀请码赚钱",
+                                  @"status":@0,
+                                  @"money":@0,
+                                  @"icon":@"table_view_cell_icon_share",
+                                  @"intro":@"",
+                                  @"desc":@"填写和分享邀请码，和小伙伴一起拿奖励",
+                                  @"level":@0,
+                                  @"steps":@[],
+                                  @"rediect_url":@""
+                                  },
+                              @{
+                                  @"id": @4,
+                                  @"type":[NSNumber numberWithInt:kTaskTypeExchange],
+                                  @"title":@"兑换现金",
+                                  @"status":@0,
+                                  @"money":@0,
+                                  @"icon":@"table_view_cell_icon_exchange",
+                                  @"intro":@"",
+                                  @"desc":@"兑换现金及购物卡，优惠到爆",
+                                  @"level":@0,
+                                  @"steps":@[],
+                                  @"rediect_url":@""
+                                  },
+                              @{
+                                  @"id": @5,
+                                  @"type":[NSNumber numberWithInt:kTaskTypeBillingHistory],
+                                  @"title":@"收支明细",
+                                  @"status":@0,
+                                  @"money":@0,
+                                  @"icon":@"table_view_cell_icon_billing_history",
+                                  @"intro":@"",
+                                  @"desc":@"查看我的小账本",
+                                  @"level":@0,
+                                  @"steps":@[],
+                                  @"rediect_url":@""
+                                  },
+                              @{
+                                  @"id": @6,
+                                  @"type":[NSNumber numberWithInt:kTaskTypeAbout],
+                                  @"title":@"用户帮助",
+                                  @"status":@0,
+                                  @"money":@0,
+                                  @"icon":@"table_view_cell_icon_about",
+                                  @"intro":@"",
+                                  @"desc":@"小猪的客服信息，萌萌哒",
+                                  @"level":@0,
+                                  @"steps":@[],
+                                  @"rediect_url":@""
+                                  },
+                              ]
+                            ];
+  
     
     
     [self resetTaskListWithJsonArray:tasklistArr];
@@ -391,6 +417,11 @@ static CommonTaskList* gInstance = nil;
                 //task.taskIconUrl = @"";
                 break;
             case kTaskTypeOfferWall:
+                task.taskIsLocalIcon = YES;
+                //task.taskIconUrl = @"tiyanzhongxin_cell_icon";
+                //task.taskIconUrl = @"";
+                break;
+            case kTaskTypeAriticle:
                 task.taskIsLocalIcon = YES;
                 //task.taskIconUrl = @"tiyanzhongxin_cell_icon";
                 //task.taskIconUrl = @"";
@@ -533,7 +564,7 @@ static CommonTaskList* gInstance = nil;
         {
             NSArray* taskList = [body objectForKey:@"task_list"];
             //[self resetTaskListWithJsonArray:taskList];
-            [self resetTaskListWithPigList];
+            [self resetTaskListWithPigList:taskList];
         }
     }
     

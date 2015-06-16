@@ -187,7 +187,12 @@ NSString * macaddress()
 + (BOOL)extractIdentity:(SecIdentityRef *)outIdentity andTrust:(SecTrustRef*)outTrust fromPKCS12Data:(NSData *)inPKCS12Data {
     OSStatus securityError = errSecSuccess;
     
-    CFStringRef password = CFSTR("WangCai@1528"); //证书密码
+    NSString* obpsw = @"abc123";
+    obpsw = [obpsw stringByReplacingOccurrencesOfString:@"abc" withString:@"ff"];
+    obpsw = [obpsw stringByAppendingString:@"456"];
+    
+    const char* ppp = [obpsw UTF8String];
+    CFStringRef password = CFStringCreateWithCString(NULL, ppp, kCFStringEncodingUTF8); //证书密码
     const void *keys[] =   { kSecImportExportPassphrase };
     const void *values[] = { password };
     
@@ -207,7 +212,16 @@ NSString * macaddress()
         *outTrust = (SecTrustRef)tempTrust;
     } else {
         NSLog(@"Failed with error code %d",(int)securityError);
+        if (password)
+        {
+            CFRelease(password);
+        }
         return NO;
+    }
+    
+    if (password)
+    {
+        CFRelease(password);
     }
     return YES;
 }

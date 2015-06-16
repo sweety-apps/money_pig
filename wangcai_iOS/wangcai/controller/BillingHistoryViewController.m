@@ -66,6 +66,13 @@
     rect.size.height -= offY;
     self.tableView.frame = rect;
     self.yueContainerView.hidden = YES;
+    
+    CGRect rectBgTips = self.failedBGTipLabel.frame;
+    rectBgTips.origin.y += self.tipCell.frame.size.height;
+    self.failedBGTipLabel.frame = rectBgTips;
+    
+    self.header.scrollView = self.tableView;
+    self.header.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)didReceiveMemoryWarning
@@ -89,6 +96,13 @@
     self.tipCell.outgoLabel.text = [NSString stringWithFormat:@"￥%@",[NSNumber numberWithFloat:((float)[[LoginAndRegister sharedInstance] getOutgo])/100.f]];
     NSString* btnStr = [NSString stringWithFormat:@"好友帮你赚了:%@元",[NSNumber numberWithFloat:((float)[[LoginAndRegister sharedInstance] getInviteIncome])/100.f]];
     [self.tipCell.shareIncomeBtn setTitle:btnStr forState:UIControlStateNormal];
+    
+    CGFloat offY = CGRectGetMaxY(self.tipCell.frame);
+    CGRect rect = self.view.frame;
+    rect.origin = CGPointZero;
+    rect.origin.y = offY;
+    rect.size.height -= offY;
+    self.tableView.frame = rect;
 }
 
 #pragma mark HTTP
@@ -116,7 +130,7 @@
     
     int row = indexPath.row;
     BillingHistoryRecord* rcd = [[BillingHistoryList sharedInstance] allRecords][row];
-    if ([rcd.money floatValue] < 0)
+    if ([rcd.money floatValue] < -100)
     {
         //跳转交易详情页
         OrderDetailViewController* controller = [OrderDetailViewController controllerWithOrderId:rcd.orderid andType:ExtractAndExchangeTypeUndefined];
@@ -188,10 +202,12 @@
     if (succeed)
     {
         [self.tableView reloadData];
+        self.failedBGTipLabel.text = @"";
     }
     else
     {
         [MBHUDView hudWithBody:@":(\n拉取失败" type:MBAlertViewHUDTypeImagePositive  hidesAfter:2.0 show:YES];
+        self.failedBGTipLabel.text = @"千万表下拉刷新！";
     }
     
     

@@ -135,7 +135,8 @@
     
     // 设置https访问证书
     [_request setValidatesSecureCertificate:NO];
-    //[_request setClientCertificateIdentity: [Common getSecIdentityRef]];
+    [_request setClientCertificateIdentity: [Common getSecIdentityRef]];
+    [_request setAllowCompressedResponse:YES];
     //
     
     NSHTTPCookie* cookie = [self getCookie];
@@ -301,7 +302,8 @@
     
     // 设置https访问证书
     [_request setValidatesSecureCertificate:NO];
-    //[_request setClientCertificateIdentity: [Common getSecIdentityRef]];
+    [_request setClientCertificateIdentity: [Common getSecIdentityRef]];
+    [_request setAllowCompressedResponse:YES];
     //
     
     _request.postBody = [[data copy] autorelease];

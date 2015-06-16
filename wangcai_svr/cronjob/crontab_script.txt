@@ -1,0 +1,13 @@
+0 * * * * python /root/wangcai_svr/cronjob/order_auto_commit.py
+5 * * * * python /root/wangcai_svr/cronjob/order_auto_commit.py
+10 * * * * python /root/wangcai_svr/cronjob/order_auto_commit.py
+15 * * * * python /root/wangcai_svr/cronjob/order_auto_commit.py
+20 * * * * python /root/wangcai_svr/cronjob/order_auto_commit.py
+25 * * * * python /root/wangcai_svr/cronjob/order_auto_commit.py
+30 * * * * python /root/wangcai_svr/cronjob/order_auto_commit.py
+35 * * * * python /root/wangcai_svr/cronjob/order_auto_commit.py
+40 * * * * python /root/wangcai_svr/cronjob/order_auto_commit.py
+45 * * * * python /root/wangcai_svr/cronjob/order_auto_commit.py
+50 * * * * python /root/wangcai_svr/cronjob/order_auto_commit.py
+55 * * * * python /root/wangcai_svr/cronjob/order_auto_commit.py
+30 3 * * * /root/wangcai_svr/cronjob/backup_login_history.sh

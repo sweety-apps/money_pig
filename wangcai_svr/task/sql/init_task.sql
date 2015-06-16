@@ -2,10 +2,10 @@
 INSERT INTO task_base SET \
            id = 1, \
            type = 1, \
-           title = '安装旺财', \
+           title = '安装小猪', \
            icon = '', \
-           intro = '安装旺财获得1元红包', \
-           descr = '安装旺财获得1元红包', \
+           intro = '安装小猪获得1元红包', \
+           descr = '安装小猪获得1元红包', \
            steps = '', \
            money = 100, \
            insert_time = NOW();
@@ -28,8 +28,8 @@ INSERT INTO task_base SET \
            type = 3, \
            title = '填写邀请人', \
            icon = '', \
-           intro = '与好友一起旺财，填写后领取2元红包', \
-           descr = '与好友一起旺财，填写后领取2元红包', \
+           intro = '与好友一起小猪，填写后领取2元红包', \
+           descr = '与好友一起小猪，填写后领取2元红包', \
            steps = '', \
            money = 200, \
            insert_time = NOW();
@@ -62,10 +62,10 @@ INSERT INTO task_base SET \
 INSERT INTO task_base SET \
            id = 6, \
            type = 6, \
-           title = '好评旺财', \
+           title = '好评小猪', \
            icon = '', \
-           intro = '红包虽小，旺财真心希望得到您的好评', \
-           descr = '红包虽小，旺财真心希望得到您的好评', \
+           intro = '红包虽小，小猪真心希望得到您的好评', \
+           descr = '红包虽小，小猪真心希望得到您的好评', \
            steps = '', \
            money = 10, \
            insert_time = NOW();

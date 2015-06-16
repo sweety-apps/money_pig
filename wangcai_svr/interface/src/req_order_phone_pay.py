@@ -34,9 +34,14 @@ class Handler:
         if time.time() - activate_time < 86400:
             logger.error('cannot withdraw in one day! userid:%d, phone_num:%s' %(req.userid, req.phone_num))
             resp.res = 1
-            resp.msg = '请在首次注册24小时后申请提现'
+            resp.msg = '请在首次注册24小时后申请兑换'
             return resp.dump_json()
 
+
+        if self.check_legal_pay(req.amount, req.discount):
+            resp.res = 1
+            resp.msg = '请求参数不对'
+            return resp.dump_json()
 
         #冻结
         rtn, sn = BillingClient.instance().freeze(req.userid, req.device_id, req.discount, '兑换%d元话费' %(req.amount/100))
@@ -85,5 +90,16 @@ class Handler:
             return
 
         SMSCenter.instance().confirm_order_phone_charge(phone_num, amount)
-        
+
+    def check_legal_pay(self, amount, discount):
+        legal_list = [ {'amount':10,'discount':10} , \
+                       {'amount':30,'discount':27} , \
+                       {'amount':50,'discount':43} , \
+                       ]
+        for item in legal_list:
+            if item['amount'] == amount and item['discount'] == discount:
+                return True
+
+        return False
+
 

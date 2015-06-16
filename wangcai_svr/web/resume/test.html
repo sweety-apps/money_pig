@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+    <title></title>
+
+    <script type="text/javascript">
+
+        function callRestaurant(){
+            var params = {
+                cmd:'action',
+                params:{
+                    actiontype:"restaurantdetail",
+                    actionparam:
+                    {
+                        restaurantid:"1"
+                    }
+                }
+            }
+            execute(params);
+        }
+
+        function execute(params){
+            if('undefined' == typeof(executeNativeCommand)){
+                console.warn('iox_hybird.js or android_hybird.js required');
+                return;
+            }else{
+                executeNativeCommand(params);
+            }
+        }
+
+    </script>
+</head>
+<body>
+        <p onclick="callRestaurant()">点我点我</p>
+</body>
+</html>

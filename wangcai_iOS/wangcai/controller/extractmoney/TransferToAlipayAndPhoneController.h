@@ -26,6 +26,8 @@
     UIPayButton* _btn1;
     UIPayButton* _btn2;
     UIPayButton* _btn3;
+    
+    UIButton* _helpButton;
 }
 
 @property (retain, nonatomic) IBOutlet UITapGestureRecognizer *tapGestureRecognizer;
@@ -60,5 +62,7 @@
 - (IBAction)clickClear1:(id)sender;
 - (IBAction)clickClear2:(id)sender;
 - (IBAction)clickClear3:(id)sender;
+
+- (IBAction)clickAlipayHelp:(id)sender;
 
 @end

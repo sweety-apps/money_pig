@@ -34,7 +34,7 @@ class Handler:
             return resp.dump_json()
         elif r['rtn'] != 0:
             resp.res = 1
-            resp.msg = 'error'
+            resp.msg = '邀请码错误'
             return resp.dump_json()
             
         inviter_id = int(r['inviter'])

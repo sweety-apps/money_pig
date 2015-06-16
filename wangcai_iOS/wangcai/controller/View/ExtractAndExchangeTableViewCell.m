@@ -27,6 +27,7 @@
     [_nameLabel release];
     [_desLabel release];
     [_cheapMarkImageView release];
+    [_rightArrowImageView release];
     [super dealloc];
 }
 @end

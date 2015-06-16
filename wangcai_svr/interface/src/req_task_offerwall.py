@@ -63,7 +63,8 @@ class Handler:
             'userid': userid,
             'type': 0,
             'increment': point,
-            'inviter': inviter
+            'inviter': inviter,
+            'remark': '体验应用赚取 %.1f' %(point/10.0)
         }
         url = 'http://' + TASK_BACKEND + '/report_task_offerwall'
         r = http_request(url, params)
@@ -79,7 +80,8 @@ class Handler:
             'userid': userid,
             'type': 1,
             'increment': point,
-            'inviter': inviter
+            'inviter': inviter,
+            'remark': '体验应用赚取 %.1f' %(point/10.0)
         }
         url = 'http://' + TASK_BACKEND + '/report_task_offerwall'
         r = http_request(url, params)

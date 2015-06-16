@@ -98,44 +98,46 @@
 
 #define DEBUG_PUSH 0
 
-#define HTTP_LOGIN_AND_REGISTER @"https://ssl.getwangcai.com/0/register"
-#define HTTP_BIND_PHONE         @"https://ssl.getwangcai.com/0/account/bind_phone"
+#define HTTP_LOGIN_AND_REGISTER @"https://api.bghills.com/0/register"
+#define HTTP_BIND_PHONE         @"https://api.bghills.com/0/account/bind_phone"
 
-#define HTTP_SEND_SMS_CODE      @"https://ssl.getwangcai.com/0/sms/resend_sms_code"
-#define HTTP_CHECK_SMS_CODE     @"https://ssl.getwangcai.com/0/account/bind_phone_confirm"
-#define HTTP_READ_ACCOUNT_INFO     @"https://ssl.getwangcai.com/0/account/info"
-#define HTTP_WRITE_ACCOUNT_INFO     @"https://ssl.getwangcai.com/0/account/update_user_info"
-#define HTTP_UPDATE_INVITER     @"https://ssl.getwangcai.com/0/account/update_inviter"
+#define HTTP_SEND_SMS_CODE      @"https://api.bghills.com/0/sms/resend_sms_code"
+#define HTTP_CHECK_SMS_CODE     @"https://api.bghills.com/0/account/bind_phone_confirm"
+#define HTTP_READ_ACCOUNT_INFO     @"https://api.bghills.com/0/account/info"
+#define HTTP_WRITE_ACCOUNT_INFO     @"https://api.bghills.com/0/account/update_user_info"
+#define HTTP_UPDATE_INVITER     @"https://api.bghills.com/0/account/update_inviter"
 
-#define HTTP_READ_TASK_LIST     @"https://ssl.getwangcai.com/0/task/list"
-#define HTTP_TAKE_AWARD     @"https://ssl.getwangcai.com/0/task/check-in"
+#define HTTP_READ_TASK_LIST     @"https://api.bghills.com/0/task/list"
+#define HTTP_TAKE_AWARD     @"https://api.bghills.com/0/task/check-in"
 
-#define HTTP_DOWNLOAD_APP       @"https://ssl.getwangcai.com/0/task/download_app"
+#define HTTP_DOWNLOAD_APP       @"https://api.bghills.com/0/task/download_app"
 
-#define HTTP_PHONE_PAY         @"https://ssl.getwangcai.com/0/order/phone_pay"
-#define HTTP_ALIPAY_PAY         @"https://ssl.getwangcai.com/0/order/alipay"
-#define HTTP_QQ_PAY             @"https://ssl.getwangcai.com/0/order/qb_pay"
+#define HTTP_PHONE_PAY         @"https://api.bghills.com/0/order/phone_pay"
+#define HTTP_ALIPAY_PAY         @"https://api.bghills.com/0/order/alipay"
+#define HTTP_QQ_PAY             @"https://api.bghills.com/0/order/qb_pay"
 
-#define HTTP_EXCHANGE_LIST         @"https://ssl.getwangcai.com/0/order/exchange_list"
-#define HTTP_EXCHANGE_CODE         @"https://ssl.getwangcai.com/0/order/exchange_code"
+#define HTTP_EXCHANGE_LIST         @"https://api.bghills.com/0/order/exchange_list"
+#define HTTP_EXCHANGE_CODE         @"https://api.bghills.com/0/order/exchange_code"
 
-#define HTTP_TASK_OFFERWALL         @"https://ssl.getwangcai.com/0/task/poll"
+#define HTTP_TASK_OFFERWALL         @"https://api.bghills.com/0/task/poll"
 
-#define HTTP_TASK_COMMENT         @"https://ssl.getwangcai.com/0/task/comment"
+#define HTTP_TASK_COMMENT         @"https://api.bghills.com/0/task/comment"
 
 
-#define HTTP_TASK_SHARE         @"https://ssl.getwangcai.com/0/task/share"
+#define HTTP_TASK_SHARE         @"https://api.bghills.com/0/task/share"
 
-#define HTTP_BILLING_HISTORY         @"https://ssl.getwangcai.com/0/account/billing_history"
+#define HTTP_BILLING_HISTORY         @"https://api.bghills.com/0/account/billing_history"
 
-#define HTTP_ORDER_DETAIL         @"https://ssl.getwangcai.com/0/order/detail"
+#define HTTP_ORDER_DETAIL         @"https://api.bghills.com/0/order/detail"
 
-#define WEB_JD_ENCHARGE_CODE        @"https://passport.m.jd.com/card/optionGiftCard.action"
+#define WEB_JD_ENCHARGE_CODE        @"http://giftcard.jd.com/giftcard/index.action"
 
-#define WEB_EXTRACT_MONEY @"http://wangcai.meme-da.com/web/extract_money.php"
-#define WEB_TASK          @"http://wangcai.meme-da.com/web/task/app_task.php"
-#define WEB_EXCHANGE_INFO @"http://wangcai.meme-da.com/web/exchange_info2.php"
-#define WEB_ORDER_INFO    @"http://wangcai.meme-da.com/web/order_info.php"
+#define WEB_ARTICLE_URL           @"http://www.bghills.com/app/article.html"
+
+#define WEB_EXTRACT_MONEY @""//@"http://wangcai.meme-da.com/web/extract_money.php"
+#define WEB_TASK          @""//@"http://wangcai.meme-da.com/web/task/app_task.php"
+#define WEB_EXCHANGE_INFO @""//@"http://wangcai.meme-da.com/web/exchange_info2.php"
+#define WEB_ORDER_INFO    @""//@"http://wangcai.meme-da.com/web/order_info.php"
 
 #else
 
@@ -143,43 +145,45 @@
 #define SERVER_HOST_NAME(x)
 
 
-#define HTTP_LOGIN_AND_REGISTER @"http://www.bghills.com/0/register"
-#define HTTP_BIND_PHONE         @"http://www.bghills.com/0/account/bind_phone"
+#define HTTP_LOGIN_AND_REGISTER @"https://api.bghills.com/0/register"
+#define HTTP_BIND_PHONE         @"https://api.bghills.com/0/account/bind_phone"
 
-#define HTTP_SEND_SMS_CODE      @"http://www.bghills.com/0/sms/resend_sms_code"
-#define HTTP_CHECK_SMS_CODE     @"http://www.bghills.com/0/account/bind_phone_confirm"
-#define HTTP_READ_ACCOUNT_INFO     @"http://www.bghills.com/0/account/info"
-#define HTTP_WRITE_ACCOUNT_INFO     @"http://www.bghills.com/0/account/update_user_info"
-#define HTTP_UPDATE_INVITER     @"http://www.bghills.com/0/account/update_inviter"
+#define HTTP_SEND_SMS_CODE      @"https://api.bghills.com/0/sms/resend_sms_code"
+#define HTTP_CHECK_SMS_CODE     @"https://api.bghills.com/0/account/bind_phone_confirm"
+#define HTTP_READ_ACCOUNT_INFO     @"https://api.bghills.com/0/account/info"
+#define HTTP_WRITE_ACCOUNT_INFO     @"https://api.bghills.com/0/account/update_user_info"
+#define HTTP_UPDATE_INVITER     @"https://api.bghills.com/0/account/update_inviter"
 
-#define HTTP_READ_TASK_LIST     @"http://www.bghills.com/0/task/list"
-#define HTTP_TAKE_AWARD     @"http://www.bghills.com/0/task/check-in"
+#define HTTP_READ_TASK_LIST     @"https://api.bghills.com/0/task/list"
+#define HTTP_TAKE_AWARD     @"https://api.bghills.com/0/task/check-in"
 
-#define HTTP_DOWNLOAD_APP       @"http://www.bghills.com/0/task/download_app"
+#define HTTP_DOWNLOAD_APP       @"https://api.bghills.com/0/task/download_app"
 
-#define HTTP_PHONE_PAY         @"http://www.bghills.com/0/order/phone_pay"
-#define HTTP_ALIPAY_PAY         @"http://www.bghills.com/0/order/alipay"
-#define HTTP_QQ_PAY         @"http://www.bghills.com/0/order/qb_pay"
+#define HTTP_PHONE_PAY         @"https://api.bghills.com/0/order/phone_pay"
+#define HTTP_ALIPAY_PAY         @"https://api.bghills.com/0/order/alipay"
+#define HTTP_QQ_PAY         @"https://api.bghills.com/0/order/qb_pay"
 
-#define HTTP_EXCHANGE_LIST         @"http://www.bghills.com/0/order/exchange_list"
-#define HTTP_EXCHANGE_CODE         @"http://www.bghills.com/0/order/exchange_code"
+#define HTTP_EXCHANGE_LIST         @"https://api.bghills.com/0/order/exchange_list"
+#define HTTP_EXCHANGE_CODE         @"https://api.bghills.com/0/order/exchange_code"
 
-#define HTTP_TASK_OFFERWALL         @"http://www.bghills.com/0/task/poll"
+#define HTTP_TASK_OFFERWALL         @"https://api.bghills.com/0/task/poll"
 
-#define HTTP_TASK_COMMENT         @"http://www.bghills.com/0/task/comment"
+#define HTTP_TASK_COMMENT         @"https://api.bghills.com/0/task/comment"
 
-#define HTTP_TASK_SHARE         @"http://www.bghills.com/0/task/share"
+#define HTTP_TASK_SHARE         @"https://api.bghills.com/0/task/share"
 
-#define HTTP_BILLING_HISTORY         @"http://www.bghills.com/0/account/billing_history"
+#define HTTP_BILLING_HISTORY         @"https://api.bghills.com/0/account/billing_history"
 
-#define HTTP_ORDER_DETAIL         @"http://www.bghills.com/0/order/detail"
+#define HTTP_ORDER_DETAIL         @"https://api.bghills.com/0/order/detail"
 
-#define WEB_JD_ENCHARGE_CODE        @"https://passport.m.jd.com/card/optionGiftCard.action"
+#define WEB_JD_ENCHARGE_CODE        @"http://giftcard.jd.com/giftcard/index.action"
 
-#define WEB_EXTRACT_MONEY         @"http://dev.meme-da.com/web/extract_money.php"
-#define WEB_TASK                  @"http://dev.meme-da.com/web/task/app_task.php"
-#define WEB_EXCHANGE_INFO         @"http://dev.meme-da.com/web/exchange_info2.php"
-#define WEB_ORDER_INFO            @"http://dev.meme-da.com/web/order_info.php"
+#define WEB_ARTICLE_URL           @"http://www.bghills.com/app/article.html"
+
+#define WEB_EXTRACT_MONEY         @""//@"http://dev.meme-da.com/web/extract_money.php"
+#define WEB_TASK                  @""//@"http://dev.meme-da.com/web/task/app_task.php"
+#define WEB_EXCHANGE_INFO         @""//@"http://dev.meme-da.com/web/exchange_info2.php"
+#define WEB_ORDER_INFO            @""//@"http://dev.meme-da.com/web/order_info.php"
 #endif
 
 

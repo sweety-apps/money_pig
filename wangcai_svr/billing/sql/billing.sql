@@ -8,6 +8,7 @@ CREATE TABLE IF NOT EXISTS anonymous_account
     flag            TINYINT         NOT NULL DEFAULT 0,
     create_time     DATETIME        NOT NULL,
     ts              TIMESTAMP       NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    offerwall_income           INT             NOT NULL DEFAULT 0,
     PRIMARY KEY (id),
     UNIQUE (device_id)
 ) ENGINE = InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
@@ -25,6 +26,7 @@ CREATE TABLE IF NOT EXISTS billing_account
     status          TINYINT         NOT NULL DEFAULT 0,
     create_time     DATETIME        NOT NULL,
     ts              TIMESTAMP       NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    offerwall_income           INT             NOT NULL DEFAULT 0,
     PRIMARY KEY (id),
     UNIQUE (userid)
 ) ENGINE = InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;

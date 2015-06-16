@@ -16,6 +16,27 @@
 #import "NSString+FloatFormat.h"
 #import "BaseTaskTableViewController.h"
 #import "Config.h"
+#import "MiidiAdSpot.h"
+
+#define kAlertBoxShowAdView (10086)
+
+@interface UIAdSpotLabel : UILabel
+
+@end
+
+@implementation UIAdSpotLabel
+
+- (void)removeFromSuperview
+{
+    [super removeFromSuperview];
+}
+
+- (void)setFrame:(CGRect)frame
+{
+    [super setFrame:frame];
+}
+
+@end
 
 @interface ChoiceMoveNode : NSObject
 
@@ -40,6 +61,12 @@
 
 @end
 
+@interface ChoujiangViewController ()
+
+@property (nonatomic, retain) UILabel* adSpotTitleLabel;
+
+@end
+
 @implementation ChoujiangViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -58,6 +85,17 @@
     _choiceViews = [[NSArray arrayWithObjects:self.choice0,self.choice1,self.choice2,self.choice3,self.choice4,self.choice5,self.choice6,self.choice7,self.choice8,self.choice9,self.choice10,self.choice11, nil] retain];
     _beilv = 1;
     _share = NO;
+    
+    if(![MiidiAdSpot isSpotAdReady]){ // 插屏广告还没有准备好
+        [MiidiAdSpot requestSpotAd:^(NSError *error){ // 请求插屏数据源
+            if(error != nil){ //失败
+                NSLog(@"requestSpotAd error");
+            }
+            else{ // 获取数据成功
+                NSLog(@"requestSpotAd success");
+            }
+        }];
+    }
     
     if ([SettingLocalRecords hasCheckInRecent2Days])
     {
@@ -115,6 +153,7 @@
 - (void)dealloc
 {
     [_choiceViews release];
+    self.adSpotTitleLabel = nil;
     [super dealloc];
 }
 
@@ -148,7 +187,8 @@
     }
     else
     {
-        UIAlertView* alert = [[[UIAlertView alloc] initWithTitle:@"提示" message:@"今天已经签到过了，明天记得来哟" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil] autorelease];
+        UIAlertView* alert = [[[UIAlertView alloc] initWithTitle:@"提示" message:@"今天已经签到过了，明天记得来哟" delegate:self cancelButtonTitle:@"点广告攒人品再返回" otherButtonTitles:nil] autorelease];
+        alert.tag = kAlertBoxShowAdView;
         [alert show];
     }
 #endif
@@ -158,7 +198,80 @@
 
 - (IBAction)onPressedBackButton:(id)sender
 {
+    [[UIApplication sharedApplication] setStatusBarHidden:YES];
     [self.stack popViewControllerAnimated:YES];
+}
+
+- (void)showAdSpot
+{
+    //展示提示Label
+    UILabel* label = [[[UIAdSpotLabel alloc] initWithFrame:CGRectMake(0, 0, 320, 180)] autorelease];
+    label.textColor = [UIColor whiteColor];
+    label.textAlignment = NSTextAlignmentCenter;
+    label.backgroundColor = [UIColor grayColor];
+    label.font = [UIFont fontWithName:@"STHeitiSC-Medium" size:18];
+    label.numberOfLines = 0;
+    label.text = @"少侠留步，点下广告可以攒人品！\n\r \n\r ";
+    label.hidden = YES;
+    self.adSpotTitleLabel = label;
+    
+    if(![MiidiAdSpot isSpotAdReady]){ // 插屏广告还没有准备好
+        
+        [MiidiAdSpot requestSpotAd:^(NSError *error){ // 请求插屏数据源
+            if(error != nil){ //失败
+                NSLog(@"requestSpotAd error");
+            }
+            else{ // 获取数据成功
+                NSLog(@"requestSpotAd success");
+                
+                // 已经准备好了
+                if([MiidiAdSpot isSpotAdReady])
+                {
+                    [MiidiAdSpot displaySpotAdWithBlock:self block:^(){ // 展示插屏广告
+                        
+                        [self.adSpotTitleLabel removeFromSuperview];
+                        [self onPressedBackButton:nil];
+                    }];
+                    [self performSelector:@selector(makeAdSpotShowAnimation) withObject:nil afterDelay:0.1];
+                }
+                else
+                {
+                    [self onPressedBackButton:nil];
+                }
+            }
+        }];
+    }
+    else
+    { // 数据都准备好了
+        [MiidiAdSpot displaySpotAdWithBlock:self block:^()
+        { // 展示插屏广告
+            [self.adSpotTitleLabel removeFromSuperview];
+            [self onPressedBackButton:nil];
+        }];
+        [self performSelector:@selector(makeAdSpotShowAnimation) withObject:nil afterDelay:0.1];
+    }
+}
+
+- (void)makeAdSpotShowAnimation
+{
+    UIView* parentView = self.view;
+    [parentView addSubview:self.adSpotTitleLabel];
+    //[self.view addSubview:self.adSpotTitleLabel];
+    [self.adSpotTitleLabel.superview bringSubviewToFront:self.adSpotTitleLabel];
+    
+    self.adSpotTitleLabel.hidden = NO;
+    
+    self.adSpotTitleLabel.transform = CGAffineTransformMakeScale(0, 0);
+    [UIView animateWithDuration:0.2 animations:^(){
+        self.adSpotTitleLabel.transform = CGAffineTransformMakeScale(1.5, 1.5);
+    } completion:^(BOOL finished) {
+        self.adSpotTitleLabel.transform = CGAffineTransformMakeScale(1.5, 1.5);
+        [UIView animateWithDuration:0.1 animations:^(){
+            self.adSpotTitleLabel.transform = CGAffineTransformMakeScale(1, 1);
+        } completion:^(BOOL finished) {
+            self.adSpotTitleLabel.transform = CGAffineTransformMakeScale(1, 1);
+        }];
+    }];
 }
 
 - (void)resetViews
@@ -319,7 +432,8 @@
     int old_balance = [[LoginAndRegister sharedInstance] getBalance];
     
     _share = NO;
-    switch (_choiceIndex)
+    int index = _choiceIndex % 12;
+    switch (index)
     {
         case 1:
         case 3:
@@ -403,8 +517,8 @@
     }
     else
     {
-        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:title message:msg delegate:self cancelButtonTitle:@"返回" otherButtonTitles:/*@"分享",*/ nil];
-        
+        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:title message:msg delegate:self cancelButtonTitle:@"点广告攒人品" otherButtonTitles:/*@"分享",*/ nil];
+        alertView.tag = kAlertBoxShowAdView;
         [alertView show];
     }
 }
@@ -487,8 +601,20 @@
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    //返回
-    [self onPressedBackButton:self.backButton];
+#if 0
+    [self showAdSpot];
+#else
+    if (alertView.tag == kAlertBoxShowAdView)
+    {
+        //插屏广告
+        [self showAdSpot];
+    }
+    else
+    {
+        //返回
+        [self onPressedBackButton:self.backButton];
+    }
+#endif
 }
 
 - (void)onPressedGetRmbUIGetRedBagAlertView:(UIGetRedBagAlertView*)alertView

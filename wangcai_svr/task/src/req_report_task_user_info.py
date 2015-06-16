@@ -36,7 +36,7 @@ class Handler:
 
         if n > 0:
             #奖励1元
-            BillingClient.instance().recharge(req.device_id, req.userid, TASK_REWARD_INFO, '填写个人资料')
+            BillingClient.instance().recharge(req.device_id, req.userid, TASK_REWARD_INFO, '填写个人资料', 0)
 
         return resp.dump_json()
 

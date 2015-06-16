@@ -8,7 +8,7 @@ fi
 userid=$1
 order_id=$2
 
-curl 'http://gm.getwangcai.com/order/phone/charge' -d 'userid=10049&order_id=201401231554000000000009fi'
+curl 'http://127.0.0.1:19866/order/phone/charge' -d 'userid=10049&order_id=201401231554000000000009fi'
 
 #echo "userid:$userid, device_id:$device_id, serial_num:$serial_num"
 

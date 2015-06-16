@@ -32,6 +32,7 @@
 #import "Common.h"
 #import "BillingHistoryViewController.h"
 #import "ExtractAndExchangeViewController.h"
+#import "AriticleWebViewController.h"
 #import "InviteController.h"
 #import "UserHelpViewController.h"
 #import <Foundation/Foundation.h>
@@ -41,9 +42,12 @@ static BOOL gNeedReloadTaskList = NO;
 static BOOL gNeedShowChoujiangShare = NO;
 static int  gChoujiang = 0;
 
+#define kReloginTimeInterval (60.0f)
+
 @interface BaseTaskTableViewController () <CommonTaskListDelegate,UIGetRedBagAlertViewDelegate>
 {
     NSTimer* _checkOfferWallTimer;
+    NSTimer* _reloginTimer;
     BOOL _justOnePage;
 }
 
@@ -107,7 +111,14 @@ static int  gChoujiang = 0;
     int nPollingInterval = [[LoginAndRegister sharedInstance] getPollingInterval];
     _checkOfferWallTimer = [NSTimer scheduledTimerWithTimeInterval:nPollingInterval target:self selector:@selector(checkDMOfferWall) userInfo:nil repeats:NO];
     
+    _reloginTimer = [NSTimer scheduledTimerWithTimeInterval:kReloginTimeInterval target:self selector:@selector(_reloginEvent) userInfo:nil repeats:NO];
     //[self performSelector:@selector(refreshTaskList) withObject:nil afterDelay:2.0f];
+}
+
+- (void)_reloginEvent
+{
+    [[LoginAndRegister sharedInstance] login:self];
+    _reloginTimer = [NSTimer scheduledTimerWithTimeInterval:kReloginTimeInterval target:self selector:@selector(_reloginEvent) userInfo:nil repeats:NO];
 }
 
 - (void)checkDMOfferWall
@@ -202,6 +213,8 @@ static int  gChoujiang = 0;
         self.zhanghuYuEHeaderCell.bindphoneLabel.text = @"未绑定手机";
         self.zhanghuYuEHeaderCell.bindphoneLabel.textColor = [UIColor whiteColor];
     }
+    
+    [self.containTableView reloadData];
 }
 
 - (void)refreshChoujiangButton
@@ -239,6 +252,8 @@ static int  gChoujiang = 0;
         [_alertBalanceTip release];
         _alertBalanceTip = nil;
     }
+    
+    [_reloginTimer invalidate];
     
     [super dealloc];
 }
@@ -345,6 +360,12 @@ static int  gChoujiang = 0;
 - (IBAction)onPressedLoadHisButton:(id)sender
 {
     [self onLoadHistoricalFinishedList];
+}
+
+- (void)onPressedArticle
+{
+    AriticleWebViewController* ctrl = [AriticleWebViewController controller];
+    [self.parentUIBoard.stack pushViewController:ctrl animated:YES];
 }
 
 - (IBAction)onPressedQiandaoChoujiangButton:(id)sender
@@ -519,6 +540,15 @@ static int  gChoujiang = 0;
             else
             {
                 [comCell setCellState:CommonTaskTableViewCellStateUnfinish];
+            }
+            
+            if ( [task.taskType intValue] == kTaskTypeEverydaySign )
+            {
+                // 是否已抽过
+                if([[ChoujiangLogic sharedInstance] getAwardCode] != kGetAwardTypeNotGet)
+                {
+                    [comCell setCellState:CommonTaskTableViewCellStateFinished];
+                }
             }
             
             if ( [task.taskType intValue] == KTaskTypeUpgrade ) {
@@ -871,6 +901,11 @@ static int  gChoujiang = 0;
                 [router presentViewController:mgr.wallNavController animated:YES completion:nil];
                 break;
             }
+            case kTaskTypeAriticle:
+            {
+                [self onPressedArticle];
+            }
+                break;
             default:
                 break;
         }
@@ -1210,7 +1245,7 @@ ON_NOTIFICATION( notification )
     int nBalance = [[LoginAndRegister sharedInstance] getIncome];
     NSString* content = [NSString stringWithFormat:@"我用赚钱小猪赚了%d元，你也可以的，填我的邀请码%@可领取2元红包。赚钱小猪下载地址:%@", nBalance/100, invite, [NSString stringWithFormat: INVITE_TASK, invite]];
                          
-    id<ISSContent> publishContent = [ShareSDK content:content defaultContent:@"" image:[ShareSDK imageWithPath:imagePath] title: @"玩应用领红包" url: [NSString stringWithFormat: INVITE_TASK, invite] description: @"赚钱小猪分享" mediaType: SSPublishContentMediaTypeNews];
+    id<ISSContent> publishContent = [ShareSDK content:content defaultContent:@"" image:[ShareSDK imageWithPath:imagePath] title: @"我们没情怀，直接发钞票" url: [NSString stringWithFormat: INVITE_TASK, invite] description: @"赚钱小猪分享" mediaType: SSPublishContentMediaTypeNews];
     
     [ShareSDK showShareActionSheet: nil shareList: nil content: publishContent statusBarTips: YES authOptions: nil shareOptions: nil result: ^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end)
      {

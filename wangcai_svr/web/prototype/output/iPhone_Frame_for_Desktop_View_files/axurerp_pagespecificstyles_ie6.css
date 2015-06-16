@@ -1,0 +1,20 @@
+﻿* html .u0_normal {
+    background-image: none;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="iPhone_Frame_for_Desktop_View_files/iPhone_Body_u0_normal.png");
+}
+
+* html .u3_normal {
+    background-image: none;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="iPhone_Frame_for_Desktop_View_files/Status_Bar_u3_normal.png");
+}
+
+* html .u6_start {
+    background-image: none;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="iPhone_Frame_for_Desktop_View_files/u6_start.png");
+}
+
+* html .u6_line {
+    background-image: none;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="iPhone_Frame_for_Desktop_View_files/u6_line.png");
+}
+

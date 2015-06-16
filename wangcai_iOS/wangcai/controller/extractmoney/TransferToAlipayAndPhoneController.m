@@ -16,6 +16,8 @@
 #import "MobClick.h"
 #import "PhoneValidationController.h"
 #import "OrderDetailViewController.h"
+#import "UIImage+imageUtils.h"
+#import "CommonWebViewController.h"
 
 @interface TransferToAlipayAndPhoneController ()
 
@@ -61,6 +63,23 @@
     _btn2 = [[UIPayButton alloc] initWithNibName:@"UIPayButton" bundle:nil];
     _btn3 = [[UIPayButton alloc] initWithNibName:@"UIPayButton" bundle:nil];
     
+    //支付宝卡使用帮助button
+    _helpButton = [[UIButton buttonWithType:UIButtonTypeCustom] retain];
+    _helpButton.layer.masksToBounds = YES;
+    _helpButton.layer.cornerRadius = 5.0f;
+    [_helpButton setTitle:@"支付宝卡使用帮助" forState:UIControlStateNormal];
+    [_helpButton setTitleColor:RGB(139, 178, 63) forState:UIControlStateNormal];
+    [_helpButton setBackgroundImage:[UIImage imageWithPureColor:[UIColor whiteColor]] forState:UIControlStateNormal];
+    _helpButton.titleLabel.font = [UIFont fontWithName:@"Heiti SC" size:14];
+    _helpButton.frame = CGRectMake(100, self.view.frame.size.height - self.navigationBarView.frame.size.height - 50, 120, 30);
+    UIView* helpButtonlineView = [[UIView alloc] initWithFrame:CGRectMake(100, CGRectGetMaxY(_helpButton.frame) - 4, 120, 1)];
+    helpButtonlineView.backgroundColor = RGB(139, 178, 63);
+    [_helpButton addTarget:self action:@selector(clickAlipayHelp:) forControlEvents:UIControlEventTouchUpInside];
+    [self._containerView addSubview:_helpButton];
+    [self._containerView addSubview:helpButtonlineView];
+    _helpButton.hidden = YES;
+    helpButtonlineView.hidden = YES;
+    
     rect.origin.x = 5;
     [_btn1.view setFrame:rect];
     
@@ -77,6 +96,8 @@
     NSArray* payInfo = nil;
     if ( _type == 1 ) {
         payInfo = [[LoginAndRegister sharedInstance] getAlipay];
+        _helpButton.hidden = NO;
+        helpButtonlineView.hidden = NO;
     } else if ( _type == 2 ) {
         payInfo = [[LoginAndRegister sharedInstance] getPhonePay];
     } else if ( _type == 3 ) {
@@ -86,7 +107,7 @@
     if ( [payInfo count] != 3 ) {
         [_btn1 setAmount:1000 Reward:0 Hot:NO Delegate:self];
         [_btn2 setAmount:3000 Reward:300 Hot:YES Delegate:self];
-        [_btn3 setAmount:5000 Reward:1000 Hot:NO Delegate:self];
+        [_btn3 setAmount:5000 Reward:700 Hot:NO Delegate:self];
     } else {
         NSDictionary* dict = [payInfo objectAtIndex:0];
         int nAmount = [[dict objectForKey:@"amount"] intValue];
@@ -208,6 +229,8 @@
     iconImageView.frame = rectIcon;
     [self.navigationBarView insertSubview:iconImageView belowSubview:self.navigationBarTitleLabel];
     self.navigationBarView.clipsToBounds = YES;
+    
+    self.failedBGTipLabel.text = @"";
 }
 
 - (IBAction)hideKeyboard:(id)sender
@@ -313,6 +336,8 @@
     [_btn1 release];
     [_btn2 release];
     [_btn3 release];
+    
+    [_helpButton release];
     
     [_tapGestureRecognizer release];
     
@@ -481,6 +506,13 @@
 
 - (IBAction)clickClear3:(id)sender {
     [self._textName setText:@""];
+}
+
+- (IBAction)clickAlipayHelp:(id)sender {
+    NSURL* url = [[NSBundle mainBundle] URLForResource:@"alipay_help" withExtension:@"html"];
+    CommonWebViewController* helpWebCtrl = [CommonWebViewController controllerWithUrl:[url absoluteString] andNavigationbarBgColor:self.navigationBarView.backgroundColor enablePullRefresh:NO];
+    
+    [self.navigationController pushViewController:helpWebCtrl animated:YES];
 }
 
 - (void)clickNext {

@@ -48,12 +48,12 @@ class Handler:
         logger.debug('phone charge, step 2, telcheck success, phone_num:%s, amount:%d, msg:%s' %(phone_num, amount, msg))
 
         #进行充值操作
-#        rtn, msg = OfpayClient.instance().charge(phone_num, amount, order.serial_num, order.create_time)
-#        if rtn != 0:
-#            logger.error('charge failed! phone:%s, amount:%d, msg:%s' %(phone_num, amount, msg))
-#            resp.rtn = 6
-#            resp.msg = '充值失败,' + msg
-#            return resp.dump_json()
+        rtn, msg = OfpayClient.instance().charge(phone_num, amount, order.serial_num, order.create_time)
+        if rtn != 0:
+            logger.error('charge failed! phone:%s, amount:%d, msg:%s' %(phone_num, amount, msg))
+            resp.rtn = 6
+            resp.msg = '充值失败,' + msg
+            return resp.dump_json()
 
         logger.debug('phone charge, step 3, charge success, phone_num:%s, amount:%d, msg:%s' %(phone_num, amount, msg))
 

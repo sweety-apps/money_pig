@@ -10,12 +10,12 @@ BILLING_BACKEND = 'http://127.0.0.1:15283'
 ORDER_BACKEND = 'http://127.0.0.1:15284'
 
 OFPAY_HOST = 'http://api2.ofpay.com'
-OFPAY_USERID = 'A917726'
-OFPAY_PASSWD = 'fbe4b0e5833713f6a5e91f49a0faf241'
+OFPAY_USERID = 'A999209'
+OFPAY_PASSWD = '19493a66701ca80eb880d63a67e2b4c8'
 
 SMS_API = 'http://106.ihuyi.com/webservice/sms.php'
-SMS_USER = 'cf_ksd'
-SMS_PASSWD = '1528studioihuyi'
+SMS_USER = 'cf_monkeybad'
+SMS_PASSWD = 'ff147258'
 SMS_XMLNS = 'http://106.ihuyi.com/'
 
 #SMS_TPL_ALIPAY = '您的支付宝提现%d元订单已转账，请浏览支付宝账号查收，感谢您的耐心等待。'

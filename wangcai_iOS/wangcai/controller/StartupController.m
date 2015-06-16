@@ -45,6 +45,7 @@
         
         self.logoImageView = (UIImageView*)[self.view viewWithTag:13];
         self.frontImageView = (UIImageView*)[self.view viewWithTag:12];
+        self.frontWordsImageView = (UIImageView*)[self.view viewWithTag:70];
         
         [[UIApplication sharedApplication] setStatusBarHidden:YES];
         _alertError = nil;
@@ -58,6 +59,22 @@
         [[LoginAndRegister sharedInstance] login:self];
     }
     return self;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    self.frontWordsImageView.transform = CGAffineTransformMakeScale(0, 0);
+    [UIView animateWithDuration:0.1 animations:^(){
+        self.frontWordsImageView.transform = CGAffineTransformMakeScale(2.0, 2.0);
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:0.5 animations:^(){
+            self.frontWordsImageView.transform = CGAffineTransformMakeScale(1.0, 1.0);
+        } completion:^(BOOL finished) {
+            self.frontWordsImageView.transform = CGAffineTransformMakeScale(1.0, 1.0);
+        }];
+    }];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
@@ -143,6 +160,7 @@
         [_alertForceUpdate release];
     }
     [_frontImageView release];
+    [_frontWordsImageView release];
     [_logoImageView release];
     [_activityIndicator release];
     [super dealloc];
@@ -205,12 +223,15 @@
 - (void)_hideSelfWithLogoMovingAnimation
 {
     CGRect rectDstLogo = CGRectMake(0, 0, 100, 110);
+    self.frontWordsImageView.alpha = 1.0;
     self.frontImageView.alpha = 1.0;
     self.logoImageView.alpha = 1.0;
     [UIView animateWithDuration:0.15 animations:^(){
+        self.frontWordsImageView.alpha = 0.0f;
         self.frontImageView.alpha = 0.0f;
     } completion:^(BOOL finished) {
-        [UIView animateWithDuration:0.2 animations:^(){
+        [UIView animateWithDuration:0.3 animations:^(){
+            self.view.backgroundColor = [UIColor whiteColor];
             self.logoImageView.frame = rectDstLogo;
         } completion:^(BOOL finished) {
             [self _hideSelfWithAnimation];

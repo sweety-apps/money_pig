@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)http://www.cocounion.com/public/mobile/index.html -->
+<html><head lang="zh-CN"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+    <meta http-equiv="expires" content="0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="pragram" content="no-cache">
+
+    <title>触控广告平台战略发布会</title>
+    <script src="./触控广告平台战略发布会_files/global.js"></script>
+    <script src="./触控广告平台战略发布会_files/zepto.min.js"></script>
+    <style>
+        /* global */
+        html,body,ul{margin: 0;padding: 0; position: relative}
+        ul,ol{list-style: none;}
+        html,body{width: 100%;height: 100%;overflow: hidden;-webkit-user-select: none;-moz-user-select: none;-o-user-select: none}
+        body{background: #f5f5f5;font:12px/21px ; color: #33234f;}
+        a{color: #33234f;text-decoration: none;}
+        a,button{-webkit-appearance:none;-moz-appearance:none;}
+        a:hover,button:hover,span:hover,div:hover{-webkit-tap-highlight-color:transparent;}
+        a{ text-decoration:none; color:#157efb; }
+        a::-webkit-focus-inner,button::-webkit-focus-inner,span::-webkit-focus-inner,div::-webkit-focus-inner{ 
+            background-color:rgba(0,0,0,0); -webkit-tap-highlight-color:rgba(0,0,0,0); }
+
+        #music_btn{position: absolute; top:3%; right:7%;z-index: 1;display: block;}
+
+
+        @-webkit-keyframes wave {
+            0%   {-webkit-transform: scaleX(0) scaleY(0);opacity: 0}
+            70%   {-webkit-transform: scaleX(1.5) scaleY(1.5);opacity: 1}
+            100% { -webkit-transform: scaleX(2) scaleY(2);opacity: 0}
+        }
+
+        @-moz-keyframes wave {
+            0%   {-moz-transform: scaleX(0) scaleY(0);opacity: 0; }
+            70%   {-moz-transform: scaleX(1.5) scaleY(1.5);opacity: 1;}
+            100% { -moz-transform: scaleX(2) scaleY(2);opacity: 0; }
+        }
+
+        @-o-keyframes wave {
+            0%   {-o-transform: scaleX(0) scaleY(0);opacity: 0; }
+            70%   {-o-transform: scaleX(1.5) scaleY(1.5);opacity: 1;}
+            100% { -o-transform: scaleX(2) scaleY(2);opacity: 0; }
+        }
+
+        @-webkit-keyframes Topto
+        {
+            0%   {margin-top: 0; opacity: 0;}
+            50%   {margin-top: -4%; opacity: 1;}
+            100% {margin-top: -8%; opacity: 0;}
+        }
+
+        @-moz-keyframes Topto
+        {
+            0%   {margin-top: 0; opacity: 0;}
+            50%   {margin-top: -4%; opacity: 1;}
+            100% {margin-top: -8%; opacity: 0;}
+        }
+        @-o-keyframes Topto
+        {
+            0%   {margin-top: 0; opacity: 0;}
+            50%   {margin-top: -4%; opacity: 1;}
+            100% {margin-top: -8%; opacity: 0;}
+        }
+
+        /* layout */
+        body{display:-webkit-box;display: box;-webkit-box-orient: vertical;box-orient: vertical;}
+        .content{display:-webkit-box;display: box;-webkit-box-orient: vertical;box-orient: vertical;-webkit-box-flex:1;box-flex:1;}
+        .tabs{-webkit-box-flex:1;box-flex:1;width: 100%;}
+        .tips{
+            position: absolute;
+            background: url("images/up.png") no-repeat;
+            background-size: 70% 70%;
+            top: 90%;
+            height: 24px;
+            width: 35px;
+            left: 50%;
+            text-align: center;
+            opacity: 0;
+            margin-left: -14px;
+            -webkit-animation:Topto 1.6s ease-out infinite;
+            -moz-animation:Topto 1.6s ease-out infinite;
+            -o-animation:Topto 1.6s ease-out infinite;
+        }
+
+        /*设置音乐*/
+        .icon_audio{background: url("images/on_off.png") no-repeat; background-size: 100% 100%; width:24px; height:24px; position:absolute; z-index: 999; top:8%; right:6%; }
+
+        .border_anim .icon_audio_anim{
+            display:block;
+            width:8px; height:8px;
+            position:absolute;
+            background:url("images/icon_audio_sign.png") no-repeat;
+            background-size: 100% 100%;
+            -webkit-animation:audio_anim 2s ease-out infinite;
+            -moz-animation:audio_anim 2s ease-out infinite;
+            -o-animation:audio_anim 2s ease-out infinite;
+            opacity:0;
+        }
+        .border_anim .iconaudio1, .border_anim .iconaudio2, .border_anim .iconaudio3{ position:relative; display:block; }
+        .border_anim .iconaudio1{
+            -webkit-transform:rotate(0deg);
+            -moz-transform:rotate(0deg);
+            -o-transform:rotate(0deg);
+        }
+        .border_anim .iconaudio2{
+            -webkit-transform:rotate(30deg);
+            -moz-transform:rotate(30deg);
+            -o-transform:rotate(30deg);
+        }
+        .border_anim .iconaudio3{
+            -webkit-transform:rotate(45deg);
+            -moz-transform:rotate(45deg);
+            -o-transform:rotate(45deg);
+        }
+        .border_anim .iconaudio2 .icon_audio_anim{
+            -webkit-animation-duration:2s;
+            -webkit-animation-delay:.9s;
+            -moz-animation-duration:2s;
+            -moz-animation-delay:.9s;
+            -o-animation-duration:2s;
+            -o-animation-delay:1.9s;
+        }
+        .border_anim .iconaudio3 .icon_audio_anim{
+            -webkit-animation-duration:2s;
+            -webkit-animation-delay:1.9s;
+            -moz-animation-duration:2s;
+            -moz-animation-delay:.9s;
+            -o-animation-duration:2s;
+            -o-animation-delay:1.9s;
+        }
+
+        @-webkit-keyframes audio_anim {
+            0% { -webkit-transform:translate(0,0); opacity:0; }
+            30% { -webkit-transform:translate(-20px,-20px); opacity:1; }
+            100% { -webkit-transform:translate(-30px,-30px); opacity:0; }
+        }
+
+        @-webkit-keyframes auto_scale {
+            0% { -webkit-transform:scale(1,1); opacity:0;}
+            20% {-webkit-transform:scale(1,1); opacity:0;}
+            40% { -webkit-transform:scale(1,1); opacity:0;}
+            60% { -webkit-transform:scale(1,1); opacity:0;}
+            80% { -webkit-transform:scale(1,1); opacity:1;}
+            100% { -webkit-transform:scale(2.5,2.5); opacity:0;}
+        }
+
+
+        @-webkit-keyframes light1 {
+            0% { top:-250px; left:350px; opacity:0; }
+            20% { top:-250px; left:350px; opacity:0; }
+            10% { top:-250px; left:350px; opacity:0; }
+            30% { top:-250px; left:350px; opacity:0; }
+            40% { top:-250px; left:350px; opacity:0; }
+            50% { top:-250px; left:350px; opacity:0; }
+            60% { top:-250px; left:350px; opacity:0; }
+            70% { top:-250px; left:350px; opacity:0; }
+            80% { top:0px; left:100px; opacity:0.5;}
+            90% { top:250px; left:-150px; opacity:1;}
+            100% { top:500px; left:-400px; opacity:0;}
+        }
+        @-webkit-keyframes light2 {
+            0% { top:-250px; left:450px; opacity:0; }
+            20% { top:-250px; left:450px; opacity:0; }
+            10% { top:-250px; left:450px; opacity:0; }
+            30% { top:-250px; left:450px; opacity:0; }
+            40% { top:-250px; left:450px; opacity:0; }
+            50% { top:-250px; left:450px; opacity:0; }
+            60% { top:-250px; left:450px; opacity:0; }
+            70% { top:-250px; left:450px; opacity:0; }
+            80% { top:0px; left:200px; opacity:0.5;}
+            90% { top:250px; left:-50px; opacity:1;}
+            100% { top:500px; left:-300px; opacity:0;}
+        }
+        @-webkit-keyframes light3{
+            0% { top:-250px; left:550px; opacity:0; }
+            20% { top:-250px; left:550px; opacity:0; }
+            10% { top:-250px; left:550px; opacity:0; }
+            30% { top:-250px; left:550px; opacity:0; }
+            40% { top:-250px; left:550px; opacity:0; }
+            50% { top:-250px; left:550px; opacity:0; }
+            60% { top:-250px; left:550px; opacity:0; }
+            70% { top:-250px; left:550px; opacity:0; }
+            80% { top:0px; left:300px; opacity:0.5;}
+            90% { top:250px; left:50px; opacity:1;}
+            100% { top:500px; left:-200px; opacity:0;}
+        }
+
+        @-webkit-keyframes light4{
+            0% { top:-250px; left:500px; opacity:0; }
+            20% { top:-250px; left:500px; opacity:0; }
+            10% { top:-250px; left:500px; opacity:0; }
+            30% { top:-250px; left:500px; opacity:0; }
+            40% { top:-250px; left:500px; opacity:0; }
+            50% { top:-250px; left:500px; opacity:0; }
+            60% { top:-250px; left:500px; opacity:0; }
+            70% { top:-250px; left:500px; opacity:0; }
+            80% { top:0px; left:250px; opacity:0.5;}
+            90% { top:250px; left:0px; opacity:1;}
+            100% { top:500px; left:-250px; opacity:0;}
+        }
+
+        @-webkit-keyframes light5{
+            0% { top:-250px; left:650px; opacity:0; }
+            20% { top:-250px; left:650px; opacity:0; }
+            10% { top:-250px; left:650px; opacity:0; }
+            30% { top:-250px; left:650px; opacity:0; }
+            40% { top:-250px; left:650px; opacity:0; }
+            50% { top:-250px; left:650px; opacity:0; }
+            60% { top:-250px; left:650px; opacity:0; }
+            70% { top:-250px; left:650px; opacity:0; }
+            80% { top:0px; left:400px; opacity:0.5;}
+            90% { top:250px; left:150px; opacity:1;}
+            100% { top:500px; left:-100px; opacity:0;}
+        }
+
+        @-webkit-keyframes light6{
+            0% { top:-250px; left:400px; opacity:0; }
+            20% { top:-250px; left:400px; opacity:0; }
+            10% { top:-250px; left:400px; opacity:0; }
+            30% { top:-250px; left:400px; opacity:0; }
+            40% { top:-250px; left:400px; opacity:0; }
+            50% { top:-250px; left:400px; opacity:0; }
+            60% { top:-250px; left:400px; opacity:0; }
+            70% { top:-250px; left:400px; opacity:0; }
+            80% { top:0px; left:150px; opacity:0.5;}
+            90% { top:250px; left:-100px; opacity:1;}
+            100% { top:500px; left:-350px; opacity:0;}
+        }
+
+        @-webkit-keyframes light7{
+            0% { top:-250px; left:600px; opacity:0; }
+            20% { top:-250px; left:600px; opacity:0; }
+            10% { top:-250px; left:600px; opacity:0; }
+            30% { top:-250px; left:600px; opacity:0; }
+            40% { top:-250px; left:600px; opacity:0; }
+            50% { top:-250px; left:600px; opacity:0; }
+            60% { top:-250px; left:600px; opacity:0; }
+            70% { top:-250px; left:600px; opacity:0; }
+            80% { top:0px; left:350px; opacity:0.5;}
+            90% { top:250px; left:100px; opacity:1;}
+            100% { top:500px; left:-150px; opacity:0;}
+        }
+
+
+        /* tab */
+        .tabs{position: relative;overflow: hidden;}
+        .tabs ul{position: absolute;width: 100%;height: 100%;}
+        .tabs li{ width: 100%; height:100%;position: relative; }
+        .tabs .sprite{position: absolute;top: 0;left: 0%;-webkit-backface-visibility:hidden;}
+
+        /*  index */
+        .tab0 .sprite{margin-left: 0px; -webkit-transition:all 500ms ease-out;  -webkit-transform-origin:20px 0px;}
+        .tab0 .bg{width: 100% ;height: 100% ; background:url("./images/one_bg.jpg") no-repeat; -webkit-background-size: 100% 100% ; background-size: 100%  100%; }
+        .tab0 .sprite1{ width: 350px; height: 100px; top:300px; left:10px; background:url("./images/one01.png") no-repeat; -webkit-background-size: 240px 60px; background-size: 240px 60px; opacity: 0; -webkit-transition:all 700ms ease-out;}
+        .tab0 .sprite1.show{-webkit-transform: translate(0px, -250px);transform: translate(0px, -250px);opacity: 1;}
+        .tab0 .sprite2{ -webkit-transition:all 900ms ease-out;width: 260px; height: 50px;top:300px; left:10px; background:url("./images/one02.png") no-repeat;-webkit-background-size: 220px 33px;  background-size: 220px 33px; opacity: 0;}
+        .tab0 .sprite2.show{-webkit-transform: translate(0px, -180px);transform: translate(0px, -180px);opacity: 1;}
+
+
+        .tabs .tab1 .sprite{-webkit-transition:all 500ms ease-out; }
+        .tabs .tab1 .bg{ background: url('images/two_bg.jpg') no-repeat; width: 100%;height: 100%; top: 0px;  -webkit-background-size: 100% 100% ; background-size: 100%  100%;}
+        .tabs .tab1 .sprite1{background: url('images/two01.png') no-repeat;  opacity: 0; top:0; width:100%; height: 17%;
+            -webkit-transform: translate(0px,100%);transform: translate(0px,100%);
+            -webkit-background-size: 100% auto ; background-size: 100%  auto; }
+        .tabs .tab1 .sprite1.show{-webkit-transform: translate(0px,0);transform: translate(0px,0); opacity: 1;}
+        .tabs .tab1 .sprite2{background: url('images/two02.png') no-repeat; -webkit-transition:all 600ms ease-out; opacity: 0; width: 100%; height: 16%; top:17%;
+            -webkit-background-size: 100% auto ; background-size: 100%  auto;-webkit-transform: translate(0px,100%);transform: translate(0px,100%);
+        }
+        .tabs .tab1 .sprite2.show{-webkit-transform: translate(0px,0);transform: translate(0px,0); opacity: 1;}
+        .tabs .tab1 .sprite3{background: url('images/two03.png') no-repeat; -webkit-transition:all 800ms ease-out; opacity: 0; width:100%; height:42%; top:34%;
+            -webkit-transform: translate(0px,100%);transform: translate(0px,100%);
+            -webkit-background-size: 100% auto ; background-size: 100% auto;}
+        .tabs .tab1 .sprite3.show{-webkit-transform: translate(0px,0);transform: translate(0px,0); opacity: 1;}
+        .tabs .tab1 .sprite4{background: url('images/two04.png') no-repeat; -webkit-transition:all 1000ms ease-out; opacity: 0; width:100%; height: 23%; top:73%;
+            -webkit-transform: translate(0px,100%);transform: translate(0px,100%);
+            -webkit-background-size: 100% auto ; background-size: 100% auto;}
+        .tabs .tab1 .sprite4.show{-webkit-transform: translate(0px,0);transform: translate( 0px,0); opacity: 1;}
+
+
+        .tabs .tab2 .sprite{-webkit-transition:all 500ms ease-out; }
+        .tabs .tab2 .bg{background: url("images/three_bg.jpg") no-repeat; width: 100%;height: 100%; -webkit-background-size: 100% 100% ; background-size: 100%  100%;}
+        .tabs .tab2 .sprite1{background: url('images/three01.png') no-repeat; top:18%; width: 100%;height: 11%;
+            -webkit-transform: translate(0px,100%);transform: translate(0px,100%);
+            -webkit-background-size: 100% auto ; background-size: 100%  auto; opacity: 0}
+        .tabs .tab2 .sprite1.show{ -webkit-transform: translate(0px, 0);transform: translate(0px, 0); opacity: 1}
+        .tabs .tab2 .sprite2{background: url('images/three02.png') no-repeat; top:32%;  width: 100%; height: 24%;
+            -webkit-transform: translate(0px,100%);transform: translate(0px,100%);
+            -webkit-background-size: 100% auto; background-size: 100%  auto;  opacity: 0;}
+        .tabs .tab2 .sprite2.show{-webkit-transform: translate(0px, 0);transform: translate(0px, 0);  opacity: 1;}
+        .tabs .tab2 .sprite3{background: url('images/three03.png') no-repeat; top:60%; width: 12%;height: 20%; left:44%;
+            -webkit-transform: translate(0px,100%);transform: translate(0px,100%);
+            -webkit-background-size: 100% auto ; background-size: 100%  auto;  opacity: 0;}
+        .tabs .tab2 .sprite3.show{-webkit-transform: translate(0px, 0);transform: translate(0px, 0);  opacity: 1;}
+        .tabs .tab2 .sprite4{background: url('images/three03.png') no-repeat; top:60%; width: 12%;height: 20%; left:44%;
+            -webkit-transform: translate(0px,100%);transform: translate(0px,100%);
+            -webkit-background-size: 100% auto ; background-size: 100%  auto;  opacity: 0;}
+        .tabs .tab2 .sprite4.show{-webkit-transform: translate(0px, 0);transform: translate(0px, 0);  opacity: 1;-webkit-animation:auto_scale 3s ease-out infinite;
+            -webkit-transform-origin:center 20px;}
+
+
+        .tabs .tab3 .sprite{-webkit-transition:all 500ms ease-out; }
+        .tabs .tab3 .bg{background: url("images/four_bg.jpg") no-repeat; width: 100%;height: 100%; -webkit-background-size: 100% 100% ; background-size: 100%  100%;}
+        .tabs .tab3 .sprite1{padding-left: 10px;}
+        .tabs .tab3 .sprite1 h2{ color: #fff; font-size: 24px; padding: 0; margin:0; line-height:26px; padding-top: 15px; margin-bottom: 0px;}
+        .tabs .tab3 .sprite1 h3{color: #fff; font-size: 20px; padding: 0; margin:0; line-height: 24px}
+        .tabs .tab3 .sprite2{background: url('images/four01.png') no-repeat; top:13%; left:-200px;  width: 100%; height: 15%; -webkit-background-size: 100% auto; background-size: 100% auto;  opacity: 0;}
+        .tabs .tab3 .sprite2.show{-webkit-transform: translate(200px, 0px);transform: translate(200px, 0px);  opacity: 1;}
+        .tabs .tab3 .sprite3{background: url('images/four02.png') no-repeat; top:25%; right:-200px; left:200px;  width: 100%; height: 16%; -webkit-background-size: 100% auto ; background-size:100% auto;  opacity: 0;}
+        .tabs .tab3 .sprite3.show{-webkit-transform: translate(-200px, 0px);transform: translate(-200px, 0px); opacity: 1;}
+        .tabs .tab3 .sprite4{background: url('images/four03.png') no-repeat; top:42%; left:-200px;  width: 100%; height: 17%; -webkit-background-size: 100% auto; background-size: 100% auto;  opacity: 0;}
+        .tabs .tab3 .sprite4.show{-webkit-transform: translate(200px, 0px);transform: translate(200px, 0px);  opacity: 1;}
+        .tabs .tab3 .sprite5{background: url('images/four04.png') no-repeat; top:56%; right:-200px;  left:200px;  width:100%; height: 16%; -webkit-background-size: 100% auto; background-size: 100% auto;  opacity: 0;}
+        .tabs .tab3 .sprite5.show{-webkit-transform: translate(-200px, 0px);transform: translate(-200px, 0px);  opacity: 1;}
+        .tabs .tab3 .sprite6{background: url('images/four05.png') no-repeat; top:71%; left:-200px;  width: 100%; height: 15%; -webkit-background-size: 100% auto; background-size: 100%  auto;  opacity: 0;}
+        .tabs .tab3 .sprite6.show{-webkit-transform: translate(200px, 0px);transform: translate(200px, 0px);  opacity: 1;}
+
+
+        .tabs .tab4 .sprite{-webkit-transition:all 500ms ease-out;}
+        .tabs .tab4 .bg{background: url("images/five_bg.jpg") no-repeat; width: 100%;height: 100%; -webkit-background-size: 100% 100% ; background-size: 100%  100%;}
+        .tabs .tab4 .sprite1{padding-left: 10px; padding-bottom: 15px; padding-top: 5px;}
+        .tabs .tab4 .sprite1 h2{ color: #000; font-size: 24px; padding: 0; margin:0; line-height:26px; padding-top: 10px; margin-bottom: 0px;}
+        .tabs .tab4 .sprite1 h3{color: #000; font-size: 20px; padding: 0; margin:0; line-height: 24px}
+        .tabs .tab4 .sprite2{padding:0 10px; top:65px; color: #000;  width: 100%; box-sizing: border-box; height: 72px; font-size: 20px; line-height: 24px; opacity: 0;}
+        .tabs .tab4 .sprite2 .title{-webkit-transition:all 500ms ease-out; position:relative; left:-400px;}
+        .tabs .tab4 .sprite2 .title h3{padding: 0; margin:0; }
+        .tabs .tab4 .sprite2 .title h3 strong{font-size:18px;}
+        .tabs .tab4 .sprite2 .title h3 span{font-size: 12px; font-weight:normal; padding-left: 5px;}
+        .tabs .tab4 .sprite2 .title .con{font-size:14px; line-height: 18px;}
+        .tabs .tab4 .sprite2 .titlemove{ left:0px; }
+        .tabs .tab4 .sprite2.show{-webkit-transform: translate(0, 0);transform: translate(0, 0); opacity: 1;}
+        .tabs .tab4 .sprite3 { width: 100%;  box-sizing: border-box; padding-left:10px; top:170px; -webkit-transition:all 900ms ease-out; opacity: 0;}
+        .tabs .tab4 .sprite3.show{-webkit-transform: translate(0, 0);transform: translate(0, 0); opacity: 1;}
+        .tabs .tab4 .sprite3 .peo{ -webkit-transition:all 500ms ease-out; float: left; height:140px; width:140px;   margin:0 5px 5px; position: relative; -webkit-transition:all 500ms ease-out;}
+        .tabs .tab4 .sprite3 .peo .name{  height:40px; width:100%; text-align: center; position: absolute; left:0; bottom:0;  background:rgba(27,155,239,1) url("images/qun.png") no-repeat center -100px; background-size:50px 50px;
+            color: #fff; box-sizing: border-box; -webkit-transition:height .5s ease-out ,padding .5s ease-out;}
+        .tabs .tab4 .sprite3 .peo .name span{font-size: 14px; line-height: 24px}
+        .tabs .tab4 .sprite3 .peo .name .job{font-size: 10px; line-height: 16px}
+        .tabs .tab4 .sprite3 .peo:hover .name{ height:100%; width:100%; background-color:rgba(27,155,239,0.8); background-position:center 35%; padding-top: 100px;}
+        .tabs .tab4 .sprite3 .peo1{ background: url("images/five01.jpg") no-repeat; webkit-background-size: 50% 50% ; background-size: 100%  100%; left:-100px; opacity:0; }
+        .tabs .tab4 .sprite3 .peo1.show{-webkit-transform: translate(100px, 0);transform: translate(100px, 0); opacity: 1;}
+        .tabs .tab4 .sprite3 .peo2{-webkit-transition:all 700ms ease-out;  background: url("images/five02.jpg") no-repeat; webkit-background-size: 100% 100% ; background-size: 100%  100%; right:-100px; opacity:0;}
+        .tabs .tab4 .sprite3 .peo2.show{-webkit-transform: translate(-100px, 0);transform: translate(-100px, 0); opacity: 1;}
+        .tabs .tab4 .sprite3 .peo3{-webkit-transition:all 900ms ease-out; background: url("images/five03.jpg") no-repeat; webkit-background-size: 100% 100% ; background-size: 100%  100%; left:-100px; opacity:0; }
+        .tabs .tab4 .sprite3 .peo3.show{-webkit-transform: translate(100px, 0);transform: translate(100px, 0); opacity: 1;}
+        .tabs .tab4 .sprite3 .peo4{ -webkit-transition:all 1.1s ease-out; background: url("images/five04.jpg") no-repeat; webkit-background-size: 100% 100% ; background-size: 100%  100%; right:-100px; opacity:0;}
+        .tabs .tab4 .sprite3 .peo4.show{-webkit-transform: translate(-100px, 0);transform: translate(-100px, 0); opacity: 1;}
+
+
+        .tabs .tab5 .sprite{-webkit-transition:all 500ms ease-out; }
+        .tabs .tab5 .bg{background: url("images/six_bg.jpg") no-repeat; width: 100%;height: 100%;  -webkit-background-size: 100% 100% ; background-size: 100%  100%;}
+        .tabs .tab5 .sprite1{background: url('images/six01.png') no-repeat; top:25%;  width: 100%;height: 23%;
+            -webkit-transform: translate(0px,100%);transform: translate(0px,100%);
+            -webkit-background-size: 100% auto; background-size: 100% auto;  opacity: 0;}
+        .tabs .tab5 .sprite1.show{-webkit-transform: translate(0px, 0px);transform: translate(0px, 0px);  opacity: 1;}
+        .tabs .tab5 .sprite2{background: url('images/six02.png') no-repeat; top:49%; width: 15%; height: 20%; left:42.5%;
+            -webkit-transition:all 800ms ease-out;
+            -webkit-transform: translate(0px,100%);transform: translate(0px,100%);
+            -webkit-background-size: 100% auto ; background-size:100% auto;  opacity: 0;}
+        .tabs .tab5 .sprite2.show{-webkit-transform: translate(0px, 0px);transform: translate(0px, 0px); opacity: 1;}
+        .tabs .tab5 .sprite3{background: url('images/six02.png') no-repeat; top:49%; width: 15%; height: 20%; left:42.5%;
+            -webkit-transform: translate(0px,100%);transform: translate(0px,100%);
+            -webkit-transition:all 800ms ease-out;
+            -webkit-background-size: 100% auto ; background-size:100% auto;  opacity: 0;}
+        .tabs .tab5 .sprite3.show{-webkit-transform: translate(0px, 0px);transform: translate(0px, 0px); opacity: 1;  -webkit-animation:auto_scale 3s ease-out infinite;
+            -webkit-transform-origin:center 20px;}
+        .light{
+            cursor:pointer;
+            position: absolute;
+            width: 180px;
+            height: 1px;
+            background-image: -webkit-linear-gradient(0deg,rgba(255,255,255,0),rgba(255,255,255,0.5),rgba(255,255,255,0));
+            transform: skewx(-25deg);
+            -webkit-transform: rotate(-45deg);
+        }
+        .tabs .tab5 .sprite4 .light,
+        .tabs .tab5 .sprite5 .light,
+        .tabs .tab5 .sprite6 .light,
+        .tabs .tab5 .sprite7 .light,
+        .tabs .tab5 .sprite8 .light,
+        .tabs .tab5 .sprite9 .light,
+        .tabs .tab5 .sprite10 .light{
+            position: absolute;
+            width: 180px;
+            height: 1px;
+            background-image: -webkit-linear-gradient(0deg,rgba(255,255,255,0),rgba(255,255,255,0.5),rgba(255,255,255,0));
+            transform: skewx(-25deg);
+            -webkit-transform: rotate(-45deg);
+        }
+        .tabs .tab5 .sprite4 .light{-webkit-animation:light1 5s ease-out infinite;}
+        .tabs .tab5 .sprite5 .light{-webkit-animation:light2 10s ease-out infinite;}
+        .tabs .tab5 .sprite6 .light{-webkit-animation:light3 8s ease-out infinite;}
+        .tabs .tab5 .sprite7 .light{-webkit-animation:light4 12s ease-out infinite;}
+        .tabs .tab5 .sprite8 .light{-webkit-animation:light5 7s ease-out infinite;}
+        .tabs .tab5 .sprite9 .light{-webkit-animation:light6 4s ease-out infinite;}
+        .tabs .tab5 .sprite10 .light{-webkit-animation:light7 3s ease-out infinite;}
+
+
+        .tabs .tab6 .sprite{-webkit-transition:all 500ms ease-out; }
+        .tabs .tab6 .bg{background: url("images/seven_bg.jpg") no-repeat; width: 100%;height: 100%; -webkit-background-size: 100% 100% ; background-size: 100%  100%;}
+        .tabs .tab6 .sprite1{background: url('images/seven01.png') no-repeat;  width: 100%;height: 100%; -webkit-background-size: 100% 100% ; background-size: 100%  100%; opacity: 0}
+        .tabs .tab6 .sprite1.show{ opacity: 1}
+        .tabs .tab6 .sprite2{background: url('images/seven02.png') no-repeat; top:0px; left:-200px;  width: 100%;height: 100%; -webkit-background-size: 100% auto; background-size: 100%  auto;  opacity: 0;}
+        .tabs .tab6 .sprite2.show{-webkit-transform: translate(200px, 0px);transform: translate(200px, 0px);  opacity: 1;}
+        .tabs .tab6 .sprite3{background: url('images/seven03.png') no-repeat; top:0px;  right:-200px; left:200px;  width: 100%;height: 100%; -webkit-background-size: 100% 100% ; background-size: 100%  100%;  opacity: 0;}
+        .tabs .tab6 .sprite3.show{-webkit-transform: translate(-200px, 0px);transform: translate(-200px, 0px);  opacity: 1;}
+        .tabs .tab6 .sprite4{position: absolute;top: 140px;left: 50%;}
+        .tabs .tab6 .sprite4::before{position: absolute;left: 63%;top: 250px;z-index: 2;width: 0px;height: 0px;padding-left: 5px;line-height: 50px;border-radius: 25px;margin: 0; background: #00b0f0; opacity: 0;}
+        .tabs .tab6 .sprite4{content: '';position: absolute;left: 62%;top: 48%;width: 80px;height: 80px;border-radius: 40px;background-color: rgba(0,176,240,0.5);-webkit-animation: wave 2.0s infinite linear;animation: wave 2.0s infinite linear;-webkit-transform-origin:center center;transform-origin:center center;}
+        .tabs .tab6 .sprite5{background: url('images/seven04.png') no-repeat; top:60%; left:-200px; width: 50%; height: 19%; -webkit-transition:all 1500ms ease-out;
+            -webkit-background-size: 100% 100% ; background-size: 100%  100%;  opacity: 0;}
+        .tabs .tab6 .sprite5.show{-webkit-transform: translate(200px, 0px);transform: translate(200px, 0px);  opacity: 1;}
+
+        #bg{
+            width:100%; height:100%;
+            background: #000;
+            position: fixed;
+            z-index: 9999;
+            text-align: center;
+            color:#FFF;
+        }
+        #loading{
+            width:48px;
+            height:48px;
+            background: url("images/loading.gif") no-repeat center;
+            margin: 55% auto 0;
+            background-size:60%;
+        }
+        .uparrw{ width:200px; height:60px; position:absolute; z-index:9999; bottom:90px; left:50%; margin-left:-100px; text-align: center;
+         color:#FFF; font-size:28px;
+         }
+        .icon_uparrw{ display:inline-block; width:30px; height:30px; 
+            background: url("images/up.png") no-repeat center; background-size:100% auto;
+            opacity:1;
+            -webkit-animation:ToptoA 1.6s ease-out infinite; 
+            }
+
+
+        @-webkit-keyframes ToptoA {
+            0%   { -webkit-transform:translate(0,0); opacity: 0; }
+            20%   { -webkit-transform:translate(0,-20px); opacity: 1; }
+            100% { -webkit-transform:translate(0,-40px); opacity: 0; }
+        }
+        @-moz-keyframes ToptoA {
+            0%   { -moz-transform:translate(0,0); opacity: 0; }
+            20%   { -moz-transform:translate(0,-20px); opacity: 1; }
+            100% { -moz-transform:translate(0,-40px); opacity: 0; }
+        }
+        @-o-keyframes ToptoA {
+            0%   { -o-transform:translate(0,0); opacity: 0; }
+            20%   { -o-transform:translate(0,-20px); opacity: 1; }
+            100% { -o-transform:translate(0,-40px); opacity: 0; }
+        }
+    </style>
+</head>
+
+<body style="margin:0;">
+
+<h1 style="width:0; height:0; overflow:hidden; position: absolute;">触控广告平台发布会
+<img class="logo" id="logo" src="./触控广告平台战略发布会_files/logo.png" style="width:0; height:0; overflow:hidden; position:absolute;" alt="logo">
+</h1>
+
+<div id="bg" style="display: none;"><div id="loading" style="display: none;"></div><span style=""></span></div>
+<!-- up arrw -->
+<div class="uparrw" id="uparrw" style="display: none;">
+    <div class="icon_uparrw" id="icon_uparrw"></div>
+    <div class="cur">滑动进入</div>
+</div>
+
+<div style="height:0px;overflow:hidden;"><audio src="48.mp3" loop="loop" autoplay=""></audio></div>
+<a href="javascript:playPause();">
+    <div class="icon_audio border_anim">
+        <span class="iconaudio1"><s class="icon_audio_anim"></s></span>
+        <span class="iconaudio2"><s class="icon_audio_anim"></s></span>
+        <span class="iconaudio3"><s class="icon_audio_anim"></s></span>
+    </div>
+</a>
+
+<div class="content">
+    <div class="tabs" id="scene" style="display: block;">
+        <ul style="-webkit-transition: -webkit-transform 500ms ease-out; transition: -webkit-transform 500ms ease-out; -webkit-transform: translate3d(0px, 0px, 0px);">
+            <li class="tab0">
+                <div class="layer" data-depth="0.5">
+                    <div class="bg sprite show"></div>
+                </div>
+                <div class="layer" data-depth="1">
+                    <div class="sprite1 sprite show"></div>
+                    <div class="sprite2 sprite show"></div>
+                </div>
+                <div class="tips"></div>
+            </li>
+            <li class="tab1">
+                <div class="layer" data-depth="0.5">
+                    <div class="bg sprite"></div>
+                </div>
+                <div class="layer" data-depth="0.75"><div class="sprite1 sprite"></div></div>
+                <div class="layer" data-depth="1"><div class="sprite2 sprite"></div></div>
+                <div class="layer" data-depth="1.5"><div class="sprite3 sprite"></div></div>
+                <div class="layer" data-depth="1.8"><div class="sprite4 sprite"></div></div>
+                <div class="tips"></div>
+            </li>
+            <li class="tab2">
+                <div class="layer" data-depth="0.5"><div class="bg sprite"></div></div>
+                <div class="layer" data-depth="0.75"><div class="sprite1 sprite"></div></div>
+                <div class="layer" data-depth="1"><div class="sprite2 sprite"></div></div>
+                <div class="layer" data-depth="1.5"><div class="sprite3 sprite"></div></div>
+                <div class="layer" data-depth="1.6"><div class="sprite4 sprite"></div></div>
+                <div class="tips"></div>
+            </li>
+            <li class="tab3">
+                <div class="layer" data-depth="0.5"><div class="bg sprite"></div></div>
+                <div class="layer" data-depth="0.75"><div class="sprite1 sprite"><h2>主要流程</h2><h3>THE MAIN PROCESS</h3></div></div>
+                <div class="layer" data-depth="1"><div class="sprite2 sprite"></div></div>
+                <div class="layer" data-depth="1"><div class="sprite3 sprite"></div></div>
+                <div class="layer" data-depth="1"><div class="sprite4 sprite"></div></div>
+                <div class="layer" data-depth="1"><div class="sprite5 sprite"></div></div>
+                <div class="layer" data-depth="1"><div class="sprite6 sprite"></div></div>
+                <div class="tips"></div>
+            </li>
+            <li class="tab4">
+                <div class="layer" data-depth="0.5"><div class="bg sprite"></div></div>
+                <div class="layer" data-depth="0.6"><div class="sprite1 sprite"><h2>嘉宾介绍</h2><h3>GUEST INTRODUCTION</h3></div></div>
+                <div class="layer" data-depth="0.75">
+                    <div class="sprite2 sprite" id="title">
+                        <div class="title title1 titlemove" style="display:block;"><h3><strong>陈昊芝</strong><span>触控科技CEO</span></h3><div class="con">触控科技CEO，在他成就斐然的创业历程中，最为知名的企业要数卓越，即卓越亚马逊的前身、IT168、爱卡、盛世收藏和译言网。</div></div>
+                        <div class="title title2" style="display: none"><h3><strong>Maria Alegre</strong><span>Chartboost联合创始人兼CEO</span></h3><div class="con">关于Chartboost:<br>由早期的前Tapulous员工创办，公司最近在A轮投资中从Translink Capital、SKTV和XG风投处融资了200万美元。</div></div>
+                        <div class="title title3" style="display: none"><h3><strong>崔晓波</strong><span>TalkingData CEO</span></h3><div class="con">TalkingData CEO，多年来专注于移动互联网、社会化媒体领域的数据分析,数据挖掘,和模式识别，对移动互联网行业发展趋势、产品技术演进有高度的前瞻性。</div></div>
+                        <div class="title title4" style="display: none"><h3><strong>李智</strong><span>易观智慧院院长</span></h3><div class="con">易观智慧院院长，长期从事研究工作，对网络营销、电子商务以及传统行业互联网化有着深刻的理解。</div></div>
+                    </div>
+                </div>
+                <div class="layer" data-depth="1">
+                    <div class="sprite3 sprite" id="img_b">
+                        <div class="peo1 peo bg_big"><div class="name"><span>陈昊芝</span><div class="job">触控科技CEO</div></div></div>
+                        <div class="peo2 peo"><div class="name"><span>Maria Alegre</span><div class="job">Chartboost联合创始人兼CEO</div></div></div>
+                        <div class="peo3 peo"><div class="name"><span>崔晓波</span><div class="job">TalkingData CEO</div></div></div>
+                        <div class="peo4 peo"><div class="name"><span>李智</span><div class="job">易观智慧院院长</div></div></div>
+                    </div>
+                </div>
+                <div class="tips"></div>
+            </li>
+
+            <li class="tab5">
+                <div class="layer" data-depth="0.5"><div class="bg sprite"></div></div>
+                <div class="layer" data-depth="0.75"><div class="sprite1 sprite"></div></div>
+                <div class="layer" data-depth="1"><div class="sprite2 sprite"></div></div>
+                <div class="layer" data-depth="1.2"><div class="sprite3 sprite"></div></div>
+                <div class="layer" data-depth="1.3"><div class="sprite4 sprite"><div class="light"></div></div></div>
+                <div class="layer" data-depth="1.3"><div class="sprite5 sprite"><div class="light"></div></div></div>
+                <div class="layer" data-depth="1.3"><div class="sprite6 sprite"><div class="light"></div></div></div>
+                <div class="layer" data-depth="1.3"><div class="sprite7 sprite"><div class="light"></div></div></div>
+                <div class="layer" data-depth="1.3"><div class="sprite8 sprite"><div class="light"></div></div></div>
+                <div class="layer" data-depth="1.3"><div class="sprite9 sprite"><div class="light"></div></div></div>
+                <div class="layer" data-depth="1.3"><div class="sprite10 sprite"><div class="light"></div></div></div>
+                <div class="tips"></div>
+            </li>
+
+            <li class="tab6">
+                <div class="layer" data-depth="0.5"><div class="bg sprite"></div></div>
+                <div class="layer" data-depth="0.75"><div class="sprite1 sprite"></div></div>
+                <div class="layer" data-depth="0.8"><div class="sprite4 sprite"></div></div>
+                <div class="layer" data-depth="1"><div class="sprite2 sprite"></div></div>
+                <div class="layer" data-depth="1.5"><div class="sprite3 sprite"></div></div>
+                <div class="layer" data-depth="2"><div class="sprite5 sprite"></div></div>
+                <!--<div class="tips"></div>-->
+            </li>
+        </ul>
+    </div>
+</div>
+<div id="debugbox" style="height:0;width:0;overflow:hidden;">debugbox</div>
+<script type="text/javascript">
+    //摇一摇测试
+  addEventMotionShake(function(){
+    // alert(debugcode); 
+  })
+//
+    function debug(str){
+        $("#debugbox").append('<p>'+encodeURI(str)+'</p>')
+    }
+
+    function isWeixin(){
+        var UA = navigator.userAgent;
+        // alert(UA)
+        if (/MicroMessenger/.test(UA)){
+            return true
+        }else{
+            return false
+        }
+    }
+    function getOSVS(){
+        var UA = navigator.userAgent;
+        var s = UA.indexOf("OS ");
+        if(s == -1){ return false }
+        var vs = UA.substr(s+3,5);
+        return vs
+    }
+
+    function playPause() {
+        var myVideo = document.querySelectorAll('audio')[0];
+        var music_btn = document.getElementById('music_btn');
+        if (myVideo.paused){
+            myVideo.play()
+            $('.icon_audio').addClass('border_anim')
+        }
+        else{
+            myVideo.pause()
+            $('.icon_audio').removeClass('border_anim')
+        }
+    }
+
+    var debugcode = "error:";
+    $(function(){
+        var _bg = document.getElementById('bg'),
+            _uparrw = document.getElementById('uparrw'),
+            _icon_uparrw = document.getElementById('icon_uparrw');
+
+        var isWEIXIN = isWeixin();
+        var os_vs = getOSVS();
+        var domeInitEnd = false;
+        var myVideo = document.querySelector('audio');
+
+        document.addEventListener('WeixinJSBridgeReady', function() {
+            onBridgeReady()
+            // _uparrw.querySelector(".cur").innerHTML = "滑动进入";
+            if(os_vs >= "7_1_1"){
+                debugcode +="os_vs>=7_1_1,";
+                // _uparrw.style.display = 'block';
+                _uparrw.style.display = 'none';
+                _bg.style.display = 'none';
+                document.getElementById("scene").style.display = "block";
+                if(!domeInitEnd) {
+                    initTabDomo()
+                }
+            }
+        })
+        
+        if(!isWEIXIN){
+            debugcode +="2,";
+            // _bg.querySelector("span").innerHTML = "滑动进入";
+            _uparrw.querySelector(".cur").innerHTML = "滑动进入";
+            _uparrw.style.display = 'block';
+            document.getElementById("loading").style.display = "none";
+        }
+
+        myVideo.addEventListener('canplaythrough',function(){
+            _uparrw.style.display = 'none';
+            _bg.style.display = 'none';
+            document.getElementById("scene").style.display = "block";
+            debugcode +="3,";
+            if(!domeInitEnd){
+                initTabDomo()
+            }
+            myVideo.play()
+        },false)
+
+        $(document).one("touchstart",function(e){
+            if(!domeInitEnd){
+                _uparrw.style.display = 'none';
+                _bg.style.display = 'none';
+                document.getElementById("scene").style.display = "block";
+                // alert(typeof myVideo.play)
+                initTabDomo()
+                debugcode +="4,";
+            }
+            myVideo.play()
+        },false)
+        
+        // alert("load ok")
+        function initTabDomo(){
+            domeInitEnd = true;
+            debugcode +="5,"; 
+            gameTab = new m.Tab({
+                target: document.querySelectorAll('.tabs li'),
+                trigger: document.querySelectorAll('.triggers li'),
+                onchange: function(n){
+                    debugcode +="7,"; 
+                    var sprites = this.target[n].querySelectorAll('.sprite');
+                    var peo = this.target[n].querySelectorAll('.peo');
+                    for(var i = 0; i < sprites.length; i++) {
+                        sprites[i].classList.add('show')
+                    }
+                    for(var j = 0; j < peo.length; j++) {
+                        peo[j].classList.add('show')
+                    }
+
+                    if(this.prevPage !== window.undefined) {
+                        var sprites = this.target[this.prevPage].querySelectorAll('.sprite');
+                        for(var i = 0; i < sprites.length; i++) {
+                            sprites[i].classList.remove('show')
+                        }
+                    }
+                },
+                touchMove: true
+            });
+            debugcode +="6,"; 
+        }
+    })
+// onload function end
+
+    function onBridgeReady() {
+        //转发朋友圈
+        WeixinJSBridge.on("menu:share:timeline", function(e) {
+            var url = 'http://www.cocounion.com/public/mobile/index.html';
+            var data = {
+                img_url: "http://www.cocounion.com/public/mobile/images/logo.png",
+                img_width: "120",
+                img_height: "120",
+                link: url,
+                //desc这个属性要加上，虽然不会显示，但是不加暂时会导致无法转发至朋友圈，
+                desc: "触控广告平台诚邀您一起参加2014触控广告平台战略发布会，7.30下午14:30上海浦东嘉里大酒店五楼圆顶屋不见不散。",
+                title: "触控广告平台战略发布会"
+            };
+        WeixinJSBridge.invoke("shareTimeline", data, function(res) {
+            WeixinJSBridge.log(res.err_msg)
+        });
+    });
+        //同步到微博
+        WeixinJSBridge.on("menu:share:weibo", function() {
+            var url = 'http://www.cocounion.com/public/mobile/index.html';
+            WeixinJSBridge.invoke("shareWeibo", {
+               "content": "触控广告平台诚邀您一起参加2014触控广告平台战略发布会，7.30下午14:30上海浦东嘉里大酒店五楼圆顶屋不见不散。",
+               "url": url
+                 }, function(res) {
+                     WeixinJSBridge.log(res.err_msg);
+                });
+        });
+        //分享给朋友
+        WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+            var url = 'http://www.cocounion.com/public/mobile/index.html';
+            WeixinJSBridge.invoke("sendAppMessage", {
+                img_url: "http://www.cocounion.com/public/mobile/images/logo.png",
+                img_width: "120",
+                img_height: "120",
+                link: url,
+                desc: "触控广告平台诚邀您一起参加2014触控广告平台战略发布会，7.30下午14:30上海浦东嘉里大酒店五楼圆顶屋不见不散。",
+                title: "触控广告平台战略发布会"
+            }, function(res) {
+                WeixinJSBridge.log(res.err_msg)
+            });
+        });
+    };
+
+    $(function(){
+       $('#img_b .peo').click(function(){
+            var index = $(this).index();
+           // $(this).addClass('bg_big').siblings('.peo').removeClass('bg_big');
+           $('#title .title').hide().removeClass('titlemove')
+           $('#title .title').eq(index).show().addClass('titlemove')
+       })
+    })
+
+
+
+  function addEventMotionShake(callback){ //检测摇动函数
+    var SHAKE_THRESHOLD = 3000;      
+    var last_update = 0;      
+    var x = y = z = last_x = last_y = last_z = 0;
+
+    if (window.DeviceMotionEvent) {   
+        window.addEventListener('devicemotion',deviceMotionHandler, false)  
+    }else{     
+      console.log('not support mobile event')  
+    }
+
+    function deviceMotionHandler(eventData) {    
+      var acceleration = eventData.accelerationIncludingGravity;
+      var curTime = new Date().getTime();   
+      if ((curTime - last_update)> 100) {
+        var diffTime = curTime -last_update;      
+        last_update = curTime;          
+        x = acceleration.x;   
+        y = acceleration.y;     
+        z = acceleration.z;     
+        var speed = Math.abs(x +y + z - last_x - last_y - last_z) / diffTime * 10000;
+        // $("#debugbox").html(speed);   
+        if (speed > SHAKE_THRESHOLD) {
+          typeof callback == "function" && callback()
+        }      
+        last_x = x;      
+        last_y = y;      
+        last_z = z;      
+      }
+    } 
+  }
+
+</script>
+
+</body></html>

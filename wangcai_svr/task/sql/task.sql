@@ -138,3 +138,16 @@ CREATE TABLE IF NOT EXISTS offer_wall_point
     PRIMARY KEY (id),
     UNIQUE (device_id, type)
 ) ENGINE = InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+CREATE TABLE IF NOT EXISTS offer_wall_point_log
+(
+    id              INT             NOT NULL AUTO_INCREMENT,
+    device_id       CHAR(32)        NOT NULL DEFAULT '',
+    type            INT             NOT NULL DEFAULT 0,
+    point           INT             NOT NULL DEFAULT 0,
+    create_time     DATETIME        NOT NULL,
+    ts              TIMESTAMP       NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    unique_task_id           VARCHAR(255)    NOT NULL DEFAULT '',
+    PRIMARY KEY (id),
+    UNIQUE (unique_task_id)
+) ENGINE = InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;

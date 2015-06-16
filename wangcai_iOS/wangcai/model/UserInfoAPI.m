@@ -155,7 +155,7 @@ static UserInfoAPI* gDefaultUserInfo = nil;
     
     NSMutableDictionary* dictionary = [[[NSMutableDictionary alloc] init] autorelease];
     
-    [req request:HTTP_READ_ACCOUNT_INFO Param:dictionary method:@"get"];
+    [req request:HTTP_READ_ACCOUNT_INFO Param:dictionary method:@"post"];
 }
 
 - (void)updateUserInfo:(id<UserInfoAPIDelegate>)delegate

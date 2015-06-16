@@ -3,6 +3,7 @@
 import web
 import json
 import logging
+import urllib
 from Crypto.Cipher import AES
 from config import *
 
@@ -65,6 +66,8 @@ class RegisterResp(Response):
         self.no_withdraw = 0
         self.offerwall = {}
         self.tips = ''
+        self.offerwall_income = 0
+        self.offerwall_list = []
 
 #############################################
 
@@ -208,6 +211,118 @@ class ReportOfferWallPointResp(Response):
 
 #############################################
 
+class CallbackOfferWallChukongReq(Request):
+    def __init__(self, input, cookies):
+        Request.__init__(self, input, cookies)
+        logger = logging.getLogger('CallbackOfferWallChukongReq')
+        self.os = urllib.unquote(input.get('os', ''))
+        self.os_version = urllib.unquote(input.get('os_version', ''))
+        self.idfa = urllib.unquote(input.get('idfa', ''))
+        self.mac = urllib.unquote(input.get('mac', ''))
+        self.imei = urllib.unquote(input.get('imei', ''))
+        self.ip = urllib.unquote(input.get('ip', ''))
+        self.transactionid = urllib.unquote(input.get('transactionid', ''))
+        self.coins = urllib.unquote(input.get('coins', ''))
+        self.adid = urllib.unquote(input.get('adid', ''))
+        self.adtitle = urllib.unquote(input.get('adtitle', ''))
+        self.taskname = urllib.unquote(input.get('taskname', ''))
+        self.taskcontent = urllib.unquote(input.get('taskcontent', ''))
+        self.token = urllib.unquote(input.get('token', ''))
+        self.sign = urllib.unquote(input.get('sign', ''))
+        self.idfa = self.idfa.upper()
+        self.mac = self.mac.upper()
+
+class CallbackOfferWallChukongResp(Response):
+    def __init__(self):
+        Response.__init__(self)
+
+#############################################
+
+class CallbackOfferWallYoumiIOSReq(Request):
+    def __init__(self, input, cookies):
+        Request.__init__(self, input, cookies)
+        logger = logging.getLogger('CallbackOfferWallYoumiIOSReq')
+        self.order = urllib.unquote(input.get('order', ''))
+        self.app = urllib.unquote(input.get('app', ''))
+        self.ad = urllib.unquote(input.get('ad', ''))
+        self.adid = urllib.unquote(input.get('adid', ''))
+        self.user = urllib.unquote(input.get('user', ''))
+        self.device = urllib.unquote(input.get('device', ''))
+        self.chn = urllib.unquote(input.get('chn', ''))
+        self.price = urllib.unquote(input.get('price', ''))
+        self.points = urllib.unquote(input.get('points', ''))
+        self.time = urllib.unquote(input.get('time', ''))
+        self.storeid = urllib.unquote(input.get('storeid', ''))
+        self.sig = urllib.unquote(input.get('sig', ''))
+        self.sign = urllib.unquote(input.get('sign', ''))
+
+class CallbackOfferWallYoumiIOSResp(Response):
+    def __init__(self):
+        Response.__init__(self)
+
+#############################################
+
+class CallbackOfferWallDomobIOSReq(Request):
+    def __init__(self, input, cookies):
+        Request.__init__(self, input, cookies)
+        logger = logging.getLogger('CallbackOfferWallDomobIOSReq')
+        self.orderid = urllib.unquote(input.get('orderid', ''))
+        self.pubid = urllib.unquote(input.get('pubid', ''))
+        self.ad = urllib.unquote(input.get('ad', ''))
+        self.adid = urllib.unquote(input.get('adid', ''))
+        self.user = urllib.unquote(input.get('user', ''))
+        self.device = urllib.unquote(input.get('device', ''))
+        self.channel = urllib.unquote(input.get('channel', ''))
+        self.price = urllib.unquote(input.get('price', ''))
+        self.point = urllib.unquote(input.get('point', ''))
+        self.ts = urllib.unquote(input.get('ts', ''))
+        self.sign = urllib.unquote(input.get('sign', ''))
+
+class CallbackOfferWallDomobIOSResp(Response):
+    def __init__(self):
+        Response.__init__(self)
+
+#############################################
+
+class CallbackOfferWallMiidiReq(Request):
+    def __init__(self, input, cookies):
+        Request.__init__(self, input, cookies)
+        logger = logging.getLogger('CallbackOfferWallMiidiReq')
+        self.id = urllib.unquote(input.get('id', ''))
+        self.trand_no = urllib.unquote(input.get('trand_no', ''))
+        self.cash = urllib.unquote(input.get('cash', ''))
+        self.imei = urllib.unquote(input.get('imei', ''))
+        self.bundleId = urllib.unquote(input.get('bundleId', ''))
+        self.param0 = urllib.unquote(input.get('param0', ''))
+        self.appName = urllib.unquote(input.get('appName', ''))
+        self.sign = urllib.unquote(input.get('sign', ''))
+
+class CallbackOfferWallMiidiResp(Response):
+    def __init__(self):
+        Response.__init__(self)
+
+#############################################
+
+class ReportPollReq(Request):
+    def __init__(self, input, cookies):
+        Request.__init__(self, input, cookies)
+        logger = logging.getLogger('ReportPollReq')
+        self.session_id = self.session_id()
+        self.device_id = self.device_id()
+        self.userid = self.userid()
+
+class ReportPollResp(Response):
+    def __init__(self):
+        Response.__init__(self)
+        self.offerwall_income = 0
+        self.level = 1
+        self.exp_current = 0
+        self.exp_next_level = 0
+        self.benefit = 0
+        self.wangcai_income = []
+
+#############################################
+
 class ReportCommentReq(Request):
     def __init__(self, input, cookies):
         Request.__init__(self, input, cookies)
@@ -307,6 +422,8 @@ class OrderDetailResp(Response):
         self.confirm_time = ''
         self.complete_time = ''
         self.extra = ''
+        self.name = ''
+        self.exchange_type = 0
 
 
 #############################################

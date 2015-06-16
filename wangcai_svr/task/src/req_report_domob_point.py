@@ -25,7 +25,7 @@ class Handler:
                 db_helper.update_offer_wall_point(req.device_id, OfferWallTypes.T_DOMOB, req.point)
 
             inc = (req.point - point)*10
-            BillingClient.instance().recharge(req.device_id, req.userid, inc, '体验应用赚取%.1f元' %(inc/100.0))
+            BillingClient.instance().recharge(req.device_id, req.userid, inc, '体验应用赚取%.1f元' %(inc/100.0), inc)
             resp.increment = inc
 
             if req.inviter != 0:

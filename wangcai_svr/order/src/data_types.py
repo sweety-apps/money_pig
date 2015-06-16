@@ -8,6 +8,7 @@ class Order:
         self.type = 0
         self.money = 0
         self.status = 0
+        self.exchange_type = 0
 
 class OrderType:
     T_NONE = 0
@@ -47,7 +48,6 @@ class OrderExchangeCode(Order):
     def __init__(self):
         Order.__init__(self)
         self.type = OrderType.T_EXCHANGE_CODE
-        self.exchange_type = 0
         self.exchange_code = ''
         self.status = 0
         self.create_time = ''
@@ -59,6 +59,8 @@ class ExchangeType:
     T_UNDEFINED = 0
     T_JINGDONG = 1
     T_XLVIP = 2
+    T_ALIPAY = 100
+    T_PHONEPAY = 101
 
 
 class ExchangeEntry:
@@ -68,6 +70,9 @@ class ExchangeEntry:
         self.icon = ''
         self.price = 0
         self.remain = 0
+        self.description = ''
+        self.is_most_cheap = 0
+        self.succeed_tip = ''
 
 
 

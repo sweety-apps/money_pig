@@ -39,7 +39,7 @@ class Handler:
             return resp.dump_json()
 
         #被邀请者奖励2元
-        BillingClient.instance().recharge('', req.invitee, TASK_REWARD_INVITEE, '被邀请奖励2元')
+        BillingClient.instance().recharge('', req.invitee, TASK_REWARD_INVITEE, '被邀请奖励1元', 0)
 
 #        n = db_helper.count_task_invite(req.userid)
 #        if n <= TASK_INVITE_NUM_MAX:

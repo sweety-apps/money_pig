@@ -13,6 +13,7 @@
 @protocol OrderDetailTableViewCellDelegate <NSObject>
 
 - (void) onPressedCheckButtonOfOrderDetailCell:(OrderDetailTableViewCell*)cell;
+- (void) onPressedHelpButtonOfOrderDetailCell:(OrderDetailTableViewCell*)cell;
 
 @end
 

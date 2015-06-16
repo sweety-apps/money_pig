@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="lt-ie9 lt-ie8 lt-ie7" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><![endif]-->
+<!--[if IE 7]><html class="lt-ie9 lt-ie8" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><![endif]-->
+<!--[if IE 8]><html class="lt-ie9" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><![endif]-->
+<!--[if gt IE 8]><!--><html xmlns="http://www.w3.org/1999/xhtml"><!--<![endif]-->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0, target-densitydpi=device-dpi, uc-fitscreen=yes" />
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- UC浏览器兼容 -->
+    <meta name="screen-orientation" content="portrait" />
+    <!--meta name="full-screen" content="yes" /-->
+    <meta name="layoutmode" content="standard" />
+    <meta name="imagemode" content="force" />
+    <!--meta name="browsermode" content="application" /-->
+    <!-- QQ浏览器兼容 -->
+    <meta name="x5-orientation" content="portrait" />
+    <!--meta name="x5-fullscreen" content="true" /-->
+    <!--meta name="x5-page-mode" content="app" /-->
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/animation.css" />
+    <title>叫我表情帝</title>
+</head>
+<body>
+<div id = "view_bg">
+    <div id = "view_debug_label"></div>
+
+    <div id = "view_preloading"></div>
+    <div id = "view_content_bg"></div>
+    <div id = "view_main">
+
+        <div id="view_main_image_container">
+            <img id = "view_main_image" src = "tmp_img/result1.png">
+
+        </div>
+
+        <div id="view_main_save_tips_container">
+            <img id = "view_main_save_tips_img" src = "img/save_pic_tips_wechat.png">
+
+        </div>
+
+        <div id = "view_main_save_tips"></div>
+
+
+        <img id = "view_main_start_btn_img" src = "img/btn_start_a.png" alt = "开始表情制作">
+        <div id = "view_main_start_btn"></div>
+
+
+        <img id = "view_main_share_tips" src = "img/share_tips.png">
+        <img id = "view_main_more_btn_img" src = "img/btn_more_a.png" alt = "更多表情">
+        <img id = "view_main_exp_label_img" src = "img/tips_view_count_bg.png" alt = "表情经验提示">
+
+        <!--div id = "view_main_start_btn">ttt<br>ttt<br>ttt</div-->
+
+        <div id = "view_main_exp_label">456个男神在玩</div>
+
+        <div id = "view_main_cover_top" class="test_cover_bg"></div>
+        <div id = "view_main_cover_left" class="test_cover_bg"></div>
+        <div id = "view_main_cover_right" class="test_cover_bg"></div>
+        <div id = "view_main_cover_bottom" class="test_cover_bg"></div>
+        <div id = "view_main_more_btn"></div>
+    </div>
+
+    <div id = "view_edit">
+        <img id = "view_edit_finish_btn_img" src = "img/btn_done_a.png" alt = "生成表情">
+        <div id = "view_edit_finish_btn"></div>
+
+        <img id = "view_edit_template_btn_img" src = "img/btn_templete_a.png" alt = "选择表情模板">
+        <div id = "view_edit_template_btn"></div>
+
+        <img id = "view_edit_picture_btn_effect_img" src = "img/edit_pic_btn_effect.png" alt = "表情特效">
+        <div id = "view_edit_picture_container">
+            <img id = "view_edit_picture_btn_img" src = "img/edit_pic_btn_a.png" alt = "选择表情图片">
+        </div>
+        <div id = "view_edit_picture_btn"></div>
+
+        <img id = "view_edit_picture" src = "tmp_img/icon_1.png" alt = "图片主题">
+
+        <img id = "view_edit_cancel_btn_img" src = "img/edit_cancel_btn.png" alt = "放弃编辑">
+        <div id = "view_edit_cancel_btn"></div>
+
+        <div id = "view_edit_text_container">
+            <img id = "view_edit_text_bg_img" src = "img/edit_textbox_bg.png" alt = "表情文字（需替换）">
+            <br /><br />
+            <img id = "view_edit_text2_bg_img" src = "img/edit_textbox_bg.png" alt = "表情文字（需替换）">
+        </div>
+        <img id = "view_edit_text_edit_btn_img" src = "img/edit_textbox_icon_pencil.png" alt = "开始表情制作">
+        <div id = "view_edit_text_edit_btn"></div>
+        <img id = "view_edit_text_clear_btn_img" src = "img/edit_textbox_icon_clear.png" alt = "开始表情制作">
+        <div id = "view_edit_text_clear_btn"></div>
+        <input id = "view_edit_text" maxlength="50" autocomplete="off" rows="1" value="测试文字1（需替换）" name="汉字输入框（需替换）" placeholder="需要文字 ~ _(:з」∠)_" />
+
+        <img id = "view_edit_text2_edit_btn_img" src = "img/edit_textbox_icon_pencil.png" alt = "开始表情制作">
+        <div id = "view_edit_text2_edit_btn"></div>
+        <img id = "view_edit_text2_clear_btn_img" src = "img/edit_textbox_icon_clear.png" alt = "开始表情制作">
+        <div id = "view_edit_text2_clear_btn"></div>
+        <input id = "view_edit_text2" maxlength="100" autocomplete="off" rows="1" value="测试文字2（需替换）" name="英文输入框（需替换）" placeholder="need wen zi ~ _(:з」∠)_"  />
+
+        <div id = "view_edit_cover"></div>
+    </div>
+
+    <div id = "view_select_tmp" class="common_popbox">
+        <div class="cp_bg"></div>
+        <div class="cp_container">
+            <div class="cp_t_l"><img class="cp_bg_img" src="img/popbox_bg_left_top.png" alt = "表情弹出框"></div>
+            <div class="cp_t_m"><img class="cp_bg_img" src="img/popbox_bg_mid_top.png" alt = "表情弹出框"></div>
+            <div class="cp_t_r">
+                <img class="cp_bg_img" src="img/popbox_bg_right_top.png" alt = "表情弹出框">
+                <img class="cp_close_btn_img" src = "img/popbox_bg_right_top_btn.png" alt = "表情弹出框关闭按钮">
+            </div>
+            <div class="cp_m_l"><img class="cp_bg_img" src="img/popbox_bg_left_mid.png"></div>
+            <div class="cp_m_m">
+                <div class="tips_container_full">
+                </div>
+            </div>
+            <div class="cp_m_r"><img class="cp_bg_img" src="img/popbox_bg_right_mid.png"></div>
+            <div class="cp_b_l"><img class="cp_bg_img" src="img/popbox_bg_left_bottom.png"></div>
+            <div class="cp_b_m"><img class="cp_bg_img" src="img/popbox_bg_bottom_mid.png"></div>
+            <div class="cp_b_r"><img class="cp_bg_img" src="img/popbox_bg_right_bottom.png"></div>
+            <div class="cp_content_box">
+                <div class="bts_up_container">
+                    <div class="view_pop_box_up_content_title">
+                        测试标题
+                    </div>
+                    <div class="view_pop_box_up_content_subtitle">
+                        本图片来自网络啦啦啦<br>第二行哈哈哈
+                    </div>
+                    <div class="view_pop_box_up_content_box">
+                        <div class="iscroll_type_element">
+                            <div id="view_select_tmp_blockflow_out_box" class="view_pop_box_up_content_inner_blockflow_out_box">
+                                <div id="view_select_tmp_blockflow_inner_box" class="view_pop_box_up_content_inner_blockflow_inner_box">
+                                    <div class="view_select_tmp_up_content_cell">
+                                        <img
+                                                class="view_select_tmp_up_content_cell_img"
+                                                src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+                                                data-original="tmp_img/icon_0.png"
+                                                width="200"
+                                                height="200"
+                                                alt="表情icon">
+                                        <img class="view_select_tmp_up_content_cell_border" src="img/templete_cell_box.png" alt="表情图片框的边界">
+                                        <div class="view_select_tmp_up_content_cell_text">
+                                            <p><b>这个逼装得还可以hahahahahha</b></p>
+                                            <p>This B is Good! ahha hahaha hhahah ha</p>
+                                        </div>
+                                    </div>
+                                    <div class="view_select_tmp_up_content_cell">
+                                        <img
+                                                class="view_select_tmp_up_content_cell_img"
+                                                src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+                                                data-original="tmp_img/icon_0.png"
+                                                width="200"
+                                                height="200"
+                                                alt="表情icon">
+                                        <img class="view_select_tmp_up_content_cell_border" src="img/templete_cell_box.png" alt="表情图片框的边界">
+                                        <div class="view_select_tmp_up_content_cell_text">
+                                            <p><b>这个逼装得还可以</b></p>
+                                            <p>This B is Good!</p>
+                                        </div>
+                                    </div>
+                                    <div class="view_select_tmp_up_content_cell">
+                                        <img
+                                                class="view_select_tmp_up_content_cell_img"
+                                                src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+                                                data-original="tmp_img/icon_0.png"
+                                                width="200"
+                                                height="200"
+                                                alt="表情icon">
+                                        <img class="view_select_tmp_up_content_cell_border" src="img/templete_cell_box.png" alt="表情图片框的边界">
+                                        <div class="view_select_tmp_up_content_cell_text">
+                                            <p><b>这个逼装得还可以</b></p>
+                                            <p>This B is Good!</p>
+                                        </div>
+                                    </div>
+                                    <div class="view_select_tmp_up_content_cell">
+                                        <img
+                                                class="view_select_tmp_up_content_cell_img"
+                                                src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+                                                data-original="tmp_img/icon_0.png"
+                                                width="200"
+                                                height="200"
+                                                alt="表情icon">
+                                        <img class="view_select_tmp_up_content_cell_border" src="img/templete_cell_box.png" alt="表情图片框的边界">
+                                        <div class="view_select_tmp_up_content_cell_text">
+                                            <p><b>这个逼装得还可以</b></p>
+                                            <p>This B is Good!</p>
+                                        </div>
+                                    </div>
+                                    <div class="view_select_tmp_up_content_cell">
+                                        <img
+                                                class="view_select_tmp_up_content_cell_img"
+                                                src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+                                                data-original="tmp_img/icon_0.png"
+                                                width="200"
+                                                height="200"
+                                                alt="表情icon">
+                                        <img class="view_select_tmp_up_content_cell_border" src="img/templete_cell_box.png" alt="表情图片框的边界">
+                                        <div class="view_select_tmp_up_content_cell_text">
+                                            <p><b>这个逼装得还可以hahahahahha</b></p>
+                                            <p>This B is Good! ahha hahaha hhahah ha</p>
+                                        </div>
+                                    </div>
+                                    <div class="view_select_tmp_up_content_cell">
+                                        <img
+                                                class="view_select_tmp_up_content_cell_img"
+                                                src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+                                                data-original="tmp_img/icon_0.png"
+                                                width="200"
+                                                height="200"
+                                                alt="表情icon">
+                                        <img class="view_select_tmp_up_content_cell_border" src="img/templete_cell_box.png" alt="表情图片框的边界">
+                                        <div class="view_select_tmp_up_content_cell_text">
+                                            <p><b>这个逼装得还可以hahahahahha</b></p>
+                                            <p>This B is Good! ahha hahaha hhahah ha</p>
+                                        </div>
+                                    </div>
+                                    <div class="view_select_tmp_up_content_cell">
+                                        <img
+                                                class="view_select_tmp_up_content_cell_img"
+                                                src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+                                                data-original="tmp_img/icon_0.png"
+                                                width="200"
+                                                height="200"
+                                                alt="表情icon">
+                                        <img class="view_select_tmp_up_content_cell_border" src="img/templete_cell_box.png" alt="表情图片框的边界">
+                                        <div class="view_select_tmp_up_content_cell_text">
+                                            <p><b>这个逼装得还可以hahahahahha</b></p>
+                                            <p>This B is Good! ahha hahaha hhahah    ha</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="view_select_tmp_up_tips_container"></div>
+                </div>
+                <div class="bts_mid_line"><img class="bts_mid_line_img" src="img/slide_line.png"></div>
+                <div class="bts_bottom_container" id="view_select_tmp_bottom_tabbar">
+                    <div class="bts_bottom_inner_content">
+                        <div class="bts_slide_tab_cell_arrow"><img class="bts_slide_tab_cell_arrow_img" src="img/slide_arrow.png"></div>
+                        <div class="bts_slide_tab_cell">
+                            <div class="bts_slide_tab_cell_image_div">
+                                <div class="bts_slide_tab_cell_image_selected">
+                                    <img class="bts_slide_tab_cell_image_border" src="img/slide_tab_icon_box_big.png" alt="表情分类1">
+                                    <img
+                                            class="bts_slide_tab_cell_image_icon"
+                                            src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+                                            data-original="tmp_img/icon_0.png"
+                                            width="200"
+                                            height="200"
+                                            alt="表情分类0">
+                                </div>
+                            </div>
+                            <div class="bts_slide_tab_cell_text">金馆长12</div>
+                        </div>
+                        <div class="bts_slide_tab_cell">
+                            <div class="bts_slide_tab_cell_image_div">
+                                <div class="bts_slide_tab_cell_image">
+                                    <img class="bts_slide_tab_cell_image_border" src="img/slide_tab_icon_box_big.png" alt="表情分类1">
+                                    <img
+                                            class="bts_slide_tab_cell_image_icon"
+                                            src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+                                            data-original="tmp_img/icon_1.png"
+                                            width="200"
+                                            height="200"
+                                            alt="表情分类1">
+                                </div>
+                            </div>
+                            <div class="bts_slide_tab_cell_text">小学生</div>
+                        </div>
+                        <div class="bts_slide_tab_cell">
+                            <div class="bts_slide_tab_cell_image_div">
+                                <div class="bts_slide_tab_cell_image">
+                                    <img class="bts_slide_tab_cell_image_border" src="img/slide_tab_icon_box_big.png" alt="表情分类1">
+                                    <img
+                                            class="bts_slide_tab_cell_image_icon"
+                                            src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+                                            data-original="tmp_img/icon_2.png"
+                                            width="200"
+                                            height="200"
+                                            alt="表情分类2">
+                                </div>
+                            </div>
+                            <div class="bts_slide_tab_cell_text">辣条</div>
+                        </div>
+                        <div class="bts_slide_tab_cell">
+                            <div class="bts_slide_tab_cell_image_div">
+                                <div class="bts_slide_tab_cell_image">
+                                    <img class="bts_slide_tab_cell_image_border" src="img/slide_tab_icon_box_big.png" alt="表情分类1">
+                                    <img
+                                            class="bts_slide_tab_cell_image_icon"
+                                            src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+                                            data-original="tmp_img/icon_0.png"
+                                            width="200"
+                                            height="200"
+                                            alt="表情分类2">
+                                </div>
+                            </div>
+                            <div class="bts_slide_tab_cell_text">皮尔德</div>
+                        </div>
+                        <div class="bts_slide_tab_cell">
+                            <div class="bts_slide_tab_cell_image_div">
+                                <div class="bts_slide_tab_cell_image">
+                                    <img class="bts_slide_tab_cell_image_border" src="img/slide_tab_icon_box_big.png" alt="表情分类1">
+                                    <img
+                                            class="bts_slide_tab_cell_image_icon"
+                                            src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+                                            data-original="tmp_img/icon_1.png"
+                                            width="200"
+                                            height="200"
+                                            alt="表情分类2">
+                                </div>
+                            </div>
+                            <div class="bts_slide_tab_cell_text">~duang</div>
+                        </div>
+                        <div class="bts_slide_tab_cell">
+                            <div class="bts_slide_tab_cell_image_div">
+                                <div class="bts_slide_tab_cell_image">
+                                    <img class="bts_slide_tab_cell_image_border" src="img/slide_tab_icon_box_big.png" alt="表情分类1">
+                                    <img
+                                            class="bts_slide_tab_cell_image_icon"
+                                            src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+                                            data-original="tmp_img/icon_2.png"
+                                            width="200"
+                                            height="200"
+                                            alt="表情分类2">
+                                </div>
+                            </div>
+                            <div class="bts_slide_tab_cell_text">作死</div>
+                        </div>
+                        <div class="bts_slide_tab_cell">
+                            <div class="bts_slide_tab_cell_image_div">
+                                <div class="bts_slide_tab_cell_image">
+                                    <img class="bts_slide_tab_cell_image_border" src="img/slide_tab_icon_box_big.png" alt="表情分类1">
+                                    <img
+                                            class="bts_slide_tab_cell_image_icon"
+                                            src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+                                            data-original="tmp_img/icon_0.png"
+                                            width="200"
+                                            height="200"
+                                            alt="表情分类2">
+                                </div>
+                            </div>
+                            <div class="bts_slide_tab_cell_text">水表</div>
+                        </div>
+                        <div class="bts_slide_tab_cell">
+                            <div class="bts_slide_tab_cell_image_div">
+                                <div class="bts_slide_tab_cell_image">
+                                    <img class="bts_slide_tab_cell_image_border" src="img/slide_tab_icon_box_big.png" alt="表情分类1">
+                                    <img
+                                            class="bts_slide_tab_cell_image_icon"
+                                            src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+                                            data-original="tmp_img/icon_1.png"
+                                            width="200"
+                                            height="200"
+                                            alt="表情分类2">
+                                </div>
+                            </div>
+                            <div class="bts_slide_tab_cell_text">自定义</div>
+                        </div>
+                        <div class="bts_slide_tab_cell">
+                            <div class="bts_slide_tab_cell_image_div">
+                                <div class="bts_slide_tab_cell_image">
+                                    <img class="bts_slide_tab_cell_image_border" src="img/slide_tab_icon_box_big.png" alt="表情分类1">
+                                    <img
+                                            class="bts_slide_tab_cell_image_icon"
+                                            src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+                                            data-original="tmp_img/icon_2.png"
+                                            width="200"
+                                            height="200"
+                                            alt="表情分类2">
+                                </div>
+                            </div>
+                            <div class="bts_slide_tab_cell_text">cell8</div>
+                        </div>
+                        <div class="bts_slide_tab_cell">
+                            <div class="bts_slide_tab_cell_image_div">
+                                <div class="bts_slide_tab_cell_image">
+                                    <img class="bts_slide_tab_cell_image_border" src="img/slide_tab_icon_box_big.png" alt="表情分类1">
+                                    <img
+                                            class="bts_slide_tab_cell_image_icon"
+                                            src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+                                            data-original="tmp_img/icon_0.png"
+                                            width="200"
+                                            height="200"
+                                            alt="表情分类2">
+                                </div>
+                            </div>
+                            <div class="bts_slide_tab_cell_text">cell9</div>
+                        </div>
+                        <div class="bts_slide_tab_cell">
+                            <div class="bts_slide_tab_cell_image_div">
+                                <div class="bts_slide_tab_cell_image">
+                                    <img class="bts_slide_tab_cell_image_border" src="img/slide_tab_icon_box_big.png" alt="表情分类1">
+                                    <img
+                                            class="bts_slide_tab_cell_image_icon"
+                                            src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+                                            data-original="tmp_img/icon_1.png"
+                                            width="200"
+                                            height="200"
+                                            alt="表情分类2">
+                                </div>
+                            </div>
+                            <div class="bts_slide_tab_cell_text">cell10</div>
+                        </div>
+                        <div class="bts_slide_tab_cell">
+                            <div class="bts_slide_tab_cell_image_div">
+                                <div class="bts_slide_tab_cell_image">
+                                    <img class="bts_slide_tab_cell_image_border" src="img/slide_tab_icon_box_big.png" alt="表情分类1">
+                                    <img
+                                            class="bts_slide_tab_cell_image_icon"
+                                            src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+                                            data-original="tmp_img/icon_2.png"
+                                            width="200"
+                                            height="200"
+                                            alt="表情分类2">
+                                </div>
+                            </div>
+                            <div class="bts_slide_tab_cell_text">cell14</div>
+                        </div>
+                        <div class="bts_slide_tab_cell">
+                            <div class="bts_slide_tab_cell_image_div">
+                                <div class="bts_slide_tab_cell_image">
+                                    <img class="bts_slide_tab_cell_image_border" src="img/slide_tab_icon_box_big.png" alt="表情分类1">
+                                    <img
+                                            class="bts_slide_tab_cell_image_icon"
+                                            src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+                                            data-original="tmp_img/icon_1.png"
+                                            width="200"
+                                            height="200"
+                                            alt="表情分类2">
+                                </div>
+                            </div>
+                            <div class="bts_slide_tab_cell_text">cell2</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cp_close_btn"></div>
+    </div>
+
+    <div id = "view_save_help" class="common_popbox">
+        <div class="cp_bg"></div>
+        <div class="cp_container">
+            <div class="cp_t_l"><img class="cp_bg_img" src="img/popbox_bg_left_top.png" alt = "表情弹出框"></div>
+            <div class="cp_t_m"><img class="cp_bg_img" src="img/popbox_bg_mid_top.png" alt = "表情弹出框"></div>
+            <div class="cp_t_r">
+                <img class="cp_bg_img" src="img/popbox_bg_right_top.png" alt = "表情弹出框">
+                <img class="cp_close_btn_img" src = "img/popbox_bg_right_top_btn.png" alt = "表情弹出框关闭按钮">
+            </div>
+            <div class="cp_m_l"><img class="cp_bg_img" src="img/popbox_bg_left_mid.png"></div>
+            <div class="cp_m_m">
+                <div class="tips_container_full">
+                </div>
+            </div>
+            <div class="cp_m_r"><img class="cp_bg_img" src="img/popbox_bg_right_mid.png"></div>
+            <div class="cp_b_l"><img class="cp_bg_img" src="img/popbox_bg_left_bottom.png"></div>
+            <div class="cp_b_m"><img class="cp_bg_img" src="img/popbox_bg_bottom_mid.png"></div>
+            <div class="cp_b_r"><img class="cp_bg_img" src="img/popbox_bg_right_bottom.png"></div>
+            <div class="cp_content_box">
+                <div class="bts_up_container">
+                    <div class="view_pop_box_up_content_title">
+                        测试 标题
+                    </div>
+                    <div class="view_pop_box_up_content_subtitle">
+                        本图片来自网络啦啦啦<br>第二行哈哈哈
+                    </div>
+                </div>
+                <div id="view_save_help_content_box">
+                    <div class="iscroll_type_element">
+                        <div id="view_save_help_text_box">
+                            2asdfjasldjflaksjdfkl<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />fasdfsadf<br /><br />dfasdf<br /><br />end
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cp_close_btn"></div>
+    </div>
+
+    <div id = "view_select_pic" class="common_popbox">
+        <div class="cp_bg"></div>
+        <div class="cp_container">
+            <div class="cp_t_l"><img class="cp_bg_img" src="img/popbox_bg_left_top.png" alt = "表情弹出框"></div>
+            <div class="cp_t_m"><img class="cp_bg_img" src="img/popbox_bg_mid_top.png" alt = "表情弹出框"></div>
+            <div class="cp_t_r">
+                <img class="cp_bg_img" src="img/popbox_bg_right_top.png" alt = "表情弹出框">
+                <img class="cp_close_btn_img" src = "img/popbox_bg_right_top_btn.png" alt = "表情弹出框关闭按钮">
+            </div>
+            <div class="cp_m_l"><img class="cp_bg_img" src="img/popbox_bg_left_mid.png"></div>
+            <div class="cp_m_m">
+                <div class="tips_container_full">
+                </div>
+            </div>
+            <div class="cp_m_r"><img class="cp_bg_img" src="img/popbox_bg_right_mid.png"></div>
+            <div class="cp_b_l"><img class="cp_bg_img" src="img/popbox_bg_left_bottom.png"></div>
+            <div class="cp_b_m"><img class="cp_bg_img" src="img/popbox_bg_bottom_mid.png"></div>
+            <div class="cp_b_r"><img class="cp_bg_img" src="img/popbox_bg_right_bottom.png"></div>
+            <div class="cp_content_box">
+                <div class="bts_up_container">
+                    <div class="view_pop_box_up_content_title">
+                        测试 标题
+                    </div>
+                    <div class="view_pop_box_up_content_subtitle">
+                        本图片来自网络啦啦啦<br>第二行哈哈哈
+                    </div>
+                    <div class="view_pop_box_up_content_box">
+                        <div class="iscroll_type_element">
+                            <div id="view_select_pic_blockflow_out_box" class="view_pop_box_up_content_inner_blockflow_out_box">
+                                <div id="view_select_pic_blockflow_inner_box" class="view_pop_box_up_content_inner_blockflow_inner_box">
+                                    <div class="view_select_pic_up_content_cell">
+                                        <img
+                                                class="view_select_pic_up_content_cell_img"
+                                                src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+                                                data-original="tmp_img/icon_0.png"
+                                                width="200"
+                                                height="200"
+                                                alt="表情icon">
+                                        <img class="view_select_pic_up_content_cell_border" src="img/pic_cell_box.png" alt="表情图片框的边界">
+                                    </div>
+                                    <div class="view_select_pic_up_content_cell">
+                                        <img
+                                                class="view_select_pic_up_content_cell_img"
+                                                src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+                                                data-original="tmp_img/icon_0.png"
+                                                width="200"
+                                                height="200"
+                                                alt="表情icon">
+                                        <img class="view_select_pic_up_content_cell_border" src="img/pic_cell_box.png" alt="表情图片框的边界">
+                                    </div>
+                                    <div class="view_select_pic_up_content_cell">
+                                        <img
+                                                class="view_select_pic_up_content_cell_img"
+                                                src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+                                                data-original="tmp_img/icon_0.png"
+                                                width="200"
+                                                height="200"
+                                                alt="表情icon">
+                                        <img class="view_select_pic_up_content_cell_border" src="img/pic_cell_box.png" alt="表情图片框的边界">
+                                    </div>
+                                    <div class="view_select_pic_up_content_cell">
+                                        <img
+                                                class="view_select_pic_up_content_cell_img"
+                                                src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+                                                data-original="tmp_img/icon_0.png"
+                                                width="200"
+                                                height="200"
+                                                alt="表情icon">
+                                        <img class="view_select_pic_up_content_cell_border" src="img/pic_cell_box.png" alt="表情图片框的边界">
+                                    </div>
+                                    <div class="view_select_pic_up_content_cell">
+                                        <img
+                                                class="view_select_pic_up_content_cell_img"
+                                                src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+                                                data-original="tmp_img/icon_0.png"
+                                                width="200"
+                                                height="200"
+                                                alt="表情icon">
+                                        <img class="view_select_pic_up_content_cell_border" src="img/pic_cell_box.png" alt="表情图片框的边界">
+                                    </div>
+                                    <div class="view_select_pic_up_content_cell">
+                                        <img
+                                                class="view_select_pic_up_content_cell_img"
+                                                src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+                                                data-original="tmp_img/icon_0.png"
+                                                width="200"
+                                                height="200"
+                                                alt="表情icon">
+                                        <img class="view_select_pic_up_content_cell_border" src="img/pic_cell_box.png" alt="表情图片框的边界">
+                                    </div>
+                                    <div class="view_select_pic_up_content_cell">
+                                        <img
+                                                class="view_select_pic_up_content_cell_img"
+                                                src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+                                                data-original="tmp_img/icon_0.png"
+                                                width="200"
+                                                height="200"
+                                                alt="表情icon">
+                                        <img class="view_select_pic_up_content_cell_border" src="img/pic_cell_box.png" alt="表情图片框的边界">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="view_select_pic_up_tips_container"></div>
+                </div>
+                <div class="bts_mid_line"><img class="bts_mid_line_img" src="img/slide_line.png"></div>
+                <div class="bts_bottom_container" id="view_select_pic_bottom_tabbar">
+                    <div class="bts_bottom_inner_content">
+                        <div class="bts_slide_tab_cell_arrow"><img class="bts_slide_tab_cell_arrow_img" src="img/slide_arrow.png"></div>
+                        <div class="bts_slide_tab_cell">
+                            <div class="bts_slide_tab_cell_image_div">
+                                <div class="bts_slide_tab_cell_image_selected">
+                                    <img class="bts_slide_tab_cell_image_border" src="img/slide_tab_icon_box_big.png" alt="表情分类1">
+                                    <img
+                                            class="bts_slide_tab_cell_image_icon"
+                                            src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+                                            data-original="tmp_img/icon_0.png"
+                                            width="200"
+                                            height="200"
+                                            alt="表情分类1">
+                                </div>
+                            </div>
+                            <div class="bts_slide_tab_cell_text">金馆长12</div>
+                        </div>
+                        <div class="bts_slide_tab_cell">
+                            <div class="bts_slide_tab_cell_image_div">
+                                <div class="bts_slide_tab_cell_image">
+                                    <img class="bts_slide_tab_cell_image_border" src="img/slide_tab_icon_box_big.png" alt="表情分类1">
+                                    <img
+                                            class="bts_slide_tab_cell_image_icon"
+                                            src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+                                            data-original="tmp_img/icon_1.png"
+                                            width="200"
+                                            height="200"
+                                            alt="表情分类1">
+                                </div>
+                            </div>
+                            <div class="bts_slide_tab_cell_text">小学生</div>
+                        </div>
+                        <div class="bts_slide_tab_cell">
+                            <div class="bts_slide_tab_cell_image_div">
+                                <div class="bts_slide_tab_cell_image">
+                                    <img class="bts_slide_tab_cell_image_border" src="img/slide_tab_icon_box_big.png" alt="表情分类1">
+                                    <img
+                                            class="bts_slide_tab_cell_image_icon"
+                                            src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+                                            data-original="tmp_img/icon_2.png"
+                                            width="200"
+                                            height="200"
+                                            alt="表情分类1">
+                                </div>
+                            </div>
+                            <div class="bts_slide_tab_cell_text">辣条</div>
+                        </div>
+                        <div class="bts_slide_tab_cell">
+                            <div class="bts_slide_tab_cell_image_div">
+                                <div class="bts_slide_tab_cell_image">
+                                    <img class="bts_slide_tab_cell_image_border" src="img/slide_tab_icon_box_big.png" alt="表情分类1">
+                                    <img
+                                            class="bts_slide_tab_cell_image_icon"
+                                            src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+                                            data-original="tmp_img/icon_0.png"
+                                            width="200"
+                                            height="200"
+                                            alt="表情分类1">
+                                </div>
+                            </div>
+                            <div class="bts_slide_tab_cell_text">皮尔德</div>
+                        </div>
+                        <div class="bts_slide_tab_cell">
+                            <div class="bts_slide_tab_cell_image_div">
+                                <div class="bts_slide_tab_cell_image">
+                                    <img class="bts_slide_tab_cell_image_border" src="img/slide_tab_icon_box_big.png" alt="表情分类1">
+                                    <img
+                                            class="bts_slide_tab_cell_image_icon"
+                                            src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+                                            data-original="tmp_img/icon_1.png"
+                                            width="200"
+                                            height="200"
+                                            alt="表情分类2">
+                                </div>
+                            </div>
+                            <div class="bts_slide_tab_cell_text">~duang</div>
+                        </div>
+                        <div class="bts_slide_tab_cell">
+                            <div class="bts_slide_tab_cell_image_div">
+                                <div class="bts_slide_tab_cell_image">
+                                    <img class="bts_slide_tab_cell_image_border" src="img/slide_tab_icon_box_big.png" alt="表情分类1">
+                                    <img
+                                            class="bts_slide_tab_cell_image_icon"
+                                            src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+                                            data-original="tmp_img/icon_2.png"
+                                            width="200"
+                                            height="200"
+                                            alt="表情分类2">
+                                </div>
+                            </div>
+                            <div class="bts_slide_tab_cell_text">作死</div>
+                        </div>
+                        <div class="bts_slide_tab_cell">
+                            <div class="bts_slide_tab_cell_image_div">
+                                <div class="bts_slide_tab_cell_image">
+                                    <img class="bts_slide_tab_cell_image_border" src="img/slide_tab_icon_box_big.png" alt="表情分类1">
+                                    <img
+                                            class="bts_slide_tab_cell_image_icon"
+                                            src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+                                            data-original="tmp_img/icon_0.png"
+                                            width="200"
+                                            height="200"
+                                            alt="表情分类2">
+                                </div>
+                            </div>
+                            <div class="bts_slide_tab_cell_text">水表</div>
+                        </div>
+                        <div class="bts_slide_tab_cell">
+                            <div class="bts_slide_tab_cell_image_div">
+                                <div class="bts_slide_tab_cell_image">
+                                    <img class="bts_slide_tab_cell_image_border" src="img/slide_tab_icon_box_big.png" alt="表情分类1">
+                                    <img
+                                            class="bts_slide_tab_cell_image_icon"
+                                            src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+                                            data-original="tmp_img/icon_1.png"
+                                            width="200"
+                                            height="200"
+                                            alt="表情分类2">
+                                </div>
+                            </div>
+                            <div class="bts_slide_tab_cell_text">自定义</div>
+                        </div>
+                        <div class="bts_slide_tab_cell">
+                            <div class="bts_slide_tab_cell_image_div">
+                                <div class="bts_slide_tab_cell_image">
+                                    <img class="bts_slide_tab_cell_image_border" src="img/slide_tab_icon_box_big.png" alt="表情分类1">
+                                    <img
+                                            class="bts_slide_tab_cell_image_icon"
+                                            src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+                                            data-original="tmp_img/icon_2.png"
+                                            width="200"
+                                            height="200"
+                                            alt="表情分类2">
+                                </div>
+                            </div>
+                            <div class="bts_slide_tab_cell_text">cell8</div>
+                        </div>
+                        <div class="bts_slide_tab_cell">
+                            <div class="bts_slide_tab_cell_image_div">
+                                <div class="bts_slide_tab_cell_image">
+                                    <img class="bts_slide_tab_cell_image_border" src="img/slide_tab_icon_box_big.png" alt="表情分类1">
+                                    <img
+                                            class="bts_slide_tab_cell_image_icon"
+                                            src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+                                            data-original="tmp_img/icon_0.png"
+                                            width="200"
+                                            height="200"
+                                            alt="表情分类2">
+                                </div>
+                            </div>
+                            <div class="bts_slide_tab_cell_text">cell9</div>
+                        </div>
+                        <div class="bts_slide_tab_cell">
+                            <div class="bts_slide_tab_cell_image_div">
+                                <div class="bts_slide_tab_cell_image">
+                                    <img class="bts_slide_tab_cell_image_border" src="img/slide_tab_icon_box_big.png" alt="表情分类1">
+                                    <img
+                                            class="bts_slide_tab_cell_image_icon"
+                                            src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+                                            data-original="tmp_img/icon_1.png"
+                                            width="200"
+                                            height="200"
+                                            alt="表情分类2">
+                                </div>
+                            </div>
+                            <div class="bts_slide_tab_cell_text">cell10</div>
+                        </div>
+                        <div class="bts_slide_tab_cell">
+                            <div class="bts_slide_tab_cell_image_div">
+                                <div class="bts_slide_tab_cell_image">
+                                    <img class="bts_slide_tab_cell_image_border" src="img/slide_tab_icon_box_big.png" alt="表情分类1">
+                                    <img
+                                            class="bts_slide_tab_cell_image_icon"
+                                            src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+                                            data-original="tmp_img/icon_2.png"
+                                            width="200"
+                                            height="200"
+                                            alt="表情分类2">
+                                </div>
+                            </div>
+                            <div class="bts_slide_tab_cell_text">cell14</div>
+                        </div>
+                        <div class="bts_slide_tab_cell">
+                            <div class="bts_slide_tab_cell_image_div">
+                                <div class="bts_slide_tab_cell_image">
+                                    <img class="bts_slide_tab_cell_image_border" src="img/slide_tab_icon_box_big.png" alt="表情分类1">
+                                    <img
+                                            class="bts_slide_tab_cell_image_icon"
+                                            src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+                                            data-original="tmp_img/icon_1.png"
+                                            width="200"
+                                            height="200"
+                                            alt="表情分类2">
+                                </div>
+                            </div>
+                            <div class="bts_slide_tab_cell_text">cell2</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cp_close_btn"></div>
+    </div>
+
+    <div id = "view_data_context">{"is_new_user":false,"tips":"456个男神在玩","animate_share_tips":false,"templete_id":"default"}</div>
+
+    <div id = "view_test_popbox">
+
+    </div>
+
+</div>
+
+<script src="./js/libs/seajs/sea.js"></script>
+<!--script src="./js/libs/seajs/sea-debug.js"></script-->
+<script src="./js/libs/seajs/seajs-preload.js"></script>
+<script src="./js/conf/sea_conf.js"></script>
+
+</body>
+</html>

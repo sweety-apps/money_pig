@@ -1216,6 +1216,12 @@ static NSOperationQueue *sharedQueue = nil;
     if([[[[self url] scheme] lowercaseString] isEqualToString:@"https"]) {
 
         NSMutableDictionary *sslProperties = [NSMutableDictionary dictionaryWithCapacity:1];
+        
+        [sslProperties setObject:(NSString *)kCFBooleanTrue forKey:(NSString *)kCFStreamSSLAllowsAnyRoot];
+        [sslProperties setObject:(NSString *)kCFBooleanTrue forKey:(NSString *)kCFStreamSSLAllowsExpiredCertificates];
+        [sslProperties setObject:(NSString *)kCFBooleanTrue forKey:(NSString *)kCFStreamSSLAllowsExpiredRoots];
+        //[sslProperties setObject:(NSString *)kCFBooleanFalse forKey:(NSString *)kCFStreamSSLValidatesCertificateChain];
+        //[sslProperties setObject:(NSString *)kCFBooleanFalse forKey:(NSString *)kCFStreamSSLValidatesCertificateChain];
 
         // Tell CFNetwork not to validate SSL certificates
         if (![self validatesSecureCertificate]) {

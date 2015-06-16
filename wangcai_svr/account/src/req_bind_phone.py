@@ -5,6 +5,9 @@ import json
 import random
 import logging
 import db_helper
+import urllib
+import urllib2
+import socket
 from config import *
 
 logger = logging.getLogger('root')
@@ -58,6 +61,9 @@ class Handler:
             else:
                 db_helper.insert_user_device(user.userid, self._device_id, anony.idfa, anony.mac, anony.platform)
                 db_helper.update_anonymous_device_flag(self._device_id, 1)
+                if n > 0:
+                    #扣减多送的一元钱
+                    self.recharge(self._device_id, -100, '非首次安装小猪回收', 0)
                 return {'rtn': 0, 'userid': user.userid, 'invite_code': user.invite_code, 'inviter': user.inviter_code, 'total_device': n}
 
     def update_phone_num(self):
@@ -69,4 +75,31 @@ class Handler:
         #重新绑定手机,只改user_info中的手机号
         db_helper.update_phone_num(self._userid, self._phone_num)
         return {'rtn': 0, 'userid': self._userid, 'invite_code': user.invite_code}
+
+    def recharge(self, device_id, money, remark, offerwall_money):
+        data = {
+            'device_id': device_id,
+            'userid': 0,
+            'money': money,
+            'remark': remark,
+            'offerwall_money': offerwall_money
+        }
+        url = 'http://' + BILLING_BACKEND + '/recharge'
+        resp = self.make_request(url, data)
+        return resp['rtn']
+
+    def make_request(self, url, data, timeout = 3):
+        logger.debug('url: %s, data: %s' %(url, json.dumps(data, ensure_ascii=False)))
+        req = urllib2.Request(url, urllib.urlencode(data))
+        try:
+            resp = urllib2.urlopen(req, timeout = timeout).read()
+            logger.debug('resp: %s' %resp)
+            return json.loads(resp)
+        except urllib2.HTTPError, e:
+            return {'rtn': -e.code}
+        except urllib2.URLError, e:
+            if isinstance(e.reason, socket.timeout):
+                return {'rtn': -1}
+            else:
+                return {'rtn': -2}
 

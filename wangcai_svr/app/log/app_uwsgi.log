@@ -1,104 +1,2291 @@
-*** Starting uWSGI 2.0.6 (64bit) on [Fri Sep  5 00:15:24 2014] ***
-compiled with version: 4.2.1 Compatible Apple LLVM 5.1 (clang-503.0.40) on 21 August 2014 02:43:37
-os: Darwin-13.3.0 Darwin Kernel Version 13.3.0: Tue Jun  3 21:27:35 PDT 2014; root:xnu-2422.110.17~1/RELEASE_X86_64
-nodename: LeetekiMacBook-Pro.local
+*** Starting uWSGI 2.0.6 (64bit) on [Mon Sep 22 01:09:29 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
 machine: x86_64
 clock source: unix
 pcre jit disabled
-detected number of CPU cores: 4
-current working directory: /Users/leejustin/Documents/SourceCode/GitHub/wangcai/wangcai_svr/app/sbin
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
 writing pidfile to ../conf/app.pid
 detected binary path: /usr/local/bin/uwsgi
-your processes number limit is 709
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
 limiting address space of processes...
 your process address space limit is 536870912 bytes (512 MB)
 your memory page size is 4096 bytes
-detected max file descriptor number: 256
-lock engine: OSX spinlocks
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
 thunder lock: disabled (you can enable it with --thunder-lock)
 uwsgi socket 0 bound to TCP address 127.0.0.1:5288 fd 3
-Python version: 2.7.5 (default, Mar  9 2014, 22:15:05)  [GCC 4.2.1 Compatible Apple LLVM 5.0 (clang-500.0.68)]
+Python version: 2.6.6 (r266:84292, Jan 22 2014, 09:42:36)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-4)]
 *** Python threads support is disabled. You can enable it with --enable-threads ***
-Python main interpreter initialized at 0x7ff8e2700940
+Python main interpreter initialized at 0x26aec00
 your server socket listen backlog is limited to 100 connections
 your mercy for graceful operations on workers is 60 seconds
 mapped 219248 bytes (214 KB) for 1 cores
 *** Operational MODE: single process ***
-WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x7ff8e2700940 pid: 4265 (default app)
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x26aec00 pid: 4251 (default app)
 *** uWSGI is running in multiple interpreter mode ***
-spawned uWSGI master process (pid: 4265)
-spawned uWSGI worker 1 (pid: 4276, cores: 1)
+spawned uWSGI master process (pid: 4251)
+spawned uWSGI worker 1 (pid: 4260, cores: 1)
 SIGINT/SIGQUIT received...killing workers...
-*** Starting uWSGI 2.0.6 (64bit) on [Fri Sep  5 01:36:02 2014] ***
-compiled with version: 4.2.1 Compatible Apple LLVM 5.1 (clang-503.0.40) on 21 August 2014 02:43:37
-os: Darwin-13.3.0 Darwin Kernel Version 13.3.0: Tue Jun  3 21:27:35 PDT 2014; root:xnu-2422.110.17~1/RELEASE_X86_64
-nodename: LeetekiMacBook-Pro.local
+*** Starting uWSGI 2.0.6 (64bit) on [Mon Sep 22 01:52:29 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
 machine: x86_64
 clock source: unix
 pcre jit disabled
-detected number of CPU cores: 4
-current working directory: /Users/leejustin/Documents/SourceCode/GitHub/wangcai/wangcai_svr/app/sbin
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
 writing pidfile to ../conf/app.pid
 detected binary path: /usr/local/bin/uwsgi
-your processes number limit is 709
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
 limiting address space of processes...
 your process address space limit is 536870912 bytes (512 MB)
 your memory page size is 4096 bytes
-detected max file descriptor number: 256
-lock engine: OSX spinlocks
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
 thunder lock: disabled (you can enable it with --thunder-lock)
 probably another instance of uWSGI is running on the same address (127.0.0.1:5288).
 bind(): Address already in use [core/socket.c line 759]
 worker 1 buried after 1 seconds
 goodbye to uWSGI.
-*** Starting uWSGI 2.0.6 (64bit) on [Fri Sep  5 01:45:15 2014] ***
-compiled with version: 4.2.1 Compatible Apple LLVM 5.1 (clang-503.0.40) on 21 August 2014 02:43:37
-os: Darwin-13.3.0 Darwin Kernel Version 13.3.0: Tue Jun  3 21:27:35 PDT 2014; root:xnu-2422.110.17~1/RELEASE_X86_64
-nodename: LeetekiMacBook-Pro.local
+*** Starting uWSGI 2.0.6 (64bit) on [Mon Sep 22 02:01:18 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
 machine: x86_64
 clock source: unix
 pcre jit disabled
-detected number of CPU cores: 4
-current working directory: /Users/leejustin/Documents/SourceCode/GitHub/wangcai/wangcai_svr/app/sbin
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
 writing pidfile to ../conf/app.pid
 detected binary path: /usr/local/bin/uwsgi
-your processes number limit is 709
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
 limiting address space of processes...
 your process address space limit is 536870912 bytes (512 MB)
 your memory page size is 4096 bytes
-detected max file descriptor number: 256
-lock engine: OSX spinlocks
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
 thunder lock: disabled (you can enable it with --thunder-lock)
 uwsgi socket 0 bound to TCP address 127.0.0.1:5288 fd 3
-Python version: 2.7.5 (default, Mar  9 2014, 22:15:05)  [GCC 4.2.1 Compatible Apple LLVM 5.0 (clang-500.0.68)]
+Python version: 2.6.6 (r266:84292, Jan 22 2014, 09:42:36)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-4)]
 *** Python threads support is disabled. You can enable it with --enable-threads ***
-Python main interpreter initialized at 0x7f9a83500e50
+Python main interpreter initialized at 0x1869c00
 your server socket listen backlog is limited to 100 connections
 your mercy for graceful operations on workers is 60 seconds
 mapped 219248 bytes (214 KB) for 1 cores
 *** Operational MODE: single process ***
-WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x7f9a83500e50 pid: 5150 (default app)
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x1869c00 pid: 6157 (default app)
 *** uWSGI is running in multiple interpreter mode ***
-spawned uWSGI master process (pid: 5150)
-spawned uWSGI worker 1 (pid: 5161, cores: 1)
+spawned uWSGI master process (pid: 6157)
+spawned uWSGI worker 1 (pid: 6172, cores: 1)
 SIGINT/SIGQUIT received...killing workers...
-*** Starting uWSGI 2.0.6 (64bit) on [Fri Sep  5 01:47:57 2014] ***
-compiled with version: 4.2.1 Compatible Apple LLVM 5.1 (clang-503.0.40) on 21 August 2014 02:43:37
-os: Darwin-13.3.0 Darwin Kernel Version 13.3.0: Tue Jun  3 21:27:35 PDT 2014; root:xnu-2422.110.17~1/RELEASE_X86_64
-nodename: LeetekiMacBook-Pro.local
+*** Starting uWSGI 2.0.6 (64bit) on [Sat Sep 27 00:45:25 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
 machine: x86_64
 clock source: unix
 pcre jit disabled
-detected number of CPU cores: 4
-current working directory: /Users/leejustin/Documents/SourceCode/GitHub/wangcai/wangcai_svr/app/sbin
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
 writing pidfile to ../conf/app.pid
 detected binary path: /usr/local/bin/uwsgi
-your processes number limit is 709
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
 limiting address space of processes...
 your process address space limit is 536870912 bytes (512 MB)
 your memory page size is 4096 bytes
-detected max file descriptor number: 256
-lock engine: OSX spinlocks
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:5288).
+bind(): Address already in use [core/socket.c line 759]
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.6 (64bit) on [Sat Sep 27 01:37:41 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5288 fd 3
+Python version: 2.6.6 (r266:84292, Jan 22 2014, 09:42:36)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-4)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x2556c00
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 219248 bytes (214 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x2556c00 pid: 23562 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 23562)
+spawned uWSGI worker 1 (pid: 23579, cores: 1)
+SIGINT/SIGQUIT received...killing workers...
+*** Starting uWSGI 2.0.6 (64bit) on [Fri Oct  3 21:45:15 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:5288).
+bind(): Address already in use [core/socket.c line 759]
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.6 (64bit) on [Fri Oct  3 21:49:45 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5288 fd 3
+Python version: 2.6.6 (r266:84292, Jan 22 2014, 09:42:36)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-4)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xa79c00
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 219248 bytes (214 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0xa79c00 pid: 22952 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 22952)
+spawned uWSGI worker 1 (pid: 22968, cores: 1)
+SIGINT/SIGQUIT received...killing workers...
+*** Starting uWSGI 2.0.6 (64bit) on [Fri Oct  3 21:49:51 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:5288).
+bind(): Address already in use [core/socket.c line 759]
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.6 (64bit) on [Mon Oct  6 20:47:34 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5288 fd 3
+Python version: 2.6.6 (r266:84292, Jan 22 2014, 09:42:36)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-4)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x19f9c00
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 219248 bytes (214 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x19f9c00 pid: 18727 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 18727)
+spawned uWSGI worker 1 (pid: 18737, cores: 1)
+SIGINT/SIGQUIT received...killing workers...
+*** Starting uWSGI 2.0.6 (64bit) on [Mon Oct  6 21:22:53 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:5288).
+bind(): Address already in use [core/socket.c line 759]
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.6 (64bit) on [Mon Oct  6 21:48:11 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5288 fd 3
+Python version: 2.6.6 (r266:84292, Jan 22 2014, 09:42:36)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-4)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xcf9c00
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 219248 bytes (214 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0xcf9c00 pid: 20817 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 20817)
+spawned uWSGI worker 1 (pid: 20832, cores: 1)
+SIGINT/SIGQUIT received...killing workers...
+*** Starting uWSGI 2.0.6 (64bit) on [Tue Oct  7 04:28:48 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:5288).
+bind(): Address already in use [core/socket.c line 759]
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.6 (64bit) on [Tue Oct  7 04:52:23 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5288 fd 3
+Python version: 2.6.6 (r266:84292, Jan 22 2014, 09:42:36)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-4)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x18fbc00
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 219248 bytes (214 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x18fbc00 pid: 1226 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1226)
+spawned uWSGI worker 1 (pid: 1242, cores: 1)
+SIGINT/SIGQUIT received...killing workers...
+*** Starting uWSGI 2.0.6 (64bit) on [Thu Oct  9 00:40:18 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:5288).
+bind(): Address already in use [core/socket.c line 759]
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.6 (64bit) on [Thu Oct  9 00:53:38 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5288 fd 3
+Python version: 2.6.6 (r266:84292, Jan 22 2014, 09:42:36)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-4)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xe9ac00
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 219248 bytes (214 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0xe9ac00 pid: 14289 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 14289)
+spawned uWSGI worker 1 (pid: 14305, cores: 1)
+SIGINT/SIGQUIT received...killing workers...
+*** Starting uWSGI 2.0.6 (64bit) on [Thu Oct  9 00:58:35 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:5288).
+bind(): Address already in use [core/socket.c line 759]
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.6 (64bit) on [Thu Oct  9 18:27:35 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5288 fd 3
+Python version: 2.6.6 (r266:84292, Jan 22 2014, 09:42:36)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-4)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x24e1c00
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 219248 bytes (214 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x24e1c00 pid: 13550 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 13550)
+spawned uWSGI worker 1 (pid: 13565, cores: 1)
+SIGINT/SIGQUIT received...killing workers...
+*** Starting uWSGI 2.0.6 (64bit) on [Fri Oct 10 02:02:42 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:5288).
+bind(): Address already in use [core/socket.c line 759]
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.6 (64bit) on [Sun Oct 12 03:02:00 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5288 fd 3
+Python version: 2.6.6 (r266:84292, Jan 22 2014, 09:42:36)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-4)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x7e8c00
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 219248 bytes (214 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x7e8c00 pid: 16641 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 16641)
+spawned uWSGI worker 1 (pid: 16650, cores: 1)
+SIGINT/SIGQUIT received...killing workers...
+*** Starting uWSGI 2.0.6 (64bit) on [Thu Oct 16 01:50:16 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:5288).
+bind(): Address already in use [core/socket.c line 759]
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.6 (64bit) on [Thu Oct 16 01:55:58 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5288 fd 3
+Python version: 2.6.6 (r266:84292, Jan 22 2014, 09:42:36)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-4)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1921c00
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 219248 bytes (214 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x1921c00 pid: 22455 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 22455)
+spawned uWSGI worker 1 (pid: 22471, cores: 1)
+SIGINT/SIGQUIT received...killing workers...
+*** Starting uWSGI 2.0.6 (64bit) on [Thu Oct 16 01:56:06 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:5288).
+bind(): Address already in use [core/socket.c line 759]
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.6 (64bit) on [Thu Oct 16 01:56:51 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5288 fd 3
+Python version: 2.6.6 (r266:84292, Jan 22 2014, 09:42:36)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-4)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1ad7c00
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 219248 bytes (214 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x1ad7c00 pid: 22793 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 22793)
+spawned uWSGI worker 1 (pid: 22809, cores: 1)
+SIGINT/SIGQUIT received...killing workers...
+*** Starting uWSGI 2.0.6 (64bit) on [Thu Oct 16 01:57:01 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:5288).
+bind(): Address already in use [core/socket.c line 759]
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.6 (64bit) on [Mon Oct 20 11:46:50 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5288 fd 3
+Python version: 2.6.6 (r266:84292, Jan 22 2014, 09:42:36)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-4)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x2183c00
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 219248 bytes (214 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x2183c00 pid: 15633 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 15633)
+spawned uWSGI worker 1 (pid: 15642, cores: 1)
+SIGINT/SIGQUIT received...killing workers...
+*** Starting uWSGI 2.0.6 (64bit) on [Mon Oct 20 12:13:00 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:5288).
+bind(): Address already in use [core/socket.c line 759]
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.6 (64bit) on [Mon Oct 20 12:19:12 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5288 fd 3
+Python version: 2.6.6 (r266:84292, Jan 22 2014, 09:42:36)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-4)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x2003c00
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 219248 bytes (214 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x2003c00 pid: 16980 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 16980)
+spawned uWSGI worker 1 (pid: 16996, cores: 1)
+SIGINT/SIGQUIT received...killing workers...
+*** Starting uWSGI 2.0.6 (64bit) on [Mon Oct 20 12:58:23 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:5288).
+bind(): Address already in use [core/socket.c line 759]
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.6 (64bit) on [Mon Oct 20 12:59:23 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5288 fd 3
+Python version: 2.6.6 (r266:84292, Jan 22 2014, 09:42:36)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-4)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x2493c00
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 219248 bytes (214 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x2493c00 pid: 18489 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 18489)
+spawned uWSGI worker 1 (pid: 18504, cores: 1)
+SIGINT/SIGQUIT received...killing workers...
+*** Starting uWSGI 2.0.6 (64bit) on [Mon Oct 20 14:00:37 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:5288).
+bind(): Address already in use [core/socket.c line 759]
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.6 (64bit) on [Mon Oct 20 14:00:55 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5288 fd 3
+Python version: 2.6.6 (r266:84292, Jan 22 2014, 09:42:36)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-4)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1f9ac00
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 219248 bytes (214 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x1f9ac00 pid: 20659 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 20659)
+spawned uWSGI worker 1 (pid: 20674, cores: 1)
+SIGINT/SIGQUIT received...killing workers...
+*** Starting uWSGI 2.0.6 (64bit) on [Mon Oct 20 14:14:39 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:5288).
+bind(): Address already in use [core/socket.c line 759]
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.6 (64bit) on [Mon Oct 20 14:14:49 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5288 fd 3
+Python version: 2.6.6 (r266:84292, Jan 22 2014, 09:42:36)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-4)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x13b6c00
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 219248 bytes (214 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x13b6c00 pid: 21411 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 21411)
+spawned uWSGI worker 1 (pid: 21427, cores: 1)
+SIGINT/SIGQUIT received...killing workers...
+*** Starting uWSGI 2.0.6 (64bit) on [Mon Oct 20 15:17:33 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:5288).
+bind(): Address already in use [core/socket.c line 759]
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.6 (64bit) on [Mon Oct 20 15:17:39 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5288 fd 3
+Python version: 2.6.6 (r266:84292, Jan 22 2014, 09:42:36)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-4)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x998c00
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 219248 bytes (214 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x998c00 pid: 23628 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 23628)
+spawned uWSGI worker 1 (pid: 23643, cores: 1)
+SIGINT/SIGQUIT received...killing workers...
+*** Starting uWSGI 2.0.6 (64bit) on [Mon Oct 20 15:17:56 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:5288).
+bind(): Address already in use [core/socket.c line 759]
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.6 (64bit) on [Mon Oct 20 18:25:40 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5288 fd 3
+Python version: 2.6.6 (r266:84292, Jan 22 2014, 09:42:36)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-4)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x21bbc00
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 219248 bytes (214 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x21bbc00 pid: 29517 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 29517)
+spawned uWSGI worker 1 (pid: 29526, cores: 1)
+SIGINT/SIGQUIT received...killing workers...
+*** Starting uWSGI 2.0.6 (64bit) on [Mon Oct 20 18:30:40 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:5288).
+bind(): Address already in use [core/socket.c line 759]
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.6 (64bit) on [Mon Oct 20 21:25:03 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5288 fd 3
+Python version: 2.6.6 (r266:84292, Jan 22 2014, 09:42:36)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-4)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x14bcc00
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 219248 bytes (214 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x14bcc00 pid: 2801 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 2801)
+spawned uWSGI worker 1 (pid: 2810, cores: 1)
+SIGINT/SIGQUIT received...killing workers...
+*** Starting uWSGI 2.0.6 (64bit) on [Mon Oct 20 21:33:14 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:5288).
+bind(): Address already in use [core/socket.c line 759]
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.6 (64bit) on [Mon Oct 20 21:38:08 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5288 fd 3
+Python version: 2.6.6 (r266:84292, Jan 22 2014, 09:42:36)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-4)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1011c00
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 219248 bytes (214 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x1011c00 pid: 3593 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 3593)
+spawned uWSGI worker 1 (pid: 3609, cores: 1)
+SIGINT/SIGQUIT received...killing workers...
+*** Starting uWSGI 2.0.6 (64bit) on [Tue Oct 21 10:38:46 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:5288).
+bind(): Address already in use [core/socket.c line 759]
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.6 (64bit) on [Tue Oct 21 23:48:05 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5288 fd 3
+Python version: 2.6.6 (r266:84292, Jan 22 2014, 09:42:36)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-4)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x25ffc00
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 219248 bytes (214 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x25ffc00 pid: 19067 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 19067)
+spawned uWSGI worker 1 (pid: 19082, cores: 1)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.6 (64bit) on [Tue Oct 21 23:53:09 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5288 fd 3
+Python version: 2.6.6 (r266:84292, Jan 22 2014, 09:42:36)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-4)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1c94c00
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 219248 bytes (214 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x1c94c00 pid: 19494 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 19494)
+spawned uWSGI worker 1 (pid: 19510, cores: 1)
+SIGINT/SIGQUIT received...killing workers...
+*** Starting uWSGI 2.0.6 (64bit) on [Tue Oct 21 23:57:16 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:5288).
+bind(): Address already in use [core/socket.c line 759]
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.6 (64bit) on [Wed Oct 22 00:02:16 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5288 fd 3
+Python version: 2.6.6 (r266:84292, Jan 22 2014, 09:42:36)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-4)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1437c00
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 219248 bytes (214 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x1437c00 pid: 20100 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 20100)
+spawned uWSGI worker 1 (pid: 20121, cores: 1)
+SIGINT/SIGQUIT received...killing workers...
+*** Starting uWSGI 2.0.6 (64bit) on [Wed Oct 22 00:02:19 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:5288).
+bind(): Address already in use [core/socket.c line 759]
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.6 (64bit) on [Wed Oct 22 02:28:23 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5288 fd 3
+Python version: 2.6.6 (r266:84292, Jan 22 2014, 09:42:36)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-4)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xfd5c00
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 219248 bytes (214 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0xfd5c00 pid: 24826 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 24826)
+spawned uWSGI worker 1 (pid: 24841, cores: 1)
+SIGINT/SIGQUIT received...killing workers...
+*** Starting uWSGI 2.0.6 (64bit) on [Wed Oct 22 02:38:36 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:5288).
+bind(): Address already in use [core/socket.c line 759]
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.6 (64bit) on [Wed Oct 22 02:44:42 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5288 fd 3
+Python version: 2.6.6 (r266:84292, Jan 22 2014, 09:42:36)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-4)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xdf9c00
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 219248 bytes (214 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0xdf9c00 pid: 25629 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 25629)
+spawned uWSGI worker 1 (pid: 25644, cores: 1)
+SIGINT/SIGQUIT received...killing workers...
+*** Starting uWSGI 2.0.6 (64bit) on [Wed Oct 22 10:34:34 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:5288).
+bind(): Address already in use [core/socket.c line 759]
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.6 (64bit) on [Wed Oct 22 21:17:42 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5288 fd 3
+Python version: 2.6.6 (r266:84292, Jan 22 2014, 09:42:36)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-4)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x269bc00
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 219248 bytes (214 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x269bc00 pid: 27251 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 27251)
+spawned uWSGI worker 1 (pid: 27260, cores: 1)
+SIGINT/SIGQUIT received...killing workers...
+*** Starting uWSGI 2.0.6 (64bit) on [Wed Oct 22 21:17:53 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:5288).
+bind(): Address already in use [core/socket.c line 759]
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.6 (64bit) on [Thu Oct 23 20:13:33 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5288 fd 3
+Python version: 2.6.6 (r266:84292, Jan 22 2014, 09:42:36)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-4)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1c84c00
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 219248 bytes (214 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x1c84c00 pid: 4480 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 4480)
+spawned uWSGI worker 1 (pid: 4490, cores: 1)
+SIGINT/SIGQUIT received...killing workers...
+*** Starting uWSGI 2.0.6 (64bit) on [Thu Oct 23 23:39:21 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:5288).
+bind(): Address already in use [core/socket.c line 759]
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.6 (64bit) on [Fri Oct 24 16:33:21 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5288 fd 3
+Python version: 2.6.6 (r266:84292, Jan 22 2014, 09:42:36)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-4)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x16a6c00
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 219248 bytes (214 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x16a6c00 pid: 9644 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 9644)
+spawned uWSGI worker 1 (pid: 9654, cores: 1)
+SIGINT/SIGQUIT received...killing workers...
+*** Starting uWSGI 2.0.6 (64bit) on [Fri Oct 24 17:19:28 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:5288).
+bind(): Address already in use [core/socket.c line 759]
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.6 (64bit) on [Fri Oct 24 18:16:49 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5288 fd 3
+Python version: 2.6.6 (r266:84292, Jan 22 2014, 09:42:36)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-4)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1f12c00
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 219248 bytes (214 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x1f12c00 pid: 13154 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 13154)
+spawned uWSGI worker 1 (pid: 13170, cores: 1)
+SIGINT/SIGQUIT received...killing workers...
+*** Starting uWSGI 2.0.6 (64bit) on [Mon Oct 27 02:19:10 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:5288).
+bind(): Address already in use [core/socket.c line 759]
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.6 (64bit) on [Mon Oct 27 14:44:27 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5288 fd 3
+Python version: 2.6.6 (r266:84292, Jan 22 2014, 09:42:36)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-4)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x15e9c00
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 219248 bytes (214 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x15e9c00 pid: 8274 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 8274)
+spawned uWSGI worker 1 (pid: 8283, cores: 1)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.6 (64bit) on [Mon Oct 27 15:10:27 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5288 fd 3
+Python version: 2.6.6 (r266:84292, Jan 22 2014, 09:42:36)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-4)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1686c00
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 219248 bytes (214 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x1686c00 pid: 9312 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 9312)
+spawned uWSGI worker 1 (pid: 9322, cores: 1)
+SIGINT/SIGQUIT received...killing workers...
+*** Starting uWSGI 2.0.6 (64bit) on [Mon Oct 27 15:39:03 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:5288).
+bind(): Address already in use [core/socket.c line 759]
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.6 (64bit) on [Mon Oct 27 17:56:39 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5288 fd 3
+Python version: 2.6.6 (r266:84292, Jan 22 2014, 09:42:36)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-4)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x9b9960
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 219248 bytes (214 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x9b9960 pid: 14632 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 14632)
+spawned uWSGI worker 1 (pid: 14642, cores: 1)
+SIGINT/SIGQUIT received...killing workers...
+*** Starting uWSGI 2.0.6 (64bit) on [Mon Oct 27 18:00:20 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:5288).
+bind(): Address already in use [core/socket.c line 759]
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.6 (64bit) on [Mon Oct 27 18:50:12 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5288 fd 3
+Python version: 2.6.6 (r266:84292, Jan 22 2014, 09:42:36)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-4)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1b63c00
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 219248 bytes (214 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x1b63c00 pid: 16593 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 16593)
+spawned uWSGI worker 1 (pid: 16609, cores: 1)
+SIGINT/SIGQUIT received...killing workers...
+*** Starting uWSGI 2.0.6 (64bit) on [Tue Oct 28 02:26:52 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:5288).
+bind(): Address already in use [core/socket.c line 759]
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.6 (64bit) on [Tue Oct 28 02:59:03 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5288 fd 3
+Python version: 2.6.6 (r266:84292, Jan 22 2014, 09:42:36)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-4)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1adec00
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 219248 bytes (214 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x1adec00 pid: 31634 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 31634)
+spawned uWSGI worker 1 (pid: 31664, cores: 1)
+SIGINT/SIGQUIT received...killing workers...
+*** Starting uWSGI 2.0.6 (64bit) on [Tue Oct 28 03:19:28 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:5288).
+bind(): Address already in use [core/socket.c line 759]
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.6 (64bit) on [Tue Oct 28 03:22:10 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5288 fd 3
+Python version: 2.6.6 (r266:84292, Jan 22 2014, 09:42:36)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-4)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x759c00
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 219248 bytes (214 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x759c00 pid: 32667 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 32667)
+spawned uWSGI worker 1 (pid: 32683, cores: 1)
+SIGINT/SIGQUIT received...killing workers...
+*** Starting uWSGI 2.0.6 (64bit) on [Tue Oct 28 03:31:27 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:5288).
+bind(): Address already in use [core/socket.c line 759]
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.6 (64bit) on [Tue Oct 28 03:40:44 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5288 fd 3
+Python version: 2.6.6 (r266:84292, Jan 22 2014, 09:42:36)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-4)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xee4c00
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 219248 bytes (214 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0xee4c00 pid: 1279 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1279)
+spawned uWSGI worker 1 (pid: 1294, cores: 1)
+SIGINT/SIGQUIT received...killing workers...
+*** Starting uWSGI 2.0.6 (64bit) on [Tue Oct 28 20:44:06 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:5288).
+bind(): Address already in use [core/socket.c line 759]
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.6 (64bit) on [Thu Oct 30 12:12:05 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5288 fd 3
+Python version: 2.6.6 (r266:84292, Jan 22 2014, 09:42:36)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-4)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x13c1c00
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 219248 bytes (214 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x13c1c00 pid: 6817 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 6817)
+spawned uWSGI worker 1 (pid: 6826, cores: 1)
+SIGINT/SIGQUIT received...killing workers...
+*** Starting uWSGI 2.0.6 (64bit) on [Thu Oct 30 12:15:38 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:5288).
+bind(): Address already in use [core/socket.c line 759]
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.6 (64bit) on [Thu Oct 30 12:20:50 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5288 fd 3
+Python version: 2.6.6 (r266:84292, Jan 22 2014, 09:42:36)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-4)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xd28c00
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 219248 bytes (214 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0xd28c00 pid: 7500 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7500)
+spawned uWSGI worker 1 (pid: 7515, cores: 1)
+SIGINT/SIGQUIT received...killing workers...
+*** Starting uWSGI 2.0.6 (64bit) on [Thu Oct 30 12:22:37 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:5288).
+bind(): Address already in use [core/socket.c line 759]
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.6 (64bit) on [Thu Oct 30 12:27:46 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5288 fd 3
+Python version: 2.6.6 (r266:84292, Jan 22 2014, 09:42:36)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-4)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1137c00
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 219248 bytes (214 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x1137c00 pid: 8022 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 8022)
+spawned uWSGI worker 1 (pid: 8037, cores: 1)
+SIGINT/SIGQUIT received...killing workers...
+*** Starting uWSGI 2.0.6 (64bit) on [Thu Oct 30 12:31:23 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:5288).
+bind(): Address already in use [core/socket.c line 759]
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.6 (64bit) on [Thu Oct 30 20:47:41 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5288 fd 3
+Python version: 2.6.6 (r266:84292, Jan 22 2014, 09:42:36)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-4)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x97bc00
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 219248 bytes (214 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x97bc00 pid: 23490 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 23490)
+spawned uWSGI worker 1 (pid: 23508, cores: 1)
+SIGINT/SIGQUIT received...killing workers...
+*** Starting uWSGI 2.0.6 (64bit) on [Fri Oct 31 02:39:17 2014] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-4) on 18 August 2014 02:05:06
+os: Linux-2.6.32-279.el6.x86_64 #1 SMP Fri Jun 22 12:19:21 UTC 2012
+nodename: AY1307261417575406b3Z
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/wangcai_svr/app/sbin
+writing pidfile to ../conf/app.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3782
+limiting address space of processes...
+your process address space limit is 536870912 bytes (512 MB)
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
 thunder lock: disabled (you can enable it with --thunder-lock)
 probably another instance of uWSGI is running on the same address (127.0.0.1:5288).
 bind(): Address already in use [core/socket.c line 759]

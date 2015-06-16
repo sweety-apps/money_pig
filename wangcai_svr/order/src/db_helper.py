@@ -229,6 +229,7 @@ def query_order_alipay_transfer(userid, serial_num):
         order.confirm_time = str(res['confirm_time'])
         order.operate_time = str(res['operate_time'])
         order.alipay_account = res['alipay_account']
+        order.exchange_type = ExchangeType.T_ALIPAY
         return order
 
 
@@ -254,6 +255,7 @@ def query_order_phone_payment(userid, serial_num):
         order.confirm_time = str(res['confirm_time'] or '')
         order.operate_time = str(res['operate_time'] or '')
         order.phone_num = res['phone_num']
+        order.exchange_type = ExchangeType.T_PHONEPAY
         return order
 
 

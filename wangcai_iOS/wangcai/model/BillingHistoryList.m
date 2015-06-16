@@ -168,7 +168,7 @@ DEF_SINGLETON(BillingHistoryList)
     _lastReqCount = count;
     _lastReqOffset = offset;
     
-    [req request:HTTP_BILLING_HISTORY Param:dictionary method:@"get"];
+    [req request:HTTP_BILLING_HISTORY Param:dictionary method:@"post"];
 }
 
 - (void) requestOrderDetailWithOrderid:(NSString*)orderid
@@ -180,7 +180,7 @@ DEF_SINGLETON(BillingHistoryList)
     NSMutableDictionary* dictionary = [[[NSMutableDictionary alloc] init] autorelease];
     dictionary[@"order_id"] = orderid;
     
-    [req request:HTTP_ORDER_DETAIL Param:dictionary method:@"get"];
+    [req request:HTTP_ORDER_DETAIL Param:dictionary method:@"post"];
 }
 
 #pragma mark 数据
@@ -209,10 +209,14 @@ DEF_SINGLETON(BillingHistoryList)
         [self listRequestCompleted:request
                           HttpCode:httpCode
                               Body:body];
+        
+        [request autorelease];
     }
     else if ([[[req getBeeHttpRequest].url absoluteString] rangeOfString:HTTP_ORDER_DETAIL].length > 0)
     {
         [self orderDetailRequestCompleted:request HttpCode:httpCode Body:body];
+        
+        [request autorelease];
     }
 }
 

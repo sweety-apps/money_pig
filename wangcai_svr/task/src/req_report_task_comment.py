@@ -35,7 +35,7 @@ class Handler:
 
         if n > 0:
             #奖励0.1元
-            BillingClient.instance().recharge(req.device_id, req.userid, TASK_REWARD_COMMENT, '好评旺财')
+            BillingClient.instance().recharge(req.device_id, req.userid, TASK_REWARD_COMMENT, '好评小猪', 0)
 
             resp.income = TASK_REWARD_COMMENT
 

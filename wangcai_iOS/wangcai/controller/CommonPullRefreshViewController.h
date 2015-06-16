@@ -19,6 +19,7 @@
 
 @property (retain, nonatomic) IBOutlet UIView *yueContainerView;
 @property (retain, nonatomic) IBOutlet CommonYuENumSmallView *yueView;
+@property (retain, nonatomic) IBOutlet UILabel *failedBGTipLabel;
 
 @property (retain, nonatomic) IBOutlet UIView *navigationBarView;
 @property (retain, nonatomic) IBOutlet UILabel *navigationBarTitleLabel;

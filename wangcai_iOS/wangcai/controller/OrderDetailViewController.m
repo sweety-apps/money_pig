@@ -12,6 +12,7 @@
 #import "BillingHistoryList.h"
 #import "OrderDetailTableViewCell.h"
 #import "Config.h"
+#import "CommonWebViewController.h"
 
 #define kAlertViewTypeCopyedCode (1)
 
@@ -111,6 +112,7 @@
     self.footer.lastUpdateTimeLabel.textColor = self.navigationBarView.backgroundColor;
     
     self.footer.scrollView = nil;
+    self.footer.refreshStateChangeBlock = nil;
     self.footer.hidden = YES;
 }
 
@@ -210,6 +212,7 @@
             msg = @"请求订单详情失败";
         }
         [MBHUDView hudWithBody:msg type:MBAlertViewHUDTypeImagePositive  hidesAfter:2.0 show:YES];
+        self.failedBGTipLabel.text = @"千万表下拉刷新！";
     }
 }
 
@@ -253,10 +256,28 @@
             UIPasteboard* pasteboard = [UIPasteboard generalPasteboard];
             pasteboard.string = [[BillingHistoryList sharedInstance] lastRequestedOrderDetail].extra;
             
-            UIAlertView* alertView = [[UIAlertView alloc] initWithTitle: @"兑换码已复制到剪贴板中" message: nil delegate:self cancelButtonTitle:@"关闭" otherButtonTitles:@"使用兑换码",nil];
+            UIAlertView* alertView = [[UIAlertView alloc] initWithTitle: @"兑换码已复制到剪贴板中" message: @"充值时“粘贴”兑换码后，请点键盘“空格”键自动填充" delegate:self cancelButtonTitle:@"关闭" otherButtonTitles:@"用兑换码充值",nil];
             alertView.tag = kAlertViewTypeCopyedCode;
             [alertView show];
             [alertView release];
+        }
+            break;
+            
+        default:
+            break;
+    }
+}
+
+- (void) onPressedHelpButtonOfOrderDetailCell:(OrderDetailTableViewCell*)cell
+{
+    switch (self.orderType)
+    {
+        case ExtractAndExchangeTypeAlipay:
+        {
+            NSURL* url = [[NSBundle mainBundle] URLForResource:@"alipay_help" withExtension:@"html"];
+            CommonWebViewController* helpWebCtrl = [CommonWebViewController controllerWithUrl:[url absoluteString] andNavigationbarBgColor:self.navigationBarView.backgroundColor enablePullRefresh:NO];
+            
+            [self.navigationController pushViewController:helpWebCtrl animated:YES];
         }
             break;
             

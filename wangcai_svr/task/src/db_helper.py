@@ -438,7 +438,10 @@ def update_offer_wall_point(device_id, type, point):
     conn.commit()
 
 
-def update_offerwall_point(device_id, type, increment):
+def update_offerwall_point(device_id, type, increment, unique_task_id):
+    stmt_log = "INSERT INTO offer_wall_point_log \
+                   SET unique_task_id = '%s', device_id = '%s', type = %d, point = %d, create_time = NOW()" \
+                   % (unique_task_id, MySQLdb.escape_string(device_id), type, increment)
     stmt = "SELECT point FROM offer_wall_point WHERE device_id = '%s' AND type = %d" \
                 % (MySQLdb.escape_string(device_id), type)
     logger.debug(stmt)
@@ -447,6 +450,8 @@ def update_offerwall_point(device_id, type, increment):
     cur = conn.cursor()
     n = cur.execute(stmt)
     if n == 0:
+        logger.debug(stmt_log)
+        cur.execute(stmt_log)
         stmt = "INSERT INTO offer_wall_point \
                     SET device_id = '%s', type = %d, point = %d, create_time = NOW()" \
                     % (MySQLdb.escape_string(device_id), type, increment)
@@ -456,11 +461,28 @@ def update_offerwall_point(device_id, type, increment):
         return increment
     else:
         res = cur.fetchone()
+        logger.debug(stmt_log)
+        cur.execute(stmt_log)
         stmt = "UPDATE offer_wall_point SET point = %d WHERE device_id = '%s' AND type = %d" \
                     % (increment, MySQLdb.escape_string(device_id), type)
         logger.debug(stmt)
         cur.execute(stmt)
         conn.commit()
         return int(res[0]) + increment
+
+def check_offerwall_point_has_reported(unique_task_id):
+    if len(unique_task_id) <= 0:
+        return 1
+    stmt = "SELECT * FROM offer_wall_point_log WHERE unique_task_id = '%s'" \
+                % (MySQLdb.escape_string(unique_task_id))
+    logger.debug(stmt)
+    conn.ping(True)
+    conn.autocommit(False)
+    cur = conn.cursor()
+    n = cur.execute(stmt)
+    if n == 0:
+        return 0
+    else:
+        return 1
 
 

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DMOfferWallManager.h"
+#import "AssetZoneManager.h"
 #import "HttpRequest.h"
 #import "UICustomAlertView.h"
 #import "CommonYuENumSmallView.h"
@@ -25,8 +25,8 @@
 - (void) onRequestAndConsumePointCompleted : (BOOL) suc Consume:(NSInteger) consume Level:(int) change wangcaiIncome:(int) income;
 @end
 
-@interface OnlineWallViewController : UIViewController<DianRuAdWallDelegate, DMOfferWallManagerDelegate, immobViewDelegate, HttpRequestDelegate, PBOfferWallDelegate, MyOfferAPIDelegate> {
-    DMOfferWallManager* _offerWallManager;
+@interface OnlineWallViewController : UIViewController<DianRuAdWallDelegate, AssetZoneManagerDelegate, immobViewDelegate, HttpRequestDelegate, PBOfferWallDelegate, MyOfferAPIDelegate> {
+    AssetZoneManager* _offerWallManager;
     NSInteger                  _nConsume;
     id<OnlineWallViewControllerDelegate>        _delegate;
     

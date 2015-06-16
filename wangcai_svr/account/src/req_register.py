@@ -62,12 +62,12 @@ class Handler:
 #                return json.dumps({'rtn': 1})
 
         #判断当前ip登陆过的设备,每个类型的设备只能登陆1次
-        if self._ip not in ['127.0.0.1','183.14.0.221', '121.14.98.49', '14.153.253.143', '113.92.102.40']:
-            mm = db_helper.query_ip_history(self._ip)
-            if self._device_id not in mm and self._platform in set(mm.values()):
-                logger.info('too many devices on ip: %s, device_list: %s' %(self._ip, str(mm)))
-                return json.dumps({'rtn': 1})
-                
+        if False:
+            if self._ip not in ['127.0.0.1','183.14.0.221', '121.14.98.49', '14.153.253.143', '113.92.102.40']:
+                mm = db_helper.query_ip_history(self._ip)
+                if self._device_id not in mm and self._platform in set(mm.values()):
+                    logger.info('too many devices on ip: %s, device_list: %s' %(self._ip, str(mm)))
+                    return json.dumps({'rtn': 1})
 
             
         #先查anonymous_device
@@ -78,7 +78,7 @@ class Handler:
             self._new_device = True
             logger.debug('new device, %s' %self._device_id)
             #初次安装奖励1元
-            self.recharge(self._device_id, 100, '初次安装奖励')
+            self.recharge(self._device_id, 100, '初次安装奖励', 0)
         elif device.flag == 0:
             #未绑定
             pass
@@ -125,12 +125,13 @@ class Handler:
         return userid in self._banned_list
 
 
-    def recharge(self, device_id, money, remark):
+    def recharge(self, device_id, money, remark, offerwall_money):
         data = {
             'device_id': device_id,
             'userid': 0,
             'money': money,
-            'remark': remark
+            'remark': remark,
+            'offerwall_money': offerwall_money
         }
         url = 'http://' + BILLING_BACKEND + '/recharge'
         resp = self.make_request(url, data)

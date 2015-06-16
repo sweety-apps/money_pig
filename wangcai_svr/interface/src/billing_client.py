@@ -4,6 +4,7 @@ import json
 import urllib
 import urllib2
 import logging
+import socket
 from config import *
 
 logger = logging.getLogger('billing_client')
@@ -21,12 +22,13 @@ class BillingClient:
     def __init__(self):
         pass
 
-    def recharge(self, device_id, userid, money, remark):
+    def recharge(self, device_id, userid, money, remark, offerwall_money):
         data = {
             'device_id': device_id,
             'userid': userid,
             'money': money,
-            'remark': remark
+            'remark': remark,
+            'offerwall_money': offerwall_money
         }
         url = 'http://' + BILLING_BACKEND + '/recharge'
         resp = self.make_request(url, data)

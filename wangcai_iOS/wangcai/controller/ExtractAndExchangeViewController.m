@@ -15,6 +15,7 @@
 
 #define kAlertViewTypeNotEnoughRemain (1)
 #define kAlertViewTypeContinueExchange (2)
+#define kAlertViewTypeNotEnoughMoney (10)
 
 @interface ExtractAndExchangeViewController () <ExtractAndExchangeLogicDelegate,UIAlertViewDelegate>
 {
@@ -60,6 +61,7 @@
     self.footer.arrowImage.image = [UIImage imageNamed:@"table_view_pull_icon_exhange"];
     
     self.footer.scrollView = nil;
+    self.footer.refreshStateChangeBlock = nil;
     self.footer.hidden = YES;
     
     [self.tableView registerNib:[UINib nibWithNibName:@"ExtractAndExchangeTableViewCell" bundle:nil] forCellReuseIdentifier:@"ExtractAndExchangeTableViewCell"];
@@ -128,9 +130,15 @@
         case ExtractAndExchangeTypeXLVip:
         {
             UIAlertView* alert = nil;
+            
             if ([rcd.remain intValue] <= 0)
             {
                 alert = [[UIAlertView alloc] initWithTitle:@"库存已红血，无法兑换" message:@"请耐心等待1-2天，库存补充后即可兑换。" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
+                alert.tag = kAlertViewTypeNotEnoughRemain;
+            }
+            else if ([[LoginAndRegister sharedInstance] getBalance] <= [rcd.price intValue])
+            {
+                alert = [[UIAlertView alloc] initWithTitle:@"您的余额不足以兑换" message:@"为了加薪、升职、当上总经理、出任CEO、迎娶白富美，\n还请努力地做任务赚钱吧，萌萌哒！" delegate:self cancelButtonTitle:@"回去搬砖" otherButtonTitles:nil];
                 alert.tag = kAlertViewTypeNotEnoughRemain;
             }
             else
@@ -182,6 +190,16 @@
     cell.nameLabel.text = rcd.name;
     cell.desLabel.text = rcd.desString;
     cell.cheapMarkImageView.hidden = [rcd.is_most_cheap boolValue] ? NO : YES;
+    
+    if(rcd.type == ExtractAndExchangeTypeUndefined)
+    {
+        cell.rightArrowImageView.hidden = YES;
+    }
+    else
+    {
+        cell.rightArrowImageView.hidden = NO;
+    }
+    
     if ([rcd.iconUrl length] > 0)
     {
         [cell.iconImageView setUrl:nil];
@@ -214,6 +232,7 @@
     if (succeed)
     {
         [self.tableView reloadData];
+        self.failedBGTipLabel.text = @"";
     }
     else
     {
@@ -222,6 +241,7 @@
             msg = @"请求兑换列表失败";
         }
         [MBHUDView hudWithBody:msg type:MBAlertViewHUDTypeImagePositive  hidesAfter:2.0 show:YES];
+        self.failedBGTipLabel.text = @"千万表下拉刷新！";
     }
 }
 

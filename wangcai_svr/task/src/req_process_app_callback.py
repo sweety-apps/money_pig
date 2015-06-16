@@ -37,7 +37,7 @@ class Handler:
                 logger.error('insert task_of_device failed')
             else:
                 logger.info('task_app succeed! device_id:%s, appid:%s' %(req.device_id, req.appid))
-                BillingClient.instance().recharge(req.device_id, req.userid, task.money, 'app: %s, %s' %(req.appid, task.app_name))
+                BillingClient.instance().recharge(req.device_id, req.userid, task.money, 'app: %s, %s' %(req.appid, task.app_name), task.money)
 
         return resp.dump_json()
 

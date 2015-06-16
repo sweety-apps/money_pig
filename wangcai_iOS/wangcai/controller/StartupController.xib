@@ -22,6 +22,9 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </activityIndicatorView>
+                <imageView userInteractionEnabled="NO" tag="70" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="startup_page_front_words.png" translatesAutoresizingMaskIntoConstraints="NO" id="7NU-7T-NsW">
+                    <rect key="frame" x="265" y="291" width="55" height="135"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.36862745099999999" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
             <nil key="simulatedStatusBarMetrics"/>
@@ -37,8 +40,11 @@
                 <imageView userInteractionEnabled="NO" tag="12" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="startup_page_front.png" translatesAutoresizingMaskIntoConstraints="NO" id="cuT-Hk-6Xp">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                 </imageView>
+                <imageView userInteractionEnabled="NO" tag="70" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="startup_page_front_words.png" translatesAutoresizingMaskIntoConstraints="NO" id="jNF-jW-OBc">
+                    <rect key="frame" x="265" y="353" width="55" height="135"/>
+                </imageView>
                 <activityIndicatorView opaque="NO" tag="12" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="4Hy-ub-4d8">
-                    <rect key="frame" x="273" y="520" width="20" height="20"/>
+                    <rect key="frame" x="278" y="522" width="20" height="20"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </activityIndicatorView>
@@ -81,6 +87,7 @@
     </objects>
     <resources>
         <image name="startup_page_front.png" width="320" height="568"/>
+        <image name="startup_page_front_words.png" width="55" height="135"/>
         <image name="table_view_topleft_icon.png" width="200" height="220"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

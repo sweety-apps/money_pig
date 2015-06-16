@@ -1,0 +1,16 @@
+{
+    "ret":0,
+    "msg":"",
+    "data":{
+        "id":"1",
+        "type":"cat1",
+        "pic_type":"cat1",
+        "pic_id":"1",
+        "picurl":"tmp_img/icon_0.png",
+        "text1":"退后，我要开始装逼了",
+        "text2":"I am SB!",
+        "result_picurl":"tmp_img/result1.png",
+        "ishot":0,
+        "tag":"金馆长"
+    }
+}

@@ -87,7 +87,7 @@
     self.myCodeLabel.layer.masksToBounds = YES;
     self.myCodeLabel.layer.cornerRadius = 2.0f;
     
-    [self.commitOtherCodeBtn setTitle:@"领2元" forState:UIControlStateNormal];
+    [self.commitOtherCodeBtn setTitle:@"领1元" forState:UIControlStateNormal];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

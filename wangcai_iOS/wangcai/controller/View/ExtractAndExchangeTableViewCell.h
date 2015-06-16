@@ -14,6 +14,7 @@
 @property (retain, nonatomic) IBOutlet UILabel *nameLabel;
 @property (retain, nonatomic) IBOutlet UILabel *desLabel;
 @property (retain, nonatomic) IBOutlet UIImageView *cheapMarkImageView;
+@property (retain, nonatomic) IBOutlet UIImageView *rightArrowImageView;
 
 
 @end

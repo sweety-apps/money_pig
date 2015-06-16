@@ -9,6 +9,8 @@ import logging
 import socket
 from config import *
 
+LINE_INTERLACE = '\n'
+
 try:
     import xml.etree.cElementTree as ET
 except:
@@ -58,7 +60,6 @@ class OfpayClient:
         ]
         return hashlib.md5(''.join(params)).hexdigest().upper()
 
-
     def charge(self, phone_num, amount, order_id, order_time):
         url = OFPAY_HOST + '/onlineorder.do'
         data = {
@@ -79,8 +80,10 @@ class OfpayClient:
         else:
             try:
 #            print resp['content']
-                content_tmp = '\r\n'.join([line for line in resp['content'].split('\r\n') if not line.startswith('<?xml')])
-                content_utf8 = content_tmp.decode('gbk').encode('utf-8')
+                logger.debug('[content] %s' %resp['content'])
+                content_utf8 = resp['content'].decode('gbk').encode('utf-8')
+                content_tmp = LINE_INTERLACE.join([line for line in content_utf8.split(LINE_INTERLACE) if not line.startswith('<?xml')])
+                content_utf8 = content_tmp
                 print content_utf8
                 root = ET.fromstring(content_utf8)
                 retcode = int(root.find('retcode').text)
@@ -114,7 +117,7 @@ class OfpayClient:
             return resp['rtn'], 'error'
         else:
             try:
-                content_tmp = '\r\n'.join([line for line in resp['content'].split('\r\n') if not line.startswith('<?xml')])
+                content_tmp = LINE_INTERLACE.join([line for line in resp['content'].split(LINE_INTERLACE) if not line.startswith('<?xml')])
                 content_utf8 = content_tmp.decode('gbk').encode('utf-8')
                 print content_utf8
                 root = ET.fromstring(content_utf8)
@@ -151,8 +154,8 @@ class OfpayClient:
                 return {'rtn': -2}
 
 
-if __name__ == '__main__':
+#if __name__ == '__main__':
 #    rtn, msg = OfpayClient.instance().telcheck('13632512376', 5)
 #    rtn, msg = OfpayClient.instance().charge('13655831069', 10, '201401231305080000000009e6', '2014-01-23 13:05:08')
 #    rtn = OfpayClient.instance().alipay('zxp0213051@163.com', 20.0, '201401231401200000000009em', '2014-01-23 14:01:20')
-    print rtn, msg
+#    print rtn, msg

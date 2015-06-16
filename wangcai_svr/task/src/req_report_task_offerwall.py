@@ -14,10 +14,16 @@ class Handler:
         req  = protocol.ReportOfferWall_Req(web.input())
         resp = protocol.ReportOfferWall_Resp()
 
-        total = db_helper.update_offerwall_point(req.device_id, req.type, req.increment)
+        is_task_finished = db_helper.check_offerwall_point_has_reported(req.unique_task_id)
+        if is_task_finished:
+            logger.error("[OFFERWALL CALLBACK] task has finished, unique_task_id = %s",req.unique_task_id)
+            resp.rtn = -1
+            return resp.dump_json()
+
+        total = db_helper.update_offerwall_point(req.device_id, req.type, req.increment, req.unique_task_id)
         
         income = req.increment * 10
-        BillingClient.instance().recharge(req.device_id, req.userid, income, '体验应用赚取%.1f元' %(income/100.0))
+        BillingClient.instance().recharge(req.device_id, req.userid, income, req.remark, income)
 
         if req.inviter != 0:
             BillingClient.instance().share_income(req.inviter, req.userid, int(income/10.0))

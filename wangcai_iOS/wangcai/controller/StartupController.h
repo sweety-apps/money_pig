@@ -17,6 +17,7 @@
     UIAlertView* _alertTips;
 }
 @property (retain, nonatomic) IBOutlet UIImageView *frontImageView;
+@property (retain, nonatomic) IBOutlet UIImageView *frontWordsImageView;
 @property (retain, nonatomic) IBOutlet UIImageView *logoImageView;
 @property (retain, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 

@@ -551,7 +551,7 @@
     [dictionary setObject:appVersion forKey:@"ver"];
     [dictionary setObject:APP_NAME forKey:@"app"];
     
-    [_request request:HTTP_EXCHANGE_LIST Param:dictionary method:@"get"];
+    [_request request:HTTP_EXCHANGE_LIST Param:dictionary method:@"post"];
 }
 
 -(void) HttpRequestCompleted : (id) request HttpCode:(int)httpCode Body:(NSDictionary*) body {

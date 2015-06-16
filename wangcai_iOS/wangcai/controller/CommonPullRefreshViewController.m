@@ -11,6 +11,17 @@
 #import "UIGetRedBagAlertView.h"
 #import "UINavigationController+UIGestureRecognizerDelegate.h"
 
+
+@interface CommonPullRefreshViewControllerCallerWrapper : NSObject
+
+@property (nonatomic,assign) CommonPullRefreshViewController* caller;
+
+@end
+
+@implementation CommonPullRefreshViewControllerCallerWrapper
+
+@end
+
 @interface CommonPullRefreshViewController ()
 
 @end
@@ -47,6 +58,11 @@
     [self.yueView setNum:[[LoginAndRegister sharedInstance] getBalance] withAnimation:NO];
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -59,20 +75,23 @@
     
     self.tableView = nil;
     self.headerBgLongView = nil;
+    self.header.scrollView = nil;
     self.header = nil;
+    self.footer.scrollView = nil;
     self.footer = nil;
     self.navigationBarTitleLabel = nil;
     self.navigationBarView = nil;
     
     [_yueContainerView release];
     [_yueView release];
+    [_failedBGTipLabel release];
     [super dealloc];
 }
 
 - (void)_setupSubViews
 {
     UIView* longView = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 0)] autorelease];
-    longView.backgroundColor = [UIColor colorWithRed:0.084 green:0.406 blue:0.796 alpha:1.000];
+    longView.backgroundColor = [UIColor whiteColor];//[UIColor colorWithRed:0.084 green:0.406 blue:0.796 alpha:1.000];
     self.headerBgLongView = longView;
     [self.view insertSubview:longView belowSubview:self.tableView];
 
@@ -83,13 +102,15 @@
     // Header
     MJRefreshHeaderView *header = [MJRefreshHeaderView header];
     header.backgroundColor = [UIColor clearColor];
+    CommonPullRefreshViewControllerCallerWrapper* wrapper = [[[CommonPullRefreshViewControllerCallerWrapper alloc] init] autorelease];
+    wrapper.caller = self;
     header.beginRefreshingBlock = ^(MJRefreshBaseView *refreshView) {
         // 进入刷新状态就会回调这个Block
         
         // 模拟延迟加载数据，因此2秒后才调用）
         // 这里的refreshView其实就是header
         NSLog(@"%@----开始进入刷新状态", refreshView.class);
-        [self onStartHeaderRefresh];
+        [wrapper.caller onStartHeaderRefresh];
     };
     header.endStateChangeBlock = ^(MJRefreshBaseView *refreshView) {
         // 刷新完毕就会回调这个Block
@@ -131,7 +152,7 @@
         // 模拟延迟加载数据，因此2秒后才调用）
         // 这里的refreshView其实就是footer
         NSLog(@"%@----开始进入刷新状态", refreshView.class);
-        [self onStartFooterRefresh];
+        [wrapper.caller onStartFooterRefresh];
     };
     footer.endStateChangeBlock = ^(MJRefreshBaseView *refreshView) {
         // 刷新完毕就会回调这个Block
@@ -163,6 +184,8 @@
     footer.activityView.color = RGB(15, 151, 208);
     footer.lastUpdateTimeLabel.textColor = RGB(15, 151, 208);
     self.footer = footer;
+    
+    self.failedBGTipLabel.text = @"正在刷新...";
 }
 
 - (void)doneWithView:(MJRefreshBaseView *)refreshView

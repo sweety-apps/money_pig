@@ -49,6 +49,7 @@ class QueryBalance_Resp(Response):
         self.income = 0
         self.outgo = 0
         self.shared_income = 0
+        self.offerwall_income = 0
 
 ######################################
 
@@ -59,6 +60,7 @@ class Recharge_Req(Request):
         self.userid = int(input.userid)
         self.money = int(input.money)
         self.remark = input.remark
+        self.offerwall_money = int(input.offerwall_money)
 
 class Recharge_Resp(Response):
     def __init__(self):

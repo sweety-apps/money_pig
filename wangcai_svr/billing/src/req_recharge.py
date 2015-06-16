@@ -15,9 +15,9 @@ class Handler:
         resp = protocol.Recharge_Resp()
 
         if req.userid == 0:
-            resp.rtn = db_helper.recharge_anonymous_account(req.device_id, req.money, req.remark)
+            resp.rtn = db_helper.recharge_anonymous_account(req.device_id, req.money, req.remark, req.offerwall_money)
         else:
-            resp.rtn = db_helper.recharge_billing_account(req.userid, req.device_id, req.money, req.remark)
+            resp.rtn = db_helper.recharge_billing_account(req.userid, req.device_id, req.money, req.remark, req.offerwall_money)
 
         return resp.dump_json()
             
