@@ -1,0 +1,978 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7068a0dc-8bfe-4b51-b873-e31e590061ed" name="Default" comment="" />
+    <ignored path="wangcai_svr.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="wangcai_svr" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="interface.log" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/interface/log/interface.log">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6672" column="0" selection-start="1156111" selection-end="1156111" vertical-scroll-proportion="0.0" vertical-offset="100080" max-vertical-offset="100170">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="req_task_domob.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/interface/src/req_task_domob.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="14" selection-start="446" selection-end="446" vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="900">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="req_task_comment.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/interface/src/req_task_comment.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="645">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="req_task_download_app.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/interface/src/req_task_download_app.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="interface_uwsgi.log" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/interface/log/interface_uwsgi.log">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13554" column="0" selection-start="3906065" selection-end="3906065" vertical-scroll-proportion="0.0" vertical-offset="203310" max-vertical-offset="203400">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/interface/src/config.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="45" column="19" selection-start="1349" selection-end="1349" vertical-scroll-proportion="0.0" vertical-offset="675" max-vertical-offset="1125">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="req_bind_phone.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/account/src/req_bind_phone.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="63" column="25" selection-start="2308" selection-end="2308" vertical-scroll-proportion="0.0" vertical-offset="523" max-vertical-offset="1545">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="req_bind_phone_confirm.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/interface/src/req_bind_phone_confirm.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="69" column="49" selection-start="2533" selection-end="2535" vertical-scroll-proportion="0.0" vertical-offset="795" max-vertical-offset="1695">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="req_register.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/account/src/req_register.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="51" column="5" selection-start="1450" selection-end="1450" vertical-scroll-proportion="0.117142856" vertical-offset="574" max-vertical-offset="2280">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="interface_svr.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/interface/src/interface_svr.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="55" column="54" selection-start="1758" selection-end="1758" vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="1245">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/task/src/db_helper.py" />
+        <option value="$PROJECT_DIR$/task/log/task.log" />
+        <option value="$PROJECT_DIR$/billing/log/billing.log" />
+        <option value="$PROJECT_DIR$/billing/src/db_helper.py" />
+        <option value="$PROJECT_DIR$/sbin/phone_charge.sh" />
+        <option value="$PROJECT_DIR$/order/src/req_order_list.py" />
+        <option value="$PROJECT_DIR$/sbin/account_recharge.sh" />
+        <option value="$PROJECT_DIR$/account/src/config.py" />
+        <option value="$PROJECT_DIR$/order/src/db_helper.py" />
+        <option value="$PROJECT_DIR$/order/src/data_types.py" />
+        <option value="$PROJECT_DIR$/order/src/protocol.py" />
+        <option value="$PROJECT_DIR$/order/src/req_order_detail.py" />
+        <option value="$PROJECT_DIR$/interface/src/req_order_detail.py" />
+        <option value="$PROJECT_DIR$/order/sbin/insert_jingdong_code.sh" />
+        <option value="$PROJECT_DIR$/interface/src/req_update_inviter.py" />
+        <option value="$PROJECT_DIR$/gm/src/config.py" />
+        <option value="$PROJECT_DIR$/gm/src/req_order_phone_charge.py" />
+        <option value="$PROJECT_DIR$/gm/log/gm.log" />
+        <option value="$PROJECT_DIR$/gm/src/ofpay_client.py" />
+        <option value="$PROJECT_DIR$/account/conf/bad_user.txt" />
+        <option value="$PROJECT_DIR$/order/sql/exchange_code_jingdong.txt" />
+        <option value="$PROJECT_DIR$/cronjob/order_auto_commit.py" />
+        <option value="$PROJECT_DIR$/cronjob/log/order_auto_commit.log" />
+        <option value="$PROJECT_DIR$/interface/src/req_offerwall_youmi.py" />
+        <option value="$PROJECT_DIR$/interface/src/req_offerwall_miidi.py" />
+        <option value="$PROJECT_DIR$/gm/log/gm_uwsgi.log" />
+        <option value="$PROJECT_DIR$/order/log/order_uwsgi.log" />
+        <option value="$PROJECT_DIR$/task/src/req_report_task_comment.py" />
+        <option value="$PROJECT_DIR$/task/sql/init_task.sql" />
+        <option value="$PROJECT_DIR$/interface/src/interface_svr.py" />
+        <option value="$PROJECT_DIR$/interface/src/protocol.py" />
+        <option value="$PROJECT_DIR$/interface/src/req_register.py" />
+        <option value="$PROJECT_DIR$/task/src/req_process_task_checkin.py" />
+        <option value="$PROJECT_DIR$/task/src/req_report_task_invite.py" />
+        <option value="$PROJECT_DIR$/task/src/config.py" />
+        <option value="$PROJECT_DIR$/interface/src/req_order_exchange_code.py" />
+        <option value="$PROJECT_DIR$/order/src/req_exchange_code.py" />
+        <option value="$PROJECT_DIR$/interface/src/req_resend_sms_code.py" />
+        <option value="$PROJECT_DIR$/account/log/account.log" />
+        <option value="$PROJECT_DIR$/interface/src/req_order_phone_pay.py" />
+        <option value="$PROJECT_DIR$/interface/src/req_order_alipay.py" />
+        <option value="$PROJECT_DIR$/interface/log/interface_uwsgi.log" />
+        <option value="$PROJECT_DIR$/order/src/req_exchange_list.py" />
+        <option value="$PROJECT_DIR$/interface/src/push_msg_center.py" />
+        <option value="$PROJECT_DIR$/interface/src/req_offerwall_chukong.py" />
+        <option value="$PROJECT_DIR$/interface/log/interface.log" />
+        <option value="$PROJECT_DIR$/interface/src/req_offerwall_domob_ios.py" />
+        <option value="$PROJECT_DIR$/interface/src/req_offerwall_miidi_ios.py" />
+        <option value="$PROJECT_DIR$/interface/src/req_offerwall_youmi_ios.py" />
+        <option value="$PROJECT_DIR$/interface/src/config.py" />
+        <option value="$PROJECT_DIR$/account/src/req_bind_phone.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="5" />
+    <option name="y" value="22" />
+    <option name="width" value="1204" />
+    <option name="height" value="734" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers ProjectPane="false" />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType ProjectPane="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope">
+        <subPane subId="Problems">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="wangcai_svr">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="wangcai_svr">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="task">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="wangcai_svr">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="task">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wangcai_svr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wangcai_svr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wangcai_svr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wangcai_svr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wangcai_svr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="interface" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wangcai_svr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wangcai_svr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="interface" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wangcai_svr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wangcai_svr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="interface" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="log" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wangcai_svr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wangcai_svr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="account" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wangcai_svr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wangcai_svr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="account" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="recentsLimit" value="5" />
+    <property name="options.lastSelected" value="editor.preferences.appearance" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+    <property name="FullScreen" value="false" />
+    <property name="last_opened_file_path" value="/wxscrape" />
+    <property name="SearchEverywhereHistory" value="" />
+  </component>
+  <component name="RunManager" selected="Python.db_helper">
+    <configuration default="false" name="req_callback" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/api/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="wangcai_svr" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/api/src/req_callback.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="app_svr" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="wangcai_svr" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/src/app_svr.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="db_helper" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/account/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="wangcai_svr" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/account/src/db_helper.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="py.test">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="wangcai_svr" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="testToRun" value="" />
+      <option name="keywords" value="" />
+      <option name="params" value="" />
+      <option name="USE_PARAM" value="false" />
+      <option name="USE_KEYWORD" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Nosetests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="wangcai_svr" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="wangcai_svr" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="wangcai_svr" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="wangcai_svr" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Attests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="wangcai_svr" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <list size="3">
+      <item index="0" class="java.lang.String" itemvalue="Python.req_callback" />
+      <item index="1" class="java.lang.String" itemvalue="Python.app_svr" />
+      <item index="2" class="java.lang.String" itemvalue="Python.db_helper" />
+    </list>
+    <recent_temporary>
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="Python.db_helper" />
+        <item index="1" class="java.lang.String" itemvalue="Python.app_svr" />
+        <item index="2" class="java.lang.String" itemvalue="Python.req_callback" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7068a0dc-8bfe-4b51-b873-e31e590061ed" name="Default" comment="" />
+      <created>1400654888008</created>
+      <updated>1400654888008</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="5" y="22" width="1204" height="734" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34285715" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24958402" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29817277" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34285715" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32932332" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29172933" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24958402" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2986689" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32932332" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="5" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/account/src/req_bind_phone.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="25" selection-start="2308" selection-end="2308" vertical-scroll-proportion="0.0" vertical-offset="688" max-vertical-offset="1665">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/src/interface_svr.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="17" selection-start="1942" selection-end="1951" vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="1245">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/log/interface.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6672" column="0" selection-start="1156111" selection-end="1156111" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100170">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/src/req_task_domob.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="14" selection-start="446" selection-end="446" vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="900">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/src/req_task_comment.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="645">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/src/req_task_download_app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/log/interface_uwsgi.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13554" column="0" selection-start="3906065" selection-end="3906065" vertical-scroll-proportion="0.0" vertical-offset="203310" max-vertical-offset="203400">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/src/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="19" selection-start="1349" selection-end="1349" vertical-scroll-proportion="0.0" vertical-offset="675" max-vertical-offset="1125">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/src/req_register.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="121" column="18" selection-start="3308" selection-end="3308" vertical-scroll-proportion="0.0" vertical-offset="1815" max-vertical-offset="3465">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task/src/req_report_task_user_info.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="15" selection-start="1053" selection-end="1053" vertical-scroll-proportion="0.0" vertical-offset="555" max-vertical-offset="735">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/account/src/req_bind_phone.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="25" selection-start="2308" selection-end="2308" vertical-scroll-proportion="0.0" vertical-offset="688" max-vertical-offset="1665">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/log/interface.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6672" column="0" selection-start="1156111" selection-end="1156111" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100170">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/src/req_task_domob.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="14" selection-start="446" selection-end="446" vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="900">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/src/req_task_comment.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="645">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/src/req_task_download_app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/log/interface_uwsgi.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13554" column="0" selection-start="3906065" selection-end="3906065" vertical-scroll-proportion="0.0" vertical-offset="203310" max-vertical-offset="203400">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/src/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="19" selection-start="1349" selection-end="1349" vertical-scroll-proportion="0.0" vertical-offset="735" max-vertical-offset="1125">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/src/req_register.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="121" column="18" selection-start="3308" selection-end="3308" vertical-scroll-proportion="0.0" vertical-offset="1815" max-vertical-offset="3465">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task/src/req_report_task_user_info.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="15" selection-start="1053" selection-end="1053" vertical-scroll-proportion="0.0" vertical-offset="555" max-vertical-offset="735">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/account/src/req_bind_phone.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="25" selection-start="2308" selection-end="2308" vertical-scroll-proportion="0.0" vertical-offset="688" max-vertical-offset="1665">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/log/interface.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="143" column="0" selection-start="26180" selection-end="26180" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2235">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/src/req_task_domob.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="14" selection-start="446" selection-end="446" vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="900">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/src/req_task_comment.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="645">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/src/req_task_download_app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/log/interface_uwsgi.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5119" column="0" selection-start="609703" selection-end="609703" vertical-scroll-proportion="0.0" vertical-offset="76785" max-vertical-offset="76875">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/src/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="0" selection-start="769" selection-end="769" vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="795">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/log/interface.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4406" column="51" selection-start="749394" selection-end="749394" vertical-scroll-proportion="0.0" vertical-offset="65327" max-vertical-offset="66285">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/log/interface_uwsgi.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13035" column="34" selection-start="3760174" selection-end="3760174" vertical-scroll-proportion="0.0" vertical-offset="195342" max-vertical-offset="195690">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/src/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="0" selection-start="769" selection-end="769" vertical-scroll-proportion="0.0" vertical-offset="288" max-vertical-offset="1125">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gm/src/req_order_alipay_perform.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="43" selection-start="1913" selection-end="1913" vertical-scroll-proportion="0.0" vertical-offset="600" max-vertical-offset="1545" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gm/src/ofpay_client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="41" selection-start="562" selection-end="562" vertical-scroll-proportion="-1.2114285" vertical-offset="829" max-vertical-offset="2415" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gm/src/gm_svr.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="37" selection-start="855" selection-end="855" vertical-scroll-proportion="0.0" vertical-offset="145" max-vertical-offset="750" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gm/log/gm.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2881" column="106" selection-start="257572" selection-end="257572" vertical-scroll-proportion="0.0" vertical-offset="43007" max-vertical-offset="43380" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cronjob/order_auto_commit.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="160" column="28" selection-start="5249" selection-end="5249" vertical-scroll-proportion="0.0" vertical-offset="1052" max-vertical-offset="2625" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gm/src/req_order_phone_charge.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="23" selection-start="1039" selection-end="1039" vertical-scroll-proportion="0.0" vertical-offset="750" max-vertical-offset="1155" />
+      </provider>
+    </entry>
+    <entry file="file:///System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-3.9256198" vertical-offset="1425" max-vertical-offset="5340" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/src/sms_center.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.6818182" vertical-offset="270" max-vertical-offset="2535" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/src/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="19" selection-start="1349" selection-end="1349" vertical-scroll-proportion="0.0" vertical-offset="735" max-vertical-offset="1125">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="238" column="8" selection-start="8019" selection-end="8019" vertical-scroll-proportion="-7.3031087" vertical-offset="6194" max-vertical-offset="21945" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/log/interface_uwsgi.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13554" column="0" selection-start="3906065" selection-end="3906065" vertical-scroll-proportion="0.0" vertical-offset="203310" max-vertical-offset="203400">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/log/interface.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6672" column="0" selection-start="1156111" selection-end="1156111" vertical-scroll-proportion="0.0" vertical-offset="100080" max-vertical-offset="100170">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/src/req_task_download_app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/src/req_task_domob.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="14" selection-start="446" selection-end="446" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="825">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/src/req_task_comment.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/src/req_register.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="121" column="18" selection-start="3308" selection-end="3308" vertical-scroll-proportion="0.0" vertical-offset="2415" max-vertical-offset="3330">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task/src/req_report_task_user_info.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="15" selection-start="1053" selection-end="1053" vertical-scroll-proportion="0.0" vertical-offset="259" max-vertical-offset="645">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/account/src/db_helper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="62" column="4" selection-start="1718" selection-end="1718" vertical-scroll-proportion="0.33142856" vertical-offset="814" max-vertical-offset="4650" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/src/interface_svr.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="54" selection-start="1758" selection-end="1758" vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="1245">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/account/src/req_bind_phone.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="25" selection-start="2308" selection-end="2308" vertical-scroll-proportion="0.0" vertical-offset="523" max-vertical-offset="1545">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface/src/req_bind_phone_confirm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="49" selection-start="2533" selection-end="2535" vertical-scroll-proportion="0.0" vertical-offset="795" max-vertical-offset="1695">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/account/src/req_register.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="5" selection-start="1450" selection-end="1450" vertical-scroll-proportion="0.117142856" vertical-offset="574" max-vertical-offset="2280">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
+
